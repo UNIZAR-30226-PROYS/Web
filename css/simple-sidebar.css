@@ -1,0 +1,639 @@
+/*!
+ * Start Bootstrap - Simple Sidebar (https://startbootstrap.com/template-overviews/simple-sidebar)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-simple-sidebar/blob/master/LICENSE)
+ */
+
+ html {
+   height: 100%;
+ }
+ body {
+   min-height: 100%;
+ }
+
+.main-content {
+  height: 100%;
+}
+
+#wrapper {
+  padding-left: 0;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  height: 100%;
+}
+
+#wrapper.toggled {
+  padding-right: 0;
+}
+
+#sidebar-wrapper {
+  z-index: 1000;
+  position: fixed;
+  right: 0;
+  width: 0;
+  height: 100%;
+  margin-left: -250px;
+  overflow-y: auto;
+  background: #000;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  width: 300px;
+}
+
+#page-content-wrapper {
+  width: 100%;
+  position: absolute;
+  padding: 15px;
+}
+
+#wrapper.toggled #page-content-wrapper {
+  position: absolute;
+  margin-right: -250px;
+}
+
+#menu-music {
+  position: absolute;
+  right:23%;
+  top: 40px;
+}
+
+
+.sb-search {
+   position: absolute;
+  width: 0%;
+  min-width:30px;
+  height:55px;
+  overflow: hidden;
+  -webkit-transition: width 0.3s;
+  -moz-transition: width 0.3s;
+  transition: width 0.3s;
+  -webkit-backface-visibility: hidden;
+  z-index: 999;
+  border-left: 1px solid #000;
+    top:0%;
+}
+.sb-search-input {
+  position: absolute;
+  top: 0;
+  right: 3px;
+  border: none;
+  outline: none;
+  background: #111;
+  width: 100%;
+  height:65px;
+  margin: 0;
+  z-index:10;
+  padding: 0em 4em 0em 1em;
+  font-size: 13px;
+  font-weight: 400;
+  color: #fff;
+}
+.sb-search-input::-webkit-input-placeholder {
+  color: #fff;
+}
+.sb-search-input:-moz-placeholder {
+  color: #fff;
+}
+.sb-search-input::-moz-placeholder {
+  color: #fff;
+}
+.sb-search-input:-ms-input-placeholder {
+  color:#fff;
+}
+.sb-icon-search,.sb-search-submit  {
+  width:30px;
+  height:40px;
+  display: block;
+  position: absolute;
+  right: 1%;
+  top: 0%;
+  padding: 0;
+  margin: 0;
+  line-height:71px;
+  text-align: center;
+  cursor: pointer;
+}
+.sb-search-submit {
+   background: url('../img/search.png') no-repeat -23px 20px;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; /* IE 8 */
+    color: transparent;
+  border: none;
+  outline: none;
+  z-index: -1;
+  -webkit-appearance: none;
+}
+.sb-icon-search {
+  background: #111 url('../img/search.png') no-repeat 23px 20px;
+  z-index: 90;
+     width:70px;
+    height:65px;
+}
+/* Open state */
+.sb-search.sb-search-open,.no-js .sb-search {
+  width:38%;
+  margin-top: 15px;
+}
+.sb-search.sb-search-open .sb-icon-search,.no-js .sb-search .sb-icon-search {
+  background: url('../img/search.png') no-repeat 23px 20px;
+  color: #fff;
+  z-index: 11;
+}
+.sb-search.sb-search-open .sb-search-submit,.no-js .sb-search .sb-search-submit {
+  z-index: 90;
+}
+
+#user {
+  font: bold 20px Arial;
+  text-decoration: none;
+  color: #333333;
+  position: absolute;
+  right:32%;
+  top: 25px;
+}
+
+#cancion {
+  position: relative;
+  top: 40px;
+  left: 45px;
+}
+
+#autor {
+  position: relative;
+  top: 20px;
+  left: 50px;
+  color: white;
+  font-size: 25px;
+}
+
+#repr {
+  position: relative;
+  top: 150px;
+  width: 100%;
+}
+
+#repr li{
+  width: 100%;
+}
+
+.audio-player {
+  width: 100%;
+}
+
+#audio-player {
+  width: 80%;
+}
+
+.next-top {
+  list-style-type: none;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.oprep {
+    float: left;
+    padding-right: 10px;
+    max-width: 50px;
+}
+
+
+.player {
+    float: left;
+}
+
+#opcionesrepr {
+  top: 20px;
+  position: relative;
+  float: left;
+  left: 60px;
+  width: 80%;
+}
+#opcionesrepr li:hover{
+  background-color: initial;
+}
+
+#reproductor {
+  padding-left: 0;
+  left: 25px;
+  width: 100%;
+}
+
+/* Sidebar Styles */
+
+.sidebar-nav {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  margin: 0;
+  padding: 0;
+  left: 0;
+  list-style: none;
+  z-index: 2;
+}
+
+.sidebar-nav li {
+  text-indent: 0px;
+  line-height: 40px;
+}
+
+.sidebar-nav li a {
+  display: block;
+  text-decoration: none;
+  color: #999999;
+}
+
+.sidebar-nav li a:hover {
+  text-decoration: none;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-nav li a:active, .sidebar-nav li a:focus {
+  text-decoration: none;
+}
+
+.sidebar-nav>.sidebar-brand {
+  height: 65px;
+  font-size: 18px;
+  line-height: 60px;
+}
+
+.sidebar-nav>.sidebar-brand a {
+  color: #999999;
+}
+
+.sidebar-nav>.sidebar-brand a:hover {
+  color: #fff;
+  background: none;
+}
+
+.navegacion ul{
+    position: fixed;
+    list-style-type: none;
+    margin: 0;
+    padding: 0.5%;
+    padding-top: 0px;
+    width: 22%;
+    background-color: #f1f1f1;
+    font-size: 1.177vw;
+}
+
+#cancion img{
+    width: 200px;
+    height: 200px;
+}
+
+.navegacion li {
+    float: left;
+    display : inline;
+    text-align: center;
+    text-decoration: none;
+    color: #333333;
+    height: 100%;
+    margin-top: 15%;
+    vertical-align: middle;
+}
+
+
+#header-section {
+  height: 80px;
+  width: 100%;
+  position: fixed;
+  z-index: 2;
+  margin-left: 22%;
+}
+
+#sidebar-wrapper {
+  margin-top: 70px;
+}
+
+.navegacion {
+  z-index:1;
+  margin: 0;
+  margin-bottom: 10%;
+  width: 15.5%;
+  height: 100%;
+  top:0;
+  position: fixed;
+}
+
+#bar{
+     max-height: 100%;
+     max-width: 30%;
+     float : left;
+     padding:0%;
+     z-index:1;
+     margin-top: 0;
+     margin-bottom: 20px;
+ }
+
+
+ li a {
+     text-decoration: none;
+     color: #333333;
+     font-size: 14px;
+ }
+
+
+ li a:hover:not(.active) {
+     text-decoration: none;
+     color: #333333;
+ }
+
+ .informacion{
+   position: absolute;
+   margin-left: 23%;
+   margin-top: 80px;
+   width: 75%;
+   height: 80%;
+ }
+
+
+
+@media(min-width:768px) {
+  #wrapper {
+    padding-left: 0;
+  }
+  #wrapper.toggled {
+    /*padding-left: 250px;*/
+  }
+  #sidebar-wrapper {
+    width: 0;
+  }
+  #wrapper.toggled #sidebar-wrapper {
+    width: 350px;
+    margin-top: 70px;
+  }
+  #page-content-wrapper {
+    padding: 20px;
+    position: relative;
+  }
+  #wrapper.toggled #page-content-wrapper {
+    margin-right: 0;
+  }
+  #menu-music {
+    position: absolute;
+    top: 40px;
+    right:16%;
+  }
+
+  .sb-search {
+		position: absolute;
+	}
+
+  .sb-search {
+     position: absolute;
+    width: 0%;
+    max-width:350px;
+    height:65px;
+    overflow: hidden;
+    -webkit-transition: width 0.3s;
+    -moz-transition: width 0.3s;
+    transition: width 0.3s;
+    -webkit-backface-visibility: hidden;
+    z-index: 999;
+    border-left: 1px solid #000;
+      margin-top: 15px;
+  }
+  .sb-search-input {
+    position: absolute;
+    top: 0;
+    right: 3px;
+    border: none;
+    outline: none;
+    background: #111;
+    width: 100%;
+    height:65px;
+    margin: 0;
+    z-index:10;
+    padding: 0em 4em 0em 1em;
+    font-size: 15px;
+    font-weight: 400;
+    color: #fff;
+  }
+  .sb-search-input::-webkit-input-placeholder {
+  	color: #fff;
+  }
+  .sb-search-input:-moz-placeholder {
+  	color: #fff;
+  }
+  .sb-search-input::-moz-placeholder {
+  	color: #fff;
+  }
+  .sb-search-input:-ms-input-placeholder {
+  	color:#fff;
+  }
+  .sb-icon-search,.sb-search-submit  {
+  	width:30px;
+  	height:40px;
+  	display: block;
+  	position: absolute;
+  	right: 1%;
+  	top: 0%;
+  	padding: 0;
+  	margin: 0;
+  	line-height:71px;
+  	text-align: center;
+  	cursor: pointer;
+  }
+  .sb-search-submit {
+     background: url('../img/search.png') no-repeat -23px 20px;
+  	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; /* IE 8 */
+      color: transparent;
+  	border: none;
+  	outline: none;
+  	z-index: -1;
+  	-webkit-appearance: none;
+  }
+  .sb-icon-search {
+    background: #111 url('../img/search.png') no-repeat 23px 20px;
+    z-index: 90;
+       width:70px;
+      height:65px;
+  }
+  /* Open state */
+  .sb-search.sb-search-open,.no-js .sb-search {
+
+  }
+  .sb-search.sb-search-open .sb-icon-search,.no-js .sb-search .sb-icon-search {
+  	background: url('../img/search.png') no-repeat 23px 20px;
+  	color: #fff;
+  	z-index: 11;
+  }
+  .sb-search.sb-search-open .sb-search-submit,.no-js .sb-search .sb-search-submit {
+  	z-index: 90;
+  }
+
+
+
+  #user {
+    font: bold 30px Arial;
+    text-decoration: none;
+    color: #333333;
+    position: absolute;
+    right:25%;
+    top: 30px;
+  }
+
+  .next-top {
+    position: relative;
+    z-index: 0;
+  }
+
+  #cancion {
+    position: relative;
+    top: 40px;
+    left: 130px;
+  }
+
+  #autor {
+    position: relative;
+    top: 20px;
+    left: 40px;
+    color: white;
+    font-size: 50px;
+  }
+
+  #repr {
+    position: relative;
+    top: 60px;
+  }
+
+  .next-top {
+    list-style-type: none;
+    position: relative;
+    margin: 0;
+    padding: 0;
+  }
+
+  .oprep {
+      float: left;
+      padding-right: 50px;
+  }
+
+
+  .player {
+      float: left;
+  }
+
+  #opcionesrepr {
+    top: 20px;
+    position: relative;
+    float: left;
+    left: 150px;
+    width: 80%;
+  }
+
+
+
+  #opcionesrepr li:hover{
+    background-color: initial;
+  }
+
+  .sidebar-nav li {
+    text-indent: 40px;
+    line-height: 40px;
+  }
+
+  .navegacion ul{
+      position: fixed;
+      list-style-type: none;
+      margin: 0;
+      padding: 0.5%;
+      padding-top: 0px;
+      width: 15%;
+      max-width: 210px;
+      background-color: #f1f1f1;
+      font-size: 1.177vw;
+  }
+
+  .navegacion li {
+      float: left;
+      display : inline;
+      text-align: center;
+      text-decoration: none;
+      color: #333333;
+      height: 100%;
+      margin-top: 15%;
+      vertical-align: middle;
+  }
+
+
+  #header-section {
+    height: 80px;
+    width: 100%;
+    position: fixed;
+    margin-left: 15.5%;
+  }
+
+  #sidebar-wrapper {
+    margin-top: 70px;
+  }
+
+  .navegacion {
+    z-index:1;
+    margin: 0;
+    margin-bottom: 10%;
+    width: 15.5%;
+    max-width: 210px;
+    height: 100%;
+    top:0;
+    position: fixed;
+  }
+
+  #bar{
+       max-height: 100%;
+       max-width: 30%;
+       float : left;
+       padding:0%;
+       z-index:1;
+       margin-top: 0;
+       margin-left: 15%;
+       margin-bottom: 20px;
+   }
+
+
+   li a {
+       text-decoration: none;
+       color: #333333;
+   }
+
+
+   li a:hover:not(.active) {
+       text-decoration: none;
+       color: #333333;
+   }
+
+   #wrapper.toggled #sidebar-wrapper {
+     width: 550px;
+     margin-top: 70px;
+   }
+
+   #reproductor {
+     padding-left: 0;
+     left: 0px;
+     width: 100%;
+   }
+
+   #cancion img{
+    width: 300px;
+    height: 300px;
+   }
+
+   .informacion{
+     position: absolute;
+     margin-left: 16%;
+     margin-top: 80px;
+     width: 80%;
+     height: 80%;
+   }
+
+}

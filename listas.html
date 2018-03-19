@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+     <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel='stylesheet' type='text/css' />
+    <!-- Graph CSS -->
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <!-- jQuery -->
+    <!-- lined-icons -->
+    <link rel="stylesheet" href="css/icon-font.css" type='text/css' />
+    <!-- //lined-icons -->
+     <!-- Meters graphs -->
+    <script src="js/jquery-2.1.4.js"></script>
+
+    <link rel="stylesheet" href="css/listas.css" type='text/css' />
+
+    <!-- Custom styles for this template -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="main-content" id="wrapper">
+      <div class="navegacion">
+        <ul>
+          <li id="bar">
+            <a href="index.html"><img src="img/logoapp.png" width="80" height="80" alt=""/></a>
+          </li>
+          <li><a href=""><img src="img/corazon.png" width="50" height="50" alt=""/>Favoritos</a></li>
+          <li><a href=""><img src="img/recientes.png" width="50" height="50" alt=""/>Recientes</a></li>
+          <li><a href=""><img src="img/listas.png" width="50" height="50" alt=""/>Mis listas</a></li>
+          <li><a href=""><img src="img/subirmusica.png" width="50" height="50" alt=""/>Subir música</a></li>
+          <li><a href=""><img src="img/amigos.png" width="50" height="50" alt=""/>Amigos</a></li>
+        </ul>
+      </div>
+
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+          <div id="cancion">
+            <img src="img/edsheeranperfect.jpg" alt="menu">
+            <div id="autor">Ed Sheeran</div>
+          </div>
+            <ul class="sidebar-nav" id="repr">
+                <li>
+                  <div class="col-md-4 player" id="reproductor">
+                    <div class="audio-player">
+                      <audio id="audio-player"  controls="controls">
+                      <source src="media/Blue Browne.mp3" type="audio/mpeg"></source>
+                      </div>
+                      <!---->
+                      <script type="text/javascript">
+                        $(function(){
+                          $('#audio-player').mediaelementplayer({
+                          alwaysShowControls: true,
+                          features: ['playpause','progress','volume'],
+                          audioVolume: 'horizontal',
+                          iPadUseNativeControls: true,
+                          iPhoneUseNativeControls: true,
+                          AndroidUseNativeControls: true
+                        });
+                       });
+                      </script>
+                      <!--audio-->
+                        <link rel="stylesheet" type="text/css" media="all" href="css/audio.css">
+                        <script type="text/javascript" src="js/mediaelement-and-player.min.js"></script>
+                        <!---->
+
+                      </div>
+                      <!--//-->
+                      <div id="opcionesrepr">
+                        <ul class="next-top">
+                          <li class="oprep"><a class="ar" href="#"> <img src="img/arrow.png" width="30" height="30" alt=""/></a></li>
+                          <li class="oprep"><a class="rel" href="#"> <img src="img/reload.png" width="30" height="30" alt=""/></a></li>
+                          <li class="oprep"><a class="ar2" href="#"><img src="img/arrow2.png" width="30" height="30" alt=""/></a></li>
+
+                        </ul>
+                      </div>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="header-section">
+            <a href="#menu-music" class="button" id="menu-music"><img src="img/simbolomenu.jpg" width="30" height="30" alt="menu"></a>
+
+						<div id="sb-search" class="sb-search sb-search-open">
+							<form action="#" method="post">
+
+								<input class="sb-search-input" placeholder="Búsqueda" type="search" name="search" id="search">
+								<input class="sb-search-submit" type="submit" value="">
+								<span class="sb-icon-search"> </span>
+							</form>
+						</div>
+
+            <a href="/login.html" class="div" id="user"><img src="img/user.jpg" width="40" height="40" alt="menu">Usuario</a>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+        <div class="informacion">
+          <br/>
+          <div id="titulopagina"><h1>Mis listas</h1></div>
+          <div class="cancioninf">
+            <a href="#" id="enlacecancion">
+    					<div class="imagen">
+    						<img src="img/listaicono.png" alt="Imagen cancion">
+    					</div>
+    					<div class="nombrecancion">
+    						<h2>Lista1</h2>
+    					</div>
+            </a>
+  				</div>
+  				<br/>
+          <div class="cancioninf">
+            <a href="#" id="enlacecancion">
+              <div class="imagen">
+                <img src="img/listaicono.png" alt="Imagen cancion">
+              </div>
+              <div class="nombrecancion">
+                <h2>Lista2</h2>
+              </div>
+            </a>
+          </div>
+
+        </div>
+
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-music").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+</body>
+
+</html>
