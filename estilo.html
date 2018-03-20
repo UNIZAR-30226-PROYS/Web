@@ -21,6 +21,7 @@
     <!-- //lined-icons -->
      <!-- Meters graphs -->
     <script src="js/jquery-2.1.4.js"></script>
+    <script src="js/anadir_a_favorito.js"></script>
 
     <link rel="stylesheet" href="css/estilo.css" type='text/css' />
 
@@ -112,50 +113,54 @@
         <div class="informacion">
           <br/>
           <div id="titulopagina"><h1>Estilo x</h1></div>
-          <div class="cancioninf">
-            <ul>
-              <li id="barraopciones"><a href="#" id="enlacecancion">
-      					<div class="imagen">
-      						<img src="img/edsheeranperfect.jpg" alt="Imagen cancion">
-      					</div>
-      					<div class="nombrecancion">
-      						Perfect
-      					</div>
-              </a></li>
-              <li id="barraopciones"><div class="simb_repr_play">
-                  <img src="img/play.png" alt="Simbolo reproducir cancion">
-              </div></li>
-              <li id="barraopciones"><div class="simb_repr_fav">
-                  <img src="img/favoritos.png" alt="Simbolo añadir a favoritos">
-              </div></li>
-              <li id="barraopciones"><div class="simb_repr_lista">
-                  <img src="img/listas_add.png" alt="Simbolo añadir a lista">
-              </div></li>
-            </ul>
-  				</div>
+          <form name="accionCancion" method="post" action="#">
+            <div class="cancioninf">
+              <ul>
+                <li id="barraopciones"><a href="#" id="enlacecancion">
+        					<div class="imagen">
+        						<img src="img/edsheeranperfect.jpg" alt="Imagen cancion">
+        					</div>
+        					<div class="nombrecancion">
+        						Perfect
+        					</div>
+                </a></li>
+                <li id="barraopciones"><div class="simb_repr_play">
+                    <input type="image" src="img/play.png" alt="Simbolo reproducir cancion">
+                </div></li>
+                <li id="barraopciones"><div class="simb_repr_fav">
+                    <input type="image" src="img/favoritos.png" alt="Simbolo añadir a favoritos" onclick="changeImage(this)">
+                </div></li>
+                <li id="barraopciones"><div class="simb_repr_lista">
+                    <input type="image" src="img/listas_add.png" alt="Simbolo añadir a lista">
+                </div></li>
+              </ul>
+    				</div>
+          </form>
 
   				<br/>
-          <div class="cancioninf">
-            <ul>
-              <li id="barraopciones"><a href="#" id="enlacecancion">
-      					<div class="imagen">
-      						<img src="img/lushlife.jpg" alt="Imagen cancion">
-      					</div>
-      					<div class="nombrecancion">
-      					  Lush life
-      					</div>
-              </a></li>
-              <li id="barraopciones"><div class="simb_repr_play">
-                  <img src="img/play.png" alt="Simbolo reproducir cancion">
-              </div></li>
-              <li id="barraopciones"><div class="simb_repr_fav">
-                  <img src="img/favoritos.png" alt="Simbolo añadir a favoritos">
-              </div></li>
-              <li id="barraopciones"><div class="simb_repr_lista">
-                  <img src="img/listas_add.png" alt="Simbolo añadir a lista">
-              </div></li>
-            </ul>
-  				</div>
+          <form name="accionCancion" method="post" action="#">
+            <div class="cancioninf">
+              <ul>
+                <li id="barraopciones"><a href="#" id="enlacecancion">
+        					<div class="imagen">
+        						<img src="img/lushlife.jpg" alt="Imagen cancion">
+        					</div>
+        					<div class="nombrecancion">
+        					  Lush life
+        					</div>
+                </a></li>
+                <li id="barraopciones"><div class="simb_repr_play">
+                    <input type="image" src="img/play.png" alt="Simbolo reproducir cancion">
+                </div></li>
+                <li id="barraopciones"><div class="simb_repr_fav">
+                    <input type="image" src="img/favoritos.png" alt="Simbolo añadir a favoritos" onclick="changeImage(this)">
+                </div></li>
+                <li id="barraopciones"><div class="simb_repr_lista">
+                    <input type="image" src="img/listas_add.png" alt="Simbolo añadir a lista">
+                </div></li>
+              </ul>
+    				</div>
+          </form>
 
         </div>
 

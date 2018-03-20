@@ -3,7 +3,9 @@
   margin-right: 15%;
 }
 
-
+.informacion form{
+  height: 12%;
+}
 .informacion input {
   font-family: "Roboto", sans-serif;
   outline: 0;
@@ -50,28 +52,37 @@ button:hover {
   margin: auto;
 }
 
-.simb_repr_play img {
+.simb_repr_play input {
   position: absolute;
   max-width: 8%;
   max-height: 8%;
   margin-left: 65%;
   margin-top: 3%;
+  border: none;
+  padding: 0;
+  background: none;
 }
 
-.simb_repr_fav img {
+.simb_repr_fav input {
   position: absolute;
   max-width: 8%;
   max-height: 8%;
   margin-left: 75%;
   margin-top: 3%;
+  border: none;
+  padding: 0;
+  background: none;
 }
 
-.simb_repr_lista img {
+.simb_repr_lista input {
   position: absolute;
   max-width: 8%;
   max-height: 8%;
   margin-left: 85%;
   margin-top: 3%;
+  border: none;
+  padding: 0;
+  background: none;
 }
 
 .nombrecancion {
@@ -124,17 +135,17 @@ button:hover {
   }
 
 
-  .simb_repr_play img {
+  .simb_repr_play input {
     margin-left: 45%;
     margin-top: 2%;
   }
 
-  .simb_repr_fav img {
+  .simb_repr_fav input {
     margin-left: 55%;
     margin-top: 2%;
   }
 
-  .simb_repr_lista img {
+  .simb_repr_lista input {
     margin-left: 65%;
     margin-top: 2%;
   }
