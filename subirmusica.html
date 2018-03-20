@@ -21,8 +21,9 @@
     <!-- //lined-icons -->
      <!-- Meters graphs -->
     <script src="js/jquery-2.1.4.js"></script>
+    <script src="js/formato_file.js"></script>
 
-    <link rel="stylesheet" href="css/listas.css" type='text/css' />
+    <link rel="stylesheet" href="css/subirmusica.css" type='text/css' />
 
     <!-- Custom styles for this template -->
     <link href="css/simple-sidebar.css" rel="stylesheet">
@@ -31,19 +32,19 @@
 
 <body>
 
-  <div class="main-content" id="wrapper">
-    <div class="navegacion">
-      <ul>
-        <li id="bar">
-          <a href="home.html"><img src="img/logoapp.png" width="80" height="80" alt=""/></a>
-        </li>
-        <li><a href="favoritos.html"><img src="img/corazon.png" width="50" height="50" alt=""/>Favoritos</a></li>
-        <li><a href="recientes.html"><img src="img/recientes.png" width="50" height="50" alt=""/>Recientes</a></li>
-        <li><a href="listas.html"><img src="img/listas.png" width="50" height="50" alt=""/>Mis listas</a></li>
-        <li><a href="subirmusica.html"><img src="img/subirmusica.png" width="50" height="50" alt=""/>Subir música</a></li>
-        <li><a href="amigos.html"><img src="img/amigos.png" width="50" height="50" alt=""/>Amigos</a></li>
-      </ul>
-    </div>
+    <div class="main-content" id="wrapper">
+      <div class="navegacion">
+        <ul>
+          <li id="bar">
+            <a href="home.html"><img src="img/logoapp.png" width="80" height="80" alt=""/></a>
+          </li>
+          <li><a href="favoritos.html"><img src="img/corazon.png" width="50" height="50" alt=""/>Favoritos</a></li>
+          <li><a href="recientes.html"><img src="img/recientes.png" width="50" height="50" alt=""/>Recientes</a></li>
+          <li><a href="listas.html"><img src="img/listas.png" width="50" height="50" alt=""/>Mis listas</a></li>
+          <li><a href="subirmusica.html"><img src="img/subirmusica.png" width="50" height="50" alt=""/>Subir música</a></li>
+          <li><a href="amigos.html"><img src="img/amigos.png" width="50" height="50" alt=""/>Amigos</a></li>
+        </ul>
+      </div>
 
 
         <!-- Sidebar -->
@@ -111,28 +112,11 @@
 
         <div class="informacion">
           <br/>
-          <div id="titulopagina"><h1>Mis listas</h1></div>
-          <div class="cancioninf">
-            <a href="#" id="enlacecancion">
-    					<div class="imagen">
-    						<img src="img/listaicono.png" alt="Imagen cancion">
-    					</div>
-    					<div class="nombrecancion">
-    						<h2>Lista1</h2>
-    					</div>
-            </a>
-  				</div>
-  				<br/>
-          <div class="cancioninf">
-            <a href="#" id="enlacecancion">
-              <div class="imagen">
-                <img src="img/listaicono.png" alt="Imagen cancion">
-              </div>
-              <div class="nombrecancion">
-                <h2>Lista2</h2>
-              </div>
-            </a>
-          </div>
+          <div id="titulopagina"><h1>Subir música</h1></div>
+          <form name="subirMusica" method="post" action="#" enctype="multipart/form-data" >
+            <input type="file" name="fichero" id="fichero" onchange="return fileValidation()"/><br /><br />
+            <input type="submit" name="send" id="send" value="Subir" accept=".mp3"/>
+          </form>
 
         </div>
 
@@ -151,6 +135,7 @@
         $("#wrapper").toggleClass("toggled");
     });
     </script>
+
 
 </body>
 
