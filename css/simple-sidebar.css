@@ -164,11 +164,11 @@
   left: 45px;
 }
 
-#autor {
+#autor1 {
   position: relative;
   top: 20px;
   left: 50px;
-  color: white;
+  color: black;
   font-size: 25px;
 }
 
@@ -528,7 +528,7 @@
     top: 20px;
     position: relative;
     float: left;
-    left: 150px;
+    left: 100px;
     width: 80%;
   }
 
@@ -539,7 +539,7 @@
   }
 
   .sidebar-nav li {
-    text-indent: 40px;
+    margin-left: 40px;
     line-height: 40px;
   }
 
