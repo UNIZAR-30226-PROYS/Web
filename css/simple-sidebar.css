@@ -36,7 +36,7 @@
   height: 100%;
   margin-left: -250px;
   overflow-y: auto;
-  background: #000;
+  background: #45B39D;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
@@ -61,7 +61,7 @@
 #menu-music {
   position: absolute;
   right:23%;
-  top: 40px;
+  top: 20px;
 }
 
 
@@ -381,7 +381,7 @@
   }
   #menu-music {
     position: absolute;
-    top: 40px;
+    top: 20px;
     right:16%;
   }
 
@@ -525,7 +525,7 @@
   }
 
   #opcionesrepr {
-    top: 20px;
+    top: 40px;
     position: relative;
     float: left;
     left: 100px;
@@ -575,7 +575,7 @@
   }
 
   #sidebar-wrapper {
-    margin-top: 70px;
+    margin-top: 80px;
   }
 
   .navegacion {
@@ -614,7 +614,7 @@
 
    #wrapper.toggled #sidebar-wrapper {
      width: 550px;
-     margin-top: 70px;
+     margin-top: 80px;
    }
 
    #reproductor {
