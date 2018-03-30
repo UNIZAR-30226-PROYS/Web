@@ -22,10 +22,21 @@ div.audio-player {
     width: 17px;
     height: 17px;
     top: 25px;
-    left: 50px;
+    left: 40px;
 	background:  url('../images/play.png') -2px -4px no-repeat;
 	z-index: 1;
 }
+
+
+.mejs-controls div.mejs-time {
+    padding-top: 12px;
+    margin-left: 340px;
+
+	z-index: 1;
+}
+
+
+
 .mejs-controls .mejs-pause button {
 	background-position: -2px -32px;
 }
@@ -55,7 +66,7 @@ div.audio-player {
   width: 0px !important;
   height: 6px;
   top: 30px;
-  left: 80px;
+  left: 60px;
   cursor: pointer;
   -webkit-border-radius: 0px 0px 2px 2px;
   -moz-border-radius: 0px 0px 2px 2px;
@@ -187,13 +198,12 @@ div#mep_0{
 @media(max-width:1280px){
 	.mejs-controls .mejs-time-rail .mejs-time-total {
 	  background: #2d2d2d;
-	  width: 221px !important;
 	}
 }
 @media(max-width:1024px){
 	.mejs-controls .mejs-time-rail .mejs-time-total {
 		background: #2d2d2d;
-		width: 160px !important;
+	/*	width: 160px !important;*/
 	}
 	.mejs-controls div.mejs-horizontal-volume-slider {
 		position: absolute;
@@ -230,19 +240,21 @@ div#mep_0{
 		left: 72px;
 	}
 	.mejs-controls .mejs-time-rail .mejs-time-total, div#mep_0 {
-		width: 154px !important;
+		width: 200px !important;
 	}
+  .mejs-controls .mejs-time-rail span {
+    left: 100px;
+  }
 }
 @media (max-width: 800px){
 	.mejs-controls .mejs-time-rail .mejs-time-total, div#mep_0 {
-		    width: 154px !important;
-            left: 153px;
+
 	}
 	.mejs-controls .mejs-play button, .mejs-controls .mejs-pause button {
 		left: 56px;
 	}
 	.mejs-controls .mejs-time-rail .mejs-time-total, div#mep_0 {
-		width: 154px !important;
+
 	}
 	.mejs-controls .mejs-play button, .mejs-controls .mejs-pause button {
 		left: 49px;
@@ -253,19 +265,85 @@ div#mep_0{
 	  width: 290px !important;
 	}
 	.mejs-controls .mejs-play button, .mejs-controls .mejs-pause button {
-	  left: 52px;
+	  left: 32px;
 	}
 	.mejs-controls .mejs-time-rail .mejs-time-total, div#mep_0 {
-		width: 154px !important;
-		left: 109px!important;
+		width: 290px !important;
+		left: 45px!important;
 	}
+  .mejs-controls div.mejs-time {
+    padding-top: 12px;
+    margin-left: 355px;
+    z-index: 1;
+}
+.mejs-controls .mejs-mute button, .mejs-controls .mejs-unmute button {
+    width: 16px;
+    height: 16px;
+    top: 25px;
+    right: 110px;
+}
+.mejs-controls div.mejs-horizontal-volume-slider {
+    position: absolute;
+    top: 30px;
+    right: 25px;
+    cursor: pointer;
+    z-index: 1;
+}
+}
+@media(max-width:767px){
+	.mejs-controls .mejs-time-rail .mejs-time-total, div#mep_0 {
+	  width: 290px !important;
+	}
+	.mejs-controls .mejs-play button, .mejs-controls .mejs-pause button {
+	  left: 32px;
+	}
+	.mejs-controls .mejs-time-rail .mejs-time-total, div#mep_0 {
+		width: 80px !important;
+		left: 45px!important;
+	}
+  .mejs-controls div.mejs-time {
+    padding-top: 12px;
+    margin-left: 142px;
+    z-index: 1;
+}
+.mejs-controls .mejs-mute button, .mejs-controls .mejs-unmute button {
+    width: 16px;
+    height: 16px;
+    top: 25px;
+    right: 80px;
+}
+.mejs-controls div.mejs-horizontal-volume-slider {
+    position: absolute;
+    top: 30px;
+    right: -10px;
+    cursor: pointer;
+    z-index: 1;
+}
 
 }
 @media (max-width:736px){
 
 .mejs-controls .mejs-time-rail .mejs-time-total, div#mep_0 {
-    width: 130px !important;
-    left: 109px!important;
+    width: 90px !important;
+    left: 40px!important;
+}
+.mejs-controls div.mejs-time {
+    padding-top: 12px;
+    margin-left: 150px;
+    z-index: 1;
+}
+.mejs-controls .mejs-mute button, .mejs-controls .mejs-unmute button {
+  width: 16px;
+  height: 16px;
+  top: 25px;
+  right: 70px;
+}
+.mejs-controls div.mejs-horizontal-volume-slider {
+    position: absolute;
+    top: 30px;
+    right: -12px;
+    cursor: pointer;
+    z-index: 1;
 }
 }
 @media(max-width:667px){
@@ -304,17 +382,21 @@ div#mep_0{
 		left: 25px!important;
 	}
 	.mejs-controls .mejs-time-rail .mejs-time-total, div#mep_0 {
-		width:125px !important;
-		left: 80px!important;
-	}
+    width: 100px !important;
+    left: 50px!important;
+}
 	.mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-total {
     width: 53px !important;
     height: 5px !important;
 	}
+  .mejs-controls div.mejs-time {
+    padding-top: 12px;
+    margin-left: 170px;
+    z-index: 1;
+}
 	.mejs-controls div.mejs-horizontal-volume-slider {
 		position: absolute;
 		top: 30px;
-		right: -80px;
 		cursor: pointer;
 		z-index: 1;
 	}
@@ -322,7 +404,7 @@ div#mep_0{
 		width: 16px;
 		height: 16px;
 		top: 25px;
-		right: -18px!important;
+		right: 55px;
 	}
 }
 	@media (max-width: 480px){
@@ -338,8 +420,13 @@ div#mep_0{
 }
 	.mejs-controls .mejs-time-rail .mejs-time-total, div#mep_0 {
 		width:100px !important;
-		left: 80px!important;
+		left: 50px!important;
 	}
+  .mejs-controls div.mejs-time {
+    padding-top: 12px;
+    margin-left: 170px;
+    z-index: 1;
+}
 	.mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-total {
     width: 53px !important;
     height: 5px !important;
@@ -347,7 +434,7 @@ div#mep_0{
 	.mejs-controls div.mejs-horizontal-volume-slider {
 		position: absolute;
 		top: 30px;
-		right: -80px;
+		right: 5px;
 		cursor: pointer;
 		z-index: 1;
 	}
@@ -355,7 +442,7 @@ div#mep_0{
 		width: 16px;
 		height: 16px;
 		top: 25px;
-		right: -24px!important;
+		right: 65px;
 	}
 
 }
@@ -372,9 +459,14 @@ div#mep_0{
 		width: 283px!important;
 	}
 	.mejs-controls .mejs-time-rail .mejs-time-total, div#mep_0 {
-		width: 56px !important;
-		left: 80px!important;
 	}
+  .mejs-controls div.mejs-horizontal-volume-slider {
+    position: absolute;
+    top: 30px;
+    right: 8px;
+    cursor: pointer;
+    z-index: 1;
+  }
 }
 
 @media(max-width:320px){
@@ -384,7 +476,7 @@ div#mep_0{
 	.mejs-controls div.mejs-horizontal-volume-slider {
 		position: absolute;
 		top: 30px;
-		right: -68px;
+		right: 25px;
 		cursor: pointer;
 		z-index: 1;
 	}
@@ -393,14 +485,12 @@ div#mep_0{
 		height: 5px !important;
 	}
 	.mejs-controls .mejs-time-rail .mejs-time-total, div#mep_0 {
-		width: 50px !important;
-		left: 72px!important;
+
 	}
 	.mejs-controls .mejs-mute button, .mejs-controls .mejs-unmute button {
 		width: 16px;
 		height: 16px;
 		top: 25px;
-		right: -28px!important;
 	}
 
 }
