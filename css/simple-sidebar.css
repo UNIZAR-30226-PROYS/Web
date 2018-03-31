@@ -635,10 +635,17 @@
 
    .informacion{
      position: absolute;
-     margin-left: 16%;
+     margin-left: 15.5%;
      margin-top: 80px;
      width: 80%;
      height: 80%;
    }
 
+}
+
+@media(max-width:350px) {
+.sb-search.sb-search-open, .no-js .sb-search {
+    width: 35%;
+    margin-top: 15px;
+}
 }
