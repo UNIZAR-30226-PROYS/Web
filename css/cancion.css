@@ -420,3 +420,38 @@ button:hover {
     padding-right: 0%;
 }
 }
+
+
+@media(max-width:767px) {
+	.window-container {
+	    display: block;
+	    background: #fcfcfc;
+	    margin: 8em auto;
+	    margin-left: 25% !important;
+	    width: 250px !important;
+	    padding: 250px 20px 20px !important;
+	    text-align: left;
+	    z-index: 3;
+	    border-radius: 3px;
+	    box-shadow: 0px 0px 30px rgba(0,0,0,0.2);
+	    -webkit-transition: 0.4s ease-out;
+	    -moz-transition: 0.4s ease-out;
+	    -ms-transition: 0.4s ease-out;
+	    -o-transition: 0.4s ease-out;
+	    transition: 0.4s ease-out;
+	    opacity: 0;
+	}
+  .nombrelista {
+    text-align: center;
+    margin-left: 40px !important;
+    padding: 10px;
+    font-size: 40px;
+}
+}
+
+@media(max-width:350px) {
+    .window-container {
+        width: 225px !important;
+        margin-left: 25% !important;
+    }
+}
