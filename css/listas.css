@@ -11,7 +11,8 @@
     display: block;
     background: #fcfcfc;
     margin: 8em auto;
-    width: 400px !important;
+    margin-left: 25% !important;
+    width: 250px !important;
     padding: 120px 20px 20px !important;
     text-align: left;
     z-index: 3;
@@ -23,6 +24,10 @@
     -o-transition: 0.4s ease-out;
     transition: 0.4s ease-out;
     opacity: 0;
+}
+
+#IdUsar {
+  width: 100px;
 }
 
 #enlacecancion {
@@ -128,7 +133,16 @@ button:hover {
     font-weight: normal;
 }
 
+#crear_lista {
+   margin-left: 105px;
+}
+
 @media(min-width:768px) {
+  .window-container {
+      width: 400px !important;
+      margin-left: 35% !important;
+  }
+
 
   .imagen img {
     position: absolute;
@@ -161,6 +175,12 @@ button:hover {
       font-size: 30px;
       margin-top: 3%;
   }
+  #IdUsar {
+    width: 100%;
+  }
+  #crear_lista {
+     margin-left: 145px;
+  }
 
 }
 
@@ -168,5 +188,28 @@ button:hover {
   .simb_repr_elim input {
       margin-left: 35%;
       margin-top: 3%;
+  }
+    .window-container {
+        width: 400px !important;
+        margin-left: 35% !important;
+    }
+  #IdUsar {
+    width: 100%;
+  }
+  #crear_lista {
+     margin-left: 145px;
+  }
+}
+
+@media(max-width:350px) {
+    .window-container {
+        width: 225px !important;
+        margin-left: 25% !important;
+    }
+  #IdUsar {
+    width: 100px;
+  }
+  #crear_lista {
+     margin-left: 105px;
   }
 }
