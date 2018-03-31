@@ -3,6 +3,12 @@
   margin-right: 15%;
 }
 
+.next-top li a.rel {
+    left: 25%;
+    top: 0px;
+    position: absolute;
+}
+
 .next-top li a.fav {
     left: 45%;
     position: absolute;

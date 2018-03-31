@@ -1002,6 +1002,7 @@ a.trend:hover {
 }
 .next-top li a.rel {
     left: 25%;
+    top: 6px;
     position: absolute;
 }
 /*-- wthree --*/
@@ -3301,7 +3302,7 @@ text-decoration:none;
   .next-top li a.rel {
     left: 22%;
     position: absolute;
-    top: -22px;
+    top: -15px;
   }
 	.toggle-btn {
 		font-size: 17px;
@@ -4058,7 +4059,7 @@ text-decoration:none;
   .next-top li a.rel {
     left: 27%;
     position: absolute;
-    top: -22px;
+    top: -15px;
 }
 	h4.tittle {
 		margin-left: 14%;

@@ -58,7 +58,7 @@
                   <div class="col-md-4 player" id="reproductor">
                     <div class="audio-player">
                       <audio id="audio-player"  controls="controls">
-                      <source src="media/Blue Browne.mp3" type="audio/mpeg"></source>
+                      <source id="source" src="media/Blue Browne.mp3" type="audio/mpeg"></source>
                       </div>
                       <!---->
                       <script type="text/javascript">
@@ -74,6 +74,14 @@
                        });
                       </script>
                       <!--audio-->
+                      <script type="text/javascript">
+                        function reloadMusic(){
+                            var src=document.getElementById("source").src;
+                              audio_core=$('#audio-player').attr('src', src)[0]
+                            audio_core.play() // <- play the song!!!
+                        }
+                      </script>
+
                         <link rel="stylesheet" type="text/css" media="all" href="css/audio.css">
                         <script type="text/javascript" src="js/mediaelement-and-player.min.js"></script>
                         <!---->
@@ -83,9 +91,8 @@
                       <div id="opcionesrepr">
                         <ul class="next-top">
                           <li class="oprep"><a class="ar" href="#"> <img src="img/arrow.png" width="30" height="30" alt=""/></a></li>
-                          <li class="oprep"><a class="rel" href="#"> <img src="img/reload.png" width="30" height="30" alt=""/></a></li>
+                          <li class="oprep"><a class="rel" href="#"> <input type="image" src="img/reload.png" width="30" height="30" alt="Reiniciar canción" title="Reiniciar canción" onClick="reloadMusic();return false;"/></a></li>
                           <li class="oprep"><a class="ar2" href="#"><img src="img/arrow2.png" width="30" height="30" alt=""/></a></li>
-
                         </ul>
                       </div>
                 </li>
