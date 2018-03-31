@@ -3,6 +3,40 @@
   margin-right: 15%;
 }
 
+#barraopciones {
+    float: left;
+}
+
+.window-container {
+    display: block;
+    background: #fcfcfc;
+    margin: 8em auto;
+    width: 400px !important;
+    padding: 120px 20px 20px !important;
+    text-align: left;
+    z-index: 3;
+    border-radius: 3px;
+    box-shadow: 0px 0px 30px rgba(0,0,0,0.2);
+    -webkit-transition: 0.4s ease-out;
+    -moz-transition: 0.4s ease-out;
+    -ms-transition: 0.4s ease-out;
+    -o-transition: 0.4s ease-out;
+    transition: 0.4s ease-out;
+    opacity: 0;
+}
+
+#enlacecancion {
+    font: bold 20px Arial;
+    text-decoration: none;
+    color: #333333;
+}
+
+.cancioninf ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+
 
 .informacion input {
   font-family: "Roboto", sans-serif;
@@ -34,9 +68,31 @@
     bottom:0%;
     right:20%;
 }
+.informacion form {
+    height: 12%;
+}
 
 button:hover {
     background-color: green;
+}
+
+.simb_repr_elim input {
+    position: absolute;
+    max-width: 8%;
+    max-height: 8%;
+    margin-left: 65%;
+    margin-top: 5%;
+    border: none;
+    padding: 0;
+    background: none;
+}
+.anadir_lista img {
+  max-width: 45px;
+  max-height: 14%;
+  margin: auto;
+  float: right;
+  margin-right: 5%;
+  margin-top: -50px;
 }
 
 .imagen img {
@@ -64,6 +120,14 @@ button:hover {
   color: #333333;
 }
 
+.nombrecancion {
+    position: absolute;
+    margin-left: 22%;
+    font-size: 100%;
+    margin-top: 5%;
+    font-weight: normal;
+}
+
 @media(min-width:768px) {
 
   .imagen img {
@@ -73,15 +137,36 @@ button:hover {
     margin: auto;
   }
 
-  .nombrecancion {
-    margin-left: 20%;
-    padding-top: 1%;
-    font-size: 90%;
+  .anadir_lista img {
+    max-width: 7%;
+    max-height: 14%;
+    margin: auto;
+    float: right;
+    margin-right: 15%;
+    margin-top: -50px;
   }
 
   .cancioninf{
     margin-top:5%;
     margin-bottom:5%;
   }
+  .simb_repr_elim input {
+      margin-left: 45%;
+      margin-top: 3%;
+  }
 
+  .nombrecancion {
+      margin-left: 15%;
+      padding-top: 0%;
+      font-size: 30px;
+      margin-top: 3%;
+  }
+
+}
+
+@media(min-width:1100px) {
+  .simb_repr_elim input {
+      margin-left: 35%;
+      margin-top: 3%;
+  }
 }

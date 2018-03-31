@@ -119,17 +119,49 @@
         <div class="informacion">
           <br/>
           <div id="titulopagina"><h1>Favoritos</h1></div>
-          <div class="cancioninf">
-            <a href="#" id="enlacecancion">
-    					<div class="imagen">
-    						<img src="img/edsheeranperfect.jpg" alt="Imagen cancion">
-    					</div>
-    					<div class="nombrecancion">
-    						<h2>Perfect</h2>
-    					</div>
-            </a>
-  				</div>
-  				<br/>
+            <form name="accionCancion" method="post" action="#">
+              <div class="cancioninf">
+                <ul>
+                  <li id="barraopciones"><a href="#" id="enlacecancion">
+                    <div class="imagen">
+                      <img src="img/edsheeranperfect.jpg" alt="Imagen cancion">
+                    </div>
+                    <div class="nombrecancion">
+                      Perfect
+                    </div>
+                  </a></li>
+                  <li id="barraopciones"><div class="simb_repr_elim">
+                      <input type="image" src="img/eliminar.png" alt="Eliminar cancion de favoritos" title="Eliminar cancion de favoritos" onClick="playMusic('media/Blue Browne.mp3');return false;">
+                  </div></li>
+                </ul>
+              </div>
+            </form>
+
+            <br/>
+            <form name="accionCancion" method="post" action="#">
+              <div class="cancioninf">
+                <ul>
+                  <li id="barraopciones"><a href="#" id="enlacecancion">
+                    <div class="imagen">
+                      <img src="img/lushlife.jpg" alt="Imagen cancion">
+                    </div>
+                    <div class="nombrecancion">
+                      Lush life
+                    </div>
+                  </a></li>
+                  <li id="barraopciones"><div class="simb_repr_elim">
+                      <input type="image" src="img/eliminar.png" alt="Eliminar cancion de favoritos" title="Eliminar cancion de favoritos" onClick="playMusic('media/Blue Browne.mp3');return false;">
+                  </div></li>
+                </ul>
+              </div>
+            </form>
+
+
+
+
+
+
+  				<!--<br/>
           <div class="cancioninf">
             <a href="#" id="enlacecancion">
               <div class="imagen">
@@ -140,7 +172,7 @@
               </div>
             </a>
           </div>
-
+-->
         </div>
 
 

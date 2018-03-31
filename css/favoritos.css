@@ -2,7 +2,21 @@
   text-align: center;
   margin-right: 15%;
 }
+#barraopciones {
+    float: left;
+}
 
+.nombrecancion {
+    margin-left: 15%;
+    padding-top: 0%;
+    font-size: 30px;
+    margin-top: 3%;
+}
+
+.cancioninf ul {
+    list-style-type: none;
+    padding-left: 0;
+}
 
 .informacion input {
   font-family: "Roboto", sans-serif;
@@ -34,6 +48,36 @@
     bottom:0%;
     right:20%;
 }
+
+#enlacecancion {
+    font: bold 20px Arial;
+    text-decoration: none;
+    color: #333333;
+}
+
+.informacion form {
+    height: 12%;
+}
+
+.nombrecancion {
+    position: absolute;
+    margin-left: 22%;
+    font-size: 100%;
+    margin-top: 5%;
+    font-weight: normal;
+}
+
+.simb_repr_elim input {
+    position: absolute;
+    max-width: 8%;
+    max-height: 8%;
+    margin-left: 65%;
+    margin-top: 5%;
+    border: none;
+    padding: 0;
+    background: none;
+}
+
 
 button:hover {
     background-color: green;
@@ -67,6 +111,12 @@ button:hover {
 }
 
 @media(min-width:768px) {
+  .nombrecancion {
+      margin-left: 15%;
+      padding-top: 0%;
+      font-size: 30px;
+      margin-top: 3%;
+  }
 
   .imagen img {
     position: absolute;
@@ -77,15 +127,21 @@ button:hover {
     height: 110px;
   }
 
-  .nombrecancion {
-    margin-left: 20%;
-    padding-top: 1%;
-    font-size: 90%;
+  .simb_repr_elim input {
+      margin-left: 45%;
+      margin-top: 3%;
   }
 
   .cancioninf{
     margin-top:5%;
-    margin-bottom:5%;
+    margin-bottom:0%;
   }
 
+}
+
+@media(min-width:1100px) {
+  .simb_repr_elim input {
+      margin-left: 35%;
+      margin-top: 3%;
+  }
 }
