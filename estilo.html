@@ -28,6 +28,8 @@
     <!-- Custom styles for this template -->
     <link href="css/simple-sidebar.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="css/demo.css">
+
 </head>
 
 <body>
@@ -102,7 +104,7 @@
 
         <!-- Page Content -->
         <div id="header-section">
-            <a href="#menu-music" class="button" id="menu-music"><img src="img/simbolomenu.png" width="30" height="30" alt="menu"></a>
+            <a href="#menu-music" class="buttonMenu" id="menu-music"><img src="img/simbolomenu.png" width="30" height="30" alt="menu"></a>
 
 						<div id="sb-search" class="sb-search sb-search-open">
 							<form action="#" method="post">
@@ -132,13 +134,13 @@
         					</div>
                 </a></li>
                 <li id="barraopciones"><div class="simb_repr_play">
-                    <input type="image" src="img/play.png" alt="Reproducir cancion" title="Reproducir canción">
+                    <input type="image" src="img/play.png" alt="Reproducir cancion" title="Reproducir canción" onClick="playMusic('media/Blue Browne.mp3');return false;">
                 </div></li>
                 <li id="barraopciones"><div class="simb_repr_fav">
                     <input type="image" src="img/favoritos.png" alt="Añadir a favoritos" title="Añadir/quitar favoritos" onclick="changeImage(this)">
                 </div></li>
                 <li id="barraopciones"><div class="simb_repr_lista">
-                    <input type="image" src="img/listas_add.png" alt="Añadir a lista" title="Añadir a lista">
+                    <input type="image" src="img/listas_add.png" alt="Añadir a lista" class="button" title="Añadir a lista" onclick="return false" data-type="zoomin">
                 </div></li>
               </ul>
     				</div>
@@ -157,13 +159,13 @@
         					</div>
                 </a></li>
                 <li id="barraopciones"><div class="simb_repr_play">
-                    <input type="image" src="img/play.png" alt="Reproducir cancion" title="Reproducir canción">
+                    <input type="image" src="img/play.png" alt="Reproducir cancion" title="Reproducir canción" onClick="playMusic('media/Blue Browne.mp3');return false;">
                 </div></li>
                 <li id="barraopciones"><div class="simb_repr_fav">
                     <input type="image" src="img/favoritos.png" alt="Añadir a favoritos" title="Añadir/quitar favoritos" onclick="changeImage(this)">
                 </div></li>
                 <li id="barraopciones"><div class="simb_repr_lista">
-                    <input type="image" src="img/listas_add.png" alt="Añadir a lista" title="Añadir a lista">
+                    <input type="image" src="img/listas_add.png" alt="Añadir a lista" class="button" title="Añadir a lista" onclick="return false" data-type="zoomin">
                 </div></li>
               </ul>
     				</div>
@@ -186,6 +188,46 @@
         $("#wrapper").toggleClass("toggled");
     });
     </script>
+
+    <script type="text/javascript">
+      function playMusic(src){
+            audio_core=$('#audio-player').attr('src', src)[0]
+          audio_core.play() // <- play the song!!!
+      }
+    </script>
+
+    <!-- contenido de la ventana emergente -->
+    <div class="overlay-container">
+      <div class="window-container zoomin">
+        <td>
+              <table width="100% ;left:35%; top:400%" >
+                <tr style="position: absolute; top: 10%;">
+                  <th>
+                  <form action="#" method="post">
+                    <table height="100%">
+                      <tr ><a href="#" id="enlacecancion">
+                        <div class="nombrelista">
+                          Lista1
+                        </div></a></tr>
+                      <tr><a href="#" id="enlacecancion">
+                        <div class="nombrelista">
+                          Lista2
+                        </div></a></tr>
+                    </table>
+                  </form>
+                  </th>
+                </tr>
+
+              </table>
+
+            </td>
+
+        <span class="close">Cerrar</span>
+      </div>
+    </div>
+    <script>!window.jQuery && document.write(unescape('%3Cscript src="js/jquery-1.7.1.min.js"%3E%3C/script%3E'))</script>
+    <script type="text/javascript" src="js/demo.js"></script>
+
 
 </body>
 

@@ -3,6 +3,12 @@
   margin-right: 15%;
 }
 
+#enlacecancion {
+    font: bold 20px Arial;
+    text-decoration: none;
+    color: #333333;
+}
+
 .next-top li a.rel {
     left: 25%;
     top: 0px;
@@ -196,7 +202,7 @@ button:hover {
 
 #sidebar-wrapper {
   height: 107%;
-  z-index: 1;
+  z-index: 0;
 }
 
 @media(min-width:768px) {

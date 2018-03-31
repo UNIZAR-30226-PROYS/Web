@@ -32,6 +32,8 @@
 
     <link rel="stylesheet" href="css/cancion.css" type='text/css' />
 
+    <link rel="stylesheet" href="css/demo.css">
+
 </head>
 
 <body>
@@ -120,7 +122,7 @@
                               <li class="oprep"><a class="rel" href="#"> <input type="image" src="img/reload1.png" width="30" height="30" alt="Reiniciar canción" title="Reiniciar canción" onClick="reloadMusic();return false;"/></a></li>
                               <li class="oprep"><a class="ar2" href="#"><input type="image" src="img/siguiente.png" width="30" height="30" alt="Siguiente canción" title="Siguiente canción"/></a></li>
                               <li class="oprep"><a class="fav" href="#"><input type="image" src="img/favoritos.png" width="30" height="30" alt="Añadir a favoritos" title="Añadir/quitar favoritos" onclick="changeImage(this)"/></a></li>
-                              <li class="oprep"><a class="lis" href="#"><input type="image" src="img/listas_add.png" width="30" height="30" alt="Añadir a lista" title="Añadir a lista"/></a></li>
+                              <li class="oprep"><a class="lis" href="#"><input type="image" src="img/listas_add.png" width="30" height="30" alt="Añadir a lista" class="button" title="Añadir a lista" onclick="return false" data-type="zoomin"/></a></li>
 
                             </ul>
                           </div>
@@ -149,6 +151,38 @@
         $("#wrapper").toggleClass("toggled");
     });
     </script>
+
+    <!-- contenido de la ventana emergente -->
+    <div class="overlay-container">
+      <div class="window-container zoomin">
+        <td>
+              <table width="100% ;left:35%; top:400%" >
+                <tr style="position: absolute; top: 10%;">
+                  <th>
+                  <form action="#" method="post">
+                    <table height="100%">
+                      <tr ><a href="#" id="enlacecancion">
+                        <div class="nombrelista">
+                          Lista1
+                        </div></a></tr>
+                      <tr><a href="#" id="enlacecancion">
+                        <div class="nombrelista">
+                          Lista2
+                        </div></a></tr>
+                    </table>
+                  </form>
+                  </th>
+                </tr>
+
+              </table>
+
+            </td>
+
+        <span class="close">Cerrar</span>
+      </div>
+    </div>
+    <script>!window.jQuery && document.write(unescape('%3Cscript src="js/jquery-1.7.1.min.js"%3E%3C/script%3E'))</script>
+    <script type="text/javascript" src="js/demo.js"></script>
 
 
 </body>
