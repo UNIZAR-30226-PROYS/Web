@@ -78,7 +78,26 @@ button:hover {
   border-width: thin;
 }
 
-@media(min-width:768px) {
+#atributos_cancion{
+  text-align: center;
+  margin-left: -100px;
+}
+
+#atributos_cancion input{
+  clear: both;
+  background: white;
+  border-style: inset;
+  border-width: 2px;
+  padding: 4px;
+  width: 180px;
+}
+
+
+.block {
+  float: right;
+}
+
+@media(min-width:1200px) {
 
   .imagen img {
     position: absolute;
@@ -112,6 +131,154 @@ button:hover {
     font-weight: bold;
     border: solid;
     border-width: thin;
+  }
+
+  #atributos_cancion{
+    text-align: center;
+    margin-right: 200px;
+  }
+
+  #atributos_cancion input{
+    float: right;
+    clear: both;
+    margin-right: 300px;
+    background: white;
+    border-style: inset;
+    border-width: 2px;
+    padding: 4px;
+    width: 210px;
+  }
+
+
+  .block {
+    float: right;
+  }
+}
+
+@media(min-width:1000px) and (max-width: 1200px) {
+
+    .imagen img {
+      position: absolute;
+      max-width: 13%;
+      max-height: 20%;
+      margin: auto;
+    }
+
+    .nombrecancion {
+      margin-left: 20%;
+      padding-top: 1%;
+      font-size: 90%;
+    }
+
+    .cancioninf{
+      margin-top:5%;
+      margin-bottom:5%;
+    }
+
+    #fichero {
+      margin-top: 4%;
+      margin-left: 20%;
+      font-size: 20px;
+      height: 10%;
+      padding: 2%;
+    }
+
+    #send {
+      margin-left: 37%;
+      font-size: 30px;
+      font-weight: bold;
+      border: solid;
+      border-width: thin;
+    }
+
+    #atributos_cancion{
+      text-align: center;
+      margin-right: 10px;
+    }
+
+    #atributos_cancion input{
+      float: right;
+      clear: both;
+      margin-right: 300px;
+      background: white;
+      border-style: inset;
+      border-width: 2px;
+      padding: 4px;
+      width: 210px;
+    }
+
+
+    .block {
+      float: right;
+    }
+}
+
+@media(min-width:750px) and (max-width: 1000px) {
+
+    .imagen img {
+      position: absolute;
+      max-width: 13%;
+      max-height: 20%;
+      margin: auto;
+    }
+
+    .nombrecancion {
+      margin-left: 20%;
+      padding-top: 1%;
+      font-size: 90%;
+    }
+
+    .cancioninf{
+      margin-top:5%;
+      margin-bottom:5%;
+    }
+
+    #fichero {
+      margin-top: 4%;
+      margin-left: 20%;
+      font-size: 20px;
+      height: 10%;
+      padding: 2%;
+    }
+
+    #send {
+      margin-left: 37%;
+      font-size: 30px;
+      font-weight: bold;
+      border: solid;
+      border-width: thin;
+    }
+
+    #atributos_cancion{
+      text-align: center;
+      margin-right: 10px;
+    }
+
+    #atributos_cancion input{
+      float: right;
+      clear: both;
+      margin-right: 200px;
+      background: white;
+      border-style: inset;
+      border-width: 2px;
+      padding: 4px;
+      width: 200px;
+    }
+
+
+    .block {
+      float: right;
+    }
+}
+
+@media(max-width:350px) {
+  #atributos_cancion input{
+    clear: both;
+    background: white;
+    border-style: inset;
+    border-width: 2px;
+    padding: 4px;
+    width: 160px;
   }
 
 }
