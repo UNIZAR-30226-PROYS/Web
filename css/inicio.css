@@ -1,0 +1,64 @@
+@media(max-width:650px) {
+  #tr_logo{
+    position: absolute;
+    top: 0px !important;
+    left: 90px !important;
+  }
+
+  #tr_datos{
+    position: absolute;
+    top: 280px !important;
+    left: 60px !important;
+  }
+  .window-container {
+    width: 360px !important;
+    padding: 400px 20px 20px;
+  }
+
+  #IdUsar{
+    width: 120px;
+  }
+}
+
+@media(max-width:370px) {
+  #tr_logo{
+    position: absolute;
+    top: -10px !important;
+    left: 40px !important;
+  }
+
+  #tr_datos{
+    position: absolute;
+    top: 260px !important;
+    left: 40px !important;
+  }
+
+  .window-container {
+    width: 300px !important;
+    padding: 430px 20px 20px !important;
+    margin-top: 10px !important;
+  }
+
+  #IdUsar{
+    width: 100px;
+  }
+
+  #ventana_reg{
+    margin-left: -15px !important;
+    margin-top: -40px !important;
+  }
+}
+
+@media(max-width:1200px ) and (min-width:600px)  {
+  #tr_logo{
+    position: absolute;
+    top: 100px !important;
+    left: 40px !important;
+  }
+
+  #tr_datos{
+    position: absolute;
+    top: 150px !important;
+    left: 440px !important;
+  }
+}
