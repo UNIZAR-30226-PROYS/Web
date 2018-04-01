@@ -22,12 +22,13 @@
      <!-- Meters graphs -->
     <script src="js/jquery-2.1.4.js"></script>
 
-    <link rel="stylesheet" href="css/listas.css" type='text/css' />
+    <link rel="stylesheet" href="css/lista.css" type='text/css' />
 
     <!-- Custom styles for this template -->
     <link href="css/simple-sidebar.css" rel="stylesheet">
 
     	<link rel="stylesheet" href="css/demo.css">
+      <link rel="stylesheet" href="css/demo1.css">
 
 </head>
 
@@ -120,48 +121,57 @@
 
         <div class="informacion">
           <br/>
-          <div id="titulopagina"><h1>Mis listas</h1></div>
+          <div id="titulopagina"><h1>Listax</h1></div>
+            <div class="editar_lista">
+              <img src="img/editar.png" alt="Cambiar nombre lista" title="Cambiar nombre lista" class="button1" data-type="zoomin1">
+            </div>
+
             <div class="anadir_lista">
-              <img src="img/anadir.png" alt="Crear lista" title="Crear lista" class="button" data-type="zoomin">
+              <img src="img/anadir.png" alt="Añadir canción" title="Añadir canción" class="button" data-type="zoomin">
             </div>
 
-          <form name="accionLista" method="post" action="#">
-            <div class="cancioninf">
-              <ul>
-                <li id="barraopciones"><a href="#" id="enlacecancion">
-                  <div class="imagen">
-                    <img src="img/listaicono.png" alt="Imagen lista">
-                  </div>
-                  <div class="nombrecancion">
-                    Lista1
-                  </div>
-                </a></li>
-                <li id="barraopciones"><div class="simb_repr_elim">
-                    <input type="image" src="img/eliminar.png" alt="Eliminar cancion de favoritos" title="Eliminar cancion de favoritos" onClick="playMusic('media/Blue Browne.mp3');return false;">
-                </div></li>
-              </ul>
-            </div>
-          </form>
+            <form name="accionCancion" method="post" action="#">
+              <div class="cancioninf">
+                <ul>
+                  <li id="barraopciones"><a href="#" id="enlacecancion">
+                    <div class="imagen">
+                      <img src="img/edsheeranperfect.jpg" alt="Imagen cancion">
+                    </div>
+                    <div class="nombrecancion">
+                      Perfect
+                    </div>
+                  </a></li>
+                  <li id="barraopciones"><div class="simb_repr_play">
+                      <input type="image" src="img/play.png" alt="Reproducir cancion" title="Reproducir canción" onClick="playMusic('media/Blue Browne.mp3');return false;">
+                  </div></li>
+                  <li id="barraopciones"><div class="simb_repr_elim">
+                      <input type="image" src="img/eliminar.png" alt="Eliminar cancion de lista" title="Eliminar canción de lista" onClick="playMusic('media/Blue Browne.mp3');return false;">
+                  </div></li>
+                </ul>
+              </div>
+            </form>
 
-
-  				<br/>
-          <form name="accionLista" method="post" action="#">
-            <div class="cancioninf">
-              <ul>
-                <li id="barraopciones"><a href="#" id="enlacecancion">
-                  <div class="imagen">
-                    <img src="img/listaicono.png" alt="Imagen lista">
-                  </div>
-                  <div class="nombrecancion">
-                    Lista2
-                  </div>
-                </a></li>
-                <li id="barraopciones"><div class="simb_repr_elim">
-                    <input type="image" src="img/eliminar.png" alt="Eliminar cancion de favoritos" title="Eliminar cancion de favoritos" onClick="playMusic('media/Blue Browne.mp3');return false;">
-                </div></li>
-              </ul>
-            </div>
-          </form>
+            <br/>
+            <form name="accionCancion" method="post" action="#">
+              <div class="cancioninf">
+                <ul>
+                  <li id="barraopciones"><a href="#" id="enlacecancion">
+                    <div class="imagen">
+                      <img src="img/lushlife.jpg" alt="Imagen cancion">
+                    </div>
+                    <div class="nombrecancion">
+                      Lush life
+                    </div>
+                  </a></li>
+                  <li id="barraopciones"><div class="simb_repr_play">
+                      <input type="image" src="img/play.png" alt="Reproducir cancion" title="Reproducir canción" onClick="playMusic('media/Blue Browne.mp3');return false;">
+                  </div></li>
+                  <li id="barraopciones"><div class="simb_repr_elim">
+                      <input type="image" src="img/eliminar.png" alt="Eliminar cancion de lista" title="Eliminar canción de lista" onClick="playMusic('media/Blue Browne.mp3');return false;">
+                  </div></li>
+                </ul>
+              </div>
+            </form>
         </div>
 
 
@@ -179,6 +189,12 @@
         $("#wrapper").toggleClass("toggled");
     });
     </script>
+    <script type="text/javascript">
+      function playMusic(src){
+            audio_core=$('#audio-player').attr('src', src)[0]
+          audio_core.play() // <- play the song!!!
+      }
+    </script>
 
     <!-- contenido de la ventana emergente -->
     <div class="overlay-container">
@@ -190,13 +206,13 @@
                   <form action="#" method="post">
                     <table height="100%">
                       <tr height="60px">
-  											<td>
-  												<label for="idNombre">  <font size="4" face="Arial" color="black" style="font-weight: bold"> &nbsp Nombre: </font></label>
-  											</td>
-  											<td>
-  												<input size="25" id="IdUsar" type="text" name="nombre" required/></br>
-  											</td>
-  										</tr>
+                        <td>
+                          <label for="idNombre">  <font size="4" face="Arial" color="black" style="font-weight: bold"> &nbsp Nombre: </font></label>
+                        </td>
+                        <td>
+                          <input size="25" id="IdUsar" type="text" name="nombre" required/></br>
+                        </td>
+                      </tr>
                     </table>
                     <input id="crear_lista" type="submit" value="Crear lista"/> <br/>
                   </form>
@@ -213,6 +229,40 @@
     <script>!window.jQuery && document.write(unescape('%3Cscript src="js/jquery-1.7.1.min.js"%3E%3C/script%3E'))</script>
     <script type="text/javascript" src="js/demo.js"></script>
 
+
+    <!-- Ventana cambiar nombre lista  -->
+    <!-- contenido de la ventana emergente -->
+    <div class="overlay-container1">
+      <div class="window-container1 zoomin1">
+        <td>
+              <table width="top:400%" >
+                <tr style="position: absolute; top: 10%;">
+                  <th>
+                  <form action="#" method="post">
+                    <table height="100%">
+                      <tr height="60px">
+                        <td>
+                          <label for="idNombre">  <font size="4" face="Arial" color="black" style="font-weight: bold"> &nbsp Nombre: </font></label>
+                        </td>
+                        <td>
+                          <input size="25" id="IdUsar" type="text" name="nombre" required/></br>
+                        </td>
+                      </tr>
+                    </table>
+                    <input id="crear_lista1" type="submit" value="Cambiar nombre"/> <br/>
+                  </form>
+                  </th>
+                </tr>
+
+              </table>
+
+            </td>
+
+        <span class="close1">Cerrar</span>
+      </div>
+    </div>
+    <script>!window.jQuery && document.write(unescape('%3Cscript src="js/jquery-1.7.1.min.js"%3E%3C/script%3E'))</script>
+    <script type="text/javascript" src="js/demo1.js"></script>
 
 </body>
 

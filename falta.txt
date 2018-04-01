@@ -1,0 +1,10 @@
+Falta:
+  -Pagina perfil: esta a mitad, tambien falta adaptar a distintos tamaños
+  -Pagina Recientes
+  -Pagina amigos
+  -Pagina inicio: adaptar a distintos tamaños
+  -Pagina Lista: cambiar desplegable para añadir cancion
+  -Pagina subirMusica: poner campos a rellenar para subir cancion (nombre, autor, estilo,...)
+
+  -Enlazar entre paginas (imagen cancion lleve a cancion,...)
+  -Mejorar apariencia

@@ -1,0 +1,324 @@
+#titulopagina {
+  text-align: center;
+  margin-right: 15%;
+}
+#barraopciones {
+    float: left;
+}
+
+.nombrecancion {
+    margin-left: 15%;
+    padding-top: 0%;
+    font-size: 30px;
+    margin-top: 3%;
+}
+
+.window-container {
+    display: block;
+    background: #fcfcfc;
+    margin: 8em auto;
+    margin-left: 25% !important;
+    width: 250px !important;
+    padding: 120px 20px 20px !important;
+    text-align: left;
+    z-index: 3;
+    border-radius: 3px;
+    box-shadow: 0px 0px 30px rgba(0,0,0,0.2);
+    -webkit-transition: 0.4s ease-out;
+    -moz-transition: 0.4s ease-out;
+    -ms-transition: 0.4s ease-out;
+    -o-transition: 0.4s ease-out;
+    transition: 0.4s ease-out;
+    opacity: 0;
+}
+
+.window-container1 {
+    display: block;
+    background: #fcfcfc;
+    margin: 8em auto;
+    margin-left: 25% !important;
+    width: 250px !important;
+    padding: 120px 20px 20px !important;
+    text-align: left;
+    z-index: 3;
+    border-radius: 3px;
+    box-shadow: 0px 0px 30px rgba(0,0,0,0.2);
+    -webkit-transition: 0.4s ease-out;
+    -moz-transition: 0.4s ease-out;
+    -ms-transition: 0.4s ease-out;
+    -o-transition: 0.4s ease-out;
+    transition: 0.4s ease-out;
+    opacity: 0;
+}
+
+.editar_lista img {
+  max-width: 35px;
+  max-height: 10%;
+  margin: auto;
+  float: left;
+  margin-left: 60%;
+  margin-top: -50px;
+}
+
+.anadir_lista img {
+  max-width: 45px;
+  max-height: 14%;
+  margin: auto;
+  float: right;
+  margin-right: 5%;
+  margin-top: -50px;
+}
+
+#IdUsar {
+  width: 100px;
+}
+
+#crear_lista {
+   margin-left: 105px;
+}
+
+#crear_lista1 {
+   margin-left: 40px;
+}
+
+.cancioninf ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.informacion input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  max-width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+  .informacion button {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #4CAF50;
+  width: 45%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 90%;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+    position: absolute;
+    float:left;
+    padding: 1%;
+    bottom:0%;
+    right:20%;
+}
+
+#enlacecancion {
+    font: bold 20px Arial;
+    text-decoration: none;
+    color: #333333;
+}
+
+
+.informacion form {
+    height: 12%;
+}
+
+.nombrecancion {
+    position: absolute;
+    margin-left: 22%;
+    font-size: 100%;
+    margin-top: 5%;
+    font-weight: normal;
+}
+
+.simb_repr_play input {
+  position: absolute;
+  max-width: 8%;
+  max-height: 8%;
+  margin-left: 55%;
+  margin-top: 5%;
+  border: none;
+  padding: 0;
+  background: none;
+}
+
+.simb_repr_elim input {
+    position: absolute;
+    max-width: 8%;
+    max-height: 8%;
+    margin-left: 65%;
+    margin-top: 5%;
+    border: none;
+    padding: 0;
+    background: none;
+}
+
+
+button:hover {
+    background-color: green;
+}
+
+.imagen img {
+  position: absolute;
+  max-width: 20%;
+  max-height: 20%;
+  margin: auto;
+  width:  60px;
+  height: 70px;
+}
+
+.nombrecancion {
+  margin-left: 25%;
+  font-size: 90%;
+}
+
+.cancioninf{
+  height: 5%;
+  width: 100%;
+  margin-top:5%;
+  margin-bottom:5%;
+}
+
+#enlacecancion{
+  font: bold 20px Arial;
+  text-decoration: none;
+  color: #333333;
+}
+
+@media(min-width:768px) {
+  .window-container {
+      width: 400px !important;
+      margin-left: 35% !important;
+  }
+
+  .window-container1 {
+      width: 400px !important;
+      margin-left: 35% !important;
+  }
+
+  .nombrecancion {
+      margin-left: 15%;
+      padding-top: 0%;
+      font-size: 30px;
+      margin-top: 3%;
+  }
+
+  .editar_lista img {
+    max-width: 5%;
+    max-height: 12%;
+    margin: auto;
+    float: left;
+    margin-left: 50%;
+    margin-top: -50px;
+  }
+
+  .anadir_lista img {
+    max-width: 7%;
+    max-height: 14%;
+    margin: auto;
+    float: right;
+    margin-right: 15%;
+    margin-top: -50px;
+  }
+
+  .imagen img {
+    position: absolute;
+    max-width: 13%;
+    max-height: 20%;
+    margin: auto;
+    width:  150px;
+    height: 110px;
+  }
+
+  .simb_repr_play input {
+    margin-left: 35%;
+    margin-top: 2%;
+  }
+
+  .simb_repr_elim input {
+      margin-left: 55%;
+      margin-top: 2%;
+  }
+
+  .cancioninf{
+    margin-top:5%;
+    margin-bottom:0%;
+  }
+
+  #IdUsar {
+    width: 100%;
+  }
+
+  #crear_lista {
+     margin-left: 145px;
+  }
+
+  #crear_lista1 {
+     margin-left: 125px;
+  }
+
+}
+
+@media(min-width:1100px) {
+  .simb_repr_elim input {
+      margin-left: 45%;
+      margin-top: 2%;
+  }
+
+  .window-container {
+      width: 400px !important;
+      margin-left: 35% !important;
+  }
+
+  .window-container1 {
+      width: 400px !important;
+      margin-left: 35% !important;
+  }
+
+  #IdUsar {
+    width: 100%;
+  }
+  #crear_lista {
+     margin-left: 145px;
+  }
+
+  #crear_lista1 {
+     margin-left: 120px;
+  }
+}
+
+@media(max-width:350px) {
+    .window-container {
+        width: 225px !important;
+        margin-left: 25% !important;
+    }
+
+    .window-container1 {
+        width: 225px !important;
+        margin-left: 25% !important;
+    }
+  #IdUsar {
+    width: 100px;
+  }
+  #crear_lista {
+     margin-left: 105px;
+  }
+
+  #crear_lista1 {
+     margin-left: 30px;
+  }
+
+  .editar_lista img {
+    max-width: 32px;
+    max-height: 8%;
+    margin: auto;
+    float: left;
+    margin-left: 62%;
+    margin-top: -50px;
+  }
+}
