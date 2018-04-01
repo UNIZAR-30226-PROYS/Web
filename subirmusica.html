@@ -121,7 +121,7 @@
           <br/>
           <div id="titulopagina"><h1>Subir música</h1></div>
           <form name="subirMusica" method="post" action="#" enctype="multipart/form-data" >
-            <input type="file" name="fichero" id="fichero" onchange="return fileValidation()"/><br /><br />
+            <input type="file" name="fichero" id="fichero" required onchange="return fileValidation()"/><br /><br />
             <input type="submit" name="send" id="send" value="Subir" accept=".mp3"/>
           </form>
 
