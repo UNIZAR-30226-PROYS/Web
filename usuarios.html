@@ -22,7 +22,7 @@
      <!-- Meters graphs -->
     <script src="js/jquery-2.1.4.js"></script>
 
-    <link rel="stylesheet" href="css/listas.css" type='text/css' />
+    <link rel="stylesheet" href="css/usuarios.css" type='text/css' />
 
     <!-- Custom styles for this template -->
     <link href="css/simple-sidebar.css" rel="stylesheet">
@@ -120,24 +120,21 @@
 
         <div class="informacion">
           <br/>
-          <div id="titulopagina"><h1>Mis listas</h1></div>
-            <div class="anadir_lista">
-              <img src="img/anadir.png" alt="Crear lista" title="Crear lista" class="button" data-type="zoomin">
-            </div>
+          <div id="titulopagina"><h1>Usuarios: "busqueda"</h1></div>
 
           <form name="accionLista" method="post" action="#">
             <div class="cancioninf">
               <ul>
-                <li id="barraopciones"><a href="lista.html" id="enlacecancion">
+                <li id="barraopciones">
                   <div class="imagen">
-                    <img src="img/listaicono.png" alt="Imagen lista">
+                    <img src="img/user.png" alt="Imagen lista">
                   </div>
                   <div class="nombrecancion">
-                    Lista1
+                    Persona1
                   </div>
-                </a></li>
+                </li>
                 <li id="barraopciones"><div class="simb_repr_elim">
-                    <input type="image" src="img/eliminar.png" alt="Eliminar cancion de favoritos" title="Eliminar cancion de favoritos">
+                    <input type="image" src="img/add_friend.png" alt="Añadir amigo" title="Añadir amigo">
                 </div></li>
               </ul>
             </div>
@@ -148,16 +145,16 @@
           <form name="accionLista" method="post" action="#">
             <div class="cancioninf">
               <ul>
-                <li id="barraopciones"><a href="#" id="enlacecancion">
+                <li id="barraopciones">
                   <div class="imagen">
-                    <img src="img/listaicono.png" alt="Imagen lista">
+                    <img src="img/user.png" alt="Imagen lista">
                   </div>
                   <div class="nombrecancion">
-                    Lista2
+                    Persona2
                   </div>
-                </a></li>
+                </li>
                 <li id="barraopciones"><div class="simb_repr_elim">
-                    <input type="image" src="img/eliminar.png" alt="Eliminar cancion de favoritos" title="Eliminar cancion de favoritos">
+                    <input type="image" src="img/add_friend.png" alt="Añadir amigo" title="Añadir amigo">
                 </div></li>
               </ul>
             </div>
@@ -179,40 +176,6 @@
         $("#wrapper").toggleClass("toggled");
     });
     </script>
-
-    <!-- contenido de la ventana emergente -->
-    <div class="overlay-container">
-      <div class="window-container zoomin">
-        <td>
-              <table width="top:400%" >
-                <tr style="position: absolute; top: 10%;">
-                  <th>
-                  <form action="#" method="post">
-                    <table height="100%">
-                      <tr height="60px">
-  											<td>
-  												<label for="idNombre">  <font size="4" face="Arial" color="black" style="font-weight: bold"> &nbsp Nombre: </font></label>
-  											</td>
-  											<td>
-  												<input size="25" id="IdUsar" type="text" name="nombre" required/></br>
-  											</td>
-  										</tr>
-                    </table>
-                    <input id="crear_lista" type="submit" value="Crear lista"/> <br/>
-                  </form>
-                  </th>
-                </tr>
-
-              </table>
-
-            </td>
-
-        <span class="close">Cerrar</span>
-      </div>
-    </div>
-    <script>!window.jQuery && document.write(unescape('%3Cscript src="js/jquery-1.7.1.min.js"%3E%3C/script%3E'))</script>
-    <script type="text/javascript" src="js/demo.js"></script>
-
 
 </body>
 

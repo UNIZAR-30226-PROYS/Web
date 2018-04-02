@@ -1,7 +1,7 @@
 Falta:
-  -Pagina perfil: esta a mitad, tambien falta adaptar a distintos tamaños
+  -Pagina perfil: esta a mitad, tambien falta adaptar a distintos tamaños y poner opcion de cerrar sesion [y eliminar cuenta]
   -Pagina Recientes
-  -[Pagina que muestre informacion de usuarios (al hacer click en un amigo que salga algo de informacion)]
+  -[Pagina que muestre informacion de usuarios (al hacer busqueda en amigos)]
   -Pagina cancion: hacer funcion al pulsar boton compartir
 
   -Mejorar apariencia
