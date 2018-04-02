@@ -21,10 +21,14 @@
     <!-- //lined-icons -->
      <!-- Meters graphs -->
     <script src="js/jquery-2.1.4.js"></script>
+    <script type="text/javascript" src="js/ponernombre.js"></script>
 
     <!-- Custom styles for this template -->
     <link href="css/simple-sidebar.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/perfil.css">
+
+  	<link rel="stylesheet" href="css/demo.css">
+    <link rel="stylesheet" href="css/demo1.css">
 </head>
 
 <body>
@@ -99,7 +103,7 @@
 
         <!-- Page Content -->
         <div id="header-section">
-            <a href="#menu-music" class="button" id="menu-music"><img src="img/simbolomenu.png" width="30" height="30" alt="menu"></a>
+            <a href="#menu-music" class="buttonMenu" id="menu-music"><img src="img/simbolomenu.png" width="30" height="30" alt="menu"></a>
 
 						<div id="sb-search" class="sb-search sb-search-open">
 							<form action="busqueda.html" method="post">
@@ -126,39 +130,13 @@
 							</div>
 						</tr>
 					</table>
-					<table  style="position: absolute; left:30%; top: 25%" >
-						<tr height="60px">
-						<div class="nombreUsuario">
-							<td>
-								<label for="idNombre">  <font size="4" face="Arial" color="black" style="font-weight: bold"> &nbsp Nombre </font></label>
-							</td>
-							<td>
-								<input size="25" id="IdUsar" type="text" name="nombre"/></br>
-							</td>
-						</div>
-						</tr>
-						<tr height="60px">
-						<div class="nombreUsuario">
-							<td>
-								<label for="idNombre">  <font size="4" face="Arial" color="black" style="font-weight: bold"> &nbsp Login </font></label>
-							</td>
-							<td>
-								<input size="25" id="IdUsar" type="text" name="nombre"/></br>
-							</td>
-						</div>
-						</tr>
-						<tr height="60px">
-						<div class="contrasenya">
-							<td>
-								<label for="idNombre">  <font size="4" face="Arial" color="black" style="font-weight: bold"> &nbsp Contraseña </font></label>
-							</td>
-							<td>
-								<input size="25" id="IdUsar" type="text" name="nombre"/></br>
-							</td>
-						</div>
-						</tr>
-						<input style="position: absolute; left:500px; top: 60%" type="submit" value="Editar"/>
-					</table>
+
+
+          <div class="block1">
+            <label for="idNombre">Nombre:</label>
+              <input size="25" id="idNombre" type="text" value="nombreX" readonly="true"/></br>
+              <button type="submit" class="button1 button-block" data-type="zoomin1" onclick="set_nombre()">Modificar nombre</button>
+          </div>
 					<br/> <br/>
 
 
@@ -179,6 +157,102 @@
         $("#wrapper").toggleClass("toggled");
     });
     </script>
+
+    <!-- contenido de la ventana emergente -->
+    <div class="overlay-container">
+      <div class="window-container zoomin">
+        <td>
+              <table width="top:400%" >
+                <tr style="position: absolute; top: 10%;">
+                  <th>
+
+                    <div id="subir_cancion_titulo">Subir música</div>
+                    <form name="subirMusica" method="post" action="#" enctype="multipart/form-data" >
+                      <input type="file" name="fichero" id="fichero" required onchange="return fileValidation()"/>
+                      <br />
+                      <div id="atributos_cancion">
+                          <div class="block">
+                            <label for="idNombre">Nombre:<font size="5" color="red" style="font-weight: bold">* </font></label>
+                              <input size="25" id="idNombre" type="text" name="nombrecancion" required/></br>
+                          </div>
+                          <div class="block">
+                            <label for="idAutor">Autor: </label>
+                              <input size="25" id="idAutor" type="text" name="nombreautor"/></br>
+                          </div>
+                          <div class="block">
+                            <label for="idGenero">Género: </label>
+                              <input size="25" id="idGenero" type="text" name="nombregenero"/></br>
+                          </div>
+                      </div>
+
+
+                      <input type="submit" name="send" id="send" value="Subir" accept=".mp3"/>
+                    </form>
+                    <br />
+
+                  <form action="#" method="post">
+                    <table height="100%">
+                      <tr height="60px">
+                        <td>
+                          <label for="idNombre">  <font size="4" face="Arial" color="black" style="font-weight: normal"> &nbsp Búsqueda: </font></label>
+                        </td>
+                        <td>
+                          <input size="25" id="IdUsar" type="text" name="nombre" required/></br>
+                        </td>
+                      </tr>
+                    </table>
+                    <input id="crear_lista" type="submit" value="Buscar"/> <br/>
+                  </form>
+                  </th>
+                </tr>
+
+              </table>
+
+            </td>
+
+        <span class="close">Cancelar</span>
+      </div>
+    </div>
+    <script>!window.jQuery && document.write(unescape('%3Cscript src="js/jquery-1.7.1.min.js"%3E%3C/script%3E'))</script>
+    <script type="text/javascript" src="js/demo.js"></script>
+
+
+    <!-- Ventana cambiar nombre lista  -->
+    <!-- contenido de la ventana emergente -->
+    <div class="overlay-container1">
+      <div class="window-container1 zoomin1">
+        <td>
+              <table width="top:400%" >
+                <tr style="position: absolute; top: 10%;">
+                  <th>
+                  <form action="#" method="post">
+                    <table height="100%">
+                      <tr height="60px">
+                        <td>
+                          <label for="idNombre">  <font size="4" face="Arial" color="black" style="font-weight: bold"> &nbsp Nombre: </font></label>
+                        </td>
+                        <td>
+                          <input size="25" id="IdUsar1" type="text" name="nombre"/></br>
+                        </td>
+                      </tr>
+                    </table>
+                    <input id="crear_lista1" type="submit" value="Cambiar nombre"/> <br/>
+                  </form>
+                  </th>
+                </tr>
+
+              </table>
+
+            </td>
+
+        <span class="close1">Cancelar</span>
+      </div>
+    </div>
+    <script>!window.jQuery && document.write(unescape('%3Cscript src="js/jquery-1.7.1.min.js"%3E%3C/script%3E'))</script>
+    <script type="text/javascript" src="js/demo1.js"></script>
+
+
+
 
 </body>
 
