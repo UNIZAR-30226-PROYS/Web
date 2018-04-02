@@ -18,7 +18,7 @@
   text-transform: uppercase;
   outline: 0;
   background: #4CAF50;
-  width: 45%;
+  width: 55%;
   border: 0;
   padding: 15px;
   color: #FFFFFF;
@@ -102,12 +102,66 @@
     opacity: 0;
 }
 
+.window-container2 {
+    display: block;
+    background: #fcfcfc;
+    margin: 8em auto;
+    margin-left: 25% !important;
+    width: 250px !important;
+    padding: 20px 20px 20px !important;
+    text-align: left;
+    z-index: 3;
+    border-radius: 3px;
+    box-shadow: 0px 0px 30px rgba(0,0,0,0.2);
+    -webkit-transition: 0.4s ease-out;
+    -moz-transition: 0.4s ease-out;
+    -ms-transition: 0.4s ease-out;
+    -o-transition: 0.4s ease-out;
+    transition: 0.4s ease-out;
+    opacity: 0;
+}
+
 .close1 {
     padding: 5px 2px !important;
 }
 
+.close2 {
+    padding: 5px 2px !important;
+}
+
+#bloque_contra {
+  margin-top: 30px;
+}
+
+#IdAntigua {
+  width: 180px;
+}
+
+#IdNueva {
+  width: 180px;
+}
+
+#IdNuevaRep {
+  width: 180px;
+}
+
+#cambiarcontrabutton {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+#IdUsar1 {
+  width: 120px;
+}
+
+#crear_lista1 {
+   margin-left: 45px;
+}
 
 @media(min-width:768px) {
+  .informacion button {
+      width: 45%;
+  }
   .window-container {
       width: 400px !important;
       margin-left: 35% !important;
@@ -115,7 +169,12 @@
 
   .window-container1 {
       width: 400px !important;
-      margin-left: 35% !important;
+      margin-left: 30% !important;
+  }
+
+  .window-container2 {
+      width: 520px !important;
+      margin-left: 25% !important;
   }
 
   .nombrecancion {
@@ -180,7 +239,7 @@
   }
 
   #crear_lista1 {
-     margin-left: 125px;
+     margin-left: 115px;
   }
 
   #subir_cancion_titulo {
@@ -222,9 +281,24 @@
   .block {
     float: right;
   }
+
+  .block2 {
+    float: right;
+    margin-right: 20px;
+    margin-bottom: 10px;
+  }
+
+  #cambiarcontrabutton {
+    margin-top: 20px;
+    margin-left: 160px;
+  }
 }
 
 @media(min-width:1100px) {
+  .informacion button {
+    width: 45%;
+  }
+
   .simb_repr_elim input {
       margin-left: 45%;
       margin-top: 2%;
@@ -238,6 +312,11 @@
   .window-container1 {
       width: 400px !important;
       margin-left: 35% !important;
+  }
+
+  .window-container2 {
+      width: 600px !important;
+      margin-left: 30% !important;
   }
 
   #IdUsar {
@@ -294,9 +373,24 @@
   .block {
     float: right;
   }
+
+  .block2 {
+    float: right;
+    margin-right: 100px;
+    margin-bottom: 10px;
+  }
+
+  #cambiarcontrabutton {
+    margin-top: 20px;
+    margin-left: 200px;
+  }
 }
 
 @media(max-width:350px) {
+    .informacion button {
+      width: 62%;
+    }
+
     .window-container {
         width: 225px !important;
         margin-left: 25% !important;
@@ -305,6 +399,12 @@
     .window-container1 {
         width: 225px !important;
         margin-left: 25% !important;
+    }
+
+    .window-container2 {
+        width: 225px !important;
+        margin-left: 25% !important;
+        margin-top: 80px !important;
     }
   #IdUsar {
     width: 100px;
@@ -317,7 +417,7 @@
   }
 
   #crear_lista1 {
-     margin-left: 30px;
+     margin-left: 45px;
   }
 
   .editar_lista img {
@@ -360,12 +460,47 @@
     padding: 4px;
     width: 130px;
   }
+
+  .block2 {
+    float: left;
+    margin-left: -12px;
+    margin-bottom: 10px;
+  }
+
+  #IdAntigua {
+    width: 180px;
+  }
+
+  #IdNueva {
+    width: 180px;
+  }
+
+  #IdNuevaRep {
+    width: 180px;
+  }
+
+  #cambiarcontrabutton {
+    margin-top: 20px;
+    margin-left: 10px;
+  }
 }
 
 @media(min-width:1000px) and (max-width: 1200px) {
+  .informacion button {
+    width: 45%;
+  }
   #atributos_cancion{
     text-align: center;
     margin-right: 10px;
+  }
+
+  .window-container1 {
+      margin-left: 35% !important;
+  }
+
+  .window-container2 {
+      width: 625px !important;
+      margin-left: 25% !important;
   }
 
   #atributos_cancion input{
@@ -382,5 +517,17 @@
 
   .block {
     float: right;
+  }
+
+
+  .block2 {
+    float: right;
+    margin-right: 100px;
+    margin-bottom: 10px;
+  }
+
+  #cambiarcontrabutton {
+    margin-top: 20px;
+    margin-left: 210px;
   }
 }
