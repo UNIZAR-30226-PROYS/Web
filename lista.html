@@ -133,7 +133,7 @@
             <form name="accionCancion" method="post" action="#">
               <div class="cancioninf">
                 <ul>
-                  <li id="barraopciones"><a href="#" id="enlacecancion">
+                  <li id="barraopciones"><a href="cancion.html" id="enlacecancion">
                     <div class="imagen">
                       <img src="img/edsheeranperfect.jpg" alt="Imagen cancion">
                     </div>
@@ -208,6 +208,22 @@
                     <form name="subirMusica" method="post" action="#" enctype="multipart/form-data" >
                       <input type="file" name="fichero" id="fichero" required onchange="return fileValidation()"/>
                       <br />
+                      <div id="atributos_cancion">
+                          <div class="block">
+                            <label for="idNombre">Nombre:<font size="5" color="red" style="font-weight: bold">* </font></label>
+                              <input size="25" id="idNombre" type="text" name="nombrecancion" required/></br>
+                          </div>
+                          <div class="block">
+                            <label for="idAutor">Autor: </label>
+                              <input size="25" id="idAutor" type="text" name="nombreautor"/></br>
+                          </div>
+                          <div class="block">
+                            <label for="idGenero">Género: </label>
+                              <input size="25" id="idGenero" type="text" name="nombregenero"/></br>
+                          </div>
+                      </div>
+
+
                       <input type="submit" name="send" id="send" value="Subir" accept=".mp3"/>
                     </form>
                     <br />

@@ -19,7 +19,7 @@
     margin: 8em auto;
     margin-left: 25% !important;
     width: 250px !important;
-    padding: 250px 20px 20px !important;
+    padding: 320px 20px 20px !important;
     text-align: left;
     z-index: 3;
     border-radius: 3px;
@@ -210,6 +210,26 @@ tr {
 
 #send {
   margin-left: 41%;
+  margin-top: 10px;
+}
+
+#atributos_cancion{
+  text-align: center;
+  margin-right: 12px;
+}
+
+#atributos_cancion input{
+  clear: both;
+  background: white;
+  border-style: inset;
+  border-width: 2px;
+  padding: 4px;
+  width: 150px;
+}
+
+
+.block {
+  float: right;
 }
 
 
@@ -296,6 +316,7 @@ tr {
 
   #send {
     margin-left: 41%;
+    margin-top: 10px;
   }
 
   input[type="file"] {
@@ -305,6 +326,27 @@ tr {
 
   tr {
     margin-left: 0px;
+  }
+
+  #atributos_cancion{
+    text-align: center;
+    margin-right: 10px;
+  }
+
+  #atributos_cancion input{
+    float: right;
+    clear: both;
+    margin-right: 70px;
+    background: white;
+    border-style: inset;
+    border-width: 2px;
+    padding: 4px;
+    width: 200px;
+  }
+
+
+  .block {
+    float: right;
   }
 }
 
@@ -346,6 +388,7 @@ tr {
 
   #send {
     margin-left: 41%;
+    margin-top: 10px;
   }
 
   input[type="file"] {
@@ -355,6 +398,27 @@ tr {
 
   tr {
     margin-left: 0px;
+  }
+
+  #atributos_cancion{
+    text-align: center;
+    margin-right:0px;
+  }
+
+  #atributos_cancion input{
+    float: right;
+    clear: both;
+    margin-right: 50px;
+    background: white;
+    border-style: inset;
+    border-width: 2px;
+    padding: 4px;
+    width: 210px;
+  }
+
+
+  .block {
+    float: right;
   }
 }
 
@@ -407,5 +471,42 @@ tr {
 
   #send {
     margin-left: 41%;
+    margin-bottom: 10px;
+  }
+
+  #atributos_cancion{
+    margin-right: 10px;
+  }
+
+  #atributos_cancion input{
+    clear: both;
+    background: white;
+    border-style: inset;
+    border-width: 2px;
+    padding: 4px;
+    width: 130px;
+  }
+}
+
+@media(min-width:1000px) and (max-width: 1200px) {
+  #atributos_cancion{
+    text-align: center;
+    margin-right: 10px;
+  }
+
+  #atributos_cancion input{
+    float: right;
+    clear: both;
+    margin-right: 50px;
+    background: white;
+    border-style: inset;
+    border-width: 2px;
+    padding: 4px;
+    width: 210px;
+  }
+
+
+  .block {
+    float: right;
   }
 }

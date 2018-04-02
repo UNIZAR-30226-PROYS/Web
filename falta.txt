@@ -3,7 +3,6 @@ Falta:
   -Pagina Recientes
   -Pagina amigos
   -[Pagina que muestre informacion de usuarios (al hacer click en un amigo que salga algo de informacion)]
-  -[Pagina subirMusica: poner campos a rellenar para subir cancion (nombre, autor, estilo,...) y tambien para subir musica en lista?]
+  -Pagina cancion: hacer funcion al pulsar boton compartir
 
-  -Enlazar entre paginas (imagen cancion lleve a cancion,...)
   -Mejorar apariencia
