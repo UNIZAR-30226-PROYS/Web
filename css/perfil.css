@@ -121,11 +121,34 @@
     opacity: 0;
 }
 
+.window-container3 {
+    display: block;
+    background: #fcfcfc;
+    margin: 8em auto;
+    margin-left: 25% !important;
+    width: 250px !important;
+    padding: 150px 20px 20px !important;
+    text-align: left;
+    z-index: 3;
+    border-radius: 3px;
+    box-shadow: 0px 0px 30px rgba(0,0,0,0.2);
+    -webkit-transition: 0.4s ease-out;
+    -moz-transition: 0.4s ease-out;
+    -ms-transition: 0.4s ease-out;
+    -o-transition: 0.4s ease-out;
+    transition: 0.4s ease-out;
+    opacity: 0;
+}
+
 .close1 {
     padding: 5px 2px !important;
 }
 
 .close2 {
+    padding: 5px 2px !important;
+}
+
+.close3 {
     padding: 5px 2px !important;
 }
 
@@ -152,6 +175,10 @@
 
 #IdUsar1 {
   width: 120px;
+}
+
+#idContraElim {
+  width: 110px;
 }
 
 #crear_lista1 {
@@ -186,6 +213,11 @@
   .window-container2 {
       width: 520px !important;
       margin-left: 25% !important;
+  }
+
+  .window-container3 {
+      width: 400px !important;
+      margin-left: 30% !important;
   }
 
   .nombrecancion {
@@ -244,6 +276,10 @@
   }
 
   #IdUsar1 {
+    width: 100%;
+  }
+
+  #idContraElim {
     width: 100%;
   }
 
@@ -332,6 +368,11 @@
       margin-left: 30% !important;
   }
 
+  .window-container3 {
+      width: 400px !important;
+      margin-left: 35% !important;
+  }
+
   #IdUsar {
     width: 100%;
   }
@@ -339,6 +380,11 @@
   #IdUsar1 {
     width: 100%;
   }
+
+  #idContraElim {
+    width: 100%;
+  }
+
   #crear_lista {
      margin-left: 145px;
   }
@@ -419,10 +465,18 @@
         margin-left: 25% !important;
         margin-top: 80px !important;
     }
+
+    .window-container3 {
+        width: 225px !important;
+        margin-left: 25% !important;
+    }
   #IdUsar {
     width: 100px;
   }
   #IdUsar1 {
+    width: 100px;
+  }
+  #idContraElim {
     width: 100px;
   }
   #crear_lista {
@@ -514,6 +568,10 @@
   .window-container2 {
       width: 625px !important;
       margin-left: 25% !important;
+  }
+
+  .window-container3 {
+      margin-left: 35% !important;
   }
 
   #atributos_cancion input{

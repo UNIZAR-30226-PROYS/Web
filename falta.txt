@@ -1,6 +1,9 @@
 Falta:
-  -Pagina perfil: falta cambiar foto perfil, tambien falta adaptar a distintos tamaños [y opción eliminar cuenta]
+  -Pagina perfil: falta cambiar foto perfil
   -Pagina Recientes
   -Pagina cancion: hacer funcion al pulsar boton compartir
+
+  -Paginas relacionadas con autores?
+  -Paginas relacionadas con album?
 
   -Mejorar apariencia
