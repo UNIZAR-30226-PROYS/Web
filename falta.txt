@@ -1,7 +1,6 @@
 Falta:
   -Pagina perfil: esta a mitad, tambien falta adaptar a distintos tamaños
   -Pagina Recientes
-  -Pagina amigos
   -[Pagina que muestre informacion de usuarios (al hacer click en un amigo que salga algo de informacion)]
   -Pagina cancion: hacer funcion al pulsar boton compartir
 
