@@ -22,30 +22,26 @@
      <!-- Meters graphs -->
     <script src="js/jquery-2.1.4.js"></script>
 
-    <link rel="stylesheet" href="css/amigos.css" type='text/css' />
-
     <!-- Custom styles for this template -->
     <link href="css/simple-sidebar.css" rel="stylesheet">
-
-    	<link rel="stylesheet" href="css/demo.css">
-
+	<link rel="stylesheet" href="css/usuario.css">
 </head>
 
 <body>
 
-  <div class="main-content" id="wrapper">
-    <div class="navegacion">
-      <ul>
-        <li id="bar">
-          <a href="home.html"><img src="img/logoapp.png" width="80" height="80" alt=""/></a>
-        </li>
-        <li><a href="favoritos.html"><img src="img/corazon.png" width="50" height="50" alt=""/>Favoritos</a></li>
-        <li><a href="recientes.html"><img src="img/recientes.png" width="50" height="50" alt=""/>Recientes</a></li>
-        <li><a href="listas.html"><img src="img/listas.png" width="50" height="50" alt=""/>Mis listas</a></li>
-        <li><a href="subirmusica.html"><img src="img/subirmusica.png" width="50" height="50" alt=""/>Subir música</a></li>
-        <li><a href="amigos.html"><img src="img/amigos.png" width="50" height="50" alt=""/>Amigos</a></li>
-      </ul>
-    </div>
+	<div class="main-content" id="wrapper">
+		<div class="navegacion">
+			<ul>
+				<li id="bar">
+					<a href="home.html"><img src="img/logoapp.png" width="80" height="80" alt=""/></a>
+				</li>
+				<li><a href="favoritos.html"><img src="img/corazon.png" width="50" height="50" alt=""/>Favoritos</a></li>
+				<li><a href="recientes.html"><img src="img/recientes.png" width="50" height="50" alt=""/>Recientes</a></li>
+				<li><a href="listas.html"><img src="img/listas.png" width="50" height="50" alt=""/>Mis listas</a></li>
+				<li><a href="subirmusica.html"><img src="img/subirmusica.png" width="50" height="50" alt=""/>Subir música</a></li>
+				<li><a href="amigos.html"><img src="img/amigos.png" width="50" height="50" alt=""/>Amigos</a></li>
+			</ul>
+		</div>
 
 
         <!-- Sidebar -->
@@ -119,53 +115,54 @@
         <!-- /#page-content-wrapper -->
 
         <div class="informacion">
-          <br/>
-          <div id="titulopagina"><h1>Amigos</h1></div>
-            <div class="anadir_lista">
-              <img src="img/anadir.png" alt="Buscar amigo" title="Buscar amigo" class="button" data-type="zoomin">
-            </div>
+		 <br/>
+          <div id="titulopagina"><h1>Usuario1</h1></div>
+					<table  style="position:  left:20%; top: 25%" >
+						<tr height="60px">
+							<div class="imagen">
+								<img src="img/user.png" alt="Imagen usuario" >
+							</div>
+						</tr>
+					</table>
 
-          <form name="accionLista" method="post" action="#">
-            <div class="cancioninf">
-              <ul>
-                <li id="barraopciones">
-                  <a href="usuario.html">
+
+
+
+
+
+          <div class="block1" id="bloque_contra">
+            <form name="accionLista" method="post" action="#">
+              <div class="cancioninf">
+                <ul>
+                  <li id="barraopciones"><a href="lista.html" id="enlacecancion">
                     <div class="imagen">
-                      <img src="img/user.png" alt="Imagen lista">
+                      <img src="img/listaicono.png" alt="Imagen lista">
                     </div>
                     <div class="nombrecancion">
-                      Persona1
+                      Lista1
                     </div>
-                  </a>
-                </li>
-                <li id="barraopciones"><div class="simb_repr_elim">
-                    <input type="image" src="img/eliminar.png" alt="Eliminar amigo" title="Eliminar amigo">
-                </div></li>
-              </ul>
-            </div>
-          </form>
+                  </a></li>
+                </ul>
+              </div>
+            </form>
 
 
-  				<br/>
-          <form name="accionLista" method="post" action="#">
-            <div class="cancioninf">
-              <ul>
-                <li id="barraopciones">
-                  <a href="#">
+            <br/>
+            <form name="accionLista" method="post" action="#">
+              <div class="cancioninf">
+                <ul>
+                  <li id="barraopciones"><a href="#" id="enlacecancion">
                     <div class="imagen">
-                      <img src="img/user.png" alt="Imagen lista">
+                      <img src="img/listaicono.png" alt="Imagen lista">
                     </div>
                     <div class="nombrecancion">
-                      Persona2
+                      Lista2
                     </div>
-                  </a>
-                </li>
-                <li id="barraopciones"><div class="simb_repr_elim">
-                    <input type="image" src="img/eliminar.png" alt="Eliminar amigo" title="Eliminar amigo">
-                </div></li>
-              </ul>
-            </div>
-          </form>
+                  </a></li>
+                </ul>
+              </div>
+            </form>
+          </div>
         </div>
 
 
@@ -183,40 +180,6 @@
         $("#wrapper").toggleClass("toggled");
     });
     </script>
-
-    <!-- contenido de la ventana emergente -->
-    <div class="overlay-container">
-      <div class="window-container zoomin">
-        <td>
-              <table width="top:400%" >
-                <tr style="position: absolute; top: 10%;">
-                  <th>
-                  <form action="usuarios.html" method="post">
-                    <table height="100%">
-                      <tr height="60px">
-  											<td>
-  												<label for="idNombre">  <font size="4" face="Arial" color="black" style="font-weight: bold"> &nbsp Nombre: </font></label>
-  											</td>
-  											<td>
-  												<input size="25" id="IdUsar" type="text" name="nombre" required/></br>
-  											</td>
-  										</tr>
-                    </table>
-                    <input id="crear_lista" type="submit" value="Buscar"/> <br/>
-                  </form>
-                  </th>
-                </tr>
-
-              </table>
-
-            </td>
-
-        <span class="close">Cerrar</span>
-      </div>
-    </div>
-    <script>!window.jQuery && document.write(unescape('%3Cscript src="js/jquery-1.7.1.min.js"%3E%3C/script%3E'))</script>
-    <script type="text/javascript" src="js/demo.js"></script>
-
 
 </body>
 
