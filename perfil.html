@@ -30,6 +30,7 @@
   	<link rel="stylesheet" href="css/demo.css">
     <link rel="stylesheet" href="css/demo1.css">
     <link rel="stylesheet" href="css/ventanacontrasena.css">
+    <link rel="stylesheet" href="css/ventanaelimcuenta.css">
 </head>
 
 <body>
@@ -123,6 +124,11 @@
 		 <br/>
           <div id="titulopagina"><h1>Mi perfil</h1></div>
 
+          <div class="anadir_lista">
+            <form action="/cerrarSesion" method="post">
+              <input type="image" src="img/cerrarsesion.png" alt="Cerrar sesión" title="Cerrar sesión">
+            </form>
+          </div>
 
 					<table  style="position:  left:20%; top: 25%" >
 						<tr height="60px">
@@ -256,6 +262,7 @@
     <script>!window.jQuery && document.write(unescape('%3Cscript src="js/jquery-1.7.1.min.js"%3E%3C/script%3E'))</script>
     <script type="text/javascript" src="js/demo1.js"></script>
     <script type="text/javascript" src="js/ventanacontrasena.js"></script>
+    <script type="text/javascript" src="js/ventanaelimcuenta.js"></script>
 
     <!-- contenido de la ventana emergente -->
     <div class="overlay-container2">
@@ -288,14 +295,41 @@
                           <input size="25" id="IdNuevaRep" type="password" name="nuevacontrarep" required/></br>
                         </td>
                       </div>
-
-
-
-
                       <button type="submit" id="cambiarcontrabutton"/>Cambiar contraseña</button>
                     </form>
                     <br />
         <span class="close2">Cancelar</span>
+      </div>
+    </div>
+
+    <!-- Ventana eliminar cuenta -->
+    <div class="overlay-container3">
+      <div class="window-container3 zoomin3">
+        <td>
+              <table width="top:400%" >
+                <tr style="position: absolute; top: 10%;">
+                  <th>
+                  <form action="#" method="post">
+                    <table height="100%">
+                      <tr height="60px">
+                        <td>
+                          <label for="idContraElim">  <font size="4" face="Arial" color="black" style="font-weight: bold"> &nbsp Contraseña: </font></label>
+                        </td>
+                        <td>
+                          <input size="25" id="idContraElim" type="password" name="contraelim"/></br>
+                        </td>
+                      </tr>
+                    </table>
+                    <input id="crear_lista1" type="submit" value="Cambiar nombre"/> <br/>
+                  </form>
+                  </th>
+                </tr>
+
+              </table>
+
+            </td>
+
+        <span class="close3">Cancelar</span>
       </div>
     </div>
 

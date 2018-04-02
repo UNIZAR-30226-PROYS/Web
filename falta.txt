@@ -1,5 +1,5 @@
 Falta:
-  -Pagina perfil: esta a mitad, tambien falta adaptar a distintos tamaños y poner opcion de cerrar sesion [y eliminar cuenta]
+  -Pagina perfil: falta cambiar foto perfil, tambien falta adaptar a distintos tamaños [y opción eliminar cuenta]
   -Pagina Recientes
   -Pagina cancion: hacer funcion al pulsar boton compartir
 
