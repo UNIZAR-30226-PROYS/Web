@@ -64,13 +64,13 @@
   font-size: 20px;
 }
 
-.window-container {
+.window-container4 {
     display: block;
     background: #fcfcfc;
     margin: 8em auto;
     margin-left: 25% !important;
     width: 250px !important;
-    padding: 320px 20px 20px !important;
+    padding: 150px 20px 20px !important;
     text-align: left;
     z-index: 3;
     border-radius: 3px;
@@ -140,6 +140,10 @@
     opacity: 0;
 }
 
+.close4 {
+    padding: 5px 2px !important;
+}
+
 .close1 {
     padding: 5px 2px !important;
 }
@@ -185,6 +189,10 @@
    margin-left: 45px;
 }
 
+#change_img_button {
+   margin-left: 75px;
+}
+
 .anadir_lista input{
   max-width: 14%;
   max-height: 14%;
@@ -196,11 +204,33 @@
   padding: 0;
 }
 
+input[type="file"] {
+    display: block;
+    font-size: 10px;
+}
+
+#subir_cancion_titulo {
+    text-align: center;
+}
+
+#tr_img_change {
+  margin-left: -10px;
+}
+
+.blockc {
+  margin-left: 0;
+  margin-top: 15px !important;
+  position: absolute;
+  margin-left: 30%;
+  width: 70%;
+}
+
+
 @media(min-width:768px) {
   .informacion button {
       width: 45%;
   }
-  .window-container {
+  .window-container4 {
       width: 400px !important;
       margin-left: 35% !important;
   }
@@ -291,6 +321,14 @@
      margin-left: 115px;
   }
 
+  #change_img_button {
+     margin-left: 145px;
+  }
+
+  #tr_img_change {
+    margin-left: 0px;
+  }
+
   #subir_cancion_titulo {
     text-align: center;
     margin-bottom: 10px;
@@ -341,6 +379,14 @@
     margin-top: 20px;
     margin-left: 160px;
   }
+
+  .blockc {
+    margin-left: 0;
+    margin-top: 140px !important;
+    position: absolute;
+    margin-left: 5px;
+    width: 25%;
+  }
 }
 
 @media(min-width:1100px) {
@@ -353,7 +399,7 @@
       margin-top: 2%;
   }
 
-  .window-container {
+  .window-container4 {
       width: 400px !important;
       margin-left: 35% !important;
   }
@@ -393,9 +439,17 @@
      margin-left: 120px;
   }
 
+  #change_img_button {
+     margin-left: 145px;
+  }
+
   #subir_cancion_titulo {
     text-align: center;
     margin-bottom: 10px;
+  }
+
+  #tr_img_change {
+    margin-left: 0px;
   }
 
   #send {
@@ -443,6 +497,14 @@
     margin-top: 20px;
     margin-left: 200px;
   }
+
+  .blockc {
+    margin-left: 0;
+    margin-top: 150px !important;
+    position: absolute;
+    margin-left: 20px;
+    width: 20%;
+  }
 }
 
 @media(max-width:350px) {
@@ -450,7 +512,7 @@
       width: 62%;
     }
 
-    .window-container {
+    .window-container4 {
         width: 225px !important;
         margin-left: 25% !important;
     }
@@ -485,6 +547,14 @@
 
   #crear_lista1 {
      margin-left: 45px;
+  }
+
+  #change_img_button {
+     margin-left: 75px;
+  }
+
+  #tr_img_change {
+    margin-left: -18px;
   }
 
   .editar_lista img {
@@ -550,6 +620,14 @@
     margin-top: 20px;
     margin-left: 10px;
   }
+
+  .blockc {
+    margin-left: 0;
+    margin-top: 5px !important;
+    position: absolute;
+    margin-left: 70px;
+    width: 70%;
+  }
 }
 
 @media(min-width:1000px) and (max-width: 1200px) {
@@ -571,6 +649,10 @@
   }
 
   .window-container3 {
+      margin-left: 35% !important;
+  }
+
+  .window-container4 {
       margin-left: 35% !important;
   }
 
@@ -601,4 +683,21 @@
     margin-top: 20px;
     margin-left: 210px;
   }
+
+  #change_img_button {
+    margin-left: 140px;
+  }
+
+  #tr_img_change {
+    margin-left: 0px;
+  }
+
+  .blockc {
+    margin-left: 0;
+    margin-top: 150px !important;
+    position: absolute;
+    margin-left: 15px;
+    width: 20%;
+  }
+
 }

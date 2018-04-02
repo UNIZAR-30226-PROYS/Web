@@ -1,5 +1,4 @@
 Falta:
-  -Pagina perfil: falta cambiar foto perfil
   -Pagina Recientes
   -Pagina cancion: hacer funcion al pulsar boton compartir
 

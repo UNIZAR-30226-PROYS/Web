@@ -22,6 +22,7 @@
      <!-- Meters graphs -->
     <script src="js/jquery-2.1.4.js"></script>
     <script type="text/javascript" src="js/ponernombre.js"></script>
+    <script type="text/javascript" src="js/formato_file_img.js"></script>
 
     <!-- Custom styles for this template -->
     <link href="css/simple-sidebar.css" rel="stylesheet">
@@ -31,6 +32,7 @@
     <link rel="stylesheet" href="css/demo1.css">
     <link rel="stylesheet" href="css/ventanacontrasena.css">
     <link rel="stylesheet" href="css/ventanaelimcuenta.css">
+    <link rel="stylesheet" href="css/ventanacambiarfoto.css">
 </head>
 
 <body>
@@ -135,6 +137,9 @@
 							<div class="imagen">
 								<img src="img/user.png" alt="Imagen usuario" >
 							</div>
+              <div class="blockc" id="bloque_contra">
+                <button type="submit" class="button4 button-block" data-type="zoomin4">Cambiar foto</button>
+              </div>
 						</tr>
 					</table>
 
@@ -174,64 +179,6 @@
     });
     </script>
 
-    <!-- contenido de la ventana emergente -->
-    <div class="overlay-container">
-      <div class="window-container zoomin">
-        <td>
-              <table width="top:400%" >
-                <tr style="position: absolute; top: 10%;">
-                  <th>
-
-                    <div id="subir_cancion_titulo">Subir música</div>
-                    <form name="subirMusica" method="post" action="#" enctype="multipart/form-data" >
-                      <input type="file" name="fichero" id="fichero" required onchange="return fileValidation()"/>
-                      <br />
-                      <div id="atributos_cancion">
-                          <div class="block">
-                            <label for="idNombre">Nombre:<font size="5" color="red" style="font-weight: bold">* </font></label>
-                              <input size="25" id="idNombre" type="text" name="nombrecancion" required/></br>
-                          </div>
-                          <div class="block">
-                            <label for="idAutor">Autor: </label>
-                              <input size="25" id="idAutor" type="text" name="nombreautor"/></br>
-                          </div>
-                          <div class="block">
-                            <label for="idGenero">Género: </label>
-                              <input size="25" id="idGenero" type="text" name="nombregenero"/></br>
-                          </div>
-                      </div>
-
-
-                      <input type="submit" name="send" id="send" value="Subir" accept=".mp3"/>
-                    </form>
-                    <br />
-
-                  <form action="#" method="post">
-                    <table height="100%">
-                      <tr height="60px">
-                        <td>
-                          <label for="idNombre">  <font size="4" face="Arial" color="black" style="font-weight: normal"> &nbsp Búsqueda: </font></label>
-                        </td>
-                        <td>
-                          <input size="25" id="IdUsar" type="text" name="nombre" required/></br>
-                        </td>
-                      </tr>
-                    </table>
-                    <input id="crear_lista" type="submit" value="Buscar"/> <br/>
-                  </form>
-                  </th>
-                </tr>
-
-              </table>
-
-            </td>
-
-        <span class="close">Cancelar</span>
-      </div>
-    </div>
-    <script>!window.jQuery && document.write(unescape('%3Cscript src="js/jquery-1.7.1.min.js"%3E%3C/script%3E'))</script>
-    <script type="text/javascript" src="js/demo.js"></script>
-
 
     <!-- Ventana cambiar nombre lista  -->
     <!-- contenido de la ventana emergente -->
@@ -268,6 +215,7 @@
     <script type="text/javascript" src="js/demo1.js"></script>
     <script type="text/javascript" src="js/ventanacontrasena.js"></script>
     <script type="text/javascript" src="js/ventanaelimcuenta.js"></script>
+    <script type="text/javascript" src="js/ventanacambiarfoto.js"></script>
 
     <!-- contenido de la ventana emergente -->
     <div class="overlay-container2">
@@ -338,6 +286,34 @@
         <span class="close3">Cancelar</span>
       </div>
     </div>
+
+    <!-- contenido de la ventana emergente -->
+    <div class="overlay-container4">
+      <div class="window-container4 zoomin4">
+        <td>
+              <table width="top:400%" >
+                <tr id="tr_img_change" style="position: absolute; top: 10%;">
+                  <th>
+
+                    <div id="subir_cancion_titulo">Cambiar foto</div>
+                    <form name="subirMusica" method="post" action="#" enctype="multipart/form-data" >
+                      <input type="file" name="fichero" id="fichero" required onchange="return fileImgValidation()"/>
+                      <br />
+                      <input type="submit" name="send" id="change_img_button" value="Cambiar"/>
+                    </form>
+                    <br />
+                  </th>
+                </tr>
+
+              </table>
+
+            </td>
+
+        <span class="close4">Cancelar</span>
+      </div>
+    </div>
+    <script>!window.jQuery && document.write(unescape('%3Cscript src="js/jquery-1.7.1.min.js"%3E%3C/script%3E'))</script>
+    <script type="text/javascript" src="js/demo.js"></script>
 
 
 </body>
