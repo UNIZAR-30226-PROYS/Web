@@ -9,6 +9,10 @@ padding-top: 0;
 margin-top: -6px;
 }
 
+#share-buttons a:hover{
+  text-decoration: none;
+}
+
 .imagen img {
   position: absolute;
   margin-left: 120px;
@@ -23,11 +27,10 @@ margin-top: -6px;
 
 #share-buttons {
   border-style: solid;
-  width: 15%;
+  border-width: thin;
   background-color: white;
-  height: 20%;
-  margin-top: 350px;
-  margin-left: 250px;
+  margin-top: 430px;
+  margin-left: 260px;
   position: absolute;
   padding-top: 8px;
 }
@@ -240,6 +243,10 @@ button:hover {
 }
 
 @media(min-width:768px) {
+  #share-buttons {
+    margin-left: 260px;
+  }
+
   #sidebar-wrapper {
       margin-top: 0;
       width: 100%;
@@ -257,6 +264,10 @@ button:hover {
 }
 
 @media(max-width:1024px) {
+  #share-buttons {
+    margin-left: 220px;
+  }
+
   .window-container0 {
       margin-left: 32% !important;
   }
@@ -289,6 +300,11 @@ button:hover {
 }
 
 @media(max-width:768px) {
+  #share-buttons {
+    margin-left: 90px;
+    margin-top: 400px;
+  }
+
   .window-container0 {
       margin-left: 25% !important;
   }
@@ -346,6 +362,11 @@ button:hover {
 }
 
 @media(max-width:667px) {
+  #share-buttons {
+    margin-left: 10px;
+    margin-top: 310px;
+  }
+
   .informacion {
     position: absolute;
     margin-left: 24%;
@@ -441,6 +462,11 @@ button:hover {
 
 }
 @media(max-width:350px) {
+  #share-buttons {
+    margin-left: 10px;
+    margin-top: 310px;
+  }
+
   .mejs-controls .mejs-time-rail .mejs-time-total {
       background: #2d2d2d;
       width: 50px !important;

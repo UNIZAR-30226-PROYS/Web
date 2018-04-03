@@ -1,6 +1,5 @@
 Falta:
   -Pagina Recientes(poner ultimas acciones con canciones, favoritos, listas, amigos y recomendaciones recibidas [y realizadas])
-  -Pagina cancion: añadir compartir en facebook y adaptar a distintos tamaños
 
   -Paginas relacionadas con autores/artistas?
   -Paginas relacionadas con album?

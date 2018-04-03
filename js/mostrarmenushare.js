@@ -2,9 +2,9 @@
 
 function mostrarMenuShare(){
     var x = document.getElementById("share-buttons");
-    if (x.style.opacity == "0") {
-        x.style.opacity = "1";
+    if (x.style.zIndex == "-100") {
+        x.style.zIndex = "0";
     } else {
-        x.style.opacity = "0";
+        x.style.zIndex = "-100";
     }
 }
