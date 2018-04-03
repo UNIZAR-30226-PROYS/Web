@@ -1,3 +1,22 @@
+#share-buttons img {
+width: 35px;
+padding: 5px;
+border: 0;
+box-shadow: 0;
+display: inline;
+z-index: 0;
+}
+
+#share-buttons {
+  border-style: solid;
+  width: 15%;
+  background-color: white;
+  height: 20%;
+  margin-top: 350px;
+  margin-left: 250px;
+  position: absolute;
+}
+
 #titulopagina {
   text-align: center;
   margin-right: 15%;

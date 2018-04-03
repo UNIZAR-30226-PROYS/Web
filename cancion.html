@@ -26,7 +26,7 @@
     <script src="js/anadir_a_favorito.js"></script>
     <link rel="stylesheet" type="text/css" media="all" href="css/audio.css">
 
-
+    <script src="js/mostrarmenushare.js"></script>
     <!-- Custom styles for this template -->
     <link href="css/simple-sidebar.css" rel="stylesheet">
 
@@ -117,7 +117,7 @@
                         <form name="accionCancion" method="post" action="#">
                           <div id="opcionesrepr">
                             <ul class="next-top">
-                              <li class="oprep"><a class="share" href="#"> <input type="image" src="img/share.png" width="30" height="30" alt="Compartir canción" title="Compartir canción"/></a></li>
+                              <li class="oprep"><a class="share" href="#"> <input type="image" src="img/share.png" width="30" height="30" alt="Compartir canción" title="Compartir canción" onclick="mostrarMenuShare(); return false"/></a></li>
                               <li class="oprep"><a class="ar" href="#"> <input type="image" src="img/atras.png" width="30" height="30" alt="Canción anterior" title="Canción anterior"/></a></li>
                               <li class="oprep"><a class="rel" href="#"> <input type="image" src="img/reload1.png" width="30" height="30" alt="Reiniciar canción" title="Reiniciar canción" onClick="reloadMusic();return false;"/></a></li>
                               <li class="oprep"><a class="ar2" href="#"><input type="image" src="img/siguiente.png" width="30" height="30" alt="Siguiente canción" title="Siguiente canción"/></a></li>
@@ -130,6 +130,28 @@
                   </li>
               </ul>
           </div>
+
+
+
+
+          <div id="share-buttons" hidden="true">
+              <!-- Facebook -->
+              <a href="http://www.facebook.com/sharer.php?u=https://simplesharebuttons.com" target="_blank">
+                  <img src="img/facebook.png" alt="Facebook" title"Compartir en Facebook"/>
+              </a>
+
+              <!-- Twitter -->
+              <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="Canción Perfect de Ed Sheeran" data-url="http://www.urldelacancion.com" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              <!--<a href="https://twitter.com/share?url=https://simplesharebuttons.com&amp;text=Simple%20Share%20Buttons&amp;hashtags=simplesharebuttons" target="_blank">
+                  <img src="img/twitter.png" alt="Twitter" title"Compartir en Twitter"/>
+              </a>
+-->
+              <a href="https://twitter.com/share?url=https://simplesharebuttons.com&amp;text=Simple%20Share%20Buttons&amp;hashtags=simplesharebuttons" target="_blank">
+                  <img src="img/share_friends.png" alt="Amigos" title"Compartir con amigo"/>
+              </a>
+
+          </div>
+
 
 
 
