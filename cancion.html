@@ -33,6 +33,7 @@
     <link rel="stylesheet" href="css/cancion.css" type='text/css' />
 
     <link rel="stylesheet" href="css/demo.css">
+    <link rel="stylesheet" href="css/ventanaamigos.css">
 
 </head>
 
@@ -134,7 +135,7 @@
 
 
 
-          <div id="share-buttons" hidden="true">
+          <div id="share-buttons" style="opacity:0">
               <!-- Facebook -->
               <a href="http://www.facebook.com/sharer.php?u=https://simplesharebuttons.com" target="_blank">
                   <img src="img/facebook.png" alt="Facebook" title"Compartir en Facebook"/>
@@ -147,7 +148,7 @@
               </a>
 -->
               <a href="https://twitter.com/share?url=https://simplesharebuttons.com&amp;text=Simple%20Share%20Buttons&amp;hashtags=simplesharebuttons" target="_blank">
-                  <img src="img/share_friends.png" alt="Amigos" title"Compartir con amigo"/>
+                  <img src="img/share_friends.png" alt="Amigos" title"Compartir con amigo" class="button0" onclick="return false" data-type="zoomin0"/>
               </a>
 
           </div>
@@ -206,6 +207,46 @@
     <script>!window.jQuery && document.write(unescape('%3Cscript src="js/jquery-1.7.1.min.js"%3E%3C/script%3E'))</script>
     <script type="text/javascript" src="js/demo.js"></script>
 
+
+    <!-- contenido de la ventana amigos -->
+    <div class="overlay-container0">
+      <div class="window-container0 zoomin0">
+        <td>
+              <table width="100% ;left:35%; top:400%" >
+                <tr style="position: absolute; top: 10%;">
+                  <th>
+                  <div id="subir_cancion_titulo">Seleccione amigo para compartir</div>
+                  <form action="#" method="post">
+                    <table height="100%">
+                      <tr ><a href="#" id="enlacecancion">
+                        <div class="imagen">
+                          <img src="img/user.png" alt="Imagen usuario">
+                        </div>
+
+                        <div class="nombrelista">
+                          Amigo1
+                        </div></a></tr>
+                      <tr><a href="#" id="enlacecancion">
+                        <div class="imagen">
+                          <img src="img/user.png" alt="Imagen usuario">
+                        </div>
+
+                        <div class="nombrelista">
+                          Amigo2
+                        </div></a></tr>
+                    </table>
+                  </form>
+                  </th>
+                </tr>
+
+              </table>
+
+            </td>
+
+        <span class="close0">Cerrar</span>
+      </div>
+    </div>
+    <script type="text/javascript" src="js/ventanaamigos.js"></script>
 
 </body>
 

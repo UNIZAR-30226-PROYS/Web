@@ -1,8 +1,8 @@
 Falta:
   -Pagina Recientes(poner ultimas acciones con canciones, favoritos, listas, amigos y recomendaciones recibidas [y realizadas])
-  -Pagina cancion: hacer funcion al pulsar boton compartir (en redes sociales(titulo,artista y caratula) o con amigos(desplegable con los amigos para elegir uno)
+  -Pagina cancion: añadir compartir en facebook y adaptar a distintos tamaños
 
-  -Paginas relacionadas con autores?
+  -Paginas relacionadas con autores/artistas?
   -Paginas relacionadas con album?
 
   -Mejorar apariencia
