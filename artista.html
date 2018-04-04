@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+     <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel='stylesheet' type='text/css' />
+    <!-- Graph CSS -->
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <!-- jQuery -->
+    <!-- lined-icons -->
+    <link rel="stylesheet" href="css/icon-font.css" type='text/css' />
+    <!-- //lined-icons -->
+     <!-- Meters graphs -->
+    <script src="js/jquery-2.1.4.js"></script>
+    <script src="js/anadir_a_favorito.js"></script>
+
+    <link rel="stylesheet" href="css/artistas.css" type='text/css' />
+
+    <!-- Custom styles for this template -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/demo.css">
+</head>
+
+<body>
+	
+  <div class="main-content" id="wrapper">
+    <div class="navegacion">
+      <ul>
+        <li id="bar">
+          <a href="home.html"><img src="img/logoapp.png" width="80" height="80" alt=""/></a>
+        </li>
+        <li><a href="favoritos.html"><img src="img/corazon.png" width="50" height="50" alt=""/>Favoritos</a></li>
+        <li><a href="recientes.html"><img src="img/recientes.png" width="50" height="50" alt=""/>Recientes</a></li>
+        <li><a href="listas.html"><img src="img/listas.png" width="50" height="50" alt=""/>Mis listas</a></li>
+        <li><a href="subirmusica.html"><img src="img/subirmusica.png" width="50" height="50" alt=""/>Subir música</a></li>
+        <li><a href="amigos.html"><img src="img/amigos.png" width="50" height="50" alt=""/>Amigos</a></li>
+      </ul>
+    </div>
+	
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+          <div id="cancion">
+            <img src="img/edsheeranperfect.jpg" alt="menu">
+            <div id="autor">Ed Sheeran</div>
+          </div>
+            <ul class="sidebar-nav" id="repr">
+                <li>
+                  <div class="col-md-4 player" id="reproductor">
+                    <div class="audio-player">
+                      <audio id="audio-player"  controls="controls">
+                        <source id="source" src="media/Blue Browne.mp3" type="audio/mpeg"></source>
+                        </div>
+                        <!---->
+                        <script type="text/javascript">
+                          $(function(){
+                            $('#audio-player').mediaelementplayer({
+                            alwaysShowControls: true,
+                            features: ['playpause','progress','volume','duration'],
+                            audioVolume: 'horizontal',
+                            iPadUseNativeControls: true,
+                            iPhoneUseNativeControls: true,
+                            AndroidUseNativeControls: true
+                          });
+                         });
+                        </script>
+                        <!--audio-->
+                        <script type="text/javascript">
+                          function reloadMusic(){
+                              var src=document.getElementById("source").src;
+                                audio_core=$('#audio-player').attr('src', src)[0]
+                              audio_core.play() // <- play the song!!!
+                          }
+                        </script>
+
+                          <link rel="stylesheet" type="text/css" media="all" href="css/audio.css">
+                          <script type="text/javascript" src="js/mediaelement-and-player.min.js"></script>
+                          <!---->
+
+                        </div>
+                        <!--//-->
+                        <div id="opcionesrepr">
+                          <ul class="next-top">
+                            <li class="oprep"><a class="ar" href="#"> <img src="img/arrow.png" width="30" height="30" alt=""/></a></li>
+                            <li class="oprep"><a class="rel" href="#"> <input type="image" src="img/reload.png" width="30" height="30" alt="Reiniciar canción" title="Reiniciar canción" onClick="reloadMusic();return false;"/></a></li>
+                            <li class="oprep"><a class="ar2" href="#"><img src="img/arrow2.png" width="30" height="30" alt=""/></a></li>
+                          </ul>
+                        </div>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+		 <!-- Page Content -->
+        <div id="header-section">
+            <a href="#menu-music" class="buttonMenu" id="menu-music"><img src="img/simbolomenu.png" width="30" height="30" alt="menu"></a>
+
+						<div id="sb-search" class="sb-search sb-search-open">
+							<form action="busqueda.html" method="post">
+
+								<input class="sb-search-input" placeholder="Búsqueda" type="search" name="search" id="search" required>
+								<input class="sb-search-submit" type="submit" value="">
+								<span class="sb-icon-search"> </span>
+							</form>
+						</div>
+
+            <a href="perfil.html" class="div" id="user"><img src="img/user.png" width="40" height="40" alt="menu">Usuario</a>
+        </div>
+        <!-- /#page-content-wrapper -->
+    <!-- /#wrapper -->
+	<div class="informacion">
+		 <br/>
+          <div id="titulopagina"><h1>Iggy Azalea</h1></div>
+		   <div class="cancionesArtista">
+		  <ul>
+              <li id="barraopciones">
+                <div class="cancioninf">
+                  <a href="cancion.html" id="enlacecancion">
+          					<div class="imagen">
+          						<img src="img/blackWindows.jpg" alt="Imagen cancion">
+          					</div>
+          					<div class="nombrecancion">
+          						Black windows
+          					</div>
+                  </a>
+        				</div>
+						
+              </li>
+
+              <li id="barraopciones">
+                <div class="cancioninf">
+                  <a href="#" id="enlacecancion">
+                    <div class="imagen">
+                      <img src="img/iggy.jpg" alt="Imagen cancion">
+                    </div>
+                    <div class="nombrecancion">
+                      Fancy
+                    </div>
+                  </a>
+                </div>
+              </li>
+			<li id="barraopciones">
+                <div class="cancioninf">
+                  <a href="cancion.html" id="enlacecancion">
+          					<div class="imagen">
+          						<img src="img/iggy.jpg" alt="Imagen cancion">
+          					</div>
+          					<div class="nombrecancion">
+          						Problem
+          					</div>
+                  </a>
+        				</div>
+						
+              </li>
+
+              <li id="barraopciones">
+                <div class="cancioninf">
+                  <a href="#" id="enlacecancion">
+                    <div class="imagen">
+                      <img src="img/iggy.jpg" alt="Imagen cancion">
+                    </div>
+                    <div class="nombrecancion">
+                      Work
+                    </div>
+                  </a>
+                </div>
+              </li>
+			
+			
+              
+			 </ul>
+			 </div>
+	</div>
+	
+	
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-music").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+    <script type="text/javascript">
+      function playMusic(src){
+            audio_core=$('#audio-player').attr('src', src)[0]
+          audio_core.play() // <- play the song!!!
+      }
+    </script>
+
+    <!-- contenido de la ventana emergente -->
+    <div class="overlay-container">
+      <div class="window-container zoomin">
+        <td>
+              <table width="100% ;left:35%; top:400%" >
+                <tr style="position: absolute; top: 10%;">
+                  <th>
+                  <form action="#" method="post">
+                    <table height="100%">
+                      <tr ><a href="#" id="enlacecancion">
+                        <div class="nombrelista">
+                          Lista1
+                        </div></a></tr>
+                      <tr><a href="#" id="enlacecancion">
+                        <div class="nombrelista">
+                          Lista2
+                        </div></a></tr>
+                    </table>
+                  </form>
+                  </th>
+                </tr>
+
+              </table>
+
+            </td>
+
+        <span class="close">Cerrar</span>
+      </div>
+    </div>
+    <script>!window.jQuery && document.write(unescape('%3Cscript src="js/jquery-1.7.1.min.js"%3E%3C/script%3E'))</script>
+    <script type="text/javascript" src="js/demo.js"></script>
+
+</body>
+
+</html>

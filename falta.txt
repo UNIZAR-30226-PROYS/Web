@@ -1,7 +1,7 @@
 Falta:
-  -Pagina Recientes(poner ultimas acciones con canciones, favoritos, listas, amigos y recomendaciones recibidas [y realizadas])
+  -Pagina Recientes(poner ultimas acciones con canciones, favoritos, listas, amigos y recomendaciones recibidas [y realizadas]) -> tiene las ultimas canciones reproducidas
 
   -Paginas relacionadas con autores/artistas?
-  -Paginas relacionadas con album?
+  -Paginas relacionadas con album?  -> no se hace uso de este atributo 
 
   -Mejorar apariencia
