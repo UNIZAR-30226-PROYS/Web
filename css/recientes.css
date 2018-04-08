@@ -126,20 +126,20 @@ button:hover {
 
 @media(min-width:768px) {
   .nombrecancion {
-    margin-left: 12%;
+    margin-left: 14.5%;
     padding-top:0%;
     font-size: 30px;
     margin-top: 1%;
   }
 
   .nombreautor {
-    margin-left: 12%;
+    margin-left: 15%;
     padding-top:0%;
     font-size: 20px;
     margin-top: 5%;
   }
   .nombreestilo {
-    margin-left: 12%;
+    margin-left: 15%;
     padding-top:0%;
     font-size: 20px;
     margin-top: 7%;
@@ -192,7 +192,79 @@ button:hover {
     padding: 10px;
     font-size: 40px;
 }
+.nombrecancion {
+    position: absolute;
+    margin-left: 20%;
+    font-size: 80%;
+    margin-top: 2%;
+    font-weight: normal;
+    max-width: 46%;
 }
+
+.nombreautor {
+  position: absolute;
+  margin-left: 24%;
+  font-size: 70%;
+  margin-top: 8%;
+  font-weight: normal;
+}
+
+.nombreestilo {
+  position: absolute;
+  margin-left: 24%;
+  font-size: 70%;
+  margin-top: 13%;
+  font-weight: normal;
+}
+}
+
+
+@media(min-width:768px) and (max-width:1300px){
+.nombrecancion {
+    position: absolute;
+    margin-left: 20%;
+    font-size: 170%;
+    margin-top: 0%;
+    font-weight: normal;
+    max-width: 46%;
+}
+
+.nombreautor {
+  position: absolute;
+  margin-left: 24%;
+  font-size: 150%;
+  margin-top: 7%;
+  font-weight: normal;
+}
+
+.nombreestilo {
+  position: absolute;
+  margin-left: 24%;
+  font-size: 150%;
+  margin-top: 12%;
+  font-weight: normal;
+}
+
+.informacion form {
+    height: 17%;
+}
+
+.simb_repr_play input {
+    margin-left: 60%;
+    margin-top: 2%;
+}
+
+.simb_repr_fav input {
+    margin-left: 75%;
+    margin-top: 2%;
+}
+
+.simb_repr_lista input {
+    margin-left: 90%;
+    margin-top: 2%;
+}
+}
+
 
 @media(max-width:350px) {
     .window-container {

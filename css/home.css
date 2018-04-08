@@ -126,7 +126,7 @@ button:hover {
 }
 
 .topsemanal ul{
-  height: 50%;
+  height: 55%;
   padding-left: 0;
 }
 
@@ -194,4 +194,34 @@ button:hover {
     color: #333;
   }
 
+}
+
+@media (min-width: 1300px){
+  .topsemanal ul {
+      height: 45%;
+      padding-left: 20px;
+  }
+}
+
+@media (max-width: 370px){
+  .topsemanal ul {
+      height: 60%;
+      padding-left: 10px;
+  }
+  #barraopciones {
+    float: left;
+    list-style-type: none;
+    width: 22%;
+    height: 100%;
+    margin-left: 5px;
+  }
+
+  .nombrecancion {
+    position: absolute;
+    font-size: 60%;
+    margin-top: 70px;
+    width: 12%;
+    font-weight: normal;
+    text-align: center;
+  }
 }

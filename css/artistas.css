@@ -127,7 +127,7 @@ button:hover {
 
 .cancionesArtista ul{
   height: 40%;
-  padding-left: 20;
+  padding-left: 20px;
 }
 
 .menuestilo ul{
@@ -194,4 +194,34 @@ button:hover {
     color: #333;
   }
 
+}
+
+@media (max-width: 415px){
+  .topsemanal ul {
+      height: 60%;
+      padding-left: 10px;
+  }
+  #barraopciones {
+    float: left;
+    list-style-type: none;
+    width: 22%;
+    height: 100%;
+    margin-left: 5px;
+  }
+
+  .nombrecancion {
+    position: absolute;
+    font-size: 60%;
+    margin-top: 70px;
+    width: 12%;
+    font-weight: normal;
+    text-align: center;
+  }
+}
+
+@media (min-width: 1300px){
+  .topsemanal ul {
+      height: 45%;
+      padding-left: 20px;
+  }
 }
