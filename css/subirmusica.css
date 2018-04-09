@@ -68,6 +68,7 @@ button:hover {
   margin-top: 4%;
   margin-left: 0%;
   padding: 0;
+  background: white;
 }
 
 #send {
@@ -76,6 +77,9 @@ button:hover {
   font-weight: bold;
   border: solid;
   border-width: thin;
+  background: #4CAF50;
+  color: white;
+  text-transform: uppercase;
 }
 
 #atributos_cancion{
@@ -95,6 +99,30 @@ button:hover {
 
 .block {
   float: right;
+}
+
+@media(min-width:1400px) {
+  #atributos_cancion {
+      margin-right: 25% !important;
+  }
+}
+
+@media(min-width:1450px) {
+  #atributos_cancion {
+      margin-right: 26% !important;
+  }
+}
+
+@media(min-width:1550px) {
+  #atributos_cancion {
+      margin-right: 30% !important;
+  }
+}
+
+@media(min-width:1700px) {
+  #atributos_cancion {
+      margin-right: 34% !important;
+  }
 }
 
 @media(min-width:1200px) {
@@ -135,7 +163,7 @@ button:hover {
 
   #atributos_cancion{
     text-align: center;
-    margin-right: 200px;
+    margin-right: 240px;
   }
 
   #atributos_cancion input{
