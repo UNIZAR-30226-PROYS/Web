@@ -21,7 +21,7 @@
     <!-- //lined-icons -->
      <!-- Meters graphs -->
     <script src="js/jquery-2.1.4.js"></script>
-
+    <script src="js/changeImage.js"></script>
     <link rel="stylesheet" href="css/favoritos.css" type='text/css' />
 
     <!-- Custom styles for this template -->
@@ -101,7 +101,7 @@
 
         <!-- Page Content -->
         <div id="header-section">
-            <a href="#menu-music" class="button" id="menu-music"><img src="img/simbolomenu.png" width="30" height="30" alt="menu"></a>
+            <a href="#menu-music" class="button" id="menu-music" onmouseover="changeImage()" onmouseout="changeImageAntes()"><img id="simbolo_menu_imagen" src="img/simbolomenu.png" width="30" height="30" alt="menu"></a>
 
 						<div id="sb-search" class="sb-search sb-search-open">
 							<form action="busqueda.html" method="post">
@@ -112,8 +112,8 @@
 							</form>
 						</div>
 
-            <a href="perfil.html" class="div" id="user"><img src="img/user.png" width="40" height="40" alt="menu">Usuario</a>
-        </div>
+            <a href="perfil.html" class="div" id="user" onmouseover="changeUser()" onmouseout="changeUserAntes()"><img id="simbolo_user_menu" src="img/user.png" width="40" height="40" alt="menu">Usuario</a>
+          </div>
         <!-- /#page-content-wrapper -->
 
         <div class="informacion">

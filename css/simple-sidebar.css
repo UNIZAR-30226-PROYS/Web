@@ -397,7 +397,16 @@
   #menu-music {
     position: absolute;
     top: 20px;
-    right:16%;
+    right: 16%;
+    padding: 10px;
+    margin: 0;
+    border: black;
+    border-style: solid;
+    border-width: thin;
+  }
+
+  #menu-music:hover {
+      background-color: black;
   }
 
   .sb-search {

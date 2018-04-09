@@ -21,7 +21,7 @@
      <!-- Meters graphs -->
     <script src="js/jquery-2.1.4.js"></script>
     <script src="js/anadir_a_favorito.js"></script>
-
+    <script src="js/changeImage.js"></script>
     <link rel="stylesheet" href="css/recientes.css" type='text/css' />
 
     <!-- Custom styles for this template -->
@@ -31,7 +31,7 @@
 </head>
 
 <body>
-	
+
   <div class="main-content" id="wrapper">
     <div class="navegacion">
       <ul>
@@ -41,11 +41,11 @@
         <li><a href="favoritos.html"><img src="img/corazon.png" width="50" height="50" alt=""/>Favoritos</a></li>
         <li><a href="recientes.html"><img src="img/recientes.png" width="50" height="50" alt=""/>Recientes</a></li>
         <li><a href="listas.html"><img src="img/listas.png" width="50" height="50" alt=""/>Mis listas</a></li>
-        <li><a href="subirmusica.html"><img src="img/subirmusica.png" width="50" height="50" alt=""/>Subir música</a></li>
+        <li><a href="subirmusica.html"><img src="img/subirmusica.png" width="50" height="50" alt=""/>Subir mï¿½sica</a></li>
         <li><a href="amigos.html"><img src="img/amigos.png" width="50" height="50" alt=""/>Amigos</a></li>
       </ul>
     </div>
-	
+
 
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
@@ -91,7 +91,7 @@
                         <div id="opcionesrepr">
                           <ul class="next-top">
                             <li class="oprep"><a class="ar" href="#"> <img src="img/arrow.png" width="30" height="30" alt=""/></a></li>
-                            <li class="oprep"><a class="rel" href="#"> <input type="image" src="img/reload.png" width="30" height="30" alt="Reiniciar canción" title="Reiniciar canción" onClick="reloadMusic();return false;"/></a></li>
+                            <li class="oprep"><a class="rel" href="#"> <input type="image" src="img/reload.png" width="30" height="30" alt="Reiniciar canciï¿½n" title="Reiniciar canciï¿½n" onClick="reloadMusic();return false;"/></a></li>
                             <li class="oprep"><a class="ar2" href="#"><img src="img/arrow2.png" width="30" height="30" alt=""/></a></li>
                           </ul>
                         </div>
@@ -102,27 +102,26 @@
 
         <!-- Page Content -->
         <div id="header-section">
-            <a href="#menu-music" class="buttonMenu" id="menu-music"><img src="img/simbolomenu.png" width="30" height="30" alt="menu"></a>
+            <a href="#menu-music" class="button" id="menu-music" onmouseover="changeImage()" onmouseout="changeImageAntes()"><img id="simbolo_menu_imagen" src="img/simbolomenu.png" width="30" height="30" alt="menu"></a>
 
 						<div id="sb-search" class="sb-search sb-search-open">
 							<form action="busqueda.html" method="post">
 
-								<input class="sb-search-input" placeholder="Búsqueda" type="search" name="search" id="search" required>
+								<input class="sb-search-input" placeholder="Bï¿½squeda" type="search" name="search" id="search" required>
 								<input class="sb-search-submit" type="submit" value="">
 								<span class="sb-icon-search"> </span>
 							</form>
 						</div>
 
-            <a href="perfil.html" class="div" id="user"><img src="img/user.png" width="40" height="40" alt="menu">Usuario</a>
-        </div>
+            <a href="perfil.html" class="div" id="user" onmouseover="changeUser()" onmouseout="changeUserAntes()"><img id="simbolo_user_menu" src="img/user.png" width="40" height="40" alt="menu">Usuario</a></div>
         <!-- /#page-content-wrapper -->
 
-		
-		
+
+
         <div class="informacion">
 		 <br/>
           <div id="titulopagina"><h1>Escuchados recientemente</h1></div>
-		  
+
 		  <!-- LAS CANCIONES -->
 			<form name="accionCancion" method="post" action="#">
 				<div class="cancioninf">
@@ -142,13 +141,13 @@
 								</div>
 					</a></li>
 					<li id="barraopciones"><div class="simb_repr_play">
-						<input type="image" src="img/play.png" alt="Reproducir cancion" title="Reproducir canción" onClick="playMusic('media/Blue Browne.mp3');return false;">
+						<input type="image" src="img/play.png" alt="Reproducir cancion" title="Reproducir canciï¿½n" onClick="playMusic('media/Blue Browne.mp3');return false;">
 					</div></li>
 					<li id="barraopciones"><div class="simb_repr_fav">
-						<input type="image" src="img/favoritos.png" alt="Añadir a favoritos" title="Añadir/quitar favoritos" onclick="changeImage(this)">
+						<input type="image" src="img/favoritos.png" alt="Aï¿½adir a favoritos" title="Aï¿½adir/quitar favoritos" onclick="changeImage(this)">
 					</div></li>
 					<li id="barraopciones"><div class="simb_repr_lista">
-						<input type="image" src="img/listas_add.png" alt="Añadir a lista" class="button" title="Añadir a lista" onclick="return false" data-type="zoomin">
+						<input type="image" src="img/listas_add.png" alt="Aï¿½adir a lista" class="button" title="Aï¿½adir a lista" onclick="return false" data-type="zoomin">
 					</div></li>
 				  </ul>
     			</div>
@@ -171,25 +170,25 @@
 								</div>
 					</a></li>
 					<li id="barraopciones"><div class="simb_repr_play">
-						<input type="image" src="img/play.png" alt="Reproducir cancion" title="Reproducir canción" onClick="playMusic('media/Blue Browne.mp3');return false;">
+						<input type="image" src="img/play.png" alt="Reproducir cancion" title="Reproducir canciï¿½n" onClick="playMusic('media/Blue Browne.mp3');return false;">
 					</div></li>
 					<li id="barraopciones"><div class="simb_repr_fav">
-						<input type="image" src="img/favoritos.png" alt="Añadir a favoritos" title="Añadir/quitar favoritos" onclick="changeImage(this)">
+						<input type="image" src="img/favoritos.png" alt="Aï¿½adir a favoritos" title="Aï¿½adir/quitar favoritos" onclick="changeImage(this)">
 					</div></li>
 					<li id="barraopciones"><div class="simb_repr_lista">
-						<input type="image" src="img/listas_add.png" alt="Añadir a lista" class="button" title="Añadir a lista" onclick="return false" data-type="zoomin">
+						<input type="image" src="img/listas_add.png" alt="Aï¿½adir a lista" class="button" title="Aï¿½adir a lista" onclick="return false" data-type="zoomin">
 					</div></li>
 				  </ul>
     			</div>
 			</form>
-		  
-		  
-		  
-		  
-		  
-		  
+
+
+
+
+
+
 		</div>
-	
+
 	</div>
     <!-- /#wrapper -->
 
