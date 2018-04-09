@@ -233,7 +233,6 @@ button:hover {
 }
 
 .informacion {
-  width: 84%;
   height: 78%;
 }
 
@@ -369,9 +368,7 @@ button:hover {
 
   .informacion {
     position: absolute;
-    margin-left: 24%;
     margin-top: 80px;
-    width: 75%;
     height: 80%;
 }
   .mejs-controls .mejs-time-rail .mejs-time-total {

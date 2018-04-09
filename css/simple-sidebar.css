@@ -291,7 +291,7 @@
     padding: 0.5%;
     padding-top: 0px;
     width: 22%;
-    background-color: #f1f1f1;
+    background-color: #BCF5A9;
     font-size: 1.177vw;
 }
 
@@ -318,20 +318,22 @@
   position: fixed;
   z-index: 2;
   margin-left: 22%;
+  background: #BCF5A9;
 }
 
 #sidebar-wrapper {
-  margin-top: 70px;
+  margin-top: 80px;
 }
 
 .navegacion {
   z-index:1;
   margin: 0;
   margin-bottom: 10%;
-  width: 15.5%;
+  width: 22%;
   height: 100%;
   top:0;
   position: fixed;
+  background: #BCF5A9;
 }
 
 #bar{
@@ -359,10 +361,11 @@
 
  .informacion{
    position: absolute;
-   margin-left: 23%;
+   margin-left: 22%;
    margin-top: 80px;
-   width: 75%;
+   width: 78%;
    height: 80%;
+   padding-left: 10px;
  }
 
 
@@ -563,7 +566,7 @@
       padding-top: 0px;
       width: 15%;
       max-width: 210px;
-      background-color: #f1f1f1;
+      background-color: #BCF5A9;
       font-size: 1.177vw;
   }
 
@@ -580,14 +583,20 @@
 
 
   #header-section {
-    height: 80px;
+    height: 90px;
     width: 100%;
     position: fixed;
-    margin-left: 15.5%;
+    margin-left: 15%;
+    marg-max
+    background: #BCF5A9;
   }
 
   #sidebar-wrapper {
-    margin-top: 80px;
+    margin-top: 90px;
+  }
+
+  .sb-search.sb-search-open, .no-js .sb-search {
+    margin-left: 20px;
   }
 
   .navegacion {
@@ -599,6 +608,7 @@
     height: 100%;
     top:0;
     position: fixed;
+    background: #BCF5A9;
   }
 
   #bar{
@@ -626,7 +636,7 @@
 
    #wrapper.toggled #sidebar-wrapper {
      width: 550px;
-     margin-top: 80px;
+     margin-top: 90px;
    }
 
    #reproductor {
@@ -642,9 +652,9 @@
 
    .informacion{
      position: absolute;
-     margin-left: 15.5%;
+     margin-left: 15%;
      margin-top: 80px;
-     width: 80%;
+     width: 85%;
      height: 80%;
    }
 
@@ -655,4 +665,14 @@
     width: 35%;
     margin-top: 15px;
 }
+}
+
+@media (min-width: 1400px) {
+  #header-section {
+      margin-left: 210px;
+  }
+  .informacion{
+    margin-left: 210px;
+    width: 86%;
+  }
 }
