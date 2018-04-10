@@ -19,7 +19,7 @@
     margin: 8em auto;
     margin-left: 25% !important;
     width: 250px !important;
-    padding: 320px 20px 20px !important;
+    padding: 380px 20px 20px !important;
     text-align: left;
     z-index: 3;
     border-radius: 3px;
@@ -79,10 +79,16 @@
 
 #crear_lista {
    margin-left: 105px;
+   background: #4CAF50;
+   color: white;
+   text-transform: uppercase;
 }
 
 #crear_lista1 {
    margin-left: 40px;
+   background: #4CAF50;
+   color: white;
+   text-transform: uppercase;
 }
 
 .cancioninf ul {
@@ -211,6 +217,9 @@ tr {
 #send {
   margin-left: 41%;
   margin-top: 10px;
+  background: #4CAF50;
+  color: white;
+  text-transform: uppercase;
 }
 
 #atributos_cancion{

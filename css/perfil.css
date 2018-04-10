@@ -175,6 +175,9 @@
 #cambiarcontrabutton {
   margin-top: 20px;
   margin-left: 20px;
+  background: #4CAF50;
+  color: white;
+  text-transform: uppercase;
 }
 
 #IdUsar1 {
@@ -187,10 +190,16 @@
 
 #crear_lista1 {
    margin-left: 45px;
+   background: #4CAF50;
+   color: white;
+   text-transform: uppercase;
 }
 
 #change_img_button {
    margin-left: 75px;
+   background: #4CAF50;
+   color: white;
+   text-transform: uppercase;
 }
 
 .anadir_lista input{

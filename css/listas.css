@@ -135,6 +135,9 @@ button:hover {
 
 #crear_lista {
    margin-left: 105px;
+   background: #4CAF50;
+   color: white;
+   text-transform: uppercase;
 }
 
 @media(min-width:768px) {
