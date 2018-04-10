@@ -1,4 +1,2 @@
 Falta:
-  -Pagina Recientes(poner ultimas acciones con canciones, favoritos, listas, amigos y recomendaciones recibidas [y realizadas]) -> tiene las ultimas canciones reproducidas
-
   -Mejorar apariencia

@@ -138,6 +138,8 @@ button:hover {
    background: #4CAF50;
    color: white;
    text-transform: uppercase;
+   border-radius: 6px;
+   border: 2px solid #088A08;
 }
 
 @media(min-width:768px) {

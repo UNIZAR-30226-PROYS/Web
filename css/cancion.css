@@ -29,7 +29,7 @@ margin-top: -6px;
   border-style: solid;
   border-width: thin;
   background-color: white;
-  margin-top: 430px;
+  margin-top: 425px;
   margin-left: 260px;
   position: absolute;
   padding-top: 8px;
@@ -119,7 +119,7 @@ button:hover {
 }
 
 #opcionesrepr {
-  left: 240px;
+  left: 310px;
 }
 
 #sidebar-wrapper {
@@ -167,7 +167,7 @@ button:hover {
 }
 
 #cancion img {
-    margin-left: 10%;
+    margin-left: 15%;
 }
 
 #cancion {
@@ -194,7 +194,7 @@ button:hover {
 #nombrecancion {
     position: relative;
     top: 10px;
-    left: 18%;
+    left: 22%;
     color: white;
     font-size: 50px;
     width: 50%;
@@ -207,19 +207,19 @@ button:hover {
 
 .mejs-controls div.mejs-time {
     padding-top: 12px;
-    margin-left: 610px;
+    margin-left: 690px;
     z-index: 1;
 }
 
 .mejs-controls .mejs-time-rail .mejs-time-total {
     background: #2d2d2d;
-    width: 510px !important;
+    width: 610px !important;
 }
 
 #autor1 {
     position: relative;
     top: 10px;
-    left: 24%;
+    left: 26%;
     color: white;
     font-size: 30px;
     width: 50%;
@@ -243,7 +243,7 @@ button:hover {
 
 @media(min-width:768px) {
   #share-buttons {
-    margin-left: 260px;
+    margin-left: 320px;
   }
 
   #sidebar-wrapper {
@@ -264,7 +264,7 @@ button:hover {
 
 @media(max-width:1024px) {
   #share-buttons {
-    margin-left: 220px;
+    margin-left: 270px;
   }
 
   .window-container0 {
@@ -273,11 +273,11 @@ button:hover {
 
   .mejs-controls .mejs-time-rail .mejs-time-total {
       background: #2d2d2d;
-      width: 350px !important;
+      width: 400px !important;
   }
   .mejs-controls div.mejs-time {
     padding-top: 12px;
-    margin-left: 450px;
+    margin-left: 490px;
     z-index: 1;
 }
 .mejs-controls .mejs-mute button, .mejs-controls .mejs-unmute button {
@@ -294,7 +294,7 @@ button:hover {
     z-index: 1;
 }
 #opcionesrepr {
-    left: 200px;
+    left: 250px;
 }
 }
 
@@ -373,14 +373,14 @@ button:hover {
 }
   .mejs-controls .mejs-time-rail .mejs-time-total {
       background: #2d2d2d;
-      width: 60px !important;
+      width: 70px !important;
   }
   .mejs-controls .mejs-time-rail .mejs-time-total, div#mep_0 {
     left: 40px!important;
 }
   .mejs-controls div.mejs-time {
     padding-top: 12px;
-    margin-left: 115px;
+    margin-left: 130px;
     z-index: 1;
 }
 .mejs-controls .mejs-mute button, .mejs-controls .mejs-unmute button {

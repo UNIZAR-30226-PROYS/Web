@@ -75,11 +75,11 @@ button:hover {
   margin-left: 35%;
   font-size: 15px;
   font-weight: bold;
-  border: solid;
-  border-width: thin;
   background: #4CAF50;
   color: white;
   text-transform: uppercase;
+  border-radius: 6px;
+  border: 2px solid #088A08;
 }
 
 #atributos_cancion{
@@ -157,8 +157,6 @@ button:hover {
     margin-left: 37%;
     font-size: 30px;
     font-weight: bold;
-    border: solid;
-    border-width: thin;
   }
 
   #atributos_cancion{

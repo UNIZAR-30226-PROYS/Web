@@ -293,6 +293,7 @@
     width: 22%;
     background-color: #BCF5A9;
     font-size: 1.177vw;
+    border-right: solid;
 }
 
 #cancion img{
@@ -366,6 +367,8 @@
   z-index: 2;
   margin-left: 22%;
   background: #CEE3F6;
+  border-bottom: solid;
+  border-width: thin;
 }
 
 #sidebar-wrapper {
@@ -381,6 +384,7 @@
   top:0;
   position: fixed;
   background: #BCF5A9;
+  border-right: solid;
 }
 
 #bar{
