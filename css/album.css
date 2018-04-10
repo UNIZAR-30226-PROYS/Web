@@ -1,3 +1,7 @@
+#titulopagina {
+  text-align: center;
+  margin-right: 15%;
+}
 
 .informacion input {
   font-family: "Roboto", sans-serif;
@@ -131,7 +135,7 @@ button:hover {
     margin-left: 14.5%;
     padding-top:0%;
     font-size: 30px;
-    margin-top: 1%;
+    margin-top: 30px;
   }
 
   .imagen img {
@@ -147,13 +151,13 @@ button:hover {
     margin-left: 15%;
     padding-top:0%;
     font-size: 20px;
-    margin-top: 4%;
+    margin-top: 5%;
   }
   .nombreestilo {
     margin-left: 15%;
     padding-top:0%;
     font-size: 20px;
-    margin-top: 6%;
+    margin-top: 7%;
   }
   .cancioninf{
     margin-top:5%;
@@ -206,8 +210,8 @@ button:hover {
 .nombrecancion {
     position: absolute;
     margin-left: 20%;
-    font-size: 80%;
-    margin-top: 2%;
+    font-size: 100%;
+    margin-top: 6%;
     font-weight: normal;
     max-width: 46%;
 }
@@ -227,11 +231,6 @@ button:hover {
   margin-top: 13%;
   font-weight: normal;
 }
-
-.informacion{
-  padding-left: 1% !important;
-}
-
 }
 
 
@@ -240,7 +239,6 @@ button:hover {
     position: absolute;
     margin-left: 20%;
     font-size: 170%;
-    margin-top: 0%;
     font-weight: normal;
     max-width: 46%;
 }

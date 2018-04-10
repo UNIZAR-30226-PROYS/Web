@@ -2,8 +2,7 @@
 <html lang="es">
 
 <head>
-
-    <meta charset="utf-8">
+		<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -22,22 +21,20 @@
      <!-- Meters graphs -->
     <script src="js/jquery-2.1.4.js"></script>
     <script src="js/anadir_a_favorito.js"></script>
-
-    <link rel="stylesheet" href="css/busqueda.css" type='text/css' />
     <script src="js/changeImage.js"></script>
+    <link rel="stylesheet" href="css/album.css" type='text/css' />
 
     <!-- Custom styles for this template -->
     <link href="css/simple-sidebar.css" rel="stylesheet">
 
     <link rel="stylesheet" href="css/demo.css">
-
 </head>
 
 <body>
 
   <div class="main-content" id="wrapper">
     <div class="navegacion">
-      <ul>
+			<ul>
         <li id="bar">
           <a href="home.html"><img src="img/logoapp.png" width="80" height="80" alt=""/></a>
         </li>
@@ -54,7 +51,7 @@
 
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
-          <div id="cancion">
+					<div id="cancion">
             <a href="cancion.html" id="enlacecancion">
               <img src="img/edsheeranperfect.jpg" alt="menu">
             </a>
@@ -67,43 +64,43 @@
                   <div class="col-md-4 player" id="reproductor">
                     <div class="audio-player">
                       <audio id="audio-player"  controls="controls">
-                      <source id="source" src="media/Blue Browne.mp3" type="audio/mpeg"></source>
-                      </div>
-                      <!---->
-                      <script type="text/javascript">
-                        $(function(){
-                          $('#audio-player').mediaelementplayer({
-                          alwaysShowControls: true,
-                          features: ['playpause','progress','volume','duration'],
-                          audioVolume: 'horizontal',
-                          iPadUseNativeControls: true,
-                          iPhoneUseNativeControls: true,
-                          AndroidUseNativeControls: true
-                        });
-                       });
-                      </script>
-                      <!--audio-->
-                      <script type="text/javascript">
-                        function reloadMusic(){
-                            var src=document.getElementById("source").src;
-                              audio_core=$('#audio-player').attr('src', src)[0]
-                            audio_core.play() // <- play the song!!!
-                        }
-                      </script>
-
-                        <link rel="stylesheet" type="text/css" media="all" href="css/audio.css">
-                        <script type="text/javascript" src="js/mediaelement-and-player.min.js"></script>
+                        <source id="source" src="media/Blue Browne.mp3" type="audio/mpeg"></source>
+                        </div>
                         <!---->
+                        <script type="text/javascript">
+                          $(function(){
+                            $('#audio-player').mediaelementplayer({
+                            alwaysShowControls: true,
+                            features: ['playpause','progress','volume','duration'],
+                            audioVolume: 'horizontal',
+                            iPadUseNativeControls: true,
+                            iPhoneUseNativeControls: true,
+                            AndroidUseNativeControls: true
+                          });
+                         });
+                        </script>
+                        <!--audio-->
+                        <script type="text/javascript">
+                          function reloadMusic(){
+                              var src=document.getElementById("source").src;
+                                audio_core=$('#audio-player').attr('src', src)[0]
+                              audio_core.play() // <- play the song!!!
+                          }
+                        </script>
 
-                      </div>
-                      <!--//-->
-                      <div id="opcionesrepr">
-                        <ul class="next-top">
-                          <li class="oprep"><a class="ar" href="#"> <img src="img/arrow.png" width="30" height="30" alt=""/></a></li>
-                          <li class="oprep"><a class="rel" href="#"> <input type="image" src="img/reload.png" width="30" height="30" alt="Reiniciar canción" title="Reiniciar canción" onClick="reloadMusic();return false;"/></a></li>
-                          <li class="oprep"><a class="ar2" href="#"><img src="img/arrow2.png" width="30" height="30" alt=""/></a></li>
-                        </ul>
-                      </div>
+                          <link rel="stylesheet" type="text/css" media="all" href="css/audio.css">
+                          <script type="text/javascript" src="js/mediaelement-and-player.min.js"></script>
+                          <!---->
+
+                        </div>
+                        <!--//-->
+                        <div id="opcionesrepr">
+                          <ul class="next-top">
+                            <li class="oprep"><a class="ar" href="#"> <img src="img/arrow.png" width="30" height="30" alt=""/></a></li>
+                            <li class="oprep"><a class="rel" href="#"> <input type="image" src="img/reload.png" width="30" height="30" alt="Reiniciar canción" title="Reiniciar canción" onClick="reloadMusic();return false;"/></a></li>
+                            <li class="oprep"><a class="ar2" href="#"><img src="img/arrow2.png" width="30" height="30" alt=""/></a></li>
+                          </ul>
+                        </div>
                 </li>
             </ul>
         </div>
@@ -122,68 +119,71 @@
 							</form>
 						</div>
 
-            <a href="perfil.html" class="div" id="user" onmouseover="changeUser()" onmouseout="changeUserAntes()"><img id="simbolo_user_menu" src="img/user.png" width="40" height="40" alt="menu">Usuario</a>
-          </div>
+            <a href="perfil.html" class="div" id="user" onmouseover="changeUser()" onmouseout="changeUserAntes()"><img id="simbolo_user_menu" src="img/user.png" width="40" height="40" alt="menu">Usuario</a></div>
         <!-- /#page-content-wrapper -->
 
+
+
         <div class="informacion">
-          <br/>
-          <div id="titulopagina"><h1>Resultados de: "busqueda"</h1></div>
-          <form name="accionCancion" method="post" action="#">
-            <div class="cancioninf">
-              <ul>
-                <li id="barraopciones"><a href="cancion.html" id="enlacecancion">
-        					<div class="nombrecancion">
-        						Perfect
-        					</div></a>
-                  <a href="artista.html" id="enlacecancion">
-                  <div class="nombreautor">
-                    Ed Sheeran
-                  </div>
-                </a></li>
-                <li id="barraopciones"><div class="simb_repr_play">
-                    <input type="image" src="img/play.png" alt="Reproducir cancion" title="Reproducir canción" onClick="playMusic('media/Georgia.mp3');return false;">
-                </div></li>
-                <li id="barraopciones"><div class="simb_repr_fav">
-                    <input type="image" src="img/favoritos.png" alt="Añadir a favoritos" title="Añadir/quitar favoritos" onclick="changeImage(this)" action="none">
-                </div></li>
-                <li id="barraopciones"><div class="simb_repr_lista">
-                    <input type="image" src="img/listas_add.png" alt="Añadir a lista" class="button" title="Añadir a lista" onclick="return false" data-type="zoomin">
-                </div></li>
-              </ul>
-    				</div>
-          </form>
+		 <br/>
+          <div id="titulopagina"><h1>Álbum: Reclassified</h1></div>
 
-  				<br/>
-          <form name="accionCancion" method="post" action="#">
-            <div class="cancioninf">
-              <ul>
-                <li id="barraopciones"><a href="#" id="enlacecancion">
-        					<div class="nombrecancion">
-        					  Lush life
-                  </div></a>
-                  <a href="artista.html" id="enlacecancion">
-                  <div class="nombreautor">
-                    Zara Larsson
-                  </div>
-                </a></li>
-                <li id="barraopciones"><div class="simb_repr_play">
-                    <input type="image" src="img/play.png" alt="Reproducir cancion" title="Reproducir canción" onClick="playMusic('media/Blue Browne.mp3');return false;">
-                </div></li>
-                <li id="barraopciones"><div class="simb_repr_fav">
-                    <input type="image" src="img/favoritos.png" alt="Añadir a favoritos" title="Añadir/quitar favoritos" onclick="changeImage(this)" action="none">
-                </div></li>
-                <li id="barraopciones"><div class="simb_repr_lista">
-                    <input type="image" src="img/listas_add.png" alt="Añadir a lista" class="button" title="Añadir a lista" onclick="return false" data-type="zoomin">
-                </div></li>
-              </ul>
-    				</div>
-          </form>
-
-        </div>
+		  <!-- LAS CANCIONES -->
+			<form name="accionCancion" method="post" action="#">
+				<div class="cancioninf">
+				  <ul>
+					<li id="barraopciones"><a href="cancion.html" id="enlacecancion">
+								<div class="imagen">
+									<img src="img/work_iggy.jpg" alt="Imagen cancion">
+								</div>
+								<div class="nombrecancion">
+									Work
+								</div>
+					</a></li>
+					<li id="barraopciones"><div class="simb_repr_play">
+						<input type="image" src="img/play.png" alt="Reproducir cancion" title="Reproducir canción" onClick="playMusic('media/Blue Browne.mp3');return false;">
+					</div></li>
+					<li id="barraopciones"><div class="simb_repr_fav">
+						<input type="image" src="img/favoritos.png" alt="Añadir a favoritos" title="Añadir/quitar favoritos" onclick="changeImage(this)">
+					</div></li>
+					<li id="barraopciones"><div class="simb_repr_lista">
+						<input type="image" src="img/listas_add.png" alt="Añadir a lista" class="button" title="Añadir a lista" onclick="return false" data-type="zoomin">
+					</div></li>
+				  </ul>
+    			</div>
+			</form>
+			<form name="accionCancion" method="post" action="#">
+				<div class="cancioninf">
+				  <ul>
+					<li id="barraopciones"><a href="cancion.html" id="enlacecancion">
+								<div class="imagen">
+									<img src="img/begforit_iggy.png" alt="Imagen cancion">
+								</div>
+								<div class="nombrecancion">
+									Beg For It
+								</div>
+					</a></li>
+					<li id="barraopciones"><div class="simb_repr_play">
+						<input type="image" src="img/play.png" alt="Reproducir cancion" title="Reproducir canción" onClick="playMusic('media/Blue Browne.mp3');return false;">
+					</div></li>
+					<li id="barraopciones"><div class="simb_repr_fav">
+						<input type="image" src="img/favoritos.png" alt="Añadir a favoritos" title="Añadir/quitar favoritos" onclick="changeImage(this)">
+					</div></li>
+					<li id="barraopciones"><div class="simb_repr_lista">
+						<input type="image" src="img/listas_add.png" alt="Añadir a lista" class="button" title="Añadir a lista" onclick="return false" data-type="zoomin">
+					</div></li>
+				  </ul>
+    			</div>
+			</form>
 
 
-    </div>
+
+
+
+
+		</div>
+
+	</div>
     <!-- /#wrapper -->
 
     <!-- Bootstrap core JavaScript -->

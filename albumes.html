@@ -2,8 +2,7 @@
 <html lang="es">
 
 <head>
-
-    <meta charset="utf-8">
+		<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -21,19 +20,22 @@
     <!-- //lined-icons -->
      <!-- Meters graphs -->
     <script src="js/jquery-2.1.4.js"></script>
-    <script src="js/changeImage.js"></script>
-    <link rel="stylesheet" href="css/favoritos.css" type='text/css' />
+    <script src="js/anadir_a_favorito.js"></script>
+
+    <link rel="stylesheet" href="css/albumes.css" type='text/css' />
+	   <script src="js/changeImage.js"></script>
 
     <!-- Custom styles for this template -->
     <link href="css/simple-sidebar.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="css/demo.css">
 </head>
 
 <body>
 
   <div class="main-content" id="wrapper">
     <div class="navegacion">
-      <ul>
+			<ul>
         <li id="bar">
           <a href="home.html"><img src="img/logoapp.png" width="80" height="80" alt=""/></a>
         </li>
@@ -50,7 +52,7 @@
 
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
-          <div id="cancion">
+					<div id="cancion">
             <a href="cancion.html" id="enlacecancion">
               <img src="img/edsheeranperfect.jpg" alt="menu">
             </a>
@@ -96,7 +98,7 @@
                         <div id="opcionesrepr">
                           <ul class="next-top">
                             <li class="oprep"><a class="ar" href="#"> <img src="img/arrow.png" width="30" height="30" alt=""/></a></li>
-                            <li class="oprep"><a class="rel" href="#"> <input type="image" src="img/reload.png" width="30" height="30" alt="Reiniciar canción" title="Reiniciar canción" onClick="reloadMusic();return false;"/></a></li>
+                            <li class="oprep"><a class="rel" href="#"> <input type="image" src="img/reload.png" width="30" height="30" alt="Reiniciar canci�n" title="Reiniciar canci�n" onClick="reloadMusic();return false;"/></a></li>
                             <li class="oprep"><a class="ar2" href="#"><img src="img/arrow2.png" width="30" height="30" alt=""/></a></li>
                           </ul>
                         </div>
@@ -104,10 +106,9 @@
             </ul>
         </div>
         <!-- /#sidebar-wrapper -->
-
-        <!-- Page Content -->
+		 <!-- Page Content -->
         <div id="header-section">
-            <a href="#menu-music" class="button" id="menu-music" onmouseover="changeImage()" onmouseout="changeImageAntes()"><img id="simbolo_menu_imagen" src="img/simbolomenu.png" width="30" height="30" alt="menu"></a>
+            <a href="#menu-music" class="buttonMenu" id="menu-music" onmouseover="changeImage()" onmouseout="changeImageAntes()"><img id="simbolo_menu_imagen" src="img/simbolomenu.png" width="30" height="30" alt="menu"></a>
 
 						<div id="sb-search" class="sb-search sb-search-open">
 							<form action="busqueda.html" method="post">
@@ -118,54 +119,62 @@
 							</form>
 						</div>
 
-            <a href="perfil.html" class="div" id="user" onmouseover="changeUser()" onmouseout="changeUserAntes()"><img id="simbolo_user_menu" src="img/user.png" width="40" height="40" alt="menu">Usuario</a>
-          </div>
+          	<a href="perfil.html" class="div" id="user" onmouseover="changeUser()" onmouseout="changeUserAntes()"><img id="simbolo_user_menu" src="img/user.png" width="40" height="40" alt="menu">Usuario</a>
+				</div>
         <!-- /#page-content-wrapper -->
-
-        <div class="informacion">
-          <br/>
-          <div id="titulopagina"><h1>Favoritos</h1></div>
-            <form name="accionCancion" method="post" action="#">
-              <div class="cancioninf">
-                <ul>
-                  <li id="barraopciones"><a href="cancion.html" id="enlacecancion">
-                    <div class="imagen">
-                      <img src="img/edsheeranperfect.jpg" alt="Imagen cancion">
-                    </div>
-                    <div class="nombrecancion">
-                      Perfect
-                    </div>
-                  </a></li>
-                  <li id="barraopciones"><div class="simb_repr_elim">
-                      <input type="image" src="img/eliminar.png" alt="Eliminar cancion de favoritos" title="Eliminar cancion de favoritos" onClick="playMusic('media/Blue Browne.mp3');return false;">
-                  </div></li>
-                </ul>
-              </div>
-            </form>
-
-            <br/>
-            <form name="accionCancion" method="post" action="#">
-              <div class="cancioninf">
-                <ul>
-                  <li id="barraopciones"><a href="#" id="enlacecancion">
-                    <div class="imagen">
-                      <img src="img/lushlife.jpg" alt="Imagen cancion">
-                    </div>
-                    <div class="nombrecancion">
-                      Lush life
-                    </div>
-                  </a></li>
-                  <li id="barraopciones"><div class="simb_repr_elim">
-                      <input type="image" src="img/eliminar.png" alt="Eliminar cancion de favoritos" title="Eliminar cancion de favoritos" onClick="playMusic('media/Blue Browne.mp3');return false;">
-                  </div></li>
-                </ul>
-              </div>
-            </form>
-        </div>
-
-
-    </div>
     <!-- /#wrapper -->
+	<div class="informacion">
+		 <br/>
+          <div id="titulopagina"><h1>Álbumes</h1></div>
+		   <div class="cancionesArtista">
+		  <ul>
+              <li id="barraopciones">
+                <div class="cancioninf">
+                  <a href="album.html" id="enlacecancion">
+          					<div class="imagen">
+          						<img src="img/reclassified_album.png" alt="Imagen cancion">
+          					</div>
+          					<div class="nombrecancion">
+          						Reclassified
+          					</div>
+                  </a>
+        				</div>
+
+              </li>
+
+              <li id="barraopciones">
+                <div class="cancioninf">
+                  <a href="album.html" id="enlacecancion">
+                    <div class="imagen">
+                      <img src="img/iggy.jpg" alt="Imagen cancion">
+                    </div>
+                    <div class="nombrecancion">
+                      The New Classic
+                    </div>
+                  </a>
+                </div>
+              </li>
+			<li id="barraopciones">
+                <div class="cancioninf">
+                  <a href="album.html" id="enlacecancion">
+          					<div class="imagen">
+          						<img src="img/divide_album.jpg" alt="Imagen cancion">
+          					</div>
+          					<div class="nombrecancion">
+          						Divide
+          					</div>
+                  </a>
+        				</div>
+
+              </li>
+
+
+
+			 </ul>
+			 </div>
+	</div>
+
+
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
@@ -178,6 +187,45 @@
         $("#wrapper").toggleClass("toggled");
     });
     </script>
+
+    <script type="text/javascript">
+      function playMusic(src){
+            audio_core=$('#audio-player').attr('src', src)[0]
+          audio_core.play() // <- play the song!!!
+      }
+    </script>
+
+    <!-- contenido de la ventana emergente -->
+    <div class="overlay-container">
+      <div class="window-container zoomin">
+        <td>
+              <table width="100% ;left:35%; top:400%" >
+                <tr style="position: absolute; top: 10%;">
+                  <th>
+                  <form action="#" method="post">
+                    <table height="100%">
+                      <tr ><a href="#" id="enlacecancion">
+                        <div class="nombrelista">
+                          Lista1
+                        </div></a></tr>
+                      <tr><a href="#" id="enlacecancion">
+                        <div class="nombrelista">
+                          Lista2
+                        </div></a></tr>
+                    </table>
+                  </form>
+                  </th>
+                </tr>
+
+              </table>
+
+            </td>
+
+        <span class="close">Cerrar</span>
+      </div>
+    </div>
+    <script>!window.jQuery && document.write(unescape('%3Cscript src="js/jquery-1.7.1.min.js"%3E%3C/script%3E'))</script>
+    <script type="text/javascript" src="js/demo.js"></script>
 
 </body>
 

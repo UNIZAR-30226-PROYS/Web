@@ -1,7 +1,4 @@
 Falta:
   -Pagina Recientes(poner ultimas acciones con canciones, favoritos, listas, amigos y recomendaciones recibidas [y realizadas]) -> tiene las ultimas canciones reproducidas
 
-  -Paginas relacionadas con autores/artistas? -> 1 pagina de autores
-  -Paginas relacionadas con album?  -> 1 pagina para todos albumes y 1 para cada album
-
   -Mejorar apariencia

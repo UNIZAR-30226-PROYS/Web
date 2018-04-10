@@ -22,7 +22,7 @@
     <script src="js/jquery-2.1.4.js"></script>
     <script src="js/anadir_a_favorito.js"></script>
 
-    <link rel="stylesheet" href="css/artistas.css" type='text/css' />
+    <link rel="stylesheet" href="css/artista.css" type='text/css' />
 	   <script src="js/changeImage.js"></script>
 
     <!-- Custom styles for this template -->
@@ -52,9 +52,13 @@
 
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
-          <div id="cancion">
-            <img src="img/edsheeranperfect.jpg" alt="menu">
-            <div id="autor">Ed Sheeran</div>
+					<div id="cancion">
+            <a href="cancion.html" id="enlacecancion">
+              <img src="img/edsheeranperfect.jpg" alt="menu">
+            </a>
+            <a href="artista.html" id="enlacecancion">
+              <div id="autor">Ed Sheeran</div>
+            </a>
           </div>
             <ul class="sidebar-nav" id="repr">
                 <li>
@@ -94,7 +98,7 @@
                         <div id="opcionesrepr">
                           <ul class="next-top">
                             <li class="oprep"><a class="ar" href="#"> <img src="img/arrow.png" width="30" height="30" alt=""/></a></li>
-                            <li class="oprep"><a class="rel" href="#"> <input type="image" src="img/reload.png" width="30" height="30" alt="Reiniciar canci�n" title="Reiniciar canci�n" onClick="reloadMusic();return false;"/></a></li>
+                            <li class="oprep"><a class="rel" href="#"> <input type="image" src="img/reload.png" width="30" height="30" alt="Reiniciar canción" title="Reiniciar canción" onClick="reloadMusic();return false;"/></a></li>
                             <li class="oprep"><a class="ar2" href="#"><img src="img/arrow2.png" width="30" height="30" alt=""/></a></li>
                           </ul>
                         </div>
@@ -122,65 +126,91 @@
 	<div class="informacion">
 		 <br/>
           <div id="titulopagina"><h1>Iggy Azalea</h1></div>
-		   <div class="cancionesArtista">
-		  <ul>
+					<div id="titulopagina"><h3>Álbumes</h3></div>
+          <div class="albumes">
+            <ul>
               <li id="barraopciones">
                 <div class="cancioninf">
-                  <a href="cancion.html" id="enlacecancion">
+                  <a href="album.html" id="enlacecancion">
           					<div class="imagen">
-          						<img src="img/blackWindows.jpg" alt="Imagen cancion">
+          						<img src="img/reclassified_album.png" alt="Imagen album">
           					</div>
           					<div class="nombrecancion">
-          						Black windows
+          						Reclassified
           					</div>
                   </a>
         				</div>
-
               </li>
 
               <li id="barraopciones">
                 <div class="cancioninf">
-                  <a href="#" id="enlacecancion">
+                  <a href="album.html" id="enlacecancion">
                     <div class="imagen">
-                      <img src="img/iggy.jpg" alt="Imagen cancion">
+                      <img src="img/iggy.jpg" alt="Imagen album">
                     </div>
                     <div class="nombrecancion">
-                      Fancy
-                    </div>
-                  </a>
-                </div>
-              </li>
-			<li id="barraopciones">
-                <div class="cancioninf">
-                  <a href="cancion.html" id="enlacecancion">
-          					<div class="imagen">
-          						<img src="img/iggy.jpg" alt="Imagen cancion">
-          					</div>
-          					<div class="nombrecancion">
-          						Problem
-          					</div>
-                  </a>
-        				</div>
-
-              </li>
-
-              <li id="barraopciones">
-                <div class="cancioninf">
-                  <a href="#" id="enlacecancion">
-                    <div class="imagen">
-                      <img src="img/iggy.jpg" alt="Imagen cancion">
-                    </div>
-                    <div class="nombrecancion">
-                      Work
+                      The New Classic
                     </div>
                   </a>
                 </div>
               </li>
 
+            </ul>
 
 
-			 </ul>
-			 </div>
+
+          </div>  <!-- Fin top semanal -->
+          <br>
+
+          <div id="tituloestilo"><h3>Canciones</h3></div>
+          <div class="cancionesArtista">
+            <ul>
+							<li id="barraopciones">
+								<div class="cancioninf">
+									<a href="cancion.html" id="enlacecancion">
+										<div class="imagen">
+											<img src="img/work_iggy.jpg" alt="Imagen cancion">
+										</div>
+										<div class="nombrecancion">
+											Work
+										</div>
+									</a>
+								</div>
+							</li>
+
+							<li id="barraopciones">
+								<div class="cancioninf">
+									<a href="cancion.html" id="enlacecancion">
+										<div class="imagen">
+											<img src="img/iggy.jpg" alt="Imagen cancion">
+										</div>
+										<div class="nombrecancion">
+											Fancy
+										</div>
+									</a>
+								</div>
+							</li>
+
+							<li id="barraopciones">
+								<div class="cancioninf">
+									<a href="cancion.html" id="enlacecancion">
+										<div class="imagen">
+											<img src="img/begforit_iggy.png" alt="Imagen cancion">
+										</div>
+										<div class="nombrecancion">
+											Beg For It
+										</div>
+									</a>
+								</div>
+							</li>
+
+
+            </ul>
+          </div>
+
+
+
+        </div>
 	</div>
 
 
