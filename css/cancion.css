@@ -9,13 +9,20 @@ padding-top: 0;
 margin-top: -6px;
 }
 
+.nombreamigo {
+    text-align: center;
+    margin-left: 80px;
+    padding: 10px;
+    font-size: 40px;
+}
+
 #share-buttons a:hover{
   text-decoration: none;
 }
 
 .imagen img {
   position: absolute;
-  margin-left: 120px;
+  margin-left: 100px;
   margin-top: 15px;
   max-width: 23%;
   max-height: 23%;
@@ -254,7 +261,6 @@ button:hover {
   #subir_cancion_titulo {
     text-align: center;
     margin-bottom: 10px;
-    margin-left: 110px;
   }
 
   #wrapper.toggled #sidebar-wrapper {
@@ -525,7 +531,6 @@ button:hover {
       margin: 8em auto;
       margin-left: 25% !important;
       width: 250px !important;
-      padding: 250px 20px 20px !important;
       text-align: left;
       z-index: 3;
       border-radius: 3px;
@@ -538,7 +543,7 @@ button:hover {
       opacity: 0;
   }
 
-  .nombrelista {
+  .nombreamigo {
     text-align: center;
     margin-left: 40px !important;
     padding: 10px;

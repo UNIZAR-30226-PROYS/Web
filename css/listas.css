@@ -7,13 +7,17 @@
     float: left;
 }
 
+#form_crear_lista{
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
 .window-container {
     display: block;
     background: #fcfcfc;
     margin: 8em auto;
     margin-left: 25% !important;
     width: 250px !important;
-    padding: 120px 20px 20px !important;
     text-align: left;
     z-index: 3;
     border-radius: 3px;
@@ -134,7 +138,7 @@ button:hover {
 }
 
 #crear_lista {
-   margin-left: 105px;
+   margin-left: 45px;
    background: #4CAF50;
    color: white;
    text-transform: uppercase;
@@ -184,7 +188,7 @@ button:hover {
     width: 100%;
   }
   #crear_lista {
-     margin-left: 145px;
+     margin-left: 125px;
   }
 
 }
@@ -202,7 +206,7 @@ button:hover {
     width: 100%;
   }
   #crear_lista {
-     margin-left: 145px;
+     margin-left: 125px;
   }
 }
 
@@ -215,6 +219,6 @@ button:hover {
     width: 100px;
   }
   #crear_lista {
-     margin-left: 105px;
+     margin-left: 35px;
   }
 }

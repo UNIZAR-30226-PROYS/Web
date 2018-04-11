@@ -65,11 +65,12 @@
 	<!-- contenido de la ventana emergente -->
 	<div class="overlay-container">
 		<div class="window-container zoomin">
+      <span class="close"><img src="img\cerrar.png" width=30 height=30></span>
 			<td>
 						<table width="100% ;left:35%; top:400%" >
-							<tr id="ventana_reg" style="position: absolute; top: 10%;">
+							<tr id="ventana_reg">
 								<th>
-								<form action="SUPONGAMOS QUE ESTO FUNCIONA" method="post">
+								<form id="form_registro" action="SUPONGAMOS QUE ESTO FUNCIONA" method="post">
 									<table height="100%">
 										<tr height="60px">
 											<td>
@@ -106,7 +107,7 @@
 
 									</table>
 									<br/> <br/>
-									<input style=" margin-left:185px;" id="boton_enviar" type="submit" value="Registrarse"/> <input style=" margin-left:35px;" id="boton_enviar" type="reset"/> <br/>
+									<input style=" margin-left:80px;" id="boton_enviar" type="submit" value="Registrarse"/> <input style=" margin-left:35px;" id="boton_enviar" type="reset"/> <br/>
 									<br/>
 									<p>
 										<font size="3" face="Arial" color="black" style="font-weight: bold"> &nbsp &nbsp Los campos marcados con * son obligatorios. </font>
@@ -122,7 +123,6 @@
 
 					</td>
 
-			<span class="close">Cerrar</span>
 		</div>
 	</div>
 	<script>!window.jQuery && document.write(unescape('%3Cscript src="js/jquery-1.7.1.min.js"%3E%3C/script%3E'))</script>

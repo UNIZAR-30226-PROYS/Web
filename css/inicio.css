@@ -1,3 +1,12 @@
+#ventana_reg{
+  padding: 0px 20px;
+}
+
+#form_registro {
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
 #boton_enviar {
    background: #4CAF50;
    color: white;
@@ -28,6 +37,9 @@ body{
 }
 
 @media(max-width:650px) {
+  #boton_enviar{
+    margin-left: 20px !important;
+  }
   #tr_logo{
     position: absolute;
     top: 0px !important;
@@ -43,7 +55,7 @@ body{
   }
   .window-container {
     width: 360px !important;
-    padding: 400px 20px 20px;
+    height: 440px;
   }
 
   #IdUsar{
@@ -52,6 +64,9 @@ body{
 }
 
 @media(max-width:370px) {
+  #boton_enviar{
+    margin-left: 0px !important;
+  }
   #tr_logo{
     position: absolute;
     top: -10px !important;
@@ -68,17 +83,12 @@ body{
 
   .window-container {
     width: 300px !important;
-    padding: 430px 20px 20px !important;
+    height: 460px;
     margin-top: 10px !important;
   }
 
   #IdUsar{
     width: 100px;
-  }
-
-  #ventana_reg{
-    margin-left: -15px !important;
-    margin-top: -40px !important;
   }
 }
 

@@ -27,7 +27,6 @@ div.audio-player {
 	z-index: 1;
 }
 
-
 .mejs-controls div.mejs-time {
     padding-top: 12px;
     margin-left: 340px;
@@ -35,6 +34,11 @@ div.audio-player {
 	z-index: 1;
 }
 
+@media (min-width:1440px){
+  .mejs-controls div.mejs-time {
+    margin-left: 330px;
+  }
+}
 
 
 .mejs-controls .mejs-pause button {
@@ -45,7 +49,7 @@ div.audio-player {
   width: 16px;
   height: 16px;
       top: 25px;
-    right: 143px;
+    right: 135px;
   background: transparent url('../images/so.png') no-repeat 0px 0px;
 }
 
@@ -74,7 +78,7 @@ div.audio-player {
 }
 .mejs-controls .mejs-time-rail .mejs-time-total {
   background:#111;
-  width: 303px !important; /* fixes display bug using jQuery 1.8+ */
+  width: 240px !important; /* fixes display bug using jQuery 1.8+ */
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
@@ -142,7 +146,7 @@ div.audio-player {
 .mejs-controls div.mejs-horizontal-volume-slider {
 	position: absolute;
 	     top:30px;
-    right: 55px;
+    right: 50px;
 	cursor: pointer;
     z-index: 1;
 
