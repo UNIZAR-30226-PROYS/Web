@@ -142,8 +142,11 @@
                     Lista1
                   </div>
                 </a></li>
+                <li id="barraopciones"><div class="simb_repr_play">
+                    <input type="image" src="img/play.png" alt="Reproducir lista" title="Reproducir lista" onClick="playMusic('media/Blue Browne.mp3');return false;">
+                </div></li>
                 <li id="barraopciones"><div class="simb_repr_elim">
-                    <input type="image" src="img/eliminar.png" alt="Eliminar cancion de favoritos" title="Eliminar cancion de favoritos">
+                    <input type="image" src="img/eliminar.png" alt="Eliminar lista" title="Eliminar lista">
                 </div></li>
               </ul>
             </div>
@@ -162,8 +165,11 @@
                     Lista2
                   </div>
                 </a></li>
+                <li id="barraopciones"><div class="simb_repr_play">
+                    <input type="image" src="img/play.png" alt="Reproducir lista" title="Reproducir lista" onClick="playMusic('media/Blue Browne.mp3');return false;">
+                </div></li>
                 <li id="barraopciones"><div class="simb_repr_elim">
-                    <input type="image" src="img/eliminar.png" alt="Eliminar cancion de favoritos" title="Eliminar cancion de favoritos">
+                    <input type="image" src="img/eliminar.png" alt="Eliminar lista" title="Eliminar lista">
                 </div></li>
               </ul>
             </div>
@@ -184,6 +190,13 @@
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
     });
+    </script>
+
+    <script type="text/javascript">
+      function playMusic(src){
+            audio_core=$('#audio-player').attr('src', src)[0]
+          audio_core.play() // <- play the song!!!
+      }
     </script>
 
     <!-- contenido de la ventana emergente -->

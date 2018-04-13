@@ -67,6 +67,17 @@
     font-weight: normal;
 }
 
+.simb_repr_play input {
+  position: absolute;
+  max-width: 8%;
+  max-height: 8%;
+  margin-left: 55%;
+  margin-top: 5%;
+  border: none;
+  padding: 0;
+  background: none;
+}
+
 .simb_repr_elim input {
     position: absolute;
     max-width: 8%;
@@ -127,9 +138,14 @@ button:hover {
     height: 110px;
   }
 
+  .simb_repr_play input {
+    margin-left: 35%;
+    margin-top: 2%;
+  }
+
   .simb_repr_elim input {
-      margin-left: 45%;
-      margin-top: 3%;
+      margin-left: 55%;
+      margin-top: 2%;
   }
 
   .cancioninf{
@@ -141,7 +157,7 @@ button:hover {
 
 @media(min-width:1100px) {
   .simb_repr_elim input {
-      margin-left: 35%;
-      margin-top: 3%;
+      margin-left: 45%;
+      margin-top: 2%;
   }
 }

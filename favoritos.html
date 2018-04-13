@@ -136,8 +136,11 @@
                       Perfect
                     </div>
                   </a></li>
+                  <li id="barraopciones"><div class="simb_repr_play">
+                      <input type="image" src="img/play.png" alt="Reproducir cancion" title="Reproducir canción" onClick="playMusic('media/Blue Browne.mp3');return false;">
+                  </div></li>
                   <li id="barraopciones"><div class="simb_repr_elim">
-                      <input type="image" src="img/eliminar.png" alt="Eliminar cancion de favoritos" title="Eliminar cancion de favoritos" onClick="playMusic('media/Blue Browne.mp3');return false;">
+                      <input type="image" src="img/eliminar.png" alt="Eliminar cancion de favoritos" title="Eliminar canción de favoritos">
                   </div></li>
                 </ul>
               </div>
@@ -155,8 +158,11 @@
                       Lush life
                     </div>
                   </a></li>
+                  <li id="barraopciones"><div class="simb_repr_play">
+                      <input type="image" src="img/play.png" alt="Reproducir cancion" title="Reproducir canción" onClick="playMusic('media/Blue Browne.mp3');return false;">
+                  </div></li>
                   <li id="barraopciones"><div class="simb_repr_elim">
-                      <input type="image" src="img/eliminar.png" alt="Eliminar cancion de favoritos" title="Eliminar cancion de favoritos" onClick="playMusic('media/Blue Browne.mp3');return false;">
+                      <input type="image" src="img/eliminar.png" alt="Eliminar cancion de favoritos" title="Eliminar canción de favoritos">
                   </div></li>
                 </ul>
               </div>
@@ -177,6 +183,13 @@
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
     });
+    </script>
+
+    <script type="text/javascript">
+      function playMusic(src){
+            audio_core=$('#audio-player').attr('src', src)[0]
+          audio_core.play() // <- play the song!!!
+      }
     </script>
 
 </body>
