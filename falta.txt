@@ -1,7 +1,7 @@
 Falta:
 General:
-  -Mejorar apariencia(reducir tamaño elementos, ajustar espacio en blanco): hecho album, albumes, amigos, artista, artistas, busqueda(A MEDIAS), cancion, estilo, top semanal, 
-
+  -Mejorar apariencia(reducir tamaño elementos, ajustar espacio en blanco): falta home, recientes, usuario, usuarios
+  
   -Cambiar form para que sea sobre SSL. Usar "https://yourdomain.com/servlet" en action(dejarlo hasta que todo funcione y crear certificado en servidor)
 
   -Usar jQuery para recibir la respuesta JSON y mostrarla en la web

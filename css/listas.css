@@ -40,12 +40,19 @@
     color: #333333;
 }
 
-.cancioninf ul {
-    list-style-type: none;
-    padding-left: 0;
+.nombrecancion {
+  position: absolute;
+  margin-left: 22%;
+  font-size: 100%;
+  margin-top: 5%;
+  font-weight: normal;
 }
 
-
+.cancioninf ul{
+  list-style-type: none;
+  padding-left: 0;
+  overflow: hidden;
+}
 
 .informacion input {
   font-family: "Roboto", sans-serif;
@@ -77,34 +84,35 @@
     bottom:0%;
     right:20%;
 }
-.informacion form {
-    height: 12%;
-}
 
 button:hover {
     background-color: green;
 }
 
+.informacion form {
+    margin-bottom: 20px;
+}
+
 .simb_repr_play input {
   position: absolute;
-  max-width: 8%;
-  max-height: 8%;
-  margin-left: 55%;
-  margin-top: 5%;
+  width:  45px;
+  height: 45px;
+  margin-left: 65%;
+  margin-top: 3%;
   border: none;
   padding: 0;
   background: none;
 }
 
 .simb_repr_elim input {
-    position: absolute;
-    max-width: 8%;
-    max-height: 8%;
-    margin-left: 65%;
-    margin-top: 5%;
-    border: none;
-    padding: 0;
-    background: none;
+  position: absolute;
+  width:  45px;
+  height: 45px;
+  margin-left: 75%;
+  margin-top: 3%;
+  border: none;
+  padding: 0;
+  background: none;
 }
 
 .anadir_lista img {
@@ -114,18 +122,6 @@ button:hover {
   float: right;
   margin-right: 5%;
   margin-top: -50px;
-}
-
-.imagen img {
-  position: absolute;
-  max-width: 20%;
-  max-height: 20%;
-  margin: auto;
-}
-
-.nombrecancion {
-  margin-left: 25%;
-  font-size: 90%;
 }
 
 .cancioninf{
@@ -141,14 +137,6 @@ button:hover {
   color: #333333;
 }
 
-.nombrecancion {
-    position: absolute;
-    margin-left: 22%;
-    font-size: 100%;
-    margin-top: 5%;
-    font-weight: normal;
-}
-
 #crear_lista {
    margin-left: 45px;
    background: #4CAF50;
@@ -158,18 +146,21 @@ button:hover {
    border: 2px solid #088A08;
 }
 
+.imagen img {
+  width: 110px;
+  height: 70px;
+  margin: auto;
+}
+
+.cancioninf{
+  margin-top:0%;
+  margin-bottom:0%;
+}
+
 @media(min-width:768px) {
   .window-container {
       width: 400px !important;
       margin-left: 35% !important;
-  }
-
-
-  .imagen img {
-    position: absolute;
-    max-width: 13%;
-    max-height: 20%;
-    margin: auto;
   }
 
   .anadir_lista img {
@@ -181,26 +172,29 @@ button:hover {
     margin-top: -50px;
   }
 
-  .cancioninf{
-    margin-top:5%;
-    margin-bottom:5%;
+  .imagen img {
+    width: 110px;
+    height: 70px;
+    margin: auto;
   }
+
   .simb_repr_play input {
     margin-left: 35%;
-    margin-top: 2%;
+    margin-top: 0.5%;
   }
 
   .simb_repr_elim input {
-      margin-left: 55%;
-      margin-top: 2%;
+    margin-left: 45%;
+    margin-top: 0.5%;
   }
 
   .nombrecancion {
-      margin-left: 15%;
-      padding-top: 0%;
-      font-size: 30px;
-      margin-top: 3%;
+    margin-left: 5%;
+    padding-top:0%;
+    font-size: 28px;
+    margin-top: 1%;
   }
+
   #IdUsar {
     width: 100%;
   }
@@ -211,14 +205,10 @@ button:hover {
 }
 
 @media(min-width:1100px) {
-  .simb_repr_elim input {
-      margin-left: 45%;
-      margin-top: 2%;
+  .window-container {
+      width: 400px !important;
+      margin-left: 35% !important;
   }
-    .window-container {
-        width: 400px !important;
-        margin-left: 35% !important;
-    }
   #IdUsar {
     width: 100%;
   }
@@ -228,10 +218,10 @@ button:hover {
 }
 
 @media(max-width:350px) {
-    .window-container {
-        width: 225px !important;
-        margin-left: 25% !important;
-    }
+  .window-container {
+      width: 225px !important;
+      margin-left: 25% !important;
+  }
   #IdUsar {
     width: 100px;
   }
