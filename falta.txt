@@ -1,7 +1,5 @@
 Falta:
 General:
-  -Mejorar apariencia(reducir tamaño elementos, ajustar espacio en blanco): falta recientes
-
   -Cambiar form para que sea sobre SSL. Usar "https://yourdomain.com/servlet" en action(dejarlo hasta que todo funcione y crear certificado en servidor)
 
   -Usar jQuery para recibir la respuesta JSON y mostrarla en la web

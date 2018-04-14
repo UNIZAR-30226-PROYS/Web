@@ -1,3 +1,7 @@
+#titulopagina {
+    text-align: center;
+    margin-right: 15%;
+}
 
 .informacion input {
   font-family: "Roboto", sans-serif;
@@ -31,7 +35,7 @@
 }
 
 .informacion form{
-  height: 12%;
+  margin-bottom: 20px;
 }
 
 button:hover {
@@ -43,18 +47,15 @@ button:hover {
 }
 
 .imagen img {
-    position: absolute;
-    max-width: 20%;
-    max-height: 20%;
-    margin: auto;
-    width: 60px;
-    height: 70px;
+  width: 110px;
+  height: 70px;
+  margin: auto;
 }
 
 .simb_repr_play input {
   position: absolute;
-  max-width: 8%;
-  max-height: 8%;
+  width:  45px;
+  height: 45px;
   margin-left: 65%;
   margin-top: 3%;
   border: none;
@@ -64,8 +65,8 @@ button:hover {
 
 .simb_repr_fav input {
   position: absolute;
-  max-width: 8%;
-  max-height: 8%;
+  width:  45px;
+  height: 45px;
   margin-left: 75%;
   margin-top: 3%;
   border: none;
@@ -75,8 +76,8 @@ button:hover {
 
 .simb_repr_lista input {
   position: absolute;
-  max-width: 8%;
-  max-height: 8%;
+  width:  45px;
+  height: 45px;
   margin-left: 85%;
   margin-top: 3%;
   border: none;
@@ -85,39 +86,32 @@ button:hover {
 }
 
 .nombrecancion {
-  position: absolute;
-  margin-left: 9%;
   font-size: 100%;
-  margin-top: 1%;
   font-weight: normal;
 }
-
-.nombreautor {
-  position: absolute;
-  margin-left: 15%;
-  font-size: 90%;
-  margin-top: 8%;
-  font-weight: normal;
-}
-.nombreestilo {
-  position: absolute;
-  margin-left: 15%;
-  font-size: 90%;
-  margin-top: 8%;
-  font-weight: normal;
-}
-
-
-.cancioninf{
-  height: 5%;
-  width: 100%;
-  margin-top:5%;
-  margin-bottom:5%;
-}
-
 .cancioninf ul{
   list-style-type: none;
   padding-left: 0;
+  overflow: hidden;
+}
+
+.nombre_autor_cancion{
+  margin-left: 5%;
+  position: absolute;
+}
+
+.nombreautor {
+  margin-left: 50px;
+  font-size: 90%;
+  margin-top: 0%;
+  font-weight: normal;
+}
+
+.nombreestilo {
+  margin-left: 50px;
+  font-size: 90%;
+  margin-top: 0%;
+  font-weight: normal;
 }
 
 #enlacecancion{
@@ -127,55 +121,46 @@ button:hover {
 }
 
 @media(min-width:768px) {
-  .nombrecancion {
-    margin-left: 14.5%;
+  ..nombrecancion {
+    margin-left: 8%;
     padding-top:0%;
     font-size: 30px;
     margin-top: 1%;
   }
 
   .imagen img {
-      position: absolute;
-      max-width: 13%;
-      max-height: 20%;
-      margin: auto;
-      width: 150px;
-      height: 110px;
+    width: 110px;
+    height: 70px;
+    margin: auto;
   }
 
   .nombreautor {
-    margin-left: 15%;
+    margin-left: 40px;
     padding-top:0%;
     font-size: 20px;
-    margin-top: 4%;
+    margin-top: 0%;
   }
-  .nombreestilo {
-    margin-left: 15%;
-    padding-top:0%;
-    font-size: 20px;
-    margin-top: 6%;
-  }
-  .cancioninf{
-    margin-top:5%;
-    margin-bottom:5%;
-  }
-
 
   .simb_repr_play input {
-    margin-left: 45%;
-    margin-top: 2%;
+    margin-left: 35%;
+    margin-top: 0.5%;
   }
 
   .simb_repr_fav input {
-    margin-left: 55%;
-    margin-top: 2%;
+    margin-left: 45%;
+    margin-top: 0.5%;
   }
 
   .simb_repr_lista input {
-    margin-left: 65%;
-    margin-top: 2%;
+    margin-left: 55%;
+    margin-top: 0.5%;
   }
-
+  .nombreestilo {
+    margin-left: 40px;
+    padding-top:0%;
+    font-size: 20px;
+    margin-top: 0%;
+  }
 }
 
 @media(max-width:767px) {
@@ -202,85 +187,8 @@ button:hover {
     margin-left: 40px !important;
     padding: 10px;
     font-size: 40px;
+  }
 }
-.nombrecancion {
-    position: absolute;
-    margin-left: 20%;
-    font-size: 80%;
-    margin-top: 2%;
-    font-weight: normal;
-    max-width: 46%;
-}
-
-.nombreautor {
-  position: absolute;
-  margin-left: 24%;
-  font-size: 70%;
-  margin-top: 8%;
-  font-weight: normal;
-}
-
-.nombreestilo {
-  position: absolute;
-  margin-left: 24%;
-  font-size: 70%;
-  margin-top: 13%;
-  font-weight: normal;
-}
-
-.informacion{
-  padding-left: 1% !important;
-}
-
-}
-
-
-@media(min-width:768px) and (max-width:1300px){
-.nombrecancion {
-    position: absolute;
-    margin-left: 20%;
-    font-size: 170%;
-    margin-top: 0%;
-    font-weight: normal;
-    max-width: 46%;
-}
-
-.nombreautor {
-  position: absolute;
-  margin-left: 24%;
-  font-size: 150%;
-  margin-top: 7%;
-  font-weight: normal;
-}
-
-.nombreestilo {
-  position: absolute;
-  margin-left: 24%;
-  font-size: 150%;
-  margin-top: 12%;
-  font-weight: normal;
-}
-
-.informacion form {
-    height: 17%;
-}
-
-.simb_repr_play input {
-    margin-left: 60%;
-    margin-top: 2%;
-}
-
-.simb_repr_fav input {
-    margin-left: 75%;
-    margin-top: 2%;
-}
-
-.simb_repr_lista input {
-    margin-left: 90%;
-    margin-top: 2%;
-}
-}
-
 
 @media(max-width:350px) {
     .window-container {
