@@ -124,7 +124,6 @@ button:hover {
 }
 
 @media(min-width:768px) {
-
   .imagen img {
     width:  150px;
     height: 110px;

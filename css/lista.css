@@ -16,13 +16,6 @@
   margin-left: 20px;
 }
 
-.nombrecancion {
-    margin-left: 15%;
-    padding-top: 0%;
-    font-size: 30px;
-    margin-top: 3%;
-}
-
 .window-container {
     display: block;
     background: #fcfcfc;
@@ -193,14 +186,6 @@ button:hover {
 .cancioninf{
   height: 5%;
   width: 100%;
-}
-
-.nombrecancion {
-  position: absolute;
-  margin-left: 22%;
-  font-size: 100%;
-  margin-top: 5%;
-  font-weight: normal;
 }
 
 #enlacecancion{

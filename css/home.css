@@ -58,25 +58,22 @@ button:hover {
 #barraopciones{
   float: left;
   list-style-type: none;
-  width: 18%;
-  height: 100%;
   margin-left: 5px;
+  margin-right: 50px;
+  margin-bottom: 4%;
 }
 
 .imagen {
   width: 100%;
 }
 
-.marco_estilo {
-  width: 100%;
+.imagen {
+  width: 150px;
 }
 
 .marco_estilo {
-  position: absolute;
   width:  60px;
   height: 70px;
-  max-width: 17%;
-  max-height: 16%;
   margin: auto;
   border-style: solid;
   border-width: thin;
@@ -87,29 +84,17 @@ button:hover {
 }
 
 .imagen img {
-  position: absolute;
   width:  60px;
   height: 70px;
-  max-width: 17%;
-  max-height: 16%;
   margin: auto;
 }
 
 .nombrecancion {
   position: absolute;
   font-size: 70%;
-  margin-top: 70px;
-  width: 12%;
+  width: 150px;
   font-weight: normal;
   text-align: center;
-}
-
-.topsemanal {
-  height: 40%;
-}
-
-.menuestilo {
-  height: 40%;
 }
 
 .cancioninf{
@@ -126,30 +111,23 @@ button:hover {
 }
 
 .topsemanal ul{
-  height: 55%;
-  padding-left: 0;
+  padding-left: 20px;
+  overflow: hidden;
 }
 
 .menuestilo ul{
-  height: 50%;
-  padding-left: 0;
+  padding-left: 20px;
+  overflow: hidden;
 }
 
 @media(min-width:768px) {
-
   .imagen img {
-    position: absolute;
-    max-width: 13%;
-    max-height: 20%;
     width:  150px;
     height: 110px;
     margin: auto;
   }
 
   .marco_estilo {
-    position: absolute;
-    max-width: 13%;
-    max-height: 20%;
     width:  150px;
     height: 110px;
     padding-top: 35px;
@@ -159,7 +137,6 @@ button:hover {
   .nombrecancion {
     padding-top:0%;
     font-size: 130%;
-    margin-top: 115px;
   }
 
   .cancioninf{
@@ -168,60 +145,9 @@ button:hover {
     padding: 2%;
   }
 
-  .topsemanal {
-    height: 70%;
-  }
-
-  .topsemanal ul{
-    height: 40%;
-    padding-left: 20px;
-  }
-
-
-  .menuestilo ul{
-    height: 40%;
-    padding-left: 20px;
-  }
-
-  #barraopciones{
-    margin-bottom: 2%;
-  }
-
   #tituloestilo {
     text-align: center;
 
 
     color: #333;
   }
-
-}
-
-@media (min-width: 1300px){
-  .topsemanal ul {
-      height: 45%;
-      padding-left: 20px;
-  }
-}
-
-@media (max-width: 370px){
-  .topsemanal ul {
-      height: 60%;
-      padding-left: 10px;
-  }
-  #barraopciones {
-    float: left;
-    list-style-type: none;
-    width: 22%;
-    height: 100%;
-    margin-left: 5px;
-  }
-
-  .nombrecancion {
-    position: absolute;
-    font-size: 60%;
-    margin-top: 70px;
-    width: 12%;
-    font-weight: normal;
-    text-align: center;
-  }
-}

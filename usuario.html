@@ -123,18 +123,14 @@
         <div class="informacion">
 		 <br/>
           <div id="titulopagina"><h1>Usuario1</h1></div>
-					<table  style="position:  left:20%; top: 25%" >
-						<tr height="60px">
-							<div class="imagen">
-								<img src="img/user.png" alt="Imagen usuario" >
-							</div>
-						</tr>
-					</table>
-
-
-
-
-
+					<div class="imagen">
+						<img src="img/user.png" alt="Imagen usuario" >
+					</div>
+          <form action="añadirAmigo" method="post">
+            <div class="anadir_lista">
+              <input type="image" src="img/add_friend.png" alt="Añadir amigo" title="Añadir amigo">
+            </div>
+          </form>
 
           <div class="block1" id="bloque_contra">
             <form name="accionLista" method="post" action="#">
@@ -144,27 +140,33 @@
                     <div class="imagen">
                       <img src="img/listaicono.png" alt="Imagen lista">
                     </div>
-                    <div class="nombrecancion">
-                      Lista1
-                    </div>
                   </a></li>
+                  <li id="barraopciones">
+                    <a href="lista.html">
+                      <div class="nombrecancion">
+                        Lista1
+                      </div>
+                    </a>
+                  </li>
                 </ul>
               </div>
             </form>
 
-
-            <br/>
             <form name="accionLista" method="post" action="#">
               <div class="cancioninf">
                 <ul>
-                  <li id="barraopciones"><a href="#" id="enlacecancion">
+                  <li id="barraopciones"><a href="lista.html" id="enlacecancion">
                     <div class="imagen">
                       <img src="img/listaicono.png" alt="Imagen lista">
                     </div>
-                    <div class="nombrecancion">
-                      Lista2
-                    </div>
                   </a></li>
+                  <li id="barraopciones">
+                    <a href="lista.html">
+                      <div class="nombrecancion">
+                        Lista2
+                      </div>
+                    </a>
+                  </li>
                 </ul>
               </div>
             </form>
