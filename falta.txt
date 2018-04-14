@@ -1,2 +1,13 @@
 Falta:
-  -Mejorar apariencia
+General:
+  -Mejorar apariencia(reducir tamaño elementos, ajustar espacio en blanco)
+
+  -Cambiar form para que sea sobre SSL. Usar "https://yourdomain.com/servlet" en action(dejarlo hasta que todo funcione y crear certificado en servidor)
+
+  -Usar jQuery para recibir la respuesta JSON y mostrarla en la web
+
+  -Cambiar valor "name" en los parametros form a enviar para que concuerden con el servidor
+
+
+
+  -Registro: falta que servlet acepte parametro de repetir contraseña
