@@ -55,8 +55,8 @@ button:hover {
 
 .simb_repr_play input {
   position: absolute;
-  max-width: 8%;
-  max-height: 8%;
+  width:  45px;
+  height: 45px;
   margin-left: 65%;
   margin-top: 3%;
   border: none;
@@ -66,8 +66,8 @@ button:hover {
 
 .simb_repr_fav input {
   position: absolute;
-  max-width: 8%;
-  max-height: 8%;
+  width:  45px;
+  height: 45px;
   margin-left: 75%;
   margin-top: 3%;
   border: none;
@@ -77,8 +77,8 @@ button:hover {
 
 .simb_repr_lista input {
   position: absolute;
-  max-width: 8%;
-  max-height: 8%;
+  width:  45px;
+  height: 45px;
   margin-left: 85%;
   margin-top: 3%;
   border: none;

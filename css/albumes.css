@@ -31,6 +31,7 @@
   box-sizing: border-box;
   font-size: 14px;
 }
+
   .informacion button {
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
@@ -58,13 +59,8 @@ button:hover {
 #barraopciones{
   float: left;
   list-style-type: none;
-  width: 18%;
-  height: 100%;
   margin-left: 5px;
-}
-
-.imagen {
-  width: 100%;
+  margin-right: 50px;
 }
 
 .marco_estilo {
@@ -87,19 +83,15 @@ button:hover {
 }
 
 .imagen img {
-  position: absolute;
   width:  60px;
   height: 70px;
-  max-width: 17%;
-  max-height: 16%;
   margin: auto;
 }
 
 .nombrecancion {
   position: absolute;
   font-size: 70%;
-  margin-top: 70px;
-  width: 12%;
+  width: 150px;
   font-weight: normal;
   text-align: center;
 }
@@ -123,6 +115,7 @@ button:hover {
 
 .cancionesArtista ul{
   padding-left: 20px;
+  overflow: hidden;
 }
 
 .menuestilo ul{
@@ -133,9 +126,6 @@ button:hover {
 @media(min-width:768px) {
 
   .imagen img {
-    position: absolute;
-    max-width: 13%;
-    max-height: 20%;
     width:  150px;
     height: 110px;
     margin: auto;
@@ -154,7 +144,6 @@ button:hover {
   .nombrecancion {
     padding-top:0%;
     font-size: 130%;
-    margin-top: 115px;
   }
 
   .cancioninf{
@@ -194,7 +183,6 @@ button:hover {
   #barraopciones {
     float: left;
     list-style-type: none;
-    width: 22%;
     height: 100%;
     margin-left: 5px;
   }
@@ -203,7 +191,7 @@ button:hover {
     position: absolute;
     font-size: 60%;
     margin-top: 70px;
-    width: 12%;
+    width: 150px;
     font-weight: normal;
     text-align: center;
   }

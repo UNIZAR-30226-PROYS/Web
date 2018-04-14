@@ -31,7 +31,7 @@
 }
 
 .informacion form{
-  height: 12%;
+  margin-bottom: 20px;
 }
 
 button:hover {
@@ -43,16 +43,17 @@ button:hover {
 }
 
 .imagen img {
-  position: absolute;
-  max-width: 20%;
-  max-height: 20%;
+  /*max-width: 20%;
+  max-height: 20%;*/
   margin: auto;
+  width:  60px;
+  height: 70px;
 }
 
 .simb_repr_play input {
   position: absolute;
-  max-width: 8%;
-  max-height: 8%;
+  width:  45px;
+  height: 45px;
   margin-left: 65%;
   margin-top: 3%;
   border: none;
@@ -62,8 +63,8 @@ button:hover {
 
 .simb_repr_fav input {
   position: absolute;
-  max-width: 8%;
-  max-height: 8%;
+  width:  45px;
+  height: 45px;
   margin-left: 75%;
   margin-top: 3%;
   border: none;
@@ -73,8 +74,8 @@ button:hover {
 
 .simb_repr_lista input {
   position: absolute;
-  max-width: 8%;
-  max-height: 8%;
+  width:  45px;
+  height: 45px;
   margin-left: 85%;
   margin-top: 3%;
   border: none;
@@ -84,24 +85,15 @@ button:hover {
 
 .nombrecancion {
   position: absolute;
-  margin-left: 9%;
+  margin-left: 22%;
   font-size: 100%;
-  margin-top: 1%;
-  font-weight: normal;
-}
-
-.nombreautor {
-  position: absolute;
-  margin-left: 15%;
-  font-size: 90%;
-  margin-top: 8%;
+  margin-top: 5%;
   font-weight: normal;
 }
 
 
 
 .cancioninf{
-  height: 5%;
   width: 100%;
   margin-top:5%;
   margin-bottom:5%;
@@ -110,6 +102,16 @@ button:hover {
 .cancioninf ul{
   list-style-type: none;
   padding-left: 0;
+  overflow: hidden;
+}
+
+
+.nombreautor {
+  position: absolute;
+  margin-left: 15%;
+  font-size: 90%;
+  margin-top: 8%;
+  font-weight: normal;
 }
 
 #enlacecancion{
