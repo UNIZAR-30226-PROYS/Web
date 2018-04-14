@@ -1,6 +1,6 @@
 Falta:
 General:
-  -Mejorar apariencia(reducir tamaño elementos, ajustar espacio en blanco)
+  -Mejorar apariencia(reducir tamaño elementos, ajustar espacio en blanco): hecho top semanal, album, amigos
 
   -Cambiar form para que sea sobre SSL. Usar "https://yourdomain.com/servlet" en action(dejarlo hasta que todo funcione y crear certificado en servidor)
 

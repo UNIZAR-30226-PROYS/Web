@@ -104,10 +104,6 @@ button:hover {
   text-align: center;
 }
 
-.cancionesArtista {
-  height: 40%;
-}
-
 .menuestilo {
   height: 40%;
 }
@@ -126,7 +122,6 @@ button:hover {
 }
 
 .cancionesArtista ul{
-  height: 40%;
   padding-left: 20px;
 }
 
@@ -168,12 +163,7 @@ button:hover {
     padding: 2%;
   }
 
-  .cancionesArtista {
-    height: 70%;
-  }
-
   .cancionesArtista ul{
-    height: 40%;
     padding-left: 20px;
   }
 
