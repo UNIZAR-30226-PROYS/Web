@@ -3,4 +3,9 @@ $(function() {
   $('#form_registro').ajaxForm(function() {
       alert("Thank you for your comment!");
   });
+
+
+  $('#acceso').ajaxForm(function() {
+      alert("Thank you for your comment!");
+  });
 });

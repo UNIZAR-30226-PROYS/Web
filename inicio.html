@@ -38,16 +38,16 @@
 		<tr id="tr_datos" style="position: absolute; top: 150px; left:1150px ">
 
 			<th>
-				<form name="acceso" action="/IniciarSesion" method="post">
+				<form name="acceso" action="http://mewat1718.ddns.net:8080/ps/IniciarSesion" method="post">
 					</br>
 					</br>
 					<label for="login">Usuario</label>
-					<input type="text" name="nombre" id="login">
+					<input type="text" name="nombre" id="login" required>
 					</br>
 					</br>
 					</br>
 					<label for="contraseña">Contraseña</label>
-					<input type="password" name="contrasenya" id="contrasenya">
+					<input type="password" name="contrasenya" id="contrasenya" required>
 					</br>
 					</br>
 					</br>
@@ -71,14 +71,14 @@
 						<table width="100% ;left:35%; top:400%" >
 							<tr id="ventana_reg">
 								<th>
-								<form id="form_registro" action="RegistrarUsuario" method="post">
+								<form id="form_registro" action="http://mewat1718.ddns.net:8080/ps/RegistrarUsuario" method="post">
 									<table height="100%">
 										<tr height="60px">
 											<td>
 												<label for="idNombre">  <font size="4" face="Arial" color="black" style="font-weight: bold"> &nbsp Nombre </font> <font size="5" color="red" style="font-weight: bold">* </font></label>
 											</td>
 											<td>
-												<input size="25" id="IdUsar" type="text" name="nombre"/></br>
+												<input size="25" id="IdUsar" type="text" name="nombre" required/></br>
 											</td>
 										</tr>
 										<tr height="60px">
@@ -86,7 +86,7 @@
 												<label for="idPass">  <font size="4" face="Arial" color="black" style="font-weight: bold"> &nbsp Contraseña </font> <font size="5" color="red" style="font-weight: bold">* </font></label>
 											</td>
 											<td>
-												<input size="25" id="IdUsar" type="password" name="contras"/></br>
+												<input size="25" id="IdUsar" type="password" name="contras" required/></br>
 											</td>
 										</tr>
 										<tr height="60px">
@@ -94,7 +94,7 @@
 												<label for="idPassConf">  <font size="4" face="Arial" color="black" style="font-weight: bold"> &nbsp Repetir contraseña </font> <font size="5" color="red" style="font-weight: bold">* </font></label>
 											</td>
 											<td>
-												<input size="25" id="IdUsar" type="password" name="contras2"/></br>
+												<input size="25" id="IdUsar" type="password" name="contras2" required/></br>
 											</td>
 										</tr>
 
