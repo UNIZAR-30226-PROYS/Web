@@ -9,4 +9,4 @@ General:
   -Añadir limitacion resultados (salgan x resultados y opcion "Mostrar mas" que carge otros) en paginas:
       -Albumes, amigos?, artistas, busqueda, favoritos?, lista?, listas, recientes?, usuarios
 
-  -Registro: falta que servlet acepte parametro de repetir contraseña
+  -En todas paginas si no se ha iniciado sesion que lleve al inicio
