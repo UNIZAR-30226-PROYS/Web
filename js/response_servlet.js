@@ -1,31 +1,56 @@
-$(function() {
-  // bind 'myForm' and provide a simple callback function
-  $('#form_registro').ajaxForm(function() {
-      alert("Thank you for your comment!");
+$(document).ready(function() {
+  $("#form_acceso").submit(function(event){
+      event.preventDefault(); //prevent default action
+      var post_url = $(this).attr("action"); //get form action url
+      var form_data = $(this).serialize(); //Encode form elements for submission
+      var request_method = $(this).attr("method"); //get form GET/POST method
+
+      $.ajax({
+          url : post_url,
+          type: request_method,
+          data : form_data,
+
+    }).done(function(response){ //
+       var obj=JSON.parse(response);
+        if(obj.error != undefined){
+          $("#inf_acceso").html(obj.error);
+        }
+        else{
+          //Pasar nombre e idsesion y cambiar de pagina
+          window.location = "home.html"
+        }
+
+    }).fail(function(response){ //
+        $("#inf_acceso").html("Error interno. Inténtelo más tarde.");
+    });
+
   });
 
-  /*$('#form_acceso').ajaxForm(function() {
-      alert("Hecho");
-  });*/
 
-  //$('#acceso').ajaxForm(function() {
-  //    alert("Thank you for your comment!");
-  //});
-/*
-  $(document).on("submit", "#acceso", function(event) {
-      var $form = $(this);
+  $("#form_registro").submit(function(event){
+    event.preventDefault(); //prevent default action
+    var post_url = $(this).attr("action"); //get form action url
+    var form_data = $(this).serialize(); //Encode form elements for submission
+    var request_method = $(this).attr("method"); //get form GET/POST method
 
-      $.post($form.attr("action"), $form.serialize(), function(response) {
-          alert("Thank you for your comment!");
-      });
+    $.ajax({
+        url : post_url,
+        type: request_method,
+        data : form_data,
 
-      event.preventDefault(); // Important! Prevents submitting the form.
-  });*/
+    }).done(function(response){
+        var obj=JSON.parse(response);
+        if(obj.error != undefined){
+          $("#inf_registro").html(obj.error);
+        }
+        else{
+          //Pasar nombre e idsesion y cambiar de pagina
+          window.location = "home.html"
+        }
+
+    }).fail(function(response){ //
+        $("#inf_registro").html("Error interno. Inténtelo más tarde.");
+    });
+
+  });
 });
-
-/*
-$('#acceso').submit(function(event) {
-  alert("Thank you for your comment!");
-  event.preventDefault();
-});
-*/

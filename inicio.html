@@ -23,7 +23,7 @@
     <script src="js/jquery-2.1.4.js"></script>
     <!-- Libreria form jQuery para recibir respuesta JSON de servlet -->
     <script src="js/jquery.form.min.js"></script>
-    <script src="js/response_servlet.js"></script>
+    <script src="js/response_servlet.js" charset="UTF-8"></script>
 
     <!-- Custom styles for this template -->
     <link href="css/simple-sidebar.css" rel="stylesheet">
@@ -39,9 +39,9 @@
 		<tr id="tr_datos" style="position: absolute; top: 150px; left:1150px ">
 
 			<th>
-				<form id="form_acceso" action="http://mewat1718.ddns.net:8080/ps/IniciarSesion" method="POST">
-					</br>
-					</br>
+				<form id="form_acceso" action="/ps/IniciarSesion" method="POST">
+          <p id="inf_acceso"></p>
+          </br>
 					<label for="login">Usuario</label>
 					<input type="text" name="nombre" id="login" required>
 					</br>
@@ -71,8 +71,9 @@
 						<table width="100% ;left:35%; top:400%" >
 							<tr id="ventana_reg">
 								<th>
-								<form id="form_registro" action="http://mewat1718.ddns.net:8080/ps/RegistrarUsuario" method="POST">
-									<table height="100%">
+								<form id="form_registro" action="/ps/RegistrarUsuario" method="POST">
+                  <p id="inf_registro"></p>
+                  <table height="100%">
 										<tr height="60px">
 											<td>
 												<label for="idNombre">  <font size="4" face="Arial" color="black" style="font-weight: bold"> &nbsp Nombre </font> <font size="5" color="red" style="font-weight: bold">* </font></label>
@@ -120,54 +121,6 @@
 	</div>
 	<script>!window.jQuery && document.write(unescape('%3Cscript src="js/jquery-1.7.1.min.js"%3E%3C/script%3E'))</script>
 	<script type="text/javascript" src="js/demo.js"></script>
-
-
-
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script>
-  <script src="http://malsup.github.com/jquery.form.js"></script>
-
-  <script>
-      // wait for the DOM to be loaded
-    $("#form_acceso").submit(function(event){
-        event.preventDefault(); //prevent default action
-        var post_url = $(this).attr("action"); //get form action url
-        var form_data = $(this).serialize(); //Encode form elements for submission
-        var request_method = $(this).attr("method"); //get form GET/POST method
-        
-        $.ajax({
-            url : post_url,
-            type: request_method,
-            data : form_data,
-/*
-            success: function(html){
-                  alert('Requese sucessful.');
-                },
-              error: function(xmlHttpRequest, textStatus, errorThrown){
-                if(xmlHttpRequest.readyState == 0){
-                  alert("no error");  // it's not really an error
-                }
-                else if(xmlHttpRequest.status == 0){
-                  alert("no error status");
-                }
-                else{
-                  alert("error");
-                }
-
-              }
-        });*/
-
-      }).done(function(response){ //
-          alert("Hecho");
-          $( this ).addClass( "done" );
-          //$("#server-results").html(response);
-      }).fail(function(response){ //
-          alert(response);
-          $( this ).addClass( "done" );
-          //$("#server-results").html(response);
-      });
-
-  });
-  </script>
 
 
 </body>

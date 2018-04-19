@@ -1,5 +1,7 @@
 Falta:
 General:
+  -Cambiar form para que action lleve a la pagina que sea
+
   -Cambiar form para que sea sobre SSL. Usar "https://yourdomain.com/servlet" en action(dejarlo hasta que todo funcione y crear certificado en servidor)
 
   -Usar jQuery para recibir la respuesta JSON y mostrarla en la web
@@ -10,3 +12,6 @@ General:
       -Albumes, amigos?, artistas, busqueda, favoritos?, lista?, listas, recientes?, usuarios
 
   -En todas paginas si no se ha iniciado sesion que lleve al inicio
+
+  -En registro: servlet envie tipo error (contraseñas no coinciden, el nombre debe ser más largo,...)
+  -En registro: al registrase, o llevar a pagina home(igual hay que modificar servlet) o quedar en la misma pagina y mostrar que se ha registrado correctamente
