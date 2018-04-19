@@ -44,8 +44,8 @@ $(document).ready(function() {
           $("#inf_registro").html(obj.error);
         }
         else{
-          //Pasar nombre e idsesion y cambiar de pagina
-          window.location = "home.html"
+          $('.close').click();
+          $('.button1').click();
         }
 
     }).fail(function(response){ //

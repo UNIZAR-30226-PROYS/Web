@@ -1,3 +1,13 @@
+.window-container1 {
+    display: block;
+    background: #fcfcfc;
+    margin-top: 200px;
+}
+
+#reg_exito{
+  margin-left: 40px;
+}
+
 #inf_acceso {
   color:red;
 }
