@@ -6,11 +6,6 @@ $(document).ready(function() {
     borrarCookie("sesionCerrada");
   }
 
-  //Ya hay sesión iniciada, pasar a home
-  if(leerCookie("login") != null && leerCookie("idSesion") != null){
-    window.location = "home.html";
-  }
-
   $("#form_acceso").submit(function(event){
       event.preventDefault(); //prevent default action
       var post_url = $(this).attr("action"); //get form action url
