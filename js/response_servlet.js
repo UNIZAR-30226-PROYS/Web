@@ -16,7 +16,9 @@ $(document).ready(function() {
           $("#inf_acceso").html(obj.error);
         }
         else{
-          //Pasar nombre e idsesion y cambiar de pagina
+          //Establecer cookies login e idsesion y cambiar de pagina
+          crearCookie("login",obj.login,10);
+          crearCookie("idSesion",obj.idSesion,10);
           window.location = "home.html"
         }
 
