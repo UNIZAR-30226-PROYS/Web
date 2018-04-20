@@ -1,4 +1,16 @@
 $(document).ready(function() {
+  //Si se ha cerrado la sesion, informar y borrar la cookie
+  if(leerCookie("sesionCerrada") != null){
+    $("#inf_acceso").css("color", "#088A08");
+    $("#inf_acceso").html("Sesión cerrada con éxito.");
+    borrarCookie("sesionCerrada");
+  }
+
+  //Ya hay sesión iniciada, pasar a home
+  if(leerCookie("login") != null && leerCookie("idSesion") != null){
+    window.location = "home.html";
+  }
+
   $("#form_acceso").submit(function(event){
       event.preventDefault(); //prevent default action
       var post_url = $(this).attr("action"); //get form action url
@@ -13,6 +25,7 @@ $(document).ready(function() {
     }).done(function(response){ //
        var obj=JSON.parse(response);
         if(obj.error != undefined){
+          $("#inf_acceso").css("color", "red");
           $("#inf_acceso").html(obj.error);
         }
         else{
@@ -23,6 +36,7 @@ $(document).ready(function() {
         }
 
     }).fail(function(response){ //
+        $("#inf_acceso").css("color", "red");
         $("#inf_acceso").html("Error interno. Inténtelo más tarde.");
     });
 

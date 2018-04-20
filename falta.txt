@@ -9,6 +9,6 @@ General:
   -Añadir limitacion resultados (salgan x resultados y opcion "Mostrar mas" que carge otros) en paginas:
       -Albumes, amigos?, artistas, busqueda, favoritos?, lista?, listas, recientes?, usuarios
 
-  -En todas paginas si no se ha iniciado sesion que lleve al inicio
+  -En todas paginas si no se ha iniciado sesion que lleve al inicio(en perfil_servlet.js ya esta, el resto hacerlo al final)
 
   -En registro: servlet envie tipo error (contraseñas no coinciden, el nombre debe ser más largo,...)
