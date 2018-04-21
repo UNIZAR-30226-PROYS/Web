@@ -206,7 +206,7 @@
                           <label for="idNombre">  <font size="4" face="Arial" color="black" style="font-weight: bold"> &nbsp Nombre: </font></label>
                         </td>
                         <td>
-                          <input size="25" id="IdUsar1" type="text" name="nombre" maxlength="15"/></br>
+                          <input size="25" id="IdUsar1" type="text" name="nombre" maxlength="15" pattern="[A-Za-z]{1}[A-Za-z0-9]{3,}" title="Debe tener 4 o más carácteres, empezar por una letra y contener solo letras o números."/></br>
                         </td>
                       </tr>
                     </table>
@@ -239,7 +239,7 @@
                           <label for="idAntigua">  <font size="4" face="Arial" color="black" style="font-weight: bold"> &nbsp Contraseña antigua: </font></label>
                         </td>
                       <td>
-                        <input size="25" id="IdAntigua" type="password" name="nombre" required/></br>
+                        <input size="25" id="IdAntigua" type="password" name="nombre" required pattern="(?=.*\d)(?=.*[A-Z]).{4,}" title="Debe contener al menos un número, una letra mayúscula y 4 o más carácteres"/></br>
                       </td>
                       </div>
                       <div class="block2">
@@ -247,7 +247,7 @@
                           <label for="idNueva">  <font size="4" face="Arial" color="black" style="font-weight: bold"> &nbsp Nueva contraseña: </font></label>
                         </td>
                         <td>
-                          <input size="25" id="IdNueva" type="password" name="nuevacontra" required/></br>
+                          <input size="25" id="IdNueva" type="password" name="nuevacontra" required pattern="(?=.*\d)(?=.*[A-Z]).{4,}" title="Debe contener al menos un número, una letra mayúscula y 4 o más carácteres"/></br>
                         </td>
                       </div>
                       <div class="block2">
@@ -255,7 +255,7 @@
                           <label for="idNuevaRep">  <font size="4" face="Arial" color="black" style="font-weight: bold"> &nbsp Repetir nueva contraseña: </font></label>
                         </td>
                         <td>
-                          <input size="25" id="IdNuevaRep" type="password" name="nuevacontrarep" required/></br>
+                          <input size="25" id="IdNuevaRep" type="password" name="nuevacontrarep" required pattern="(?=.*\d)(?=.*[A-Z]).{4,}" title="Debe contener al menos un número, una letra mayúscula y 4 o más carácteres"/></br>
                         </td>
                       </div>
                       <button type="submit" id="cambiarcontrabutton"/>Cambiar contraseña</button>
@@ -280,7 +280,7 @@
                           <label for="idContraElim">  <font size="4" face="Arial" color="black" style="font-weight: bold"> &nbsp Contraseña: </font></label>
                         </td>
                         <td>
-                          <input size="25" id="idContraElim" type="password" name="contraelim" required/></br>
+                          <input size="25" id="idContraElim" type="password" name="contraelim" required pattern="(?=.*\d)(?=.*[A-Z]).{4,}" title="Debe contener al menos un número, una letra mayúscula y 4 o más carácteres"/></br>
                         </td>
                       </tr>
                     </table>
@@ -321,6 +321,29 @@
     </div>
     <script>!window.jQuery && document.write(unescape('%3Cscript src="js/jquery-1.7.1.min.js"%3E%3C/script%3E'))</script>
     <script type="text/javascript" src="js/demo.js"></script>
+    <script>
+      //Validar que no se introduzcan espacios
+      $('#IdUsar1').on('keypress', function(e) {
+          if (e.which == 32)
+              return false;
+      });
+      $('#IdAntigua').on('keypress', function(e) {
+          if (e.which == 32)
+              return false;
+      });
+      $('#IdNueva').on('keypress', function(e) {
+          if (e.which == 32)
+              return false;
+      });
+      $('#IdNuevaRep').on('keypress', function(e) {
+          if (e.which == 32)
+              return false;
+      });
+      $('#idContraElim').on('keypress', function(e) {
+          if (e.which == 32)
+              return false;
+      });
+    </script>
 </body>
 
 </html>

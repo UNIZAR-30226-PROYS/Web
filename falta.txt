@@ -12,3 +12,17 @@ General:
   -En todas paginas si no se ha iniciado sesion que lleve al inicio(en perfil_servlet.js ya esta, el resto hacerlo al final)
 
   -En registro: servlet envie tipo error (contraseñas no coinciden, el nombre debe ser más largo,...)
+
+
+(hecho)INICIO: servlets registro y login implementados, al cerrar sesion informa de ello. Si ya hay sesion va a home directamente
+Perfil: cerrar sesion (hecho)
+
+
+AMIGOS:
+  De buscar usuarios: (se usa sessionStorage que permite almacenar en navegador y si se cierra la pestaña elimina esa informacion)
+    -Cambiar para que solo sea busqueda desde "+" y no desde menu superior??
+    -Pasar correctamente el objeto JSON recibido(stringfy a string)
+
+    En usuarios:
+      -Al cargar que mire los valores del sessionStorage y muestre los usuarios y al final la borre
+      -La busqueda que haga lo mismo que en amigos

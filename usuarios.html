@@ -126,8 +126,14 @@
 
         <div class="informacion">
           <br/>
-          <div id="titulopagina"><h1>Usuarios: "busqueda"</h1></div>
-
+          <div id="titulopagina"><h1 id="texto_nombre_busqueda">Usuarios: </h1></div>
+          <script>
+            var personaGuardada = sessionStorage.getItem("persona");
+            var url_string = window.location.href;
+            var url = new URL(url_string);
+            var c = url.searchParams.get("busqueda_usuario");
+            $( "#texto_nombre_busqueda" ).append("\"" + c + "\"");
+          </script>
           <form name="accionLista" method="post" action="#">
             <div class="cancioninf">
               <ul>
