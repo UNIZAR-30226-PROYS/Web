@@ -23,3 +23,6 @@ AMIGOS:
     -Borrar el propio usuario para que no salga o desde el servidor
     -Que en servidor se envien tambien la URL de las imagenes de los usuarios
     -Servidor busquedas se deberia usar Lucene Apache, sino son poco utiles
+
+
+(hecho)USUARIOS: muestra 4 por pagina con opcion de mas y funcion de seguir usuario
