@@ -113,9 +113,9 @@
             <a href="#menu-music" class="buttonMenu" id="menu-music" onmouseover="changeImage()" onmouseout="changeImageAntes()"><img id="simbolo_menu_imagen" src="img/simbolomenu.png" width="30" height="30" alt="menu"></a>
 
 						<div id="sb-search" class="sb-search sb-search-open">
-							<form id="form_buscar_amigos" action="/ps/BuscarUsuarios" method="post">
+							<form action="/BuscarUsuarios" method="post">
 
-								<input class="sb-search-input" placeholder="Búsqueda usuario" type="search" name="usuario" id="search" required>
+								<input class="sb-search-input" placeholder="Búsqueda" type="search" name="usuario" id="search" required>
 								<input class="sb-search-submit" type="submit" value="">
 								<span class="sb-icon-search"> </span>
 							</form>
@@ -209,14 +209,14 @@
               <table width="top:400%" >
                 <tr style="position: absolute; top: 10%; padding-left: 20px;">
                   <th>
-                  <form action="usuarios.html" method="post">
+                  <form id="form_buscar_amigos" action="/ps/BuscarUsuarios" method="post">
                     <table height="100%">
                       <tr height="60px">
   											<td>
   												<label for="idNombre">  <font size="4" face="Arial" color="black" style="font-weight: bold"> &nbsp Nombre: </font></label>
   											</td>
   											<td>
-  												<input size="25" id="IdUsar" type="text" name="nombre" required/></br>
+  												<input size="25" type="text" name="usuario" id="search_user" required/></br>
   											</td>
   										</tr>
                     </table>

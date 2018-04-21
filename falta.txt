@@ -7,7 +7,7 @@ General:
   -Cambiar valor "name" en los parametros form a enviar para que concuerden con el servidor
 
   -Añadir limitacion resultados (salgan x resultados y opcion "Mostrar mas" que carge otros) en paginas:
-      -Albumes, amigos?, artistas, busqueda, favoritos?, lista?, listas, recientes?, usuarios
+      -Albumes, amigos?, artistas, busqueda, favoritos?, lista?, listas, recientes?, usuarios(hecho -> usar como referencia)
 
   -En todas paginas si no se ha iniciado sesion que lleve al inicio(en perfil_servlet.js ya esta, el resto hacerlo al final)
 
@@ -21,8 +21,9 @@ Perfil: cerrar sesion (hecho)
 AMIGOS:
   De buscar usuarios: (se usa sessionStorage que permite almacenar en navegador y si se cierra la pestaña elimina esa informacion)
     -Cambiar para que solo sea busqueda desde "+" y no desde menu superior??
-    -Pasar correctamente el objeto JSON recibido(stringfy a string)
+    -Borrar el propio usuario para que no salga o desde el servidor
+    -Que en servidor se envien tambien la URL de las imagenes de los usuarios
+    -Servidor busquedas se deberia usar Lucene Apache, sino son poco utiles
 
     En usuarios:
-      -Al cargar que mire los valores del sessionStorage y muestre los usuarios y al final la borre
       -La busqueda que haga lo mismo que en amigos

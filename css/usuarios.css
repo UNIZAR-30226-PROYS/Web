@@ -2,6 +2,18 @@
     float: left;
 }
 
+#boton_mostrar_mas {
+  right: unset;
+  width: 60%;
+  margin-left: 100px;
+  font-size:20px;
+  margin-top: 20px;
+}
+
+#sin_resul {
+  margin-left: 70px;
+}
+
 .window-container {
     display: block;
     background: #fcfcfc;
@@ -172,6 +184,13 @@ button:hover {
         width: 400px !important;
         margin-left: 35% !important;
     }
+  #boton_mostrar_mas {
+    right: unset;
+    width: 20%;
+    margin-left: 400px;
+    font-size:20px;
+    margin-top: 20px;
+  }
   #IdUsar {
     width: 100%;
   }
