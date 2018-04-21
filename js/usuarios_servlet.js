@@ -14,7 +14,7 @@ $(document).ready(function() {
     for(i=inicio; i<(elem_por_pagina+inicio) && i<usuarios.length;i++){
       var user=usuarios[i];
       var image="img/user.png";
-      var large='<form name="accionLista" method="post" action="#"><div class="cancioninf"><ul><li id="barraopciones"><a href="usuario.html'+"?usuario="+user+'"><div class="imagen"><img src="'+image+'" alt="Imagen lista"></div></a></li><li id="barraopciones"><a href="usuario.html'+"?usuario="+user+'"><div class="nombrecancion">'+user+'</div></a></li><li id="barraopciones"><div class="simb_repr_elim"><input type="image" src="img/add_friend.png" alt="Añadir amigo" title="Añadir amigo"></div></li></ul></div></form>';
+      var large='<form class="form_seguir_usuario" method="post" action="/ps/SeguirUsuario"><div class="cancioninf"><ul><li id="barraopciones"><a href="usuario.html'+"?usuario="+user+'"><div class="imagen"><img src="'+image+'" alt="Imagen lista"></div></a></li><li id="barraopciones"><a href="usuario.html'+"?usuario="+user+'"><div class="nombrecancion">'+user+'</div></a></li><li id="barraopciones"><div class="simb_repr_elim"><input type="image" src="img/add_friend.png" alt="Añadir amigo" title="Añadir amigo"><input type="hidden" id="seguido" name="seguido" value="'+user+'"/></div></li></ul></div></form>';
       $(".informacion").append(large);
     }
     if((elem_por_pagina+inicio)<usuarios.length){
@@ -53,6 +53,36 @@ $(document).ready(function() {
         sessionStorage.setItem("lista_usuarios", lista_usuarios);
         //Pasar tambien el valor de busqueda
         window.location= "usuarios.html?busqueda_usuario="+valor_sin_espacioizquierdo+"&pagina=1";
+
+    }).fail(function(response){
+        alert("Error interno. Inténtelo más tarde.");
+    });
+  });
+
+  $(".form_seguir_usuario").submit(function(event){
+      event.preventDefault(); //prevent default action
+      var post_url = $(this).attr("action"); //get form action url
+      var form_data = $(this).serialize(); //Encode form elements for submission
+      var request_method = $(this).attr("method"); //get form GET/POST method
+      var user = form_data.slice(8);
+
+      $.ajax({
+          url : post_url,
+          type: request_method,
+          data : form_data,
+
+    }).done(function(response){ //
+       var obj=JSON.parse(response);
+       //Mostrar mensaje correspondiente en forma de ventana
+       if(obj.error != undefined){
+         $("#resultado_seguir").text("Ya estas siguiendo a "+ user+ ".");
+         $("#result_seguir").attr("src","img/error.png");
+       }
+       else{
+         $("#resultado_seguir").text("Usuario añadido como amigo.");
+         $("#result_seguir").attr("src","img/exito.png");
+       }
+       $('.button1').click();
 
     }).fail(function(response){
         alert("Error interno. Inténtelo más tarde.");

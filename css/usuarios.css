@@ -1,5 +1,13 @@
+.window-container1 {
+  margin: 13em auto !important;
+}
+
 #barraopciones {
     float: left;
+}
+
+#reg_exito{
+  margin-left: 70px;
 }
 
 #boton_mostrar_mas {
@@ -122,6 +130,13 @@ button:hover {
   margin: auto;
 }
 
+#result_seguir {
+  width: 90px;
+  height: 50px;
+  margin: auto;
+  margin-right: 30px;
+}
+
 .cancioninf{
   height: 5%;
   width: 100%;
@@ -156,6 +171,13 @@ button:hover {
     width: 110px;
     height: 70px;
     margin: auto;
+  }
+
+   #result_seguir {
+    width: 90px;
+    height: 50px;
+    margin: auto;
+    margin-right: 30px;
   }
 
   .simb_repr_elim input {

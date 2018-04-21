@@ -27,7 +27,7 @@ $(document).ready(function() {
           //Establecer cookies login e idsesion y cambiar de pagina
           crearCookie("login",obj.login,10);
           crearCookie("idSesion",obj.idSesion,10);
-          window.location = "home.html"
+          window.location = "home.html";
         }
 
     }).fail(function(response){ //
