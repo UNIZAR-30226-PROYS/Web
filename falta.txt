@@ -20,10 +20,6 @@ Perfil: cerrar sesion (hecho)
 
 AMIGOS:
   De buscar usuarios: (se usa sessionStorage que permite almacenar en navegador y si se cierra la pestaña elimina esa informacion)
-    -Cambiar para que solo sea busqueda desde "+" y no desde menu superior??
     -Borrar el propio usuario para que no salga o desde el servidor
     -Que en servidor se envien tambien la URL de las imagenes de los usuarios
     -Servidor busquedas se deberia usar Lucene Apache, sino son poco utiles
-
-    En usuarios:
-      -La busqueda que haga lo mismo que en amigos
