@@ -27,7 +27,10 @@
     <!-- Custom styles for this template -->
     <link href="css/simple-sidebar.css" rel="stylesheet">
 
-    	<link rel="stylesheet" href="css/demo.css">
+  	<link rel="stylesheet" href="css/demo.css">
+    <link rel="stylesheet" href="css/demo1.css">
+    <script src="js/listas_servlet.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="js/reg_exito.js"></script>
 
 </head>
 
@@ -213,19 +216,47 @@
               <table width="top:400%" >
                 <tr>
                   <th>
-                  <form action="#" method="post" id="form_crear_lista">
+                  <form id="form_crear_lista" action="/ps/CrearListaDeReproduccion" method="post">
                     <table height="100%">
                       <tr height="60px">
   											<td>
   												<label for="idNombre">  <font size="4" face="Arial" color="black" style="font-weight: bold"> &nbsp Nombre: </font></label>
   											</td>
   											<td>
-  												<input size="25" id="IdUsar" type="text" name="nombre" required/></br>
+  												<input size="25" id="IdUsar" type="text" name="nombreLista" required/></br>
   											</td>
   										</tr>
                     </table>
                     <input id="crear_lista" type="submit" value="Crear lista"/> <br/>
                   </form>
+                  </th>
+                </tr>
+
+              </table>
+
+            </td>
+      </div>
+    </div>
+
+
+    <button type="submit" class="button1 button-block" data-type="zoomin1" hidden></button>
+    <div class="overlay-container1">
+      <div class="window-container1 zoomin1">
+        <span class="close1"><img src="img\cerrar.png" width=30 height=30></span>
+        <td>
+              <table width="top:400%" >
+                <tr>
+                  <th>
+                  <table id="reg_exito" height="100%">
+                    <tr height="60px">
+                      <td>
+                        <img id="result_seguir" src="img/exito.png"/>
+                      </td>
+                      <td>
+                        <p id="resultado_seguir"></p>
+                      </td>
+                    </tr>
+                  </table>
                   </th>
                 </tr>
 

@@ -26,3 +26,6 @@ AMIGOS:
 
 
 (hecho)USUARIOS: muestra 4 por pagina con opcion de mas y funcion de seguir usuario
+
+LISTAS:
+  -(hecho)Crear lista. Informa de ello y recarga la pagina

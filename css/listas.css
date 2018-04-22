@@ -1,6 +1,14 @@
+.window-container1 {
+  margin: 13em auto !important;
+}
+
 #titulopagina {
   text-align: center;
   margin-right: 15%;
+}
+
+#reg_exito{
+  margin-left: 70px;
 }
 
 #barraopciones {
@@ -152,6 +160,13 @@ button:hover {
   margin: auto;
 }
 
+#result_seguir {
+  width: 90px;
+  height: 50px;
+  margin: auto;
+  margin-right: 30px;
+}
+
 .cancioninf{
   margin-top:0%;
   margin-bottom:0%;
@@ -177,6 +192,13 @@ button:hover {
     height: 70px;
     margin: auto;
   }
+
+  #result_seguir {
+   width: 90px;
+   height: 50px;
+   margin: auto;
+   margin-right: 30px;
+ }
 
   .simb_repr_play input {
     margin-left: 35%;
