@@ -15,17 +15,21 @@ General:
 
 
 (hecho)INICIO: servlets registro y login implementados, al cerrar sesion informa de ello. Si ya hay sesion va a home directamente
+
 Perfil: cerrar sesion (hecho)
 
 
 AMIGOS:
   De buscar usuarios: (se usa sessionStorage que permite almacenar en navegador y si se cierra la pestaña elimina esa informacion)
-    -Borrar el propio usuario para que no salga o desde el servidor
-    -Que en servidor se envien tambien la URL de las imagenes de los usuarios
-    -Servidor busquedas se deberia usar Lucene Apache, sino son poco utiles
+    -Mostrar amigos
 
 
-(hecho)USUARIOS: muestra 4 por pagina con opcion de mas y funcion de seguir usuario
+USUARIOS: (hecho)muestra 4 por pagina con opcion de mas y funcion de seguir usuario
+  -Borrar el propio usuario para que no salga o desde el servidor
+  -Que en servidor se envien tambien la URL de las imagenes de los usuarios y ponerla en la pagina
 
 LISTAS:
   -(hecho)Crear lista. Informa de ello y recarga la pagina
+  -(hecho)Muestra las listas del usuario
+  -Borrar lista
+  -Reproducir lista
