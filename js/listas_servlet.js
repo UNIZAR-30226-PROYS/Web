@@ -37,7 +37,8 @@ $(document).ready(function() {
          inicio=(pag_actual-1)*elem_por_pagina;
          for(i=inicio; i<(elem_por_pagina+inicio) && i<listas.length;i++){
            var lista=listas[i];
-           var large='<form name="accionLista" method="post" action="#"><div class="cancioninf"><ul><li id="barraopciones"><a href="lista.html'+"?lista="+lista+'" id="enlacecancion"><div class="imagen"><img src="img/listaicono.png" alt="Imagen lista"></div></a></li><li id="barraopciones"><a href="lista.html'+"?lista="+lista+'"><div class="nombrecancion">'+lista+'</div></a></li><li id="barraopciones"><div class="simb_repr_play"><input type="image" src="img/play.png" alt="Reproducir lista" title="Reproducir lista" onClick="playMusic(\'media/Blue Browne.mp3\');return false;"></div></li><li id="barraopciones"><div class="simb_repr_elim"><input type="image" src="img/eliminar.png" alt="Eliminar lista" title="Eliminar lista"></div></li></ul></div></form>';
+           //var large='<div class="cancioninf"><ul><li id="barraopciones"><a href="lista.html'+"?lista="+lista+'" id="enlacecancion"><div class="imagen"><img src="img/listaicono.png" alt="Imagen lista"></div></a></li><li id="barraopciones"><a href="lista.html'+"?lista="+lista+'"><div class="nombrecancion">'+lista+'</div></a></li><li id="barraopciones"><div class="simb_repr_play"><input type="image" src="img/play.png" alt="Reproducir lista" title="Reproducir lista" onClick="playMusic(\'media/Blue Browne.mp3\');return false;"></div></li><li id="barraopciones"><form id="prueba_form" class="form_borrar_lista" method="post" action="/ps/BorrarListaDeReproduccio"><div class="simb_repr_elim"><input type="image" id="prueba" src="img/eliminar.png" alt="Eliminar lista" title="Eliminar lista"></div><input type="hidden" id="seguido" name="nombreLista" value="'+lista+'"/></form></li></ul></div>';
+           var large='<div class="cancioninf"><ul><li id="barraopciones"><a href="lista.html'+"?lista="+lista+'" id="enlacecancion"><div class="imagen"><img src="img/listaicono.png" alt="Imagen lista"></div></a></li><li id="barraopciones"><a href="lista.html'+"?lista="+lista+'"><div class="nombrecancion">'+lista+'</div></a></li><li id="barraopciones"><div class="simb_repr_play"><input type="image" src="img/play.png" alt="Reproducir lista" title="Reproducir lista" onClick="playMusic(\'media/Blue Browne.mp3\');return false;"></div></li><li id="barraopciones"><form class="form_borrar_lista" method="post" action="/ps/BorrarListaDeReproduccion"><div class="simb_repr_elim"><input type="image" src="img/eliminar.png" alt="Eliminar lista" title="Eliminar lista"></div><input type="hidden" id="seguido" name="nombreLista" value="'+lista+'"/></form></li></ul></div>';
            $(".informacion").append(large);
          }
          if((elem_por_pagina+inicio)<listas.length){
@@ -52,28 +53,7 @@ $(document).ready(function() {
     });
   });
 
-  if(pag_actual == null){//No hay informacion, solicitar al servidor
-    $("#form_mostrar_listas").submit();
-  }
-  else{
-    //Ya estan mostrar siguiente pagina
-    pag_actual = parseInt(pag_actual);
-    inicio=(pag_actual-1)*elem_por_pagina;
-
-    var jsonData = JSON.parse(JSON.parse(sessionStorage.getItem("listas")));
-    var listas = jsonData.nombre;
-    for(i=inicio; i<(elem_por_pagina+inicio) && i<listas.length;i++){
-      var lista=listas[i];
-      var large='<form name="accionLista" method="post" action="#"><div class="cancioninf"><ul><li id="barraopciones"><a href="lista.html'+"?lista="+lista+'" id="enlacecancion"><div class="imagen"><img src="img/listaicono.png" alt="Imagen lista"></div></a></li><li id="barraopciones"><a href="lista.html'+"?lista="+lista+'"><div class="nombrecancion">'+lista+'</div></a></li><li id="barraopciones"><div class="simb_repr_play"><input type="image" src="img/play.png" alt="Reproducir lista" title="Reproducir lista" onClick="playMusic(\'media/Blue Browne.mp3\');return false;"></div></li><li id="barraopciones"><div class="simb_repr_elim"><input type="image" src="img/eliminar.png" alt="Eliminar lista" title="Eliminar lista"></div></li></ul></div></form>';
-      $(".informacion").append(large);
-    }
-    if((elem_por_pagina+inicio)<listas.length){
-      var pagina_sig=pag_actual+1;
-      var boton_mas = '<br><br><form action="listas.html"><button type="submit" id="boton_mostrar_mas" class="aumentar">Mostrar más</button><input type="hidden" name="pagina" value="'+pagina_sig+'"/></form>';
-      $(".informacion").append(boton_mas);
-    }
-  }
-
+  $("#form_mostrar_listas").submit();
 
   $("#form_crear_lista").submit(function(event){
       event.preventDefault(); //prevent default action
@@ -111,4 +91,36 @@ $(document).ready(function() {
     });
   });
 
+});
+
+//Se ejecuta despues, una vez que estan los elementos cargados, se define el form de borrar lista
+$(window).load(function() {
+    $(".form_borrar_lista").submit(function(event){
+        event.preventDefault(); //prevent default action
+        var post_url = $(this).attr("action"); //get form action url
+        var form_data = $(this).serialize(); //Encode form elements for submission
+        var request_method = $(this).attr("method"); //get form GET/POST method
+        var lista = form_data.slice(12);
+
+        $.ajax({
+            url : post_url,
+            type: request_method,
+            data : form_data,
+
+      }).done(function(response){
+         var obj=JSON.parse(response);
+         //Mostrar mensaje correspondiente en forma de ventana
+         if(obj.error != undefined){
+           alert("Error interno. Inténtelo más tarde.");
+         }
+         else{
+           $("#resultado_seguir").text("Lista eliminada correctamente.");
+           $("#result_seguir").attr("src","img/exito.png");
+         }
+         $('.button1').click();
+
+      }).fail(function(response){
+          alert("Error interno. Inténtelo más tarde.");
+      });
+    });
 });

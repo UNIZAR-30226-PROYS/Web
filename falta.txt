@@ -31,5 +31,5 @@ USUARIOS: (hecho)muestra 4 por pagina con opcion de mas y funcion de seguir usua
 LISTAS:
   -(hecho)Crear lista. Informa de ello y recarga la pagina
   -(hecho)Muestra las listas del usuario
-  -Borrar lista
+  -(hecho)Borrar lista(falta comprobarlo una vez que el servlet BorrarListaDeReproduccion envie JSON vacio(ahora no envia nada))
   -Reproducir lista

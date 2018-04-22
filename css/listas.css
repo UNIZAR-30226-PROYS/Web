@@ -181,7 +181,7 @@ button:hover {
 
 .cancioninf{
   margin-top:0%;
-  margin-bottom:0%;
+  margin-bottom:20px;
 }
 
 @media(min-width:768px) {
