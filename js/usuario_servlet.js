@@ -32,11 +32,21 @@ $(document).ready(function() {
           data : form_data,
 
     }).done(function(response){ //
-       var obj=JSON.parse(response);
+        var obj=JSON.parse(response);
         var lista_usuarios = JSON.stringify(response);
-        sessionStorage.setItem("lista_usuarios", lista_usuarios);
-        //Pasar tambien el valor de busqueda
-        window.location= "usuarios.html?busqueda_usuario="+valor_sin_espacioizquierdo+"&pagina=1";
+        if(obj.error != undefined){
+          if(obj.error.indexOf("Usuario no logeado en el servidor") >= 0){
+            //El usuario no esta logeado, quitar cookies e ir a inicio
+            borrarCookie("login");
+            borrarCookie("idSesion");
+            window.location = "inicio.html";
+          }
+        }
+        else{
+          sessionStorage.setItem("lista_usuarios", lista_usuarios);
+          //Pasar tambien el valor de busqueda
+          window.location= "usuarios.html?busqueda_usuario="+valor_sin_espacioizquierdo+"&pagina=1";
+        }
 
     }).fail(function(response){
         alert("Error interno. Inténtelo más tarde.");
@@ -78,6 +88,12 @@ $(document).ready(function() {
 
            l='<form id="form_seguir_usuario" method="post" action="/ps/SeguirUsuario"><div class="anadir_lista"><input type="image" src="img/add_friend.png" alt="Añadir amigo" title="Añadir amigo"></div><input type="hidden" id="seguido" name="seguido" value="'+c+'"/></form>';
            $("#titulopagina").after(l);
+         }
+         else if(obj.error.indexOf("Usuario no logeado en el servidor") >= 0){
+           //El usuario no esta logeado, quitar cookies e ir a inicio
+           borrarCookie("login");
+           borrarCookie("idSesion");
+           window.location = "inicio.html";
          }
          else{
            $("#titulopagina").after("<h2 id=\"sin_resul\">No existe el usuario.</h2>");
@@ -138,8 +154,16 @@ $(window).load(function() {
        var obj=JSON.parse(response);
        //Mostrar mensaje correspondiente en forma de ventana
        if(obj.error != undefined){
-         $("#resultado_seguir").text("Ya estas siguiendo a "+ user+ ".");
-         $("#result_seguir").attr("src","img/error.png");
+         if(obj.error.indexOf("Usuario no logeado en el servidor") >= 0){
+           //El usuario no esta logeado, quitar cookies e ir a inicio
+           borrarCookie("login");
+           borrarCookie("idSesion");
+           window.location = "inicio.html";
+         }
+         else{
+           $("#resultado_seguir").text("Ya estas siguiendo a "+ user+ ".");
+           $("#result_seguir").attr("src","img/error.png");
+         }
        }
        else{
          $("#resultado_seguir").text("Usuario añadido como amigo.");

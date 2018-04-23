@@ -21,8 +21,16 @@ $(document).ready(function() {
     }).done(function(response){
        var obj=JSON.parse(response);
        if(obj.error != undefined){
-         //No hay resultados
-         $("#anadir_lista").after("<h2 id=\"sin_resul\">No hay listas.</h2>");
+         if(obj.error.indexOf("Usuario no logeado en el servidor") >= 0){
+           //El usuario no esta logeado, quitar cookies e ir a inicio
+           borrarCookie("login");
+           borrarCookie("idSesion");
+           window.location = "inicio.html";
+         }
+         else{
+           //No hay resultados
+           $("#anadir_lista").after("<h2 id=\"sin_resul\">No hay listas.</h2>");
+         }
        }
        else{
          var listas = obj.nombre;
@@ -75,8 +83,16 @@ $(document).ready(function() {
     }).done(function(response){ //
        var obj=JSON.parse(response);
        if(obj.error != undefined){
-         $("#resultado_seguir").text("Ya existe la lista "+ valor_sin_espacioizquierdo+ ".");
-         $("#result_seguir").attr("src","img/error.png");
+         if(obj.error.indexOf("Usuario no logeado en el servidor") >= 0){
+           //El usuario no esta logeado, quitar cookies e ir a inicio
+           borrarCookie("login");
+           borrarCookie("idSesion");
+           window.location = "inicio.html";
+         }
+         else{
+           $("#resultado_seguir").text("Ya existe la lista "+ valor_sin_espacioizquierdo+ ".");
+           $("#result_seguir").attr("src","img/error.png");
+         }
        }
        else{
          $("#resultado_seguir").text("Lista creada correctamente.");
@@ -109,7 +125,15 @@ $(window).load(function() {
          var obj=JSON.parse(response);
          //Mostrar mensaje correspondiente en forma de ventana
          if(obj.error != undefined){
-           alert("Error interno. Inténtelo más tarde.");
+           if(obj.error.indexOf("Usuario no logeado en el servidor") >= 0){
+             //El usuario no esta logeado, quitar cookies e ir a inicio
+             borrarCookie("login");
+             borrarCookie("idSesion");
+             window.location = "inicio.html";
+           }
+           else{
+             alert("Error interno. Inténtelo más tarde.");
+           }
          }
          else{
            $("#resultado_seguir").text("Lista eliminada correctamente.");

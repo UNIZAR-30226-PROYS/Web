@@ -18,12 +18,22 @@ $(document).ready(function() {
           type: request_method,
           data : form_data,
 
-    }).done(function(response){ //
+    }).done(function(response){
        var obj=JSON.parse(response);
         var lista_canciones = JSON.stringify(response);
-        sessionStorage.setItem("lista_canciones", lista_canciones);
-        //Pasar tambien el valor de busqueda
-        window.location= "busqueda.html?busqueda_cancion="+valor_sin_espacioizquierdo+"&pagina=1";
+        if(obj.error != undefined){
+          if(obj.error.indexOf("Usuario no logeado en el servidor") >= 0){
+            //El usuario no esta logeado, quitar cookies e ir a inicio
+            borrarCookie("login");
+            borrarCookie("idSesion");
+            window.location = "inicio.html";
+          }
+        }
+        else{
+          sessionStorage.setItem("lista_canciones", lista_canciones);
+          //Pasar tambien el valor de busqueda
+          window.location= "busqueda.html?busqueda_cancion="+valor_sin_espacioizquierdo+"&pagina=1";
+        }
 
     }).fail(function(response){
         alert("Error interno. Inténtelo más tarde.");

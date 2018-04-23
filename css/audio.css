@@ -117,7 +117,6 @@ div.audio-player {
   width: 12px  !important;
   height: 14px  !important;
   top: -2px;
-  background: url('../images/dot1.png') no-repeat 0px 0px;
 }
 /* time progress tooltip */
 .mejs-controls .mejs-time-rail .mejs-time-float {
@@ -128,7 +127,6 @@ div.audio-player {
   top: -26px;
   margin-left: 0;
   z-index: 9999;
-  background: url('../images/time-box.png');
 }
 .mejs-controls .mejs-time-rail .mejs-time-float-current {
   width: 33px !important;

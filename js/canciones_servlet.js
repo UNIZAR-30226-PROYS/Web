@@ -19,8 +19,16 @@ $(window).load(function() {
     }).done(function(response){
        var obj=JSON.parse(response);
        if(obj.error != undefined){
-         //No hay resultados
-         $(".close").after("<h2 id=\"sin_resul\">No hay listas.</h2>");
+         if(obj.error.indexOf("Usuario no logeado en el servidor") >= 0){
+           //El usuario no esta logeado, quitar cookies e ir a inicio
+           borrarCookie("login");
+           borrarCookie("idSesion");
+           window.location = "inicio.html";
+         }
+         else{
+           //No hay resultados
+           $(".close").after("<h2 id=\"sin_resul\">No hay listas.</h2>");
+         }
        }
        else{
          var listas = obj.nombre;

@@ -19,8 +19,16 @@ $(document).ready(function() {
     }).done(function(response){
        var obj=JSON.parse(response);
        if(obj.error != undefined || obj.SinSeguidos != undefined){
+         if(obj.error.indexOf("Usuario no logeado en el servidor") >= 0){
+           //El usuario no esta logeado, quitar cookies e ir a inicio
+           borrarCookie("login");
+           borrarCookie("idSesion");
+           window.location = "inicio.html";
+         }
+         else{
+           $("#anadir_lista").after("<h2 id=\"sin_resul\">No hay amigos.</h2>");
+         }
          //No hay resultados
-         $("#anadir_lista").after("<h2 id=\"sin_resul\">No hay amigos.</h2>");
        }
        else{
          var amigos = obj.listaDeSeguidos;
@@ -72,13 +80,22 @@ $(document).ready(function() {
           type: request_method,
           data : form_data,
 
-    }).done(function(response){ //
-       var obj=JSON.parse(response);
-        var lista_usuarios = JSON.stringify(response);
+    }).done(function(response){
+      var obj=JSON.parse(response);
+      var lista_usuarios = JSON.stringify(response);
+      if(obj.error != undefined){
+        if(obj.error.indexOf("Usuario no logeado en el servidor") >= 0){
+          //El usuario no esta logeado, quitar cookies e ir a inicio
+          borrarCookie("login");
+          borrarCookie("idSesion");
+          window.location = "inicio.html";
+        }
+      }
+      else{
         sessionStorage.setItem("lista_usuarios", lista_usuarios);
         //Pasar tambien el valor de busqueda
         window.location= "usuarios.html?busqueda_usuario="+valor_sin_espacioizquierdo+"&pagina=1";
-
+      }
     }).fail(function(response){
         alert("Error interno. Inténtelo más tarde.");
     });
@@ -104,7 +121,15 @@ $(window).load(function() {
          var obj=JSON.parse(response);
          //Mostrar mensaje correspondiente en forma de ventana
          if(obj.error != undefined){
-           alert("Error interno. Inténtelo más tarde.");
+           if(obj.error.indexOf("Usuario no logeado en el servidor") >= 0){
+             //El usuario no esta logeado, quitar cookies e ir a inicio
+             borrarCookie("login");
+             borrarCookie("idSesion");
+             window.location = "inicio.html";
+           }
+           else{
+             alert("Error interno. Inténtelo más tarde.");
+           }
          }
          else{
            $("#resultado_seguir").text("Amigo eliminado correctamente.");

@@ -13,7 +13,15 @@ $(document).ready(function() {
     }).done(function(response){ //
        var obj=JSON.parse(response);
         if(obj.error != undefined){
-          alert(obj.error);
+          if(obj.error.indexOf("Usuario no logeado en el servidor") >= 0){
+            //El usuario no esta logeado, quitar cookies e ir a inicio
+            borrarCookie("login");
+            borrarCookie("idSesion");
+            window.location = "inicio.html";
+          }
+          else{
+            alert(obj.error);
+          }
         }
         else{
           //Eliminar cookies login e idsesion y cambiar de pagina a inicio
