@@ -26,7 +26,6 @@ $(document).ready(function() {
        }
        else{
          var listas = obj.nombre;
-         sessionStorage.setItem("listas", JSON.stringify(response));
          //Definir elementos a mostrar por pagina, pagina actual y valor a empezar a mostrar
          if(pag_actual == null){
            pag_actual = 1;
@@ -37,7 +36,6 @@ $(document).ready(function() {
          inicio=(pag_actual-1)*elem_por_pagina;
          for(i=inicio; i<(elem_por_pagina+inicio) && i<listas.length;i++){
            var lista=listas[i];
-           //var large='<div class="cancioninf"><ul><li id="barraopciones"><a href="lista.html'+"?lista="+lista+'" id="enlacecancion"><div class="imagen"><img src="img/listaicono.png" alt="Imagen lista"></div></a></li><li id="barraopciones"><a href="lista.html'+"?lista="+lista+'"><div class="nombrecancion">'+lista+'</div></a></li><li id="barraopciones"><div class="simb_repr_play"><input type="image" src="img/play.png" alt="Reproducir lista" title="Reproducir lista" onClick="playMusic(\'media/Blue Browne.mp3\');return false;"></div></li><li id="barraopciones"><form id="prueba_form" class="form_borrar_lista" method="post" action="/ps/BorrarListaDeReproduccio"><div class="simb_repr_elim"><input type="image" id="prueba" src="img/eliminar.png" alt="Eliminar lista" title="Eliminar lista"></div><input type="hidden" id="seguido" name="nombreLista" value="'+lista+'"/></form></li></ul></div>';
            var large='<div class="cancioninf"><ul><li id="barraopciones"><a href="lista.html'+"?lista="+lista+'" id="enlacecancion"><div class="imagen"><img src="img/listaicono.png" alt="Imagen lista"></div></a></li><li id="barraopciones"><a href="lista.html'+"?lista="+lista+'"><div class="nombrecancion">'+lista+'</div></a></li><li id="barraopciones"><div class="simb_repr_play"><input type="image" src="img/play.png" alt="Reproducir lista" title="Reproducir lista" onClick="playMusic(\'media/Blue Browne.mp3\');return false;"></div></li><li id="barraopciones"><form class="form_borrar_lista" method="post" action="/ps/BorrarListaDeReproduccion"><div class="simb_repr_elim"><input type="image" src="img/eliminar.png" alt="Eliminar lista" title="Eliminar lista"></div><input type="hidden" id="seguido" name="nombreLista" value="'+lista+'"/></form></li></ul></div>';
            $(".informacion").append(large);
          }

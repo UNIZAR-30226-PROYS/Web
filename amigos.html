@@ -28,7 +28,9 @@
     <link href="css/simple-sidebar.css" rel="stylesheet">
     <script src="js/changeImage.js"></script>
     <script src="js/amigos_servlet.js" charset="UTF-8"></script>
-    	<link rel="stylesheet" href="css/demo.css">
+  	<link rel="stylesheet" href="css/demo.css">
+    <link rel="stylesheet" href="css/demo1.css">
+    <script type="text/javascript" src="js/reg_exito.js"></script>
 
 </head>
 
@@ -128,64 +130,14 @@
         <div class="informacion">
           <br/>
           <div id="titulopagina"><h1>Amigos</h1></div>
-            <div class="anadir_lista">
+            <div class="anadir_lista" id="anadir_lista">
               <img src="img/anadir.png" alt="Buscar amigo" title="Buscar amigo" class="button" data-type="zoomin">
             </div>
-
-          <form name="accionLista" method="post" action="#">
-            <div class="cancioninf">
-              <ul>
-                <li id="barraopciones">
-                  <a href="usuario.html">
-                    <div class="imagen">
-                      <img src="img/user.png" alt="Imagen lista">
-                    </div>
-                  </a>
-                </li>
-                <li id="barraopciones">
-                  <a href="usuario.html">
-                    <div class="nombrecancion">
-                      Persona1
-                    </div>
-                  </a>
-                </li>
-                <li id="barraopciones"><div class="simb_repr_elim">
-                    <input type="image" src="img/eliminar.png" alt="Eliminar amigo" title="Eliminar amigo">
-                </div></li>
-              </ul>
-            </div>
-          </form>
-
-
-  				<br/>
-          <form name="accionLista" method="post" action="#">
-            <div class="cancioninf">
-              <ul>
-                <li id="barraopciones">
-                  <a href="usuario.html">
-                    <div class="imagen">
-                      <img src="img/user.png" alt="Imagen lista">
-                    </div>
-                  </a>
-                </li>
-                <li id="barraopciones">
-                  <a href="usuario.html">
-                    <div class="nombrecancion">
-                      Persona2
-                    </div>
-                  </a>
-                </li>
-
-
-                <li id="barraopciones"><div class="simb_repr_elim">
-                    <input type="image" src="img/eliminar.png" alt="Eliminar amigo" title="Eliminar amigo">
-                </div></li>
-              </ul>
-            </div>
-          </form>
         </div>
 
-
+        <form id="form_mostrar_amigos" method="post" action="/ps/VerSeguidos">
+          <input type="submit" value="Enviar">
+        </form>
     </div>
     <!-- /#wrapper -->
 
@@ -222,6 +174,33 @@
                     </table>
                     <input id="crear_lista" type="submit" value="Buscar"/> <br/>
                   </form>
+                  </th>
+                </tr>
+
+              </table>
+
+            </td>
+      </div>
+    </div>
+
+    <button type="submit" class="button1 button-block" data-type="zoomin1" hidden></button>
+    <div class="overlay-container1">
+      <div class="window-container1 zoomin1">
+        <span class="close1"><img src="img\cerrar.png" width=30 height=30></span>
+        <td>
+              <table width="top:400%" >
+                <tr>
+                  <th>
+                  <table id="reg_exito" height="100%">
+                    <tr height="60px">
+                      <td>
+                        <img id="result_seguir" src="img/exito.png"/>
+                      </td>
+                      <td>
+                        <p id="resultado_seguir"></p>
+                      </td>
+                    </tr>
+                  </table>
                   </th>
                 </tr>
 

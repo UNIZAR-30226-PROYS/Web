@@ -4,6 +4,29 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-simple-sidebar/blob/master/LICENSE)
  */
 
+ #result_seguir {
+   width: 90px;
+   height: 50px;
+   margin: auto;
+   margin-right: 30px;
+ }
+
+ #boton_mostrar_mas {
+   right: unset;
+   width: 60%;
+   margin-left: 100px;
+   font-size:20px;
+   margin-top: 20px;
+ }
+
+ #sin_resul {
+   margin-left: 70px;
+ }
+
+ #reg_exito{
+   margin-left: 70px;
+ }
+
  html {
    height: 100%;
  }
@@ -422,6 +445,13 @@
 
 
 @media(min-width:768px) {
+  #result_seguir {
+   width: 90px;
+   height: 50px;
+   margin: auto;
+   margin-right: 30px;
+ }
+ 
   #cancion {
     width: 60%;
   }
@@ -937,5 +967,14 @@
   .informacion{
     margin-left: 170px;
     width: 92%;
+  }
+}
+@media (min-width: 1100px) {
+  #boton_mostrar_mas {
+    right: unset;
+    width: 20%;
+    margin-left: 400px;
+    font-size:20px;
+    margin-top: 20px;
   }
 }

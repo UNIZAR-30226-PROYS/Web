@@ -20,8 +20,9 @@ Perfil: cerrar sesion (hecho)
 
 
 AMIGOS:
-  De buscar usuarios: (se usa sessionStorage que permite almacenar en navegador y si se cierra la pestaña elimina esa informacion)
-    -Mostrar amigos
+  -(hecho)Mostrar amigos
+  -(hecho)Borrar amigo
+  -Mostrar imagenes de los usuarios
 
 
 USUARIOS: (hecho)muestra 4 por pagina con opcion de mas y funcion de seguir usuario
