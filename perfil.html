@@ -29,7 +29,6 @@
 	<link rel="stylesheet" href="css/perfil.css">
 
   	<link rel="stylesheet" href="css/demo.css">
-    <link rel="stylesheet" href="css/demo1.css">
     <link rel="stylesheet" href="css/ventanacontrasena.css">
     <link rel="stylesheet" href="css/ventanaelimcuenta.css">
     <link rel="stylesheet" href="css/ventanacambiarfoto.css">
@@ -157,9 +156,8 @@
           <div class="block1">
             <label for="idNombre">Nombre:</label>
               <input size="25" id="idNombre" type="text" value="nombreX" readonly="true"/></br>
-              <button type="submit" class="button1 button-block" data-type="zoomin1" onclick="set_nombre()">Modificar nombre</button>
           </div>
-					<br/> <br/>
+
 
           <div class="block1" id="bloque_contra">
             <button type="submit" class="button2 button-block" data-type="zoomin2">Modificar contraseña</button>
@@ -189,39 +187,7 @@
     });
     </script>
 
-
-    <!-- Ventana cambiar nombre lista  -->
-    <!-- contenido de la ventana emergente -->
-    <div class="overlay-container1">
-      <div class="window-container1 zoomin1">
-        <span class="close1"><img src="img\cerrar.png" width=30 height=30></span>
-        <td>
-              <table width="top:400%" >
-                <tr>
-                  <th>
-                  <form action="#" method="post" id="form_cambio_nombre">
-                    <table height="100%">
-                      <tr height="60px">
-                        <td>
-                          <label for="idNombre">  <font size="4" face="Arial" color="black" style="font-weight: bold"> &nbsp Nombre: </font></label>
-                        </td>
-                        <td>
-                          <input size="25" id="IdUsar1" type="text" name="nombre" maxlength="15" pattern="[A-Za-z]{1}[A-Za-z0-9]{3,}" title="Debe tener 4 o más carácteres, empezar por una letra y contener solo letras o números."/></br>
-                        </td>
-                      </tr>
-                    </table>
-                    <input id="crear_lista1" type="submit" value="Cambiar nombre"/> <br/>
-                  </form>
-                  </th>
-                </tr>
-
-              </table>
-
-            </td>
-      </div>
-    </div>
     <script>!window.jQuery && document.write(unescape('%3Cscript src="js/jquery-1.7.1.min.js"%3E%3C/script%3E'))</script>
-    <script type="text/javascript" src="js/demo1.js"></script>
     <script type="text/javascript" src="js/ventanacontrasena.js"></script>
     <script type="text/javascript" src="js/ventanaelimcuenta.js"></script>
     <script type="text/javascript" src="js/ventanacambiarfoto.js"></script>

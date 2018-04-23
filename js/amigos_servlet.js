@@ -18,7 +18,7 @@ $(document).ready(function() {
 
     }).done(function(response){
        var obj=JSON.parse(response);
-       if(obj.error != undefined){
+       if(obj.error != undefined || obj.SinSeguidos != undefined){
          //No hay resultados
          $("#anadir_lista").after("<h2 id=\"sin_resul\">No hay amigos.</h2>");
        }

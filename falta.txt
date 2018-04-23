@@ -2,12 +2,8 @@ Falta:
 General:
   -Cambiar form para que sea sobre SSL. Usar "https://yourdomain.com/servlet" en action(dejarlo hasta que todo funcione y crear certificado en servidor)
 
-  -Usar jQuery(ajax) para recibir la respuesta JSON y mostrarla en la web
-
-  -Cambiar valor "name" en los parametros form a enviar para que concuerden con el servidor
-
   -Añadir limitacion resultados (salgan x resultados y opcion "Mostrar mas" que carge otros) en paginas:
-      -Albumes, amigos?, artistas, busqueda, favoritos?, lista?, listas, recientes?, usuarios(hecho -> usar como referencia)
+      -Albumes, amigos(hecho), artistas, busqueda, favoritos?, lista?, listas(hecho), recientes?, usuarios(hecho)
 
   -En todas paginas si no se ha iniciado sesion que lleve al inicio(en perfil_servlet.js ya esta, el resto hacerlo al final)
 
@@ -22,7 +18,14 @@ Perfil: cerrar sesion (hecho)
 AMIGOS:
   -(hecho)Mostrar amigos
   -(hecho)Borrar amigo
+  -(hecho)Busqueda canciones
   -Mostrar imagenes de los usuarios
+
+BUSQUEDA:(canciones)
+  -Poner formato para mostrar canciones correctamente (con URL imagen, nombre y artista)
+  -Implementar funciones cancion(repr, fav y añadir a lista)
+  -(hecho)Al pulsar añadir a lista salen las listas
+  -Para añadir a lista, en form de lista hay que poner los parametros de la cancion elegida (nombre,artista,...) usar diversos input hidden y poner valor
 
 
 USUARIOS: (hecho)muestra 4 por pagina con opcion de mas y funcion de seguir usuario

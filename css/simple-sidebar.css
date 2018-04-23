@@ -4,6 +4,14 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-simple-sidebar/blob/master/LICENSE)
  */
 
+ .anadir_cancion_lista_f {
+   background: none;
+   border: none;
+ }
+ .anadir_cancion_lista_f:focus {
+   outline: none;
+ }
+
  #result_seguir {
    width: 90px;
    height: 50px;
@@ -451,7 +459,7 @@
    margin: auto;
    margin-right: 30px;
  }
- 
+
   #cancion {
     width: 60%;
   }
