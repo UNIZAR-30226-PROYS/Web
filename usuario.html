@@ -24,7 +24,10 @@
     <script src="js/changeImage.js"></script>
     <!-- Custom styles for this template -->
     <link href="css/simple-sidebar.css" rel="stylesheet">
-	<link rel="stylesheet" href="css/usuario.css">
+  	<link rel="stylesheet" href="css/usuario.css">
+    <script src="js/usuario_servlet.js" charset="UTF-8"></script>
+    <link rel="stylesheet" href="css/demo1.css">
+    <script type="text/javascript" src="js/reg_exito.js"></script>
 </head>
 
 <body>
@@ -108,9 +111,9 @@
             <a href="#menu-music" class="buttonMenu" id="menu-music" onmouseover="changeImage()" onmouseout="changeImageAntes()"><img id="simbolo_menu_imagen" src="img/simbolomenu.png" width="30" height="30" alt="menu"></a>
 
 						<div id="sb-search" class="sb-search sb-search-open">
-							<form action="busqueda.html" method="post">
+              <form id="form_buscar_amigos" action="/ps/BuscarUsuarios" method="post">
 
-								<input class="sb-search-input" placeholder="Búsqueda usuario" type="search" name="search" id="search" required>
+								<input class="sb-search-input" placeholder="Búsqueda usuario" type="search" name="usuario" id="search_user" required>
 								<input class="sb-search-submit" type="submit" value="">
 								<span class="sb-icon-search"> </span>
 							</form>
@@ -122,57 +125,17 @@
 
         <div class="informacion">
 		 <br/>
-          <div id="titulopagina"><h1>Usuario1</h1></div>
-					<div class="imagen">
-						<img src="img/user.png" alt="Imagen usuario" >
-					</div>
-          <form action="añadirAmigo" method="post">
-            <div class="anadir_lista">
-              <input type="image" src="img/add_friend.png" alt="Añadir amigo" title="Añadir amigo">
-            </div>
-          </form>
+          <div id="titulopagina"></div>
 
           <div class="block1" id="bloque_contra">
-            <form name="accionLista" method="post" action="#">
-              <div class="cancioninf">
-                <ul>
-                  <li id="barraopciones"><a href="lista.html" id="enlacecancion">
-                    <div class="imagen">
-                      <img src="img/listaicono.png" alt="Imagen lista">
-                    </div>
-                  </a></li>
-                  <li id="barraopciones">
-                    <a href="lista.html">
-                      <div class="nombrecancion">
-                        Lista1
-                      </div>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </form>
 
-            <form name="accionLista" method="post" action="#">
-              <div class="cancioninf">
-                <ul>
-                  <li id="barraopciones"><a href="lista.html" id="enlacecancion">
-                    <div class="imagen">
-                      <img src="img/listaicono.png" alt="Imagen lista">
-                    </div>
-                  </a></li>
-                  <li id="barraopciones">
-                    <a href="lista.html">
-                      <div class="nombrecancion">
-                        Lista2
-                      </div>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </form>
           </div>
         </div>
 
+        <form id="form_mostrar_usuario" method="post" action="/ps/MostrarListasReproduccion">
+          <input type="hidden" id="user" name="user">
+          <input type="submit" value="Enviar">
+        </form>
 
     </div>
     <!-- /#wrapper -->
@@ -189,6 +152,32 @@
     });
     </script>
 
+    <button type="submit" class="button1 button-block" data-type="zoomin1" hidden></button>
+    <div class="overlay-container1">
+      <div class="window-container1 zoomin1">
+        <span class="close1"><img src="img\cerrar.png" width=30 height=30></span>
+        <td>
+              <table width="top:400%" >
+                <tr>
+                  <th>
+                  <table id="reg_exito" height="100%">
+                    <tr height="60px">
+                      <td>
+                        <img id="result_seguir" src="img/exito.png"/>
+                      </td>
+                      <td>
+                        <p id="resultado_seguir"></p>
+                      </td>
+                    </tr>
+                  </table>
+                  </th>
+                </tr>
+
+              </table>
+
+            </td>
+      </div>
+    </div>
 </body>
 
 </html>
