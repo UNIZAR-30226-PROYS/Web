@@ -1,0 +1,16 @@
+SUBIRMUSICA:
+	Paremetro nombre de la cancion: o quitar nombre en web o modificar en servlet para que acepte el nombre del form en vez del metadato
+
+Al devolver cancion en una busqueda falta la clave de la ruta de la imagen
+
+Servlets que faltan:
+	-Devolver todos los estilos/generos
+	-Devolver canciones de un genero
+	-Top semanal(unas pocas canciones que seran recomendaciones a todos los users)
+	-Devolver todos los albumes
+	-Devolver todos los albumes de un artista
+	-Devolver todos los artistas
+	-Buscar lista reproduccion
+	-Buscar artista
+	-Buscar album
+	
