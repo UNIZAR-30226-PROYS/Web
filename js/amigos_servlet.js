@@ -90,8 +90,13 @@ $(document).ready(function() {
           borrarCookie("idSesion");
           window.location = "inicio.html";
         }
+        else if(obj.error.indexOf("usuario cuyo nombre sea o empiece") >= 0){
+          sessionStorage.setItem("lista_usuarios", lista_usuarios);
+          //Pasar tambien el valor de busqueda
+          window.location= "usuarios.html?busqueda_usuario="+valor_sin_espacioizquierdo+"&pagina=1";
+        }
         else{
-          alert("Error. Inténtelo más tarde: "+obj.error);
+          alert("Error. Inténtelo más tarde."+obj.error);
         }
       }
       else{

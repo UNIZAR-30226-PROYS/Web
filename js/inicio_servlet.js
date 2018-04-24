@@ -5,6 +5,11 @@ $(document).ready(function() {
     $("#inf_acceso").html("Sesión cerrada con éxito.");
     borrarCookie("sesionCerrada");
   }
+  else if(leerCookie("cuentaEliminada") != null){
+    $("#inf_acceso").css("color", "#088A08");
+    $("#inf_acceso").html("Cuenta eliminada con éxito.");
+    borrarCookie("cuentaEliminada");
+  }
 
   $("#form_acceso").submit(function(event){
       event.preventDefault(); //prevent default action
