@@ -18,17 +18,17 @@ $(document).ready(function() {
 
     }).done(function(response){
        var obj=JSON.parse(response);
-       if(obj.error != undefined || obj.SinSeguidos != undefined){
+       if(obj.error != undefined){
          if(obj.error.indexOf("Usuario no logeado en el servidor") >= 0){
            //El usuario no esta logeado, quitar cookies e ir a inicio
            borrarCookie("login");
            borrarCookie("idSesion");
            window.location = "inicio.html";
          }
-         else{
-           $("#anadir_lista").after("<h2 id=\"sin_resul\">No hay amigos.</h2>");
-         }
+       }
+       else if(obj.SinSeguidos != undefined){
          //No hay resultados
+         $("#anadir_lista").after("<h2 id=\"sin_resul\">No hay amigos.</h2>");
        }
        else{
          var amigos = obj.listaDeSeguidos;
@@ -89,6 +89,9 @@ $(document).ready(function() {
           borrarCookie("login");
           borrarCookie("idSesion");
           window.location = "inicio.html";
+        }
+        else{
+          alert("Error. Inténtelo más tarde: "+obj.error);
         }
       }
       else{

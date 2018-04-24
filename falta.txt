@@ -7,7 +7,7 @@ General:
 
   -En todas paginas si no se ha iniciado sesion que lleve al inicio(en perfil_servlet.js ya esta, el resto hacerlo al final)
 
-  -En registro: servlet envie tipo error (contraseñas no coinciden, el nombre debe ser más largo,...)
+  -Servlets envien respuesta codificada UTF8 (response.setContenttype...) o mirar como hacer en javascript
 
 
 (hecho)INICIO: servlets registro y login implementados, al cerrar sesion informa de ello. Si ya hay sesion va a home directamente
@@ -17,8 +17,8 @@ Perfil: cerrar sesion (hecho)
 
 AMIGOS:
   -(hecho)Mostrar amigos
-  -(hecho)Borrar amigo
-  -(hecho)Busqueda canciones
+  -(hecho)Borrar amigo   -> NUEVO ERROR: da excepcion sql, cuando se arregle borrar del .js que informe del mensaje(obj.error) y que solo diga error?
+  -(hecho)Busqueda canciones(lleva a la pagina, verificar alli su funcionamiento)
   -Mostrar imagenes de los usuarios
 
 BUSQUEDA:(canciones)
@@ -36,10 +36,10 @@ USUARIO:
   -(hecho)Ver listas de usuario(informa en caso de no seguir al usuario que no las puede ver)
   -(hecho)Busqueda de usuarios
   -(hecho)Añadir amigo
-  -Falta cambiar la imagen (usar otro form para solicitar al servidor la ruta?)
+  -Falta ver la imagen (usar otro form para solicitar al servidor la ruta?)
 
 LISTAS:
   -(hecho)Crear lista. Informa de ello y recarga la pagina
   -(hecho)Muestra las listas del usuario
-  -(hecho)Borrar lista(falta comprobarlo una vez que el servlet BorrarListaDeReproduccion envie JSON vacio(ahora no envia nada))
+  -(hecho)Borrar lista
   -Reproducir lista

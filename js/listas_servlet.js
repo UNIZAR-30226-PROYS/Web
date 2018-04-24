@@ -55,7 +55,7 @@ $(document).ready(function() {
        }
 
     }).fail(function(response){
-        alert("Error interno. Inténtelo más tarde.");
+        //alert("Error interno. Inténtelo más tarde.");
     });
   });
 
@@ -109,40 +109,44 @@ $(document).ready(function() {
 
 //Se ejecuta despues, una vez que estan los elementos cargados, se define el form de borrar lista
 $(window).load(function() {
-    $(".form_borrar_lista").submit(function(event){
-        event.preventDefault(); //prevent default action
-        var post_url = $(this).attr("action"); //get form action url
-        var form_data = $(this).serialize(); //Encode form elements for submission
-        var request_method = $(this).attr("method"); //get form GET/POST method
-        var lista = form_data.slice(12);
+    //Poner tiempo de espera para definir los form de borrar lista, sino puede que no se capture el submit
+    var explode = function(){
+      $(".form_borrar_lista").submit(function(event){
+          event.preventDefault(); //prevent default action
+          var post_url = $(this).attr("action"); //get form action url
+          var form_data = $(this).serialize(); //Encode form elements for submission
+          var request_method = $(this).attr("method"); //get form GET/POST method
+          var lista = form_data.slice(12);
 
-        $.ajax({
-            url : post_url,
-            type: request_method,
-            data : form_data,
+          $.ajax({
+              url : post_url,
+              type: request_method,
+              data : form_data,
 
-      }).done(function(response){
-         var obj=JSON.parse(response);
-         //Mostrar mensaje correspondiente en forma de ventana
-         if(obj.error != undefined){
-           if(obj.error.indexOf("Usuario no logeado en el servidor") >= 0){
-             //El usuario no esta logeado, quitar cookies e ir a inicio
-             borrarCookie("login");
-             borrarCookie("idSesion");
-             window.location = "inicio.html";
+        }).done(function(response){
+           var obj=JSON.parse(response);
+           //Mostrar mensaje correspondiente en forma de ventana
+           if(obj.error != undefined){
+             if(obj.error.indexOf("Usuario no logeado en el servidor") >= 0){
+               //El usuario no esta logeado, quitar cookies e ir a inicio
+               borrarCookie("login");
+               borrarCookie("idSesion");
+               window.location = "inicio.html";
+             }
+             else{
+               alert("Error interno. Inténtelo más tarde.");
+             }
            }
            else{
-             alert("Error interno. Inténtelo más tarde.");
+             $("#resultado_seguir").text("Lista eliminada correctamente.");
+             $("#result_seguir").attr("src","img/exito.png");
            }
-         }
-         else{
-           $("#resultado_seguir").text("Lista eliminada correctamente.");
-           $("#result_seguir").attr("src","img/exito.png");
-         }
-         $('.button1').click();
+           $('.button1').click();
 
-      }).fail(function(response){
-          alert("Error interno. Inténtelo más tarde.");
+        }).fail(function(response){
+            alert("Error interno. Inténtelo más tarde.");
+        });
       });
-    });
+    };
+    setTimeout(explode, 200);
 });
