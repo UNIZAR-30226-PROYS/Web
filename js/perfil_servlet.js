@@ -123,7 +123,6 @@ $(document).ready(function() {
           data : form_data,
 
     }).done(function(response){
-      alert(response);
        $('.close3').click();
        var obj=JSON.parse(response);
        if(obj.error != undefined){
