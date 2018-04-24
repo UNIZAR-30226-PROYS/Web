@@ -113,6 +113,8 @@ $(document).ready(function() {
 
 //Se ejecuta despues, una vez que estan los elementos cargados, se define el form de borrar amigo
 $(window).load(function() {
+  //Poner tiempo de espera para definir los form, sino puede que no se capture el submit
+  var explode = function(){
     $(".form_borrar_amigo").submit(function(event){
         event.preventDefault(); //prevent default action
         var post_url = $(this).attr("action"); //get form action url
@@ -149,4 +151,6 @@ $(window).load(function() {
           alert("Error interno. Inténtelo más tarde.");
       });
     });
+  };
+  setTimeout(explode, 200);
 });

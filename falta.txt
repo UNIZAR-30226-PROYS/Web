@@ -23,7 +23,7 @@ Perfil:
 
 AMIGOS:
   -(hecho)Mostrar amigos
-  -(hecho)Borrar amigo   -> NUEVO ERROR: da excepcion sql, cuando se arregle borrar del .js que informe del mensaje(obj.error) y que solo diga error?
+  -(hecho)Borrar amigo
   -(hecho)Busqueda canciones(lleva a la pagina, verificar alli su funcionamiento)
   -Mostrar imagenes de los usuarios
 
