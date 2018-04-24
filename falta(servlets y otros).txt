@@ -4,8 +4,8 @@ SUBIRMUSICA:
 Al devolver cancion en una busqueda falta la clave de la ruta de la imagen
 
 Servlets que faltan:
-	-Devolver todos los estilos/generos
-	-Devolver canciones de un genero
+	-Devolver todos los estilos/generos --> HECHO
+	-Devolver canciones de un genero --> HECHO
 	-Top semanal(unas pocas canciones que seran recomendaciones a todos los users)
 	-Devolver todos los albumes
 	-Devolver todos los albumes de un artista
