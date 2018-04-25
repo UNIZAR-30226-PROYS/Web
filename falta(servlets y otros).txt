@@ -6,11 +6,11 @@ Al devolver cancion en una busqueda falta la clave de la ruta de la imagen
 Servlets que faltan:
 	-Devolver todos los estilos/generos --> HECHO
 	-Devolver canciones de un genero --> HECHO
-	-Top semanal(unas pocas canciones que seran recomendaciones a todos los users)
-	-Devolver todos los albumes
-	-Devolver todos los albumes de un artista
-	-Devolver todos los artistas
+	-Top semanal(unas pocas canciones que seran recomendaciones a todos los users) --> HECHO
+	-Devolver todos los albumes --> HECHO
+	-Devolver todos los albumes de un artista --> HECHO
+	-Devolver todos los artistas --> HECHO
 	-Buscar lista reproduccion
-	-Buscar artista
-	-Buscar album
+	-Buscar artista --> HECHO
+	-Buscar album --> HECHO
 	
