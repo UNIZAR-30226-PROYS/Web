@@ -34,6 +34,7 @@
     <link href="css/simple-sidebar.css" rel="stylesheet">
     <script src="js/cookies.js"></script>
     <script src="js/busqueda_cancion_servlet.js" charset="UTF-8"></script>
+    <script src="js/home_servlet.js" charset="UTF-8"></script>
 
 </head>
 
@@ -268,7 +269,7 @@
 
           <div id="tituloestilo"><h1>Estilos</h1></div>
           <div class="menuestilo">
-            <ul>
+            <ul id="lista_estilos">
               <li id="barraopciones">
                 <div class="cancioninf">
                   <a href="estilo.html" id="enlacecancion">
@@ -316,8 +317,9 @@
 
         </div>
 
-
-
+        <form id="form_mostrar_estilos" method="post" action="/ps/ObtenerGeneros">
+          <input type="submit" hidden>
+        </form>
 
     </div>
     <!-- /#wrapper -->

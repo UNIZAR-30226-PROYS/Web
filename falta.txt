@@ -49,3 +49,7 @@ LISTAS:
   -(hecho)Muestra las listas del usuario
   -(hecho)Borrar lista
   -Reproducir lista
+
+HOME:
+  -Mostrar top topsemanal
+  -Mostrar estilos(esta el js, falta quitar los objetos html estaticos, depurar una vez vaya en el servidor y quitar el alert)
