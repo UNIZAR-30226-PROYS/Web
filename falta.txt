@@ -35,13 +35,14 @@ BUSQUEDA:(canciones)
 
 
 USUARIOS: (hecho)muestra 4 por pagina con opcion de mas y funcion de seguir usuario
-  -Borrar el propio usuario para que no salga o desde el servidor
+  -Borrar el propio usuario para que no salga o desde el servidor(de momento se ha borrado para que no salga en la web)
   -Que en servidor se envien tambien la URL de las imagenes de los usuarios y ponerla en la pagina
 
 USUARIO:
   -(hecho)Ver listas de usuario(informa en caso de no seguir al usuario que no las puede ver)
   -(hecho)Busqueda de usuarios
   -(hecho)Añadir amigo
+  -(hecho)Si es el propio usuario, deja verlo pero no sale opcion de añadir amigo
   -Falta ver la imagen (usar otro form para solicitar al servidor la ruta?)
 
 LISTAS:

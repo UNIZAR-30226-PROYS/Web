@@ -14,11 +14,19 @@ $(document).ready(function() {
     var elem_por_pagina = 4;
     var pag_actual= parseInt(url.searchParams.get("pagina"));
     var inicio=(pag_actual-1)*elem_por_pagina;
+    var sin_elementos = 1;
     for(i=inicio; i<(elem_por_pagina+inicio) && i<usuarios.length;i++){
       var user=usuarios[i];
       var image="img/user.png";
-      var large='<form class="form_seguir_usuario" method="post" action="/ps/SeguirUsuario"><div class="cancioninf"><ul><li id="barraopciones"><a href="usuario.html'+"?usuario="+user+'"><div class="imagen"><img src="'+image+'" alt="Imagen lista"></div></a></li><li id="barraopciones"><a href="usuario.html'+"?usuario="+user+'"><div class="nombrecancion">'+user+'</div></a></li><li id="barraopciones"><div class="simb_repr_elim"><input type="image" src="img/add_friend.png" alt="Añadir amigo" title="Añadir amigo"><input type="hidden" id="seguido" name="seguido" value="'+user+'"/></div></li></ul></div></form>';
-      $(".informacion").append(large);
+      if(leerCookie("login") != user){ //Poner opcion añadir amigo solo si no es el mismo
+        var large='<form class="form_seguir_usuario" method="post" action="/ps/SeguirUsuario"><div class="cancioninf"><ul><li id="barraopciones"><a href="usuario.html'+"?usuario="+user+'"><div class="imagen"><img src="'+image+'" alt="Imagen lista"></div></a></li><li id="barraopciones"><a href="usuario.html'+"?usuario="+user+'"><div class="nombrecancion">'+user+'</div></a></li><li id="barraopciones"><div class="simb_repr_elim"><input type="image" src="img/add_friend.png" alt="Añadir amigo" title="Añadir amigo"><input type="hidden" id="seguido" name="seguido" value="'+user+'"/></div></li></ul></div></form>';
+        $(".informacion").append(large);
+        sin_elementos = 0;
+      }
+    }
+    if(sin_elementos == 1){
+      //No hay resultados ya que solo habia uno que era el propio usuario y no se muestra
+      $("#titulopagina").after("<h2 id=\"sin_resul\">No hay resultados.</h2>");
     }
     if((elem_por_pagina+inicio)<usuarios.length){
       var pagina_sig=pag_actual+1;

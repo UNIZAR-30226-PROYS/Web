@@ -75,9 +75,10 @@ $(document).ready(function() {
            //ESTABLECER IMAGEN O USAR OTRO FORM PARA VER CUAL ES
            var l='<div class="imagen"><img src="img/user.png" alt="Imagen usuario" ></div>';
            $("#titulopagina").after(l);
-
-           l='<form id="form_seguir_usuario" method="post" action="/ps/SeguirUsuario"><div class="anadir_lista"><input type="image" src="img/add_friend.png" alt="Añadir amigo" title="Añadir amigo"></div><input type="hidden" id="seguido" name="seguido" value="'+c+'"/></form>';
-           $("#titulopagina").after(l);
+           if(leerCookie("login") != c){ //Poner opcion añadir amigo solo si no es el mismo
+             l='<form id="form_seguir_usuario" method="post" action="/ps/SeguirUsuario"><div class="anadir_lista"><input type="image" src="img/add_friend.png" alt="Añadir amigo" title="Añadir amigo"></div><input type="hidden" id="seguido" name="seguido" value="'+c+'"/></form>';
+             $("#titulopagina").after(l);
+           }
 
            l='No puedes ver las listas porque no lo sigues.';
            $(".block1").append(l);
@@ -85,9 +86,10 @@ $(document).ready(function() {
          else if(err.indexOf("no tiene ninguna lista asociada") >= 0){
            var l='<div class="imagen"><img src="img/user.png" alt="Imagen usuario" ></div>';
            $("#titulopagina").after(l);
-
-           l='<form id="form_seguir_usuario" method="post" action="/ps/SeguirUsuario"><div class="anadir_lista"><input type="image" src="img/add_friend.png" alt="Añadir amigo" title="Añadir amigo"></div><input type="hidden" id="seguido" name="seguido" value="'+c+'"/></form>';
-           $("#titulopagina").after(l);
+           if(leerCookie("login") != c){ //Poner opcion añadir amigo solo si no es el mismo
+             l='<form id="form_seguir_usuario" method="post" action="/ps/SeguirUsuario"><div class="anadir_lista"><input type="image" src="img/add_friend.png" alt="Añadir amigo" title="Añadir amigo"></div><input type="hidden" id="seguido" name="seguido" value="'+c+'"/></form>';
+             $("#titulopagina").after(l);
+           }
          }
          else if(obj.error.indexOf("Usuario no logeado en el servidor") >= 0){
            //El usuario no esta logeado, quitar cookies e ir a inicio
@@ -103,9 +105,10 @@ $(document).ready(function() {
          //ESTABLECER IMAGEN O USAR OTRO FORM PARA VER CUAL ES
          var l='<div class="imagen"><img src="img/user.png" alt="Imagen usuario" ></div>';
          $("#titulopagina").after(l);
-
-         l='<form id="form_seguir_usuario" method="post" action="/ps/SeguirUsuario"><div class="anadir_lista"><input type="image" src="img/add_friend.png" alt="Añadir amigo" title="Añadir amigo"></div><input type="hidden" id="seguido" name="seguido" value="'+c+'"/></form>';
-         $("#titulopagina").after(l);
+         if(leerCookie("login") != c){ //Poner opcion añadir amigo solo si no es el mismo
+           l='<form id="form_seguir_usuario" method="post" action="/ps/SeguirUsuario"><div class="anadir_lista"><input type="image" src="img/add_friend.png" alt="Añadir amigo" title="Añadir amigo"></div><input type="hidden" id="seguido" name="seguido" value="'+c+'"/></form>';
+           $("#titulopagina").after(l);
+         }
 
          var listas = obj.nombre;
          //Definir elementos a mostrar por pagina, pagina actual y valor a empezar a mostrar
@@ -178,5 +181,5 @@ $(window).load(function() {
       });
     });
   };
-  setTimeout(explode, 200);
+  setTimeout(explode, 400);
 });
