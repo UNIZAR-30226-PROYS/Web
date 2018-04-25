@@ -30,7 +30,7 @@ AMIGOS:
 BUSQUEDA:(canciones)
   -Poner formato para mostrar canciones correctamente (con URL imagen, nombre y artista)
   -Implementar funciones cancion(repr, fav y añadir a lista)
-  -(hecho)Al pulsar añadir a lista salen las listas
+  -(hecho)Al pulsar añadir a lista salen las listas(IMPORTANTE*** CAMBIAR WINDOW POR FUNCTION QUE SE LLAME AL MOSTRAR LAS CANCIONES(canciones_servlet.js una vez que mostrar las canciones este hecho))
   -Para añadir a lista, en form de lista hay que poner los parametros de la cancion elegida (nombre,artista,...) usar diversos input hidden y poner valor
 
 
@@ -50,7 +50,58 @@ LISTAS:
   -(hecho)Muestra las listas del usuario
   -(hecho)Borrar lista
   -Reproducir lista
+  -Permitir busqueda de listas
+
+BUSQUEDA_LISTAS:
+  -Hacer pagina que muestre las listas resultado de la busqueda de listas
+  -Permitir la busqueda de listas
 
 HOME:
-  -Mostrar top topsemanal
-  -Mostrar estilos(esta el js, falta quitar los objetos html estaticos, depurar una vez vaya en el servidor y quitar el alert)
+  -Mostrar top topsemanal(hecho el js, falta depurar una vez que haya canciones)
+  -(hecho)Mostrar estilos
+
+TOP SEMANAL:
+  -Mostrar canciones
+  -Mostrar al menos nombre y artista
+
+ESTILO:
+  -Mostrar canciones
+
+ALBUMES:
+  -Mostrar todos los albumes limitados por paginas
+  -Busqueda de albumes lleve a pagina que los muestre
+
+BUSQUEDA_ALBUMES:
+  -Hacer pagina que muestre los albumes resultado de la busqueda de albumes
+  -Permitir la busqueda de albumes
+
+ALBUM:
+  -Mostrar canciones del album
+
+ARTISTAS:
+  -Mostrar todos los artistas limitados por paginas
+  -Busqueda de artistas lleve a pagina que los muestre
+
+BUSQUEDA_ARTISTAS:
+  -Hacer pagina que muestre los artistas resultado de la busqueda de artistas
+  -Permitir la busqueda de artistas
+
+ARTISTA:
+  -Mostrar albumes del artista
+  -Mostrar canciones
+  -Permitir busqueda de artistas
+
+SUBIR_MUSICA:
+  -Permitir envio de ficheros de musica
+
+FAVORITOS:
+  -Mostrar canciones
+  -Permitir que en todas las canciones se pueda añadir/quitar de favorito
+
+RECIENTES:
+  -Mostrar ultimas actividades(incluidas las recomendaciones recibidas de amigos en cancion->share->seleccionar amigo)
+
+CANCION:
+  -Mostrar datos de la cancion
+  -Reproducir cancion
+  -Implementar funciones del reproductor

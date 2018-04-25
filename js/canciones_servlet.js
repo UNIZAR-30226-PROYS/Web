@@ -1,3 +1,5 @@
+//MODIFICAR PARA USAR FUNCTION QUE SE LLAME CUANDO SE PONGAN LAS CANCIONES Y NO USAR TIMEOUT
+
 $(window).load(function() {
   //Poner tiempo de espera para definir los form, sino puede que no se capture el submit
   var explode = function(){

@@ -53,6 +53,7 @@ $(document).ready(function() {
            $(".informacion").append(boton_mas);
          }
        }
+       form_mostrar_amigos();
 
     }).fail(function(response){
         alert("Error interno. Inténtelo más tarde.");
@@ -111,46 +112,43 @@ $(document).ready(function() {
 });
 
 
-//Se ejecuta despues, una vez que estan los elementos cargados, se define el form de borrar amigo
-$(window).load(function() {
-  //Poner tiempo de espera para definir los form, sino puede que no se capture el submit
-  var explode = function(){
-    $(".form_borrar_amigo").submit(function(event){
-        event.preventDefault(); //prevent default action
-        var post_url = $(this).attr("action"); //get form action url
-        var form_data = $(this).serialize(); //Encode form elements for submission
-        var request_method = $(this).attr("method"); //get form GET/POST method
-        var amigo = form_data.slice(14);
 
-        $.ajax({
-            url : post_url,
-            type: request_method,
-            data : form_data,
+  //Definir los form, sino puede que no se capture el submit
+function form_mostrar_amigos(){
+  $(".form_borrar_amigo").submit(function(event){
+      event.preventDefault(); //prevent default action
+      var post_url = $(this).attr("action"); //get form action url
+      var form_data = $(this).serialize(); //Encode form elements for submission
+      var request_method = $(this).attr("method"); //get form GET/POST method
+      var amigo = form_data.slice(14);
 
-      }).done(function(response){
-         var obj=JSON.parse(response);
-         //Mostrar mensaje correspondiente en forma de ventana
-         if(obj.error != undefined){
-           if(obj.error.indexOf("Usuario no logeado en el servidor") >= 0){
-             //El usuario no esta logeado, quitar cookies e ir a inicio
-             borrarCookie("login");
-             borrarCookie("idSesion");
-             window.location = "inicio.html";
-           }
-           else{
-             alert("Error interno. Inténtelo más tarde.");
-           }
+      $.ajax({
+          url : post_url,
+          type: request_method,
+          data : form_data,
+
+    }).done(function(response){
+       var obj=JSON.parse(response);
+       //Mostrar mensaje correspondiente en forma de ventana
+       if(obj.error != undefined){
+         if(obj.error.indexOf("Usuario no logeado en el servidor") >= 0){
+           //El usuario no esta logeado, quitar cookies e ir a inicio
+           borrarCookie("login");
+           borrarCookie("idSesion");
+           window.location = "inicio.html";
          }
          else{
-           $("#resultado_seguir").text("Amigo eliminado correctamente.");
-           $("#result_seguir").attr("src","img/exito.png");
+           alert("Error interno. Inténtelo más tarde.");
          }
-         $('.button1').click();
+       }
+       else{
+         $("#resultado_seguir").text("Amigo eliminado correctamente.");
+         $("#result_seguir").attr("src","img/exito.png");
+       }
+       $('.button1').click();
 
-      }).fail(function(response){
-          alert("Error interno. Inténtelo más tarde.");
-      });
+    }).fail(function(response){
+        alert("Error interno. Inténtelo más tarde.");
     });
-  };
-  setTimeout(explode, 200);
-});
+  });
+}
