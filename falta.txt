@@ -68,7 +68,8 @@ ESTILO:
   -Mostrar canciones
 
 ALBUMES:
-  -Mostrar todos los albumes limitados por paginas
+  -(hecho)Mostrar todos los albumes limitados por paginas(se han limitado a 20 por pagina, falta depurar una vez haya más albumes)(se solicita una vez y se guarda los datos, solo se borran cuando se cierra el navegador(la lista a priori no va a variar no es necesario sobrecargar al servidor))
+  -Cambiar foto albumes al cargarlos
   -Busqueda de albumes lleve a pagina que los muestre
 
 BUSQUEDA_ALBUMES:
@@ -77,9 +78,11 @@ BUSQUEDA_ALBUMES:
 
 ALBUM:
   -Mostrar canciones del album
+  -Añadir nombre artista a la pagina
 
 ARTISTAS:
-  -Mostrar todos los artistas limitados por paginas
+  -(hecho)Mostrar todos los artistas limitados por paginas(se han limitado a 20 por pagina, falta depurar una vez haya más artistas)(se solicita una vez y se guarda los datos, solo se borran cuando se cierra el navegador(la lista a priori no va a variar no es necesario sobrecargar al servidor))
+  -Cambiar foto artistas al cargarlos
   -Busqueda de artistas lleve a pagina que los muestre
 
 BUSQUEDA_ARTISTAS:
@@ -107,4 +110,4 @@ CANCION:
   -Implementar funciones del reproductor
 
 REPRODUCTOR(WRAPPER):
-  -Reproductor en menu derecho 
+  -Reproductor en menu derecho

@@ -30,6 +30,7 @@
 
     <link rel="stylesheet" href="css/demo.css">
 		<script src="js/cookies.js"></script>
+		<script src="js/artistas_servlet.js" charset="UTF-8"></script>
 </head>
 
 <body>
@@ -112,9 +113,9 @@
             <a href="#menu-music" class="buttonMenu" id="menu-music" onmouseover="changeImage()" onmouseout="changeImageAntes()"><img id="simbolo_menu_imagen" src="img/simbolomenu.png" width="30" height="30" alt="menu"></a>
 
 						<div id="sb-search" class="sb-search sb-search-open">
-							<form action="busqueda.html" method="post">
+							<form class="form_buscar_artista" id="form_buscar_artista" action="/ps/BuscarArtista" method="post">
 
-								<input class="sb-search-input" placeholder="Búsqueda artista" type="search" name="search" id="search" required>
+								<input class="sb-search-input" placeholder="Búsqueda artista" type="search" name="artista" id="search" required>
 								<input class="sb-search-submit" type="submit" value="">
 								<span class="sb-icon-search"> </span>
 							</form>
@@ -128,39 +129,15 @@
 		 <br/>
           <div id="titulopagina"><h1>Artistas</h1></div>
 		   <div class="cancionesArtista">
-		  <ul>
-              <li id="barraopciones">
-                <div class="cancioninf">
-                  <a href="artista.html" id="enlacecancion">
-          					<div class="imagen">
-          						<img src="img/blackWindows.jpg" alt="Imagen cancion">
-          					</div>
-          					<div class="nombrecancion">
-          						Iggy Azalea
-          					</div>
-                  </a>
-        				</div>
-
-              </li>
-
-              <li id="barraopciones">
-                <div class="cancioninf">
-                  <a href="artista.html" id="enlacecancion">
-                    <div class="imagen">
-                      <img src="img/edsheeran.jpeg" alt="Imagen cancion">
-                    </div>
-                    <div class="nombrecancion">
-                      Ed Sheeran
-                    </div>
-                  </a>
-                </div>
-              </li>
-
-
-
-			 </ul>
+		   	<ul id="lista_artistas">
+					
+			 	</ul>
 			 </div>
 	</div>
+
+	<form id="form_mostrar_artistas" method="post" action="/ps/ObtenerArtistas">
+		<input type="submit" hidden>
+	</form>
 
 
     <!-- Menu Toggle Script -->
