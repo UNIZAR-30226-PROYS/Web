@@ -90,7 +90,7 @@ BUSQUEDA_ARTISTAS:
   -Permitir la busqueda de artistas
 
 ARTISTA:
-  -Mostrar albumes del artista
+  -(hecho)Mostrar albumes del artista(solo los muestra si hay, en caso contrario no muestra esa seccion)
   -Mostrar canciones
   -Permitir busqueda de artistas
 

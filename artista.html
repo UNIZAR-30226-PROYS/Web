@@ -30,6 +30,8 @@
 
     <link rel="stylesheet" href="css/demo.css">
 		<script src="js/cookies.js"></script>
+		<script src="js/artista_servlet.js" charset="UTF-8"></script>
+
 </head>
 
 <body>
@@ -126,46 +128,11 @@
     <!-- /#wrapper -->
 	<div class="informacion">
 		 <br/>
-          <div id="titulopagina"><h1>Iggy Azalea</h1></div>
-					<div id="titulopagina"><h3>Álbumes</h3></div>
-          <div class="albumes">
-            <ul>
-              <li id="barraopciones">
-                <div class="cancioninf">
-                  <a href="album.html" id="enlacecancion">
-          					<div class="imagen">
-          						<img src="img/reclassified_album.png" alt="Imagen album">
-          					</div>
-          					<div class="nombrecancion">
-          						Reclassified
-          					</div>
-                  </a>
-        				</div>
-              </li>
-
-              <li id="barraopciones">
-                <div class="cancioninf">
-                  <a href="album.html" id="enlacecancion">
-                    <div class="imagen">
-                      <img src="img/iggy.jpg" alt="Imagen album">
-                    </div>
-                    <div class="nombrecancion">
-                      The New Classic
-                    </div>
-                  </a>
-                </div>
-              </li>
-
-            </ul>
-
-
-
-          </div>  <!-- Fin top semanal -->
-
+          <div id="titulopagina"><h1 id="nombre_artista_titulo"></h1></div>
 
           <div id="tituloestilo"><h3>Canciones</h3></div>
           <div class="cancionesArtista">
-            <ul>
+            <ul id="lista_canciones_artista">
 							<li id="barraopciones">
 								<div class="cancioninf">
 									<a href="cancion.html" id="enlacecancion">
@@ -213,6 +180,11 @@
 
         </div>
 	</div>
+
+	<form id="form_mostrar_albumes_artista" method="post" action="/ps/ObtenerAlbumsArtista">
+		<input type="hidden" name="artista" id="nombre_artista_album">
+		<input type="submit" hidden>
+	</form>
 
 
     <!-- Menu Toggle Script -->
