@@ -91,7 +91,7 @@ BUSQUEDA_ARTISTAS:
 
 ARTISTA:
   -(hecho)Mostrar albumes del artista(solo los muestra si hay, en caso contrario no muestra esa seccion)
-  -Mostrar canciones
+  -(hecho)Mostrar canciones(falta cambiar la imagen)
   -Permitir busqueda de artistas
 
 SUBIR_MUSICA:

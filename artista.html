@@ -129,60 +129,16 @@
 	<div class="informacion">
 		 <br/>
           <div id="titulopagina"><h1 id="nombre_artista_titulo"></h1></div>
-
-          <div id="tituloestilo"><h3>Canciones</h3></div>
-          <div class="cancionesArtista">
-            <ul id="lista_canciones_artista">
-							<li id="barraopciones">
-								<div class="cancioninf">
-									<a href="cancion.html" id="enlacecancion">
-										<div class="imagen">
-											<img src="img/work_iggy.jpg" alt="Imagen cancion">
-										</div>
-										<div class="nombrecancion">
-											Work
-										</div>
-									</a>
-								</div>
-							</li>
-
-							<li id="barraopciones">
-								<div class="cancioninf">
-									<a href="cancion.html" id="enlacecancion">
-										<div class="imagen">
-											<img src="img/iggy.jpg" alt="Imagen cancion">
-										</div>
-										<div class="nombrecancion">
-											Fancy
-										</div>
-									</a>
-								</div>
-							</li>
-
-							<li id="barraopciones">
-								<div class="cancioninf">
-									<a href="cancion.html" id="enlacecancion">
-										<div class="imagen">
-											<img src="img/begforit_iggy.png" alt="Imagen cancion">
-										</div>
-										<div class="nombrecancion">
-											Beg For It
-										</div>
-									</a>
-								</div>
-							</li>
-
-
-            </ul>
-          </div>
-
-
-
-        </div>
+					<h5 id="separador_album_cancion"></h5>
 	</div>
 
 	<form id="form_mostrar_albumes_artista" method="post" action="/ps/ObtenerAlbumsArtista">
 		<input type="hidden" name="artista" id="nombre_artista_album">
+		<input type="submit" hidden>
+	</form>
+
+	<form id="form_mostrar_canciones_artista" method="post" action="/ps/BuscarCancionArtista">
+		<input type="hidden" name="artista" id="nombre_artista_cancion">
 		<input type="submit" hidden>
 	</form>
 

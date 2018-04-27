@@ -44,7 +44,6 @@ $(document).ready(function() {
          }
        }
        else{
-         var lista_albumes = JSON.stringify(response);
          var albumes = obj.albums;
 
          //Añadir titulo albumes y seccion
@@ -68,6 +67,59 @@ $(document).ready(function() {
   });
 
   $("#form_mostrar_albumes_artista").submit();
+
+  //Definir el form de mostrar albumes
+  $("#form_mostrar_canciones_artista").submit(function(event){
+      event.preventDefault(); //prevent default action
+
+      //Establecer valor del nombre de artista
+      document.getElementById("nombre_artista_cancion").value=artista;
+      var post_url = $(this).attr("action"); //get form action url
+      var form_data = $(this).serialize(); //Encode form elements for submission
+      var request_method = $(this).attr("method"); //get form GET/POST method
+
+      $.ajax({
+          url : post_url,
+          type: request_method,
+          data : form_data,
+
+    }).done(function(response){
+       var obj=JSON.parse(response);
+       if(obj.error != undefined){
+         if(obj.error.indexOf("Usuario no logeado en el servidor") >= 0){
+           //El usuario no esta logeado, quitar cookies e ir a inicio
+           borrarCookie("login");
+           borrarCookie("idSesion");
+           window.location = "inicio.html";
+         }
+         else{
+           //Suponer no hay canciones y mostrar sin resultados
+         }
+       }
+       else{
+         var canciones = obj.canciones;
+
+         //Añadir titulo albumes y seccion
+         if(canciones.length > 0){
+           var l='<div id="tituloestilo"><h3>Canciones</h3></div><div class="cancionesArtista"><ul id="lista_canciones_artista"></ul></div>';
+           $("#separador_album_cancion").after(l);
+
+           for(i=0;i<canciones.length;i++){
+             var cancion=canciones[i].tituloCancion;
+             //Cambiar cuando JSON devuelva imagen
+             var image="img/work_iggy.jpg";
+             var large='<li id="barraopciones"><div class="cancioninf"><a href="cancion.html'+"?cancion="+cancion+'" id="enlacecancion"><div class="imagen"><img src="'+image+'" alt="Imagen cancion"></div><div class="nombrecancion">'+cancion+'</div></a></div></li>';
+             $("#lista_canciones_artista").append(large);
+           }
+         }
+       }
+
+    }).fail(function(response){
+        alert("Error interno. Inténtelo más tarde.");
+    });
+  });
+
+  $("#form_mostrar_canciones_artista").submit();
 
 
   //NO ESTA HECHO ES UN GENERICO
