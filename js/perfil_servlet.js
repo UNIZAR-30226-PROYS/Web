@@ -1,4 +1,7 @@
 $(document).ready(function() {
+  //Mostrar nombre
+  document.getElementById("idNombre").value=leerCookie("login");
+
   $("#form_cerrar_sesion").submit(function(event){
       event.preventDefault(); //prevent default action
       var post_url = $(this).attr("action"); //get form action url

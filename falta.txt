@@ -9,11 +9,12 @@ General:
 
 Perfil:
   -(hecho)Cerrar sesion
-  -Cambiar nombre(verificar funcionamiento, de momento devuelve JSON vacio(correcto) pero no cambia el nombre)
+  -Cambiar nombre(verificar funcionamiento, de momento devuelve ERROR y no cambia el nombre)
   -(hecho)Cambiar contraseña
   -(hecho)Cambiar foto(solo acepta jpg y mirando en el directorio de la máquina (apache/images/user.jpg) se ve que esta)
-  -Eliminar cuenta(verificar name una vez este el servlet)
-  -Mostrar nombre y foto al cargar la pagina
+  -(hecho)Eliminar cuenta
+  -(hecho)Mostrar nombre
+  -Mostrar foto al cargar la pagina
 
 
 AMIGOS:
