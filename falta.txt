@@ -45,8 +45,15 @@ LISTAS:
   -(hecho)Crear lista. Informa de ello y recarga la pagina
   -(hecho)Muestra las listas del usuario
   -(hecho)Borrar lista
-  -Reproducir lista
+  -Reproducir lista(con varias opciones:en orden, aleatorio o en bucle)
   -(hecho)Permitir busqueda de listas
+
+LISTA:
+  -En +: quitar opcion de busqueda(ya esta en la barra superior) y hacer opcion subir musica(ademas se añadira automaticamente a la lista)
+  -Permitir cambiar nombre de la lista(solo si la lista es del usuario sino no debe salir esa opcion, p ej leer cookie login y comparar con la que devuelve el servlet(si no esta se debe añadir))
+  -Añadir opcion reproducir lista(con varias opciones:en orden, aleatorio o en bucle)
+  -Mostrar canciones con opcion de reproducir(siempre) y de eliminar(solo si la lista es del usuario)
+
 
 BUSQUEDA_LISTAS:(FALTA DEPURAR cuando funcione el servlet y permitir reproduccion de lista)
   -(hecho)Hacer pagina que muestre las listas resultado de la busqueda de listas
