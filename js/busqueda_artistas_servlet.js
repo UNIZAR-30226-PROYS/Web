@@ -77,7 +77,7 @@ $(document).ready(function() {
           window.location= "busqueda_artistas.html?busqueda_artista="+valor_sin_espacioizquierdo+"&pagina=1";
         }
         else{
-          alert("Error. Inténtelo más tarde."+obj.error);
+          alert("Error. Inténtelo más tarde.");
         }
       }
       else{

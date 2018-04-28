@@ -57,7 +57,12 @@ $(document).ready(function() {
     }).done(function(response){
         var obj=JSON.parse(response);
         if(obj.error != undefined){
-          $("#inf_registro").html(obj.error);
+          if(obj.error.indexOf("La contrase") >= 0){
+            $("#inf_registro").html("La contraseña no es válida.");
+          }
+          else{ //(obj.error.indexOf("El usuario") >= 0){
+            $("#inf_registro").html("El usuario ya existe.");
+          }
         }
         else{
           $('.close').click();

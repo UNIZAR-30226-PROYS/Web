@@ -13,7 +13,7 @@ $(document).ready(function() {
     window.location="home.html";
   }
   $( "#titulo_artista" ).append(c);
-  
+
   //FALTA MOSTRAR CANCIONES
 
   $("#form_buscar_album").submit(function(event){
@@ -51,7 +51,7 @@ $(document).ready(function() {
           window.location= "busqueda_albumes.html?busqueda_album="+valor_sin_espacioizquierdo+"&pagina=1";
         }
         else{
-          alert("Error. Inténtelo más tarde."+obj.error);
+          alert("Error. Inténtelo más tarde.");
         }
       }
       else{

@@ -2,7 +2,7 @@ Falta:
 General:
   -Cambiar form para que sea sobre SSL. Usar "https://yourdomain.com/servlet" en action(dejarlo hasta que todo funcione y crear certificado en servidor)
 
-  -Servlets envien respuesta codificada UTF8 (response.setContenttype...) o mirar como hacer en javascript
+  -(hecho)Servlets envien respuesta codificada UTF8(se ha mirado el tipo de mensaje y se ha puesto un mensaje sin usar directamente el string recibido del server)
 
 
 (hecho)INICIO: servlets registro y login implementados, al cerrar sesion informa de ello. Si ya hay sesion va a home directamente
@@ -31,7 +31,7 @@ BUSQUEDA:(canciones)
 
 
 USUARIOS: (hecho)muestra 4 por pagina con opcion de mas y funcion de seguir usuario
-  -Borrar el propio usuario para que no salga o desde el servidor(de momento se ha borrado para que no salga en la web)
+  -(hecho)Borrar el propio usuario para que no salga o desde el servidor(de momento se ha borrado para que no salga en la web)
   -Que en servidor se envien tambien la URL de las imagenes de los usuarios y ponerla en la pagina
 
 USUARIO:
@@ -60,7 +60,7 @@ LISTA:
 BUSQUEDA_LISTAS:(FALTA permitir reproduccion de lista)
   -(hecho)Hacer pagina que muestre las listas resultado de la busqueda de listas
   -(hecho)Permitir la busqueda de listas
-  -Mostra solo listas de los amigos(se debe realizar en el servidor)
+  -Mostrar solo listas de los amigos(se debe realizar en el servidor)
 
 HOME:
   -Mostrar top topsemanal(hecho el js, falta depurar una vez que haya canciones)
@@ -68,7 +68,7 @@ HOME:
 
 TOP SEMANAL:
   -Mostrar canciones
-  -Mostrar al menos nombre y artista
+  -Mostrar al menos nombre, imagen y artista para cada cancion
 
 ESTILO:
   -(hecho)Motrar nombre del estilo

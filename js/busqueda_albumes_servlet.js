@@ -70,14 +70,14 @@ $(document).ready(function() {
           borrarCookie("login");
           borrarCookie("idSesion");
           window.location = "inicio.html";
-        }   //////////////////////////CAMBIAR/////////////////
+        } 
         else if(obj.error.indexOf("album cuyo nombre sea o empiece") >= 0){
           sessionStorage.setItem("lista_albumes", lista_albumes);
           //Pasar tambien el valor de busqueda
           window.location= "busqueda_albumes.html?busqueda_album="+valor_sin_espacioizquierdo+"&pagina=1";
         }
         else{
-          alert("Error. Inténtelo más tarde."+obj.error);
+          alert("Error. Inténtelo más tarde.");
         }
       }
       else{

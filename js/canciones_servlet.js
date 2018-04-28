@@ -44,7 +44,7 @@ $(window).load(function() {
          }
 
       }).fail(function(response){
-          //alert("Error interno. Inténtelo más tarde.");
+          alert("Error interno. Inténtelo más tarde.");
       });
     });
   };

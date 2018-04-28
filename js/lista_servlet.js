@@ -43,7 +43,7 @@ $(document).ready(function() {
           window.location= "busqueda_listas.html?busqueda_lista="+valor_sin_espacioizquierdo+"&pagina=1";
         }
         else{
-          alert("Error. Inténtelo más tarde."+obj.error);
+          alert("Error. Inténtelo más tarde.");
         }
       }
       else{
