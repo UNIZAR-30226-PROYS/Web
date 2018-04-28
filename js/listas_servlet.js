@@ -53,9 +53,10 @@ $(document).ready(function() {
            $(".informacion").append(boton_mas);
          }
        }
+       form_borrar_lista();
 
     }).fail(function(response){
-        //alert("Error interno. Inténtelo más tarde.");
+        alert("Error interno. Inténtelo más tarde.");
     });
   });
 
@@ -105,48 +106,92 @@ $(document).ready(function() {
     });
   });
 
+  $("#form_buscar_lista").submit(function(event){
+      event.preventDefault(); //prevent default action
+      //Quitar espacios en blanco a la izquierda y si no hay texto no se envia la busqueda
+      var valor_busqueda = document.getElementById("form_buscar_lista").elements[0].value;
+      var valor_sin_espacioizquierdo = $.trim(valor_busqueda);
+      document.getElementById("search_lista").value=valor_sin_espacioizquierdo;
+      if(valor_sin_espacioizquierdo == ""){
+        return false;
+      }
+
+      var post_url = $(this).attr("action"); //get form action url
+      var form_data = $(this).serialize(); //Encode form elements for submission
+      var request_method = $(this).attr("method"); //get form GET/POST method
+
+      $.ajax({
+          url : post_url,
+          type: request_method,
+          data : form_data,
+
+    }).done(function(response){
+      alert(response);
+      var obj=JSON.parse(response);
+      var lista_listas = JSON.stringify(response);
+      if(obj.error != undefined){
+        if(obj.error.indexOf("Usuario no logeado en el servidor") >= 0){
+          //El usuario no esta logeado, quitar cookies e ir a inicio
+          borrarCookie("login");
+          borrarCookie("idSesion");
+          window.location = "inicio.html";
+        }   //////////////////////////CAMBIAR/////////////////
+        else if(obj.error.indexOf("lista cuyo nombre sea o empiece") >= 0){
+          sessionStorage.setItem("lista_listas", lista_listas);
+          //Pasar tambien el valor de busqueda
+          window.location= "busqueda_listas.html?busqueda_lista="+valor_sin_espacioizquierdo+"&pagina=1";
+        }
+        else{
+          alert("Error. Inténtelo más tarde."+obj.error);
+        }
+      }
+      else{
+        sessionStorage.setItem("lista_listas", lista_listas);
+        //Pasar tambien el valor de busqueda
+        window.location= "busqueda_listas.html?busqueda_lista="+valor_sin_espacioizquierdo+"&pagina=1";
+      }
+    }).fail(function(response){
+        alert("Error interno. Inténtelo más tarde.");
+    });
+  });
 });
 
-//Se ejecuta despues, una vez que estan los elementos cargados, se define el form de borrar lista
-$(window).load(function() {
-    //Poner tiempo de espera para definir los form de borrar lista, sino puede que no se capture el submit
-    var explode = function(){
-      $(".form_borrar_lista").submit(function(event){
-          event.preventDefault(); //prevent default action
-          var post_url = $(this).attr("action"); //get form action url
-          var form_data = $(this).serialize(); //Encode form elements for submission
-          var request_method = $(this).attr("method"); //get form GET/POST method
-          var lista = form_data.slice(12);
+//Definir los form, sino puede que no se capture el submit
+function form_borrar_lista(){
+  $(".form_borrar_lista").submit(function(event){
+      event.preventDefault(); //prevent default action
+      var post_url = $(this).attr("action"); //get form action url
+      var form_data = $(this).serialize(); //Encode form elements for submission
+      var request_method = $(this).attr("method"); //get form GET/POST method
+      var lista = form_data.slice(12);
 
-          $.ajax({
-              url : post_url,
-              type: request_method,
-              data : form_data,
+      $.ajax({
+          url : post_url,
+          type: request_method,
+          data : form_data,
 
-        }).done(function(response){
-           var obj=JSON.parse(response);
-           //Mostrar mensaje correspondiente en forma de ventana
-           if(obj.error != undefined){
-             if(obj.error.indexOf("Usuario no logeado en el servidor") >= 0){
-               //El usuario no esta logeado, quitar cookies e ir a inicio
-               borrarCookie("login");
-               borrarCookie("idSesion");
-               window.location = "inicio.html";
-             }
-             else{
-               alert("Error interno. Inténtelo más tarde.");
-             }
-           }
-           else{
-             $("#resultado_seguir").text("Lista eliminada correctamente.");
-             $("#result_seguir").attr("src","img/exito.png");
-           }
-           $('.button1').click();
+    }).done(function(response){
+       var obj=JSON.parse(response);
+       //Mostrar mensaje correspondiente en forma de ventana
+       if(obj.error != undefined){
+         if(obj.error.indexOf("Usuario no logeado en el servidor") >= 0){
+           //El usuario no esta logeado, quitar cookies e ir a inicio
+           borrarCookie("login");
+           borrarCookie("idSesion");
+           window.location = "inicio.html";
+         }
+         else{
+           alert("Error interno. Inténtelo más tarde.");
+         }
+       }
+       else{
+         $("#resultado_seguir").text("Lista eliminada correctamente.");
+         $("#result_seguir").attr("src","img/exito.png");
+       }
+       $('.button1').click();
 
-        }).fail(function(response){
-            alert("Error interno. Inténtelo más tarde.");
-        });
-      });
-    };
-    setTimeout(explode, 200);
-});
+    }).fail(function(response){
+        alert("Error interno. Inténtelo más tarde.");
+    });
+  });
+}

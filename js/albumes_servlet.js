@@ -41,9 +41,10 @@ $(document).ready(function() {
          inicio=(pag_actual-1)*elem_por_pagina;
          for(i=inicio; i<(elem_por_pagina+inicio) && i<albumes.length;i++){
            var album=albumes[i].nombre;
+           var artista=albumes[i].artista;
            //Cambiar cuando JSON devuelva imagen
            var image="img/reclassified_album.png";
-           var large='<li id="barraopciones"> <div class="cancioninf"><a href="album.html'+"?album="+album+'" id="enlacecancion"><div class="imagen"><img src="'+image+'" alt="Imagen cancion"></div><div class="nombrecancion">'+album+'</div></a></div></li>';
+           var large='<li id="barraopciones"> <div class="cancioninf"><a href="album.html'+"?album="+album+'&artista='+artista+'" id="enlacecancion"><div class="imagen"><img src="'+image+'" alt="Imagen cancion"></div><div class="nombrecancion">'+album+'</div></a></div></li>';
            $("#lista_albumes").append(large);
          }
          if((elem_por_pagina+inicio)<albumes.length){
@@ -58,7 +59,7 @@ $(document).ready(function() {
     });
   });
 
-
+/*
   var jsonData = JSON.parse(JSON.parse(sessionStorage.getItem("lista_albumes")));
   if(jsonData != undefined){
     var albums = jsonData.albums;
@@ -90,14 +91,15 @@ $(document).ready(function() {
     //No hay albumes, solicitar al servidor la lista
     $("#form_mostrar_albumes").submit();
   }
+  */
+  $("#form_mostrar_albumes").submit();
 
-  //NO ESTA HECHO ES UN GENERICO
   $("#form_buscar_album").submit(function(event){
       event.preventDefault(); //prevent default action
       //Quitar espacios en blanco a la izquierda y si no hay texto no se envia la busqueda
-      var valor_busqueda = document.getElementById("form_buscar_amigos").elements[0].value;
+      var valor_busqueda = document.getElementById("form_buscar_album").elements[0].value;
       var valor_sin_espacioizquierdo = $.trim(valor_busqueda);
-      document.getElementById("search_user").value=valor_sin_espacioizquierdo;
+      document.getElementById("search_album").value=valor_sin_espacioizquierdo;
       if(valor_sin_espacioizquierdo == ""){
         return false;
       }
@@ -113,27 +115,27 @@ $(document).ready(function() {
 
     }).done(function(response){
       var obj=JSON.parse(response);
-      var lista_usuarios = JSON.stringify(response);
+      var lista_albumes = JSON.stringify(response);
       if(obj.error != undefined){
         if(obj.error.indexOf("Usuario no logeado en el servidor") >= 0){
           //El usuario no esta logeado, quitar cookies e ir a inicio
           borrarCookie("login");
           borrarCookie("idSesion");
           window.location = "inicio.html";
-        }
-        else if(obj.error.indexOf("usuario cuyo nombre sea o empiece") >= 0){
-          sessionStorage.setItem("lista_usuarios", lista_usuarios);
+        }   //////////////////////////CAMBIAR/////////////////
+        else if(obj.error.indexOf("album cuyo nombre sea o empiece") >= 0){
+          sessionStorage.setItem("lista_albumes", lista_albumes);
           //Pasar tambien el valor de busqueda
-          window.location= "usuarios.html?busqueda_usuario="+valor_sin_espacioizquierdo+"&pagina=1";
+          window.location= "busqueda_albumes.html?busqueda_album="+valor_sin_espacioizquierdo+"&pagina=1";
         }
         else{
           alert("Error. Inténtelo más tarde."+obj.error);
         }
       }
       else{
-        sessionStorage.setItem("lista_usuarios", lista_usuarios);
+        sessionStorage.setItem("lista_albumes", lista_albumes);
         //Pasar tambien el valor de busqueda
-        window.location= "usuarios.html?busqueda_usuario="+valor_sin_espacioizquierdo+"&pagina=1";
+        window.location= "busqueda_albumes.html?busqueda_album="+valor_sin_espacioizquierdo+"&pagina=1";
       }
     }).fail(function(response){
         alert("Error interno. Inténtelo más tarde.");

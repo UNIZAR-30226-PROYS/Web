@@ -50,11 +50,11 @@ LISTAS:
   -(hecho)Muestra las listas del usuario
   -(hecho)Borrar lista
   -Reproducir lista
-  -Permitir busqueda de listas
+  -(hecho)Permitir busqueda de listas
 
-BUSQUEDA_LISTAS:
-  -Hacer pagina que muestre las listas resultado de la busqueda de listas
-  -Permitir la busqueda de listas
+BUSQUEDA_LISTAS:(FALTA DEPURAR cuando funcione el servlet y permitir reproduccion de lista)
+  -(hecho)Hacer pagina que muestre las listas resultado de la busqueda de listas
+  -(hecho)Permitir la busqueda de listas
 
 HOME:
   -Mostrar top topsemanal(hecho el js, falta depurar una vez que haya canciones)
@@ -65,34 +65,36 @@ TOP SEMANAL:
   -Mostrar al menos nombre y artista
 
 ESTILO:
+  -(hecho)Motrar nombre del estilo
   -Mostrar canciones
 
 ALBUMES:
-  -(hecho)Mostrar todos los albumes limitados por paginas(se han limitado a 20 por pagina, falta depurar una vez haya más albumes)(se solicita una vez y se guarda los datos, solo se borran cuando se cierra el navegador(la lista a priori no va a variar no es necesario sobrecargar al servidor))
+  -(hecho)Mostrar todos los albumes limitados por paginas(se han limitado a 20 por pagina, falta depurar una vez haya más albumes)(se solicita una vez y no se guardan los datos porque se complicaba al realizar busquedas)
   -Cambiar foto albumes al cargarlos
-  -Busqueda de albumes lleve a pagina que los muestre
+  -(hecho)Busqueda de albumes lleve a pagina que los muestre
 
-BUSQUEDA_ALBUMES:
-  -Hacer pagina que muestre los albumes resultado de la busqueda de albumes
-  -Permitir la busqueda de albumes
+BUSQUEDA_ALBUMES:(falta cambiar las imagenes y depurar cuando haya muchos)
+  -(hecho)Hacer pagina que muestre los albumes resultado de la busqueda de albumes
+  -(hecho)Permitir la busqueda de albumes
 
 ALBUM:
   -Mostrar canciones del album
-  -Añadir nombre artista a la pagina
+  -(hecho)Añadir nombre artista a la pagina
+  -(hecho)Busqueda de albumes lleve a pagina que los muestre
 
 ARTISTAS:
-  -(hecho)Mostrar todos los artistas limitados por paginas(se han limitado a 20 por pagina, falta depurar una vez haya más artistas)(se solicita una vez y se guarda los datos, solo se borran cuando se cierra el navegador(la lista a priori no va a variar no es necesario sobrecargar al servidor))
+  -(hecho)Mostrar todos los artistas limitados por paginas(se han limitado a 20 por pagina, falta depurar una vez haya más artistas)
   -Cambiar foto artistas al cargarlos
-  -Busqueda de artistas lleve a pagina que los muestre
+  -(hecho)Busqueda de artistas lleve a pagina que los muestre
 
-BUSQUEDA_ARTISTAS:
-  -Hacer pagina que muestre los artistas resultado de la busqueda de artistas
-  -Permitir la busqueda de artistas
+BUSQUEDA_ARTISTAS:(falta cambiar las imagenes y depurar cuando haya muchos)
+  -(hecho)Hacer pagina que muestre los artistas resultado de la busqueda de artistas
+  -(hecho)Permitir la busqueda de artistas
 
 ARTISTA:
   -(hecho)Mostrar albumes del artista(solo los muestra si hay, en caso contrario no muestra esa seccion)
   -(hecho)Mostrar canciones(falta cambiar la imagen)
-  -Permitir busqueda de artistas
+  -(hecho)Permitir busqueda de artistas
 
 SUBIR_MUSICA:
   -Permitir envio de ficheros de musica
