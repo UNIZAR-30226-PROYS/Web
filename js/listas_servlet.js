@@ -42,10 +42,18 @@ $(document).ready(function() {
            pag_actual = parseInt(pag_actual);
          }
          inicio=(pag_actual-1)*elem_por_pagina;
+         var sin_elementos = 1;
          for(i=inicio; i<(elem_por_pagina+inicio) && i<listas.length;i++){
            var lista=listas[i];
-           var large='<div class="cancioninf"><ul><li id="barraopciones"><a href="lista.html'+"?lista="+lista+'" id="enlacecancion"><div class="imagen"><img src="img/listaicono.png" alt="Imagen lista"></div></a></li><li id="barraopciones"><a href="lista.html'+"?lista="+lista+'"><div class="nombrecancion">'+lista+'</div></a></li><li id="barraopciones"><div class="simb_repr_play"><input type="image" src="img/play.png" alt="Reproducir lista" title="Reproducir lista" onClick="playMusic(\'media/Blue Browne.mp3\');return false;"></div></li><li id="barraopciones"><form class="form_borrar_lista" method="post" action="/ps/BorrarListaDeReproduccion"><div class="simb_repr_elim"><input type="image" src="img/eliminar.png" alt="Eliminar lista" title="Eliminar lista"></div><input type="hidden" id="seguido" name="nombreLista" value="'+lista+'"/></form></li></ul></div>';
-           $(".informacion").append(large);
+           if("Favoritos" != lista){
+             var large='<div class="cancioninf"><ul><li id="barraopciones"><a href="lista.html'+"?lista="+lista+'" id="enlacecancion"><div class="imagen"><img src="img/listaicono.png" alt="Imagen lista"></div></a></li><li id="barraopciones"><a href="lista.html'+"?lista="+lista+'"><div class="nombrecancion">'+lista+'</div></a></li><li id="barraopciones"><div class="simb_repr_play"><input type="image" src="img/play.png" alt="Reproducir lista" title="Reproducir lista" onClick="playMusic(\'media/Blue Browne.mp3\');return false;"></div></li><li id="barraopciones"><form class="form_borrar_lista" method="post" action="/ps/BorrarListaDeReproduccion"><div class="simb_repr_elim"><input type="image" src="img/eliminar.png" alt="Eliminar lista" title="Eliminar lista"></div><input type="hidden" id="seguido" name="nombreLista" value="'+lista+'"/></form></li></ul></div>';
+             $(".informacion").append(large);
+             sin_elementos = 0;
+           }
+         }
+         if(sin_elementos == 1){
+           //No hay resultados
+           $("#anadir_lista").after("<h2 id=\"sin_resul\">No hay listas.</h2>");
          }
          if((elem_por_pagina+inicio)<listas.length){
            var pagina_sig=pag_actual+1;
@@ -126,7 +134,6 @@ $(document).ready(function() {
           data : form_data,
 
     }).done(function(response){
-      alert(response);
       var obj=JSON.parse(response);
       var lista_listas = JSON.stringify(response);
       if(obj.error != undefined){
@@ -135,8 +142,8 @@ $(document).ready(function() {
           borrarCookie("login");
           borrarCookie("idSesion");
           window.location = "inicio.html";
-        }   //////////////////////////CAMBIAR/////////////////
-        else if(obj.error.indexOf("lista cuyo nombre sea o empiece") >= 0){
+        }
+        else if(obj.error.indexOf("lista cuyo nombre coincida") >= 0){
           sessionStorage.setItem("lista_listas", lista_listas);
           //Pasar tambien el valor de busqueda
           window.location= "busqueda_listas.html?busqueda_lista="+valor_sin_espacioizquierdo+"&pagina=1";

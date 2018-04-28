@@ -44,14 +44,12 @@ $(document).ready(function() {
       var post_url = $(this).attr("action"); //get form action url
       var form_data = $(this).serialize(); //Encode form elements for submission
       var request_method = $(this).attr("method"); //get form GET/POST method
-      alert("Enviando valores cambio nombre: "+form_data);
       $.ajax({
           url : post_url,
           type: request_method,
           data : form_data,
 
     }).done(function(response){
-            alert(response);
       $('.close1').click();
       var obj=JSON.parse(response);
       var lista_usuarios = JSON.stringify(response);
@@ -70,6 +68,9 @@ $(document).ready(function() {
       else{
         $("#resultado_seguir").text("Nombre cambiado correctamente.");
         $("#result_seguir").attr("src","img/exito.png");
+        //Cambiar cookie de login
+        var nuevonombre=document.getElementById("IdUsar1").value;
+        crearCookie("login",nuevonombre,10);
       }
       $('.button5').click();
     }).fail(function(response){

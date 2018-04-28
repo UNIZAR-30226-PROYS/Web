@@ -121,8 +121,10 @@ $(document).ready(function() {
          inicio=(pag_actual-1)*elem_por_pagina;
          for(i=inicio; i<(elem_por_pagina+inicio) && i<listas.length;i++){
            var lista=listas[i];
-           var large='<div class="cancioninf"><ul><li id="barraopciones"><a href="lista.html'+"?lista="+lista+'" id="enlacecancion"><div class="imagen"><img src="img/listaicono.png" alt="Imagen lista"></div></a></li><li id="barraopciones"><a href="lista.html'+"?lista="+lista+'"><div class="nombrecancion">'+lista+'</div></a></li></ul></div>';
-           $(".block1").append(large);
+           if("Favoritos" != lista){
+             var large='<div class="cancioninf"><ul><li id="barraopciones"><a href="lista.html'+"?lista="+lista+'" id="enlacecancion"><div class="imagen"><img src="img/listaicono.png" alt="Imagen lista"></div></a></li><li id="barraopciones"><a href="lista.html'+"?lista="+lista+'"><div class="nombrecancion">'+lista+'</div></a></li></ul></div>';
+             $(".block1").append(large);
+           }
          }
          if((elem_por_pagina+inicio)<listas.length){
            var pagina_sig=pag_actual+1;

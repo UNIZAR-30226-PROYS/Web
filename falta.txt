@@ -9,7 +9,7 @@ General:
 
 Perfil:
   -(hecho)Cerrar sesion
-  -Cambiar nombre(verificar funcionamiento, de momento devuelve ERROR y no cambia el nombre)
+  -(hecho)Cambiar nombre
   -(hecho)Cambiar contraseña
   -(hecho)Cambiar foto(solo acepta jpg y mirando en el directorio de la máquina (apache/images/user.jpg) se ve que esta)
   -(hecho)Eliminar cuenta
@@ -49,15 +49,18 @@ LISTAS:
   -(hecho)Permitir busqueda de listas
 
 LISTA:
-  -En +: quitar opcion de busqueda(ya esta en la barra superior) y hacer opcion subir musica(ademas se añadira automaticamente a la lista)
+  -(hecho)En + quitar opcion de busqueda(ya esta en la barra superior)
+  -Hacer opcion subir musica(ademas se añadira automaticamente a la lista)
   -Permitir cambiar nombre de la lista(solo si la lista es del usuario sino no debe salir esa opcion, p ej leer cookie login y comparar con la que devuelve el servlet(si no esta se debe añadir))
   -Añadir opcion reproducir lista(con varias opciones:en orden, aleatorio o en bucle)
   -Mostrar canciones con opcion de reproducir(siempre) y de eliminar(solo si la lista es del usuario)
+  -(hecho)Permitir busqueda listas
 
 
-BUSQUEDA_LISTAS:(FALTA DEPURAR cuando funcione el servlet y permitir reproduccion de lista)
+BUSQUEDA_LISTAS:(FALTA permitir reproduccion de lista)
   -(hecho)Hacer pagina que muestre las listas resultado de la busqueda de listas
   -(hecho)Permitir la busqueda de listas
+  -Mostra solo listas de los amigos(se debe realizar en el servidor)
 
 HOME:
   -Mostrar top topsemanal(hecho el js, falta depurar una vez que haya canciones)
@@ -104,7 +107,7 @@ SUBIR_MUSICA:
 
 FAVORITOS:
   -Mostrar canciones
-  -Permitir que en todas las canciones se pueda añadir/quitar de favorito
+  -Permitir que en todas las canciones se pueda añadir/quitar de favorito(Añadir/quitar cancion a lista)
 
 RECIENTES:
   -Mostrar ultimas actividades(incluidas las recomendaciones recibidas de amigos en cancion->share->seleccionar amigo)
