@@ -204,7 +204,7 @@
                           <label for="IdUsar1">  <font size="4" face="Arial" color="black" style="font-weight: bold"> &nbsp Nombre: </font></label>
                         </td>
                         <td>
-                          <input size="25" id="IdUsar1" type="text" name="nuevoNombre" maxlength="15" pattern="[A-Za-z]{1}[A-Za-z0-9]{3,}" title="Debe tener 4 o más carácteres, empezar por una letra y contener solo letras o números."/></br>
+                          <input size="25" id="IdUsar1" type="text" name="nuevoNombre" maxlength="15" pattern="[A-Za-z]{1}[A-Za-z0-9]{3,}" title="Debe tener de 4 a 15 carácteres, empezar por una letra y contener solo letras o números."/></br>
                       </td>
                       </tr>
                     </table>
@@ -238,7 +238,7 @@
                           <label for="idAntigua">  <font size="4" face="Arial" color="black" style="font-weight: bold"> &nbsp Contraseña antigua: </font></label>
                         </td>
                       <td>
-                        <input size="25" id="IdAntigua" type="password" name="viejaPass" required pattern="(?=.*\d)(?=.*[A-Z]).{4,}" title="Debe contener al menos un número, una letra mayúscula y 4 o más carácteres"/></br>
+                        <input size="25" id="IdAntigua" type="password" name="viejaPass" required maxlength="15" pattern="(?=.*\d)(?=.*[A-Z]).{4,}" title="Debe contener al menos un número, una letra mayúscula y de 4 a 15 carácteres"/></br>
                       </td>
                       </div>
                       <div class="block2">
@@ -246,7 +246,7 @@
                           <label for="idNueva">  <font size="4" face="Arial" color="black" style="font-weight: bold"> &nbsp Nueva contraseña: </font></label>
                         </td>
                         <td>
-                          <input size="25" id="IdNueva" type="password" name="nuevaContrasenya" required pattern="(?=.*\d)(?=.*[A-Z]).{4,}" title="Debe contener al menos un número, una letra mayúscula y 4 o más carácteres"/></br>
+                          <input size="25" id="IdNueva" type="password" name="nuevaContrasenya" required maxlength="15" pattern="(?=.*\d)(?=.*[A-Z]).{4,}" title="Debe contener al menos un número, una letra mayúscula y de 4 a 15 carácteres"/></br>
                         </td>
                       </div>
                       <div class="block2">
@@ -254,7 +254,7 @@
                           <label for="idNuevaRep">  <font size="4" face="Arial" color="black" style="font-weight: bold"> &nbsp Repetir nueva contraseña: </font></label>
                         </td>
                         <td>
-                          <input size="25" id="IdNuevaRep" type="password" name="nuevaContrasenyaR" required pattern="(?=.*\d)(?=.*[A-Z]).{4,}" title="Debe contener al menos un número, una letra mayúscula y 4 o más carácteres"/></br>
+                          <input size="25" id="IdNuevaRep" type="password" name="nuevaContrasenyaR" required maxlength="15" pattern="(?=.*\d)(?=.*[A-Z]).{4,}" title="Debe contener al menos un número, una letra mayúscula y de 4 a 15 carácteres"/></br>
                         </td>
                       </div>
                       <button type="submit" id="cambiarcontrabutton"/>Cambiar contraseña</button>
