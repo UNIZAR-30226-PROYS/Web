@@ -29,10 +29,12 @@
 
     	<link rel="stylesheet" href="css/demo.css">
       <link rel="stylesheet" href="css/demo1.css">
-    <script src="js/formato_file.js"></script>
-    <script src="js/cookies.js"></script>
-    <script src="js/comprobar_sesion_iniciada.js"></script>
-    <script src="js/lista_servlet.js" charset="UTF-8"></script>
+      <!-- Para la ventana del resultado -->
+      <link rel="stylesheet" href="css/ventanacontrasena.css">
+      <script src="js/formato_file.js"></script>
+      <script src="js/cookies.js"></script>
+      <script src="js/comprobar_sesion_iniciada.js"></script>
+      <script src="js/lista_servlet.js" charset="UTF-8"></script>
 </head>
 
 <body>
@@ -230,6 +232,7 @@
 
 
                       <input type="submit" name="send" id="send" value="Subir" accept=".mp3"/>
+                      <br/>
                     </form>
                   </th>
                 </tr>
@@ -252,14 +255,15 @@
               <table width="top:400%" >
                 <tr>
                   <th>
-                  <form id="form_cambiar_nombre_lista" action="#" method="post">
+                  <form id="form_cambiar_nombre_lista" method="post" action="/ps/CambiarNombreLista">
                     <table height="100%">
                       <tr height="60px">
                         <td>
                           <label for="idNombre">  <font size="4" face="Arial" color="black" style="font-weight: bold"> &nbsp Nombre: </font></label>
                         </td>
                         <td>
-                          <input size="25" id="IdUsar1" type="text" name="nombre" required/></br>
+                          <input type="hidden" id="viejoNombre" name="viejoNombre">
+                          <input size="25" id="IdUsar1" type="text" name="nuevoNombre" required/></br>
                         </td>
                       </tr>
                     </table>
@@ -278,8 +282,34 @@
 
 
     <script type="text/javascript" src="js/ponernombrelista.js"></script>
+    <script type="text/javascript" src="js/ventana_result_lista.js"></script>
 
+    <button type="submit" class="button2 button-block" data-type="zoomin2" hidden></button>
+    <div class="overlay-container2">
+      <div class="window-container2 zoomin2">
+        <span class="close2"><img src="img\cerrar.png" width=30 height=30></span>
+        <td>
+              <table width="top:400%" >
+                <tr>
+                  <th>
+                  <table id="reg_exito" height="100%">
+                    <tr height="60px">
+                      <td>
+                        <img id="result_seguir" src="img/exito.png"/>
+                      </td>
+                      <td>
+                        <p id="resultado_seguir"></p>
+                      </td>
+                    </tr>
+                  </table>
+                  </th>
+                </tr>
 
+              </table>
+
+            </td>
+      </div>
+    </div>
 
 </body>
 

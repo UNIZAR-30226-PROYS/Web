@@ -51,7 +51,8 @@ LISTAS:
 LISTA:
   -(hecho)En + quitar opcion de busqueda(ya esta en la barra superior)
   -Hacer opcion subir musica(ademas se añadira automaticamente a la lista)
-  -Permitir cambiar nombre de la lista(solo si la lista es del usuario sino no debe salir esa opcion, p ej leer cookie login y comparar con la que devuelve el servlet(si no esta se debe añadir))
+  -(hecho)Cambiar nombre lista(FALTA depurar cuando vaya en server)
+  -Permitir cambiar nombre de la lista solo si la lista es del usuario sino no debe salir esa opcion, p ej leer cookie login y comparar con la que devuelve el servlet(si no esta se debe añadir)
   -Añadir opcion reproducir lista(con varias opciones:en orden, aleatorio o en bucle)
   -Mostrar canciones con opcion de reproducir(siempre) y de eliminar(solo si la lista es del usuario)
   -(hecho)Permitir busqueda listas
