@@ -1,33 +1,17 @@
-.window-container1 {
-  margin: 13em auto !important;
+#sin_resul {
+  margin-left: 70px;
 }
 
-#titulopagina {
-  text-align: center;
-  margin-right: 15%;
+#boton_mostrar_mas {
+  right: unset;
+  width: 60%;
+  margin-left: 100px;
+  font-size:20px;
+  margin-top: 20px;
 }
 
 #barraopciones {
     float: left;
-}
-
-.window-container {
-    display: block;
-    background: #fcfcfc;
-    margin: 8em auto;
-    margin-left: 25% !important;
-    width: 250px !important;
-    height: 150px !important;
-    text-align: left;
-    z-index: 3;
-    border-radius: 3px;
-    box-shadow: 0px 0px 30px rgba(0,0,0,0.2);
-    -webkit-transition: 0.4s ease-out;
-    -moz-transition: 0.4s ease-out;
-    -ms-transition: 0.4s ease-out;
-    -o-transition: 0.4s ease-out;
-    transition: 0.4s ease-out;
-    opacity: 0;
 }
 
 #IdUsar {
@@ -40,13 +24,19 @@
     color: #333333;
 }
 
+.nombrecancion {
+  position: absolute;
+  margin-left: 22%;
+  font-size: 100%;
+  margin-top: 5%;
+  font-weight: normal;
+}
+
 .cancioninf ul{
   list-style-type: none;
   padding-left: 0;
   overflow: hidden;
 }
-
-
 
 .informacion input {
   font-family: "Roboto", sans-serif;
@@ -83,7 +73,11 @@ button:hover {
     background-color: green;
 }
 
-.simb_repr_elim input {
+.informacion form {
+    margin-bottom: 20px;
+}
+
+.simb_repr_play input {
   position: absolute;
   width:  45px;
   height: 45px;
@@ -93,6 +87,18 @@ button:hover {
   padding: 0;
   background: none;
 }
+
+.simb_repr_elim input {
+  position: absolute;
+  width:  45px;
+  height: 45px;
+  margin-left: 75%;
+  margin-top: 3%;
+  border: none;
+  padding: 0;
+  background: none;
+}
+
 .anadir_lista img {
   max-width: 45px;
   max-height: 14%;
@@ -102,15 +108,11 @@ button:hover {
   margin-top: -50px;
 }
 
-.imagen img {
-  width: 110px;
-  height: 70px;
-  margin: auto;
-}
-
 .cancioninf{
-  margin-top:0%;
-  margin-bottom:0%;
+  height: 5%;
+  width: 100%;
+  margin-top:5%;
+  margin-bottom:5%;
 }
 
 #enlacecancion{
@@ -119,16 +121,8 @@ button:hover {
   color: #333333;
 }
 
-.nombrecancion {
-  position: absolute;
-  margin-left: 22%;
-  font-size: 100%;
-  margin-top: 5%;
-  font-weight: normal;
-}
-
 #crear_lista {
-   margin-left: 105px;
+   margin-left: 45px;
    background: #4CAF50;
    color: white;
    text-transform: uppercase;
@@ -136,17 +130,28 @@ button:hover {
    border: 2px solid #088A08;
 }
 
+.imagen img {
+  width: 110px;
+  height: 70px;
+  margin: auto;
+}
+
+#result_seguir {
+  width: 90px;
+  height: 50px;
+  margin: auto;
+  margin-right: 30px;
+}
+
+.cancioninf{
+  margin-top:0%;
+  margin-bottom:20px;
+}
+
 @media(min-width:768px) {
   .window-container {
       width: 400px !important;
       margin-left: 35% !important;
-  }
-
-
-  .imagen img {
-    width: 110px;
-    height: 70px;
-    margin: auto;
   }
 
   .anadir_lista img {
@@ -158,11 +163,28 @@ button:hover {
     margin-top: -50px;
   }
 
-  .simb_repr_elim input {
+  .imagen img {
+    width: 110px;
+    height: 70px;
+    margin: auto;
+  }
+
+  #result_seguir {
+   width: 90px;
+   height: 50px;
+   margin: auto;
+   margin-right: 30px;
+ }
+
+  .simb_repr_play input {
     margin-left: 35%;
     margin-top: 0.5%;
   }
 
+  .simb_repr_elim input {
+    margin-left: 45%;
+    margin-top: 0.5%;
+  }
 
   .nombrecancion {
     margin-left: 5%;
@@ -170,37 +192,46 @@ button:hover {
     font-size: 28px;
     margin-top: 1%;
   }
+
   #IdUsar {
     width: 100%;
   }
   #crear_lista {
-     margin-left: 145px;
+     margin-left: 125px;
   }
 
 }
 
 @media(min-width:1100px) {
-    .window-container {
-        width: 400px !important;
-        margin-left: 35% !important;
-    }
+  #boton_mostrar_mas {
+    right: unset;
+    width: 20%;
+    margin-left: 400px;
+    font-size:20px;
+    margin-top: 20px;
+  }
+
+  .window-container {
+      width: 400px !important;
+      margin-left: 35% !important;
+  }
   #IdUsar {
     width: 100%;
   }
   #crear_lista {
-     margin-left: 145px;
+     margin-left: 125px;
   }
 }
 
 @media(max-width:350px) {
-    .window-container {
-        width: 225px !important;
-        margin-left: 25% !important;
-    }
+  .window-container {
+      width: 225px !important;
+      margin-left: 25% !important;
+  }
   #IdUsar {
     width: 100px;
   }
   #crear_lista {
-     margin-left: 105px;
+     margin-left: 35px;
   }
 }

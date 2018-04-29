@@ -1,3 +1,7 @@
+.window-container2 {
+  margin: 13em auto !important;
+}
+
 #titulopagina {
   text-align: center;
   margin-right: 15%;
@@ -210,6 +214,7 @@ tr {
 }
 
 #send {
+  margin-bottom: 10px;
   margin-left: 41%;
   margin-top: 10px;
   background: #4CAF50;

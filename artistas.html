@@ -28,7 +28,9 @@
     <!-- Custom styles for this template -->
     <link href="css/simple-sidebar.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/demo.css">
+		<script src="js/cookies.js"></script>
+		<script src="js/artistas_servlet.js" charset="UTF-8"></script>
+		<script src="js/comprobar_sesion_iniciada.js"></script>
 </head>
 
 <body>
@@ -111,9 +113,9 @@
             <a href="#menu-music" class="buttonMenu" id="menu-music" onmouseover="changeImage()" onmouseout="changeImageAntes()"><img id="simbolo_menu_imagen" src="img/simbolomenu.png" width="30" height="30" alt="menu"></a>
 
 						<div id="sb-search" class="sb-search sb-search-open">
-							<form action="busqueda.html" method="post">
+							<form class="form_buscar_artista" id="form_buscar_artista" action="/ps/BuscarArtista" method="post">
 
-								<input class="sb-search-input" placeholder="Búsqueda artista" type="search" name="search" id="search" required>
+								<input class="sb-search-input" placeholder="Búsqueda artista" type="search" name="artista" id="search_artista" required>
 								<input class="sb-search-submit" type="submit" value="">
 								<span class="sb-icon-search"> </span>
 							</form>
@@ -127,45 +129,16 @@
 		 <br/>
           <div id="titulopagina"><h1>Artistas</h1></div>
 		   <div class="cancionesArtista">
-		  <ul>
-              <li id="barraopciones">
-                <div class="cancioninf">
-                  <a href="artista.html" id="enlacecancion">
-          					<div class="imagen">
-          						<img src="img/blackWindows.jpg" alt="Imagen cancion">
-          					</div>
-          					<div class="nombrecancion">
-          						Iggy Azalea
-          					</div>
-                  </a>
-        				</div>
+		   	<ul id="lista_artistas">
 
-              </li>
-
-              <li id="barraopciones">
-                <div class="cancioninf">
-                  <a href="artista.html" id="enlacecancion">
-                    <div class="imagen">
-                      <img src="img/edsheeran.jpeg" alt="Imagen cancion">
-                    </div>
-                    <div class="nombrecancion">
-                      Ed Sheeran
-                    </div>
-                  </a>
-                </div>
-              </li>
-
-
-
-			 </ul>
+			 	</ul>
 			 </div>
 	</div>
 
+	<form id="form_mostrar_artistas" method="post" action="/ps/ObtenerArtistas">
+		<input type="submit" hidden>
+	</form>
 
-
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Menu Toggle Script -->
     <script>
@@ -182,37 +155,7 @@
       }
     </script>
 
-    <!-- contenido de la ventana emergente -->
-    <div class="overlay-container">
-      <div class="window-container zoomin">
-        <td>
-              <table width="100% ;left:35%; top:400%" >
-                <tr style="position: absolute; top: 10%;">
-                  <th>
-                  <form action="#" method="post">
-                    <table height="100%">
-                      <tr ><a href="#" id="enlacecancion">
-                        <div class="nombrelista">
-                          Lista1
-                        </div></a></tr>
-                      <tr><a href="#" id="enlacecancion">
-                        <div class="nombrelista">
-                          Lista2
-                        </div></a></tr>
-                    </table>
-                  </form>
-                  </th>
-                </tr>
-
-              </table>
-
-            </td>
-
-        <span class="close">Cerrar</span>
-      </div>
-    </div>
     <script>!window.jQuery && document.write(unescape('%3Cscript src="js/jquery-1.7.1.min.js"%3E%3C/script%3E'))</script>
-    <script type="text/javascript" src="js/demo.js"></script>
 
 </body>
 

@@ -1,3 +1,11 @@
+.cancioninf {
+    margin-top: 0%;
+    margin-bottom: 20px;
+}
+
+.window-container1 {
+  margin: 13em auto !important;
+}
 
 .informacion input {
   font-family: "Roboto", sans-serif;

@@ -5,6 +5,11 @@ $(document).ready(function() {
     $("#inf_acceso").html("Sesión cerrada con éxito.");
     borrarCookie("sesionCerrada");
   }
+  else if(leerCookie("cuentaEliminada") != null){
+    $("#inf_acceso").css("color", "#088A08");
+    $("#inf_acceso").html("Cuenta eliminada con éxito.");
+    borrarCookie("cuentaEliminada");
+  }
 
   $("#form_acceso").submit(function(event){
       event.preventDefault(); //prevent default action
@@ -52,7 +57,12 @@ $(document).ready(function() {
     }).done(function(response){
         var obj=JSON.parse(response);
         if(obj.error != undefined){
-          $("#inf_registro").html(obj.error);
+          if(obj.error.indexOf("La contrase") >= 0){
+            $("#inf_registro").html("La contraseña no es válida.");
+          }
+          else{ //(obj.error.indexOf("El usuario") >= 0){
+            $("#inf_registro").html("El usuario ya existe.");
+          }
         }
         else{
           $('.close').click();

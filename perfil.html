@@ -33,9 +33,12 @@
     <link rel="stylesheet" href="css/ventanacontrasena.css">
     <link rel="stylesheet" href="css/ventanaelimcuenta.css">
     <link rel="stylesheet" href="css/ventanacambiarfoto.css">
+    <link rel="stylesheet" href="css/ventanaresultperfil.css">
     <script src="js/cookies.js"></script>
     <script src="js/perfil_servlet.js" charset="UTF-8"></script>
     <script src="js/comprobar_sesion_iniciada.js"></script>
+    <script src="js/busqueda_cancion_servlet.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="js/result_perfil.js"></script>
 
 </head>
 
@@ -120,9 +123,9 @@
             <a href="#menu-music" class="buttonMenu" id="menu-music" onmouseover="changeImage()" onmouseout="changeImageAntes()"><img id="simbolo_menu_imagen" src="img/simbolomenu.png" width="30" height="30" alt="menu"></a>
 
 						<div id="sb-search" class="sb-search sb-search-open">
-							<form action="busqueda.html" method="post">
+              <form class="form_buscar_cancion" id="form_buscar_cancion" action="/ps/BuscarCancionTitulo" method="post">
 
-								<input class="sb-search-input" placeholder="Búsqueda" type="search" name="search" id="search" required>
+								<input class="sb-search-input" placeholder="Búsqueda" type="search" name="titulo" id="search" required>
 								<input class="sb-search-submit" type="submit" value="">
 								<span class="sb-icon-search"> </span>
 							</form>
@@ -156,10 +159,10 @@
 
           <div class="block1">
             <label for="idNombre">Nombre:</label>
-              <input size="25" id="idNombre" type="text" value="nombreX" readonly="true"/></br>
+              <input size="25" id="idNombre" type="text" readonly="true"/></br>
               <button type="submit" class="button1 button-block" data-type="zoomin1" onclick="set_nombre()">Modificar nombre</button>
           </div>
-					<br/> <br/>
+          <br/> <br/>
 
           <div class="block1" id="bloque_contra">
             <button type="submit" class="button2 button-block" data-type="zoomin2">Modificar contraseña</button>
@@ -177,10 +180,6 @@
     </div>
     <!-- /#wrapper -->
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
     <!-- Menu Toggle Script -->
     <script>
     $("#menu-music").click(function(e) {
@@ -188,7 +187,6 @@
         $("#wrapper").toggleClass("toggled");
     });
     </script>
-
 
     <!-- Ventana cambiar nombre lista  -->
     <!-- contenido de la ventana emergente -->
@@ -199,15 +197,15 @@
               <table width="top:400%" >
                 <tr>
                   <th>
-                  <form action="#" method="post" id="form_cambio_nombre">
+                  <form id="form_cambio_nombre" method="post" action="/ps/CambiarNombre">
                     <table height="100%">
                       <tr height="60px">
                         <td>
-                          <label for="idNombre">  <font size="4" face="Arial" color="black" style="font-weight: bold"> &nbsp Nombre: </font></label>
+                          <label for="IdUsar1">  <font size="4" face="Arial" color="black" style="font-weight: bold"> &nbsp Nombre: </font></label>
                         </td>
                         <td>
-                          <input size="25" id="IdUsar1" type="text" name="nombre" maxlength="15" pattern="[A-Za-z]{1}[A-Za-z0-9]{3,}" title="Debe tener 4 o más carácteres, empezar por una letra y contener solo letras o números."/></br>
-                        </td>
+                          <input size="25" id="IdUsar1" type="text" name="nuevoNombre" maxlength="15" pattern="[A-Za-z]{1}[A-Za-z0-9]{3,}" title="Debe tener 4 o más carácteres, empezar por una letra y contener solo letras o números."/></br>
+                      </td>
                       </tr>
                     </table>
                     <input id="crear_lista1" type="submit" value="Cambiar nombre"/> <br/>
@@ -220,6 +218,7 @@
             </td>
       </div>
     </div>
+
     <script>!window.jQuery && document.write(unescape('%3Cscript src="js/jquery-1.7.1.min.js"%3E%3C/script%3E'))</script>
     <script type="text/javascript" src="js/demo1.js"></script>
     <script type="text/javascript" src="js/ventanacontrasena.js"></script>
@@ -233,13 +232,13 @@
 
                     <div id="subir_cancion_titulo">Cambiar contraseña</div>
                     <br/>
-                    <form name="subirMusica" id="form_cambiar_contra" method="post" action="#" enctype="multipart/form-data" >
+                    <form id="form_cambiar_contra" method="post" action="/ps/CambiarContrasenya">
                       <div class="block2">
                         <td>
                           <label for="idAntigua">  <font size="4" face="Arial" color="black" style="font-weight: bold"> &nbsp Contraseña antigua: </font></label>
                         </td>
                       <td>
-                        <input size="25" id="IdAntigua" type="password" name="nombre" required pattern="(?=.*\d)(?=.*[A-Z]).{4,}" title="Debe contener al menos un número, una letra mayúscula y 4 o más carácteres"/></br>
+                        <input size="25" id="IdAntigua" type="password" name="viejaPass" required pattern="(?=.*\d)(?=.*[A-Z]).{4,}" title="Debe contener al menos un número, una letra mayúscula y 4 o más carácteres"/></br>
                       </td>
                       </div>
                       <div class="block2">
@@ -247,7 +246,7 @@
                           <label for="idNueva">  <font size="4" face="Arial" color="black" style="font-weight: bold"> &nbsp Nueva contraseña: </font></label>
                         </td>
                         <td>
-                          <input size="25" id="IdNueva" type="password" name="nuevacontra" required pattern="(?=.*\d)(?=.*[A-Z]).{4,}" title="Debe contener al menos un número, una letra mayúscula y 4 o más carácteres"/></br>
+                          <input size="25" id="IdNueva" type="password" name="nuevaContrasenya" required pattern="(?=.*\d)(?=.*[A-Z]).{4,}" title="Debe contener al menos un número, una letra mayúscula y 4 o más carácteres"/></br>
                         </td>
                       </div>
                       <div class="block2">
@@ -255,7 +254,7 @@
                           <label for="idNuevaRep">  <font size="4" face="Arial" color="black" style="font-weight: bold"> &nbsp Repetir nueva contraseña: </font></label>
                         </td>
                         <td>
-                          <input size="25" id="IdNuevaRep" type="password" name="nuevacontrarep" required pattern="(?=.*\d)(?=.*[A-Z]).{4,}" title="Debe contener al menos un número, una letra mayúscula y 4 o más carácteres"/></br>
+                          <input size="25" id="IdNuevaRep" type="password" name="nuevaContrasenyaR" required pattern="(?=.*\d)(?=.*[A-Z]).{4,}" title="Debe contener al menos un número, una letra mayúscula y 4 o más carácteres"/></br>
                         </td>
                       </div>
                       <button type="submit" id="cambiarcontrabutton"/>Cambiar contraseña</button>
@@ -273,18 +272,18 @@
                 <tr>
                   <th>
                   <div id="subir_cancion_titulo">Para eliminar la cuenta introduce la contraseña</div>
-                  <form action="#" method="post">
+                  <form id="form_eliminar_cuenta" method="post" action="/ps/EliminarCuenta">
                     <table height="100%">
                       <tr height="60px">
                         <td>
                           <label for="idContraElim">  <font size="4" face="Arial" color="black" style="font-weight: bold"> &nbsp Contraseña: </font></label>
                         </td>
                         <td>
-                          <input size="25" id="idContraElim" type="password" name="contraelim" required pattern="(?=.*\d)(?=.*[A-Z]).{4,}" title="Debe contener al menos un número, una letra mayúscula y 4 o más carácteres"/></br>
+                          <input size="25" id="idContraElim" type="password" name="pass" required pattern="(?=.*\d)(?=.*[A-Z]).{4,}" title="Debe contener al menos un número, una letra mayúscula y 4 o más carácteres"/></br>
                         </td>
                       </tr>
                     </table>
-                    <input id="crear_lista1" type="submit" value="Eliminar cuenta"/> <br/>
+                    <input id="crear_lista2" type="submit" value="Eliminar cuenta"/> <br/>
                   </form>
                   </th>
                 </tr>
@@ -305,8 +304,8 @@
                   <th>
 
                     <div id="subir_cancion_titulo">Cambiar foto</div>
-                    <form name="subirMusica" method="post" action="#" enctype="multipart/form-data" >
-                      <input type="file" name="fichero" id="fichero" required onchange="return fileImgValidation()"/>
+                    <form id="form_cambiar_foto" method="post" action="/ps/CambiarFotoPerfil" enctype="multipart/form-data">
+                      <input type="file" name="foto" id="fichero" required onchange="return fileImgValidation()"/>
                       <br />
                       <input type="submit" name="send" id="change_img_button" value="Cambiar"/>
                     </form>
@@ -319,6 +318,36 @@
             </td>
       </div>
     </div>
+
+    <!-- Ventana de resultado de la operacion (exito o error) -->
+    <button type="submit" class="button5 button-block" data-type="zoomin5" hidden></button>
+    <div class="overlay-container5">
+      <div class="window-container5 zoomin5">
+        <span class="close5"><img src="img\cerrar.png" width=30 height=30></span>
+        <td>
+              <table width="top:400%" >
+                <tr>
+                  <th>
+                  <table id="reg_exito" height="100%">
+                    <tr height="60px">
+                      <td>
+                        <img id="result_seguir" src="img/exito.png"/>
+                      </td>
+                      <td>
+                        <p id="resultado_seguir"></p>
+                      </td>
+                    </tr>
+                  </table>
+                  </th>
+                </tr>
+
+              </table>
+
+            </td>
+      </div>
+    </div>
+
+
     <script>!window.jQuery && document.write(unescape('%3Cscript src="js/jquery-1.7.1.min.js"%3E%3C/script%3E'))</script>
     <script type="text/javascript" src="js/demo.js"></script>
     <script>

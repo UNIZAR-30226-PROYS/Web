@@ -1,6 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Pontano+Sans|Oleo+Script);
 
-	.overlay-container {
+	.overlay-container5 {
 		display: none;
 		content: " ";
 		height: 100%;
@@ -17,13 +17,12 @@
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#007f7f7f', endColorstr='#e67f7f7f',GradientType=1 );
 	}
 
-	.window-container {
+	.window-container5 {
 		display: block;
 		background: #fcfcfc;
 		margin: 8em auto;
 		width: 500px;
-    padding: 0px 0px 0px;
-    text-align: left;
+		text-align: left;
 		z-index: 3;
 		overflow:auto;
 		border-radius: 3px;
@@ -35,10 +34,9 @@
 		transition: 0.4s ease-out;
 		opacity: 0;
 		margin-bottom:0;
-		max-height: 500px;
 	}
 
-	.zoomin {
+	.zoomin5 {
 		-webkit-transform:  scale(1.2);
 		-moz-transform:  scale(1.2);
 		-ms-transform:  scale(1.2);
@@ -52,7 +50,7 @@
 		transform:  scale(0.7);
 	}
 
-	.window-container-visible {
+	.window-container5-visible {
 		-webkit-transform:  scale(1);
 		-moz-transform:  scale(1);
 		-ms-transform:  scale(1);
@@ -60,7 +58,7 @@
 		opacity: 1;
 	}
 
-		.window-container h3 {
+		.window-container5 h3 {
 			margin: 1em 0 0.5em;
 			font-family: "Oleo Script";
 			font-weight: normal;
@@ -68,7 +66,7 @@
 			text-align: center;
 		}
 
-		.close {
+		.close5 {
 			float: right;
 			margin: 1em auto;
 			display: block;
@@ -86,11 +84,11 @@
 			cursor: pointer;
 		}
 
-			.close:hover {
+			.close5:hover {
 				background: none;
 			}
 
-			.close:active {
+			.close5:active {
 				background: none;
 				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f4f4', endColorstr='#dcdcdc',GradientType=0 );
 			}

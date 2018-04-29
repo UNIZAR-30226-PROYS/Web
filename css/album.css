@@ -3,6 +3,11 @@
   margin-right: 15%;
 }
 
+#tituloartista {
+  text-align: center;
+  margin-right: 15%;
+}
+
 .informacion input {
   font-family: "Roboto", sans-serif;
   outline: 0;

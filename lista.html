@@ -29,7 +29,12 @@
 
     	<link rel="stylesheet" href="css/demo.css">
       <link rel="stylesheet" href="css/demo1.css">
-    <script src="js/formato_file.js"></script>
+      <!-- Para la ventana del resultado -->
+      <link rel="stylesheet" href="css/ventanacontrasena.css">
+      <script src="js/formato_file.js"></script>
+      <script src="js/cookies.js"></script>
+      <script src="js/comprobar_sesion_iniciada.js"></script>
+      <script src="js/lista_servlet.js" charset="UTF-8"></script>
 </head>
 
 <body>
@@ -113,9 +118,9 @@
             <a href="#menu-music" class="buttonMenu" id="menu-music" onmouseover="changeImage()" onmouseout="changeImageAntes()"><img id="simbolo_menu_imagen" src="img/simbolomenu.png" width="30" height="30" alt="menu"></a>
 
 						<div id="sb-search" class="sb-search sb-search-open">
-							<form action="#" method="post">
+              <form class="form_buscar_lista" id="form_buscar_lista" action="/ps/BuscarLista" method="post">
 
-								<input class="sb-search-input" placeholder="Búsqueda lista" type="search" name="search" id="search">
+                <input class="sb-search-input" placeholder="Búsqueda lista" type="search" name="nuevoNombre" id="search_lista" required>
 								<input class="sb-search-submit" type="submit" value="">
 								<span class="sb-icon-search"> </span>
 							</form>
@@ -127,7 +132,7 @@
 
         <div class="informacion">
           <br/>
-          <div id="titulopagina"><h1 id="prueba">Listax</h1></div>
+          <div id="titulopagina"><h1 id="prueba">Lista: </h1></div>
             <div class="editar_lista">
               <img src="img/editar.png" alt="Cambiar nombre lista" title="Cambiar nombre lista" class="button1" data-type="zoomin1" onclick="nombreLista()">
             </div>
@@ -191,10 +196,6 @@
     </div>
     <!-- /#wrapper -->
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
     <!-- Menu Toggle Script -->
     <script>
     $("#menu-music").click(function(e) {
@@ -231,22 +232,8 @@
 
 
                       <input type="submit" name="send" id="send" value="Subir" accept=".mp3"/>
+                      <br/>
                     </form>
-                    <br />
-
-                  <form action="#" method="post" id="form_busqueda">
-                    <table height="100%">
-                      <tr height="60px">
-                        <td>
-                          <label for="idNombre">  <font size="4" face="Arial" color="black" style="font-weight: normal"> &nbsp Búsqueda: </font></label>
-                        </td>
-                        <td>
-                          <input size="25" id="IdUsar" type="text" name="nombre" required/></br>
-                        </td>
-                      </tr>
-                    </table>
-                    <input id="crear_lista" type="submit" value="Buscar"/> <br/>
-                  </form>
                   </th>
                 </tr>
 
@@ -268,14 +255,15 @@
               <table width="top:400%" >
                 <tr>
                   <th>
-                  <form id="form_cambiar_nombre_lista" action="#" method="post">
+                  <form id="form_cambiar_nombre_lista" method="post" action="/ps/CambiarNombreLista">
                     <table height="100%">
                       <tr height="60px">
                         <td>
                           <label for="idNombre">  <font size="4" face="Arial" color="black" style="font-weight: bold"> &nbsp Nombre: </font></label>
                         </td>
                         <td>
-                          <input size="25" id="IdUsar1" type="text" name="nombre" required/></br>
+                          <input type="hidden" id="viejoNombre" name="viejoNombre">
+                          <input size="25" id="IdUsar1" type="text" name="nuevoNombre" required/></br>
                         </td>
                       </tr>
                     </table>
@@ -294,8 +282,34 @@
 
 
     <script type="text/javascript" src="js/ponernombrelista.js"></script>
+    <script type="text/javascript" src="js/ventana_result_lista.js"></script>
 
+    <button type="submit" class="button2 button-block" data-type="zoomin2" hidden></button>
+    <div class="overlay-container2">
+      <div class="window-container2 zoomin2">
+        <span class="close2"><img src="img\cerrar.png" width=30 height=30></span>
+        <td>
+              <table width="top:400%" >
+                <tr>
+                  <th>
+                  <table id="reg_exito" height="100%">
+                    <tr height="60px">
+                      <td>
+                        <img id="result_seguir" src="img/exito.png"/>
+                      </td>
+                      <td>
+                        <p id="resultado_seguir"></p>
+                      </td>
+                    </tr>
+                  </table>
+                  </th>
+                </tr>
 
+              </table>
+
+            </td>
+      </div>
+    </div>
 
 </body>
 

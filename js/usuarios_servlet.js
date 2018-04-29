@@ -2,6 +2,9 @@ $(document).ready(function() {
   var url_string = window.location.href;
   var url = new URL(url_string);
   var c = url.searchParams.get("busqueda_usuario");
+  if(c == undefined){ //Si se ha ido directamente a la pagina redirigir
+    window.location="home.html";
+  }
   $( "#texto_nombre_busqueda" ).append("\"" + c + "\"");
   var jsonData = JSON.parse(JSON.parse(sessionStorage.getItem("lista_usuarios")));
 
@@ -11,11 +14,19 @@ $(document).ready(function() {
     var elem_por_pagina = 4;
     var pag_actual= parseInt(url.searchParams.get("pagina"));
     var inicio=(pag_actual-1)*elem_por_pagina;
+    var sin_elementos = 1;
     for(i=inicio; i<(elem_por_pagina+inicio) && i<usuarios.length;i++){
       var user=usuarios[i];
       var image="img/user.png";
-      var large='<form class="form_seguir_usuario" method="post" action="/ps/SeguirUsuario"><div class="cancioninf"><ul><li id="barraopciones"><a href="usuario.html'+"?usuario="+user+'"><div class="imagen"><img src="'+image+'" alt="Imagen lista"></div></a></li><li id="barraopciones"><a href="usuario.html'+"?usuario="+user+'"><div class="nombrecancion">'+user+'</div></a></li><li id="barraopciones"><div class="simb_repr_elim"><input type="image" src="img/add_friend.png" alt="Añadir amigo" title="Añadir amigo"><input type="hidden" id="seguido" name="seguido" value="'+user+'"/></div></li></ul></div></form>';
-      $(".informacion").append(large);
+      if(leerCookie("login") != user){ //Poner opcion añadir amigo solo si no es el mismo
+        var large='<form class="form_seguir_usuario" method="post" action="/ps/SeguirUsuario"><div class="cancioninf"><ul><li id="barraopciones"><a href="usuario.html'+"?usuario="+user+'"><div class="imagen"><img src="'+image+'" alt="Imagen lista"></div></a></li><li id="barraopciones"><a href="usuario.html'+"?usuario="+user+'"><div class="nombrecancion">'+user+'</div></a></li><li id="barraopciones"><div class="simb_repr_elim"><input type="image" src="img/add_friend.png" alt="Añadir amigo" title="Añadir amigo"><input type="hidden" id="seguido" name="seguido" value="'+user+'"/></div></li></ul></div></form>';
+        $(".informacion").append(large);
+        sin_elementos = 0;
+      }
+    }
+    if(sin_elementos == 1){
+      //No hay resultados ya que solo habia uno que era el propio usuario y no se muestra
+      $("#titulopagina").after("<h2 id=\"sin_resul\">No hay resultados.</h2>");
     }
     if((elem_por_pagina+inicio)<usuarios.length){
       var pagina_sig=pag_actual+1;
@@ -48,11 +59,29 @@ $(document).ready(function() {
           data : form_data,
 
     }).done(function(response){ //
-       var obj=JSON.parse(response);
+        var obj=JSON.parse(response);
         var lista_usuarios = JSON.stringify(response);
-        sessionStorage.setItem("lista_usuarios", lista_usuarios);
-        //Pasar tambien el valor de busqueda
-        window.location= "usuarios.html?busqueda_usuario="+valor_sin_espacioizquierdo+"&pagina=1";
+        if(obj.error != undefined){
+          if(obj.error.indexOf("Usuario no logeado en el servidor") >= 0){
+            //El usuario no esta logeado, quitar cookies e ir a inicio
+            borrarCookie("login");
+            borrarCookie("idSesion");
+            window.location = "inicio.html";
+          }
+          else if(obj.error.indexOf("usuario cuyo nombre sea o empiece") >= 0){
+            sessionStorage.setItem("lista_usuarios", lista_usuarios);
+            //Pasar tambien el valor de busqueda
+            window.location= "usuarios.html?busqueda_usuario="+valor_sin_espacioizquierdo+"&pagina=1";
+          }
+          else{
+            alert("Error. Inténtelo más tarde.");
+          }
+        }
+        else{
+          sessionStorage.setItem("lista_usuarios", lista_usuarios);
+          //Pasar tambien el valor de busqueda
+          window.location= "usuarios.html?busqueda_usuario="+valor_sin_espacioizquierdo+"&pagina=1";
+        }
 
     }).fail(function(response){
         alert("Error interno. Inténtelo más tarde.");
@@ -75,8 +104,16 @@ $(document).ready(function() {
        var obj=JSON.parse(response);
        //Mostrar mensaje correspondiente en forma de ventana
        if(obj.error != undefined){
-         $("#resultado_seguir").text("Ya estas siguiendo a "+ user+ ".");
-         $("#result_seguir").attr("src","img/error.png");
+         if(obj.error.indexOf("Usuario no logeado en el servidor") >= 0){
+           //El usuario no esta logeado, quitar cookies e ir a inicio
+           borrarCookie("login");
+           borrarCookie("idSesion");
+           window.location = "inicio.html";
+         }
+         else{
+           $("#resultado_seguir").text("Ya estas siguiendo a "+ user+ ".");
+           $("#result_seguir").attr("src","img/error.png");
+         }
        }
        else{
          $("#resultado_seguir").text("Usuario añadido como amigo.");

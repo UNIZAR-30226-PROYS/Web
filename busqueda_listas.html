@@ -21,21 +21,22 @@
     <!-- //lined-icons -->
      <!-- Meters graphs -->
     <script src="js/jquery-2.1.4.js"></script>
+
+    <link rel="stylesheet" href="css/busqueda_listas.css" type='text/css' />
     <script src="js/changeImage.js"></script>
     <!-- Custom styles for this template -->
     <link href="css/simple-sidebar.css" rel="stylesheet">
-  	<link rel="stylesheet" href="css/usuario.css">
-    <script src="js/usuario_servlet.js" charset="UTF-8"></script>
-    <link rel="stylesheet" href="css/demo1.css">
-    <script type="text/javascript" src="js/reg_exito.js"></script>
+
+    <script src="js/busqueda_listas_servlet.js" charset="UTF-8"></script>
     <script src="js/cookies.js"></script>
     <script src="js/comprobar_sesion_iniciada.js"></script>
+
 </head>
 
 <body>
 
-	<div class="main-content" id="wrapper">
-		<div class="navegacion">
+  <div class="main-content" id="wrapper">
+    <div class="navegacion">
       <ul>
         <li id="bar">
           <a href="home.html"><img src="img/logoapp.png" width="80" height="80" alt=""/></a>
@@ -113,9 +114,9 @@
             <a href="#menu-music" class="buttonMenu" id="menu-music" onmouseover="changeImage()" onmouseout="changeImageAntes()"><img id="simbolo_menu_imagen" src="img/simbolomenu.png" width="30" height="30" alt="menu"></a>
 
 						<div id="sb-search" class="sb-search sb-search-open">
-              <form id="form_buscar_amigos" action="/ps/BuscarUsuarios" method="post">
+              <form class="form_buscar_lista" id="form_buscar_lista" action="/ps/BuscarLista" method="post">
 
-								<input class="sb-search-input" placeholder="Búsqueda usuario" type="search" name="usuario" id="search_user" required>
+								<input class="sb-search-input" placeholder="Búsqueda lista" type="search" name="nuevoNombre" id="search_lista" required>
 								<input class="sb-search-submit" type="submit" value="">
 								<span class="sb-icon-search"> </span>
 							</form>
@@ -126,21 +127,12 @@
         <!-- /#page-content-wrapper -->
 
         <div class="informacion">
-		 <br/>
-          <div id="titulopagina"></div>
-
-          <div class="block1" id="bloque_contra">
-
-          </div>
+          <br/>
+          <div id="titulopagina"><h1 id="texto_nombre_busqueda">Listas: </h1></div>
         </div>
-
-        <form id="form_mostrar_usuario" method="post" action="/ps/MostrarListasReproduccion">
-          <input type="hidden" id="user" name="user">
-          <input type="submit" value="Enviar">
-        </form>
-
     </div>
     <!-- /#wrapper -->
+
     <!-- Menu Toggle Script -->
     <script>
     $("#menu-music").click(function(e) {
@@ -149,32 +141,16 @@
     });
     </script>
 
-    <button type="submit" class="button1 button-block" data-type="zoomin1" hidden></button>
-    <div class="overlay-container1">
-      <div class="window-container1 zoomin1">
-        <span class="close1"><img src="img\cerrar.png" width=30 height=30></span>
-        <td>
-              <table width="top:400%" >
-                <tr>
-                  <th>
-                  <table id="reg_exito" height="100%">
-                    <tr height="60px">
-                      <td>
-                        <img id="result_seguir" src="img/exito.png"/>
-                      </td>
-                      <td>
-                        <p id="resultado_seguir"></p>
-                      </td>
-                    </tr>
-                  </table>
-                  </th>
-                </tr>
+    <script type="text/javascript">
+      function playMusic(src){
+            audio_core=$('#audio-player').attr('src', src)[0]
+          audio_core.play() // <- play the song!!!
+      }
+    </script>
 
-              </table>
+    <script>!window.jQuery && document.write(unescape('%3Cscript src="js/jquery-1.7.1.min.js"%3E%3C/script%3E'))</script>
 
-            </td>
-      </div>
-    </div>
+
 </body>
 
 </html>

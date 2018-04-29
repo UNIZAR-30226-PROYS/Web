@@ -29,6 +29,10 @@
     <link href="css/simple-sidebar.css" rel="stylesheet">
 
     <link rel="stylesheet" href="css/demo.css">
+		<script src="js/cookies.js"></script>
+		<script src="js/artista_servlet.js" charset="UTF-8"></script>
+		<script src="js/comprobar_sesion_iniciada.js"></script>
+
 </head>
 
 <body>
@@ -111,9 +115,9 @@
             <a href="#menu-music" class="buttonMenu" id="menu-music" onmouseover="changeImage()" onmouseout="changeImageAntes()"><img id="simbolo_menu_imagen" src="img/simbolomenu.png" width="30" height="30" alt="menu"></a>
 
 						<div id="sb-search" class="sb-search sb-search-open">
-							<form action="busqueda.html" method="post">
+							<form class="form_buscar_artista" id="form_buscar_artista" action="/ps/BuscarArtista" method="post">
 
-								<input class="sb-search-input" placeholder="Búsqueda artista" type="search" name="search" id="search" required>
+								<input class="sb-search-input" placeholder="Búsqueda artista" type="search" name="artista" id="search_artista" required>
 								<input class="sb-search-submit" type="submit" value="">
 								<span class="sb-icon-search"> </span>
 							</form>
@@ -125,99 +129,20 @@
     <!-- /#wrapper -->
 	<div class="informacion">
 		 <br/>
-          <div id="titulopagina"><h1>Iggy Azalea</h1></div>
-					<div id="titulopagina"><h3>Álbumes</h3></div>
-          <div class="albumes">
-            <ul>
-              <li id="barraopciones">
-                <div class="cancioninf">
-                  <a href="album.html" id="enlacecancion">
-          					<div class="imagen">
-          						<img src="img/reclassified_album.png" alt="Imagen album">
-          					</div>
-          					<div class="nombrecancion">
-          						Reclassified
-          					</div>
-                  </a>
-        				</div>
-              </li>
-
-              <li id="barraopciones">
-                <div class="cancioninf">
-                  <a href="album.html" id="enlacecancion">
-                    <div class="imagen">
-                      <img src="img/iggy.jpg" alt="Imagen album">
-                    </div>
-                    <div class="nombrecancion">
-                      The New Classic
-                    </div>
-                  </a>
-                </div>
-              </li>
-
-            </ul>
-
-
-
-          </div>  <!-- Fin top semanal -->
-
-
-          <div id="tituloestilo"><h3>Canciones</h3></div>
-          <div class="cancionesArtista">
-            <ul>
-							<li id="barraopciones">
-								<div class="cancioninf">
-									<a href="cancion.html" id="enlacecancion">
-										<div class="imagen">
-											<img src="img/work_iggy.jpg" alt="Imagen cancion">
-										</div>
-										<div class="nombrecancion">
-											Work
-										</div>
-									</a>
-								</div>
-							</li>
-
-							<li id="barraopciones">
-								<div class="cancioninf">
-									<a href="cancion.html" id="enlacecancion">
-										<div class="imagen">
-											<img src="img/iggy.jpg" alt="Imagen cancion">
-										</div>
-										<div class="nombrecancion">
-											Fancy
-										</div>
-									</a>
-								</div>
-							</li>
-
-							<li id="barraopciones">
-								<div class="cancioninf">
-									<a href="cancion.html" id="enlacecancion">
-										<div class="imagen">
-											<img src="img/begforit_iggy.png" alt="Imagen cancion">
-										</div>
-										<div class="nombrecancion">
-											Beg For It
-										</div>
-									</a>
-								</div>
-							</li>
-
-
-            </ul>
-          </div>
-
-
-
-        </div>
+          <div id="titulopagina"><h1 id="nombre_artista_titulo"></h1></div>
+					<h5 id="separador_album_cancion"></h5>
 	</div>
 
+	<form id="form_mostrar_albumes_artista" method="post" action="/ps/ObtenerAlbumsArtista">
+		<input type="hidden" name="artista" id="nombre_artista_album">
+		<input type="submit" hidden>
+	</form>
 
+	<form id="form_mostrar_canciones_artista" method="post" action="/ps/BuscarCancionArtista">
+		<input type="hidden" name="artista" id="nombre_artista_cancion">
+		<input type="submit" hidden>
+	</form>
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Menu Toggle Script -->
     <script>

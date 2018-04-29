@@ -89,7 +89,6 @@ button:hover {
 }
 
 .nombrecancion {
-  position: absolute;
   font-size: 70%;
   width: 150px;
   font-weight: normal;
@@ -142,7 +141,7 @@ button:hover {
 
   .nombrecancion {
     padding-top:0%;
-    font-size: 130%;
+    font-size: 105%;
   }
 
   .cancioninf{
@@ -161,9 +160,6 @@ button:hover {
     padding-left: 20px;
   }
 
-  #barraopciones{
-    margin-bottom: 2%;
-  }
 
   #tituloestilo {
     text-align: center;
@@ -187,7 +183,6 @@ button:hover {
   }
 
   .nombrecancion {
-    position: absolute;
     font-size: 60%;
     margin-top: 70px;
     width: 150px;

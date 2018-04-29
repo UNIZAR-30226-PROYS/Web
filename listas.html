@@ -31,6 +31,8 @@
     <link rel="stylesheet" href="css/demo1.css">
     <script src="js/listas_servlet.js" charset="UTF-8"></script>
     <script type="text/javascript" src="js/reg_exito.js"></script>
+    <script src="js/cookies.js"></script>
+    <script src="js/comprobar_sesion_iniciada.js"></script>
 
 </head>
 
@@ -115,9 +117,9 @@
             <a href="#menu-music" class="buttonMenu" id="menu-music" onmouseover="changeImage()" onmouseout="changeImageAntes()"><img id="simbolo_menu_imagen" src="img/simbolomenu.png" width="30" height="30" alt="menu"></a>
 
 						<div id="sb-search" class="sb-search sb-search-open">
-							<form action="busqueda.html" method="post">
+              <form class="form_buscar_lista" id="form_buscar_lista" action="/ps/BuscarLista" method="post">
 
-								<input class="sb-search-input" placeholder="Búsqueda lista" type="search" name="search" id="search" required>
+                <input class="sb-search-input" placeholder="Búsqueda lista" type="search" name="nuevoNombre" id="search_lista" required>
 								<input class="sb-search-submit" type="submit" value="">
 								<span class="sb-icon-search"> </span>
 							</form>
@@ -130,68 +132,18 @@
         <div class="informacion">
           <br/>
           <div id="titulopagina"><h1>Mis listas</h1></div>
-            <div class="anadir_lista">
+            <div class="anadir_lista" id="anadir_lista">
               <img src="img/anadir.png" alt="Crear lista" title="Crear lista" class="button" data-type="zoomin">
             </div>
 
-          <form name="accionLista" method="post" action="#">
-            <div class="cancioninf">
-              <ul>
-                <li id="barraopciones"><a href="lista.html" id="enlacecancion">
-                  <div class="imagen">
-                    <img src="img/listaicono.png" alt="Imagen lista">
-                  </div>
-                </a></li>
-                <li id="barraopciones">
-                  <a href="lista.html">
-                    <div class="nombrecancion">
-                      Lista1
-                    </div>
-                  </a>
-                </li>
-                <li id="barraopciones"><div class="simb_repr_play">
-                    <input type="image" src="img/play.png" alt="Reproducir lista" title="Reproducir lista" onClick="playMusic('media/Blue Browne.mp3');return false;">
-                </div></li>
-                <li id="barraopciones"><div class="simb_repr_elim">
-                    <input type="image" src="img/eliminar.png" alt="Eliminar lista" title="Eliminar lista">
-                </div></li>
-              </ul>
-            </div>
-          </form>
-
-          <form name="accionLista" method="post" action="#">
-            <div class="cancioninf">
-              <ul>
-                <li id="barraopciones"><a href="lista.html" id="enlacecancion">
-                  <div class="imagen">
-                    <img src="img/listaicono.png" alt="Imagen lista">
-                  </div>
-                </a></li>
-                <li id="barraopciones">
-                  <a href="lista.html">
-                    <div class="nombrecancion">
-                      Lista2
-                    </div>
-                  </a>
-                </li>
-                <li id="barraopciones"><div class="simb_repr_play">
-                    <input type="image" src="img/play.png" alt="Reproducir lista" title="Reproducir lista" onClick="playMusic('media/Blue Browne.mp3');return false;">
-                </div></li>
-                <li id="barraopciones"><div class="simb_repr_elim">
-                    <input type="image" src="img/eliminar.png" alt="Eliminar lista" title="Eliminar lista">
-                </div></li>
-              </ul>
-            </div>
-          </form>
         </div>
-
+        <form id="form_mostrar_listas" method="post" action="/ps/MostrarListasReproduccion">
+          <input type="hidden" id="user" name="user">
+          <input type="submit" value="Enviar" hidden>
+        </form>
 
     </div>
     <!-- /#wrapper -->
-
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Menu Toggle Script -->
     <script>

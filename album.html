@@ -28,6 +28,9 @@
     <link href="css/simple-sidebar.css" rel="stylesheet">
 
     <link rel="stylesheet" href="css/demo.css">
+		<script src="js/cookies.js"></script>
+		<script src="js/album_servlet.js" charset="UTF-8"></script>
+		<script src="js/comprobar_sesion_iniciada.js"></script>
 </head>
 
 <body>
@@ -111,9 +114,9 @@
             <a href="#menu-music" class="buttonMenu" id="menu-music" onmouseover="changeImage()" onmouseout="changeImageAntes()"><img id="simbolo_menu_imagen" src="img/simbolomenu.png" width="30" height="30" alt="menu"></a>
 
 						<div id="sb-search" class="sb-search sb-search-open">
-							<form action="busqueda.html" method="post">
+							<form class="form_buscar_album" id="form_buscar_album" action="/ps/BuscarAlbum" method="post">
 
-								<input class="sb-search-input" placeholder="Búsqueda álbum" type="search" name="search" id="search" required>
+								<input class="sb-search-input" placeholder="Búsqueda álbum" type="search" name="album" id="search_album" required>
 								<input class="sb-search-submit" type="submit" value="">
 								<span class="sb-icon-search"> </span>
 							</form>
@@ -126,7 +129,8 @@
 
         <div class="informacion">
 		 <br/>
-          <div id="titulopagina"><h1>Álbum: Reclassified</h1></div>
+          <div id="titulopagina"><h1 id="texto_nombre_busqueda">Álbum: </h1></div>
+					<div id="tituloartista"><h2 id="titulo_artista">Artista: </h2></div>
 
 		  <!-- LAS CANCIONES -->
 			<form name="accionCancion" method="post" action="#">
@@ -194,11 +198,6 @@
 
 	</div>
     <!-- /#wrapper -->
-
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
     <!-- Menu Toggle Script -->
     <script>
     $("#menu-music").click(function(e) {

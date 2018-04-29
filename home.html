@@ -32,6 +32,10 @@
 
     <!-- Custom styles for this template -->
     <link href="css/simple-sidebar.css" rel="stylesheet">
+    <script src="js/cookies.js"></script>
+    <script src="js/busqueda_cancion_servlet.js" charset="UTF-8"></script>
+    <script src="js/home_servlet.js" charset="UTF-8"></script>
+    <script src="js/comprobar_sesion_iniciada.js"></script>
 
 </head>
 
@@ -116,9 +120,9 @@
             <a href="#menu-music" class="buttonMenu" id="menu-music" onmouseover="changeImage()" onmouseout="changeImageAntes()"><img id="simbolo_menu_imagen" src="img/simbolomenu.png" width="30" height="30" alt="menu"></a>
 
 						<div id="sb-search" class="sb-search sb-search-open">
-							<form action="busqueda.html" method="post">
+              <form class="form_buscar_cancion" id="form_buscar_cancion" action="/ps/BuscarCancionTitulo" method="post">
 
-								<input class="sb-search-input" placeholder="Búsqueda" type="search" name="search" id="search" required>
+								<input class="sb-search-input" placeholder="Búsqueda" type="search" name="titulo" id="search" required>
 								<input class="sb-search-submit" type="submit" value="">
 								<span class="sb-icon-search"> </span>
 							</form>
@@ -132,181 +136,14 @@
           <br/>
           <div id="titulopagina"><a href="topsemanal.html"><h1>Top semanal</h1></a></div>
           <div class="topsemanal">
-            <ul>
-              <li id="barraopciones">
-                <div class="cancioninf">
-                  <a href="cancion.html" id="enlacecancion">
-          					<div class="imagen">
-          						<img src="img/edsheeranperfect.jpg" alt="Imagen cancion">
-          					</div>
-          					<div class="nombrecancion">
-          						Perfect
-          					</div>
-                  </a>
-        				</div>
-              </li>
+            <ul id="lista_top_semanal">
 
-              <li id="barraopciones">
-                <div class="cancioninf">
-                  <a href="#" id="enlacecancion">
-                    <div class="imagen">
-                      <img src="img/iggy.jpg" alt="Imagen cancion">
-                    </div>
-                    <div class="nombrecancion">
-                      Problem
-                    </div>
-                  </a>
-                </div>
-              </li>
-
-              <li id="barraopciones">
-                <div class="cancioninf">
-                  <a href="#" id="enlacecancion">
-                    <div class="imagen">
-                      <img src="img/lushlife.jpg" alt="Imagen cancion">
-                    </div>
-                    <div class="nombrecancion">
-                      Lush life
-                    </div>
-                  </a>
-                </div>
-              </li>
-
-              <li id="barraopciones">
-                <div class="cancioninf">
-                  <a href="#" id="enlacecancion">
-                    <div class="imagen">
-                      <img src="img/iggy.jpg" alt="Imagen cancion">
-                    </div>
-                    <div class="nombrecancion">
-                      Fancy
-                    </div>
-                  </a>
-                </div>
-              </li>
-
-              <li id="barraopciones">
-                <div class="cancioninf">
-                  <a href="#" id="enlacecancion">
-                    <div class="imagen">
-                      <img src="img/blackWindows.jpg" alt="Imagen cancion">
-                    </div>
-                    <div class="nombrecancion">
-                      Black windows
-                    </div>
-                  </a>
-                </div>
-              </li>
-
-              <li id="barraopciones">
-                <div class="cancioninf">
-                  <a href="#" id="enlacecancion">
-                    <div class="imagen">
-                      <img src="img/lushlife.jpg" alt="Imagen cancion">
-                    </div>
-                    <div class="nombrecancion">
-                      Lush life
-                    </div>
-                  </a>
-                </div>
-              </li>
-
-              <li id="barraopciones">
-                <div class="cancioninf">
-                  <a href="#" id="enlacecancion">
-                    <div class="imagen">
-                      <img src="img/lushlife.jpg" alt="Imagen cancion">
-                    </div>
-                    <div class="nombrecancion">
-                      Lush life
-                    </div>
-                  </a>
-                </div>
-              </li>
-
-
-              <li id="barraopciones">
-                <div class="cancioninf">
-                  <a href="#" id="enlacecancion">
-                    <div class="imagen">
-                      <img src="img/lushlife.jpg" alt="Imagen cancion">
-                    </div>
-                    <div class="nombrecancion">
-                      Lush life
-                    </div>
-                  </a>
-                </div>
-              </li>
-              <li id="barraopciones">
-                <div class="cancioninf">
-                  <a href="#" id="enlacecancion">
-                    <div class="imagen">
-                      <img src="img/lushlife.jpg" alt="Imagen cancion">
-                    </div>
-                    <div class="nombrecancion">
-                      Lush life
-                    </div>
-                  </a>
-                </div>
-              </li>
-              <li id="barraopciones">
-                <div class="cancioninf">
-                  <a href="#" id="enlacecancion">
-                    <div class="imagen">
-                      <img src="img/lushlife.jpg" alt="Imagen cancion">
-                    </div>
-                    <div class="nombrecancion">
-                      Lush life
-                    </div>
-                  </a>
-                </div>
-              </li>
             </ul>
           </div>  <!-- Fin top semanal -->
 
           <div id="tituloestilo"><h1>Estilos</h1></div>
           <div class="menuestilo">
-            <ul>
-              <li id="barraopciones">
-                <div class="cancioninf">
-                  <a href="estilo.html" id="enlacecancion">
-          					<div class="marco_estilo">
-                      Pop
-          					</div>
-                  </a>
-        				</div>
-              </li>
-
-              <li id="barraopciones">
-                <div class="cancioninf">
-                  <a href="#" id="enlacecancion">
-                    <div class="marco_estilo">
-                      Rock
-                    </div>
-                  </a>
-                </div>
-              </li>
-
-              <li id="barraopciones">
-                <div class="cancioninf">
-                  <a href="#" id="enlacecancion">
-                    <div class="marco_estilo">
-                      Indie
-                    </div>
-                  </a>
-                </div>
-              </li>
-
-              <li id="barraopciones">
-                <div class="cancioninf">
-                  <a href="#" id="enlacecancion">
-                    <div class="marco_estilo">
-                      Jazz
-                    </div>
-                  </a>
-                </div>
-              </li>
-
+            <ul id="lista_estilos">
             </ul>
           </div>
 
@@ -314,15 +151,16 @@
 
         </div>
 
+        <form id="form_mostrar_top_semanal" method="post" action="/ps/TopSemanal">
+          <input type="submit" hidden>
+        </form>
 
-
+        <form id="form_mostrar_estilos" method="post" action="/ps/ObtenerGeneros">
+          <input type="submit" hidden>
+        </form>
 
     </div>
     <!-- /#wrapper -->
-
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Menu Toggle Script -->
     <script>

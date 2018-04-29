@@ -1,0 +1,4 @@
+SUBIRMUSICA:
+	Paremetro nombre de la cancion: o quitar nombre en web o modificar en servlet para que acepte el nombre del form en vez del metadato
+
+Al devolver cancion en una busqueda falta la clave de la ruta de la imagen

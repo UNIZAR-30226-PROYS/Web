@@ -1,3 +1,7 @@
+.window-container5 {
+  margin: 13em auto !important;
+}
+
 #titulopagina {
   text-align: center;
   margin-right: 15%;
@@ -211,6 +215,16 @@
    margin-bottom: 20px;
 }
 
+#crear_lista2 {
+   margin-left: 45px;
+   background: #4CAF50;
+   color: white;
+   text-transform: uppercase;
+   border-radius: 6px;
+   border: 2px solid #088A08;
+   margin-bottom: 20px;
+}
+
 #change_img_button {
    margin-left: 75px;
    background: #4CAF50;
@@ -365,6 +379,11 @@ input[type="file"] {
      margin-bottom: 20px;
   }
 
+  #crear_lista2 {
+     margin-left: 115px;
+     margin-bottom: 20px;
+  }
+
   #change_img_button {
      margin-left: 125px;
   }
@@ -487,6 +506,11 @@ input[type="file"] {
      margin-bottom: 20px;
   }
 
+  #crear_lista2 {
+     margin-left: 120px;
+     margin-bottom: 20px;
+  }
+
   #change_img_button {
      margin-left: 145px;
   }
@@ -594,6 +618,10 @@ input[type="file"] {
   }
 
   #crear_lista1 {
+     margin-left: 25px;
+  }
+
+  #crear_lista2 {
      margin-left: 25px;
   }
 

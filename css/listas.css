@@ -2,6 +2,18 @@
   margin: 13em auto !important;
 }
 
+#sin_resul {
+  margin-left: 70px;
+}
+
+#boton_mostrar_mas {
+  right: unset;
+  width: 60%;
+  margin-left: 100px;
+  font-size:20px;
+  margin-top: 20px;
+}
+
 #titulopagina {
   text-align: center;
   margin-right: 15%;
@@ -169,7 +181,7 @@ button:hover {
 
 .cancioninf{
   margin-top:0%;
-  margin-bottom:0%;
+  margin-bottom:20px;
 }
 
 @media(min-width:768px) {
@@ -227,6 +239,14 @@ button:hover {
 }
 
 @media(min-width:1100px) {
+  #boton_mostrar_mas {
+    right: unset;
+    width: 20%;
+    margin-left: 400px;
+    font-size:20px;
+    margin-top: 20px;
+  }
+
   .window-container {
       width: 400px !important;
       margin-left: 35% !important;

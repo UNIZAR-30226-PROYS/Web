@@ -2,30 +2,121 @@ Falta:
 General:
   -Cambiar form para que sea sobre SSL. Usar "https://yourdomain.com/servlet" en action(dejarlo hasta que todo funcione y crear certificado en servidor)
 
-  -Usar jQuery(ajax) para recibir la respuesta JSON y mostrarla en la web
-
-  -Cambiar valor "name" en los parametros form a enviar para que concuerden con el servidor
-
-  -Añadir limitacion resultados (salgan x resultados y opcion "Mostrar mas" que carge otros) en paginas:
-      -Albumes, amigos?, artistas, busqueda, favoritos?, lista?, listas, recientes?, usuarios(hecho -> usar como referencia)
-
-  -En todas paginas si no se ha iniciado sesion que lleve al inicio(en perfil_servlet.js ya esta, el resto hacerlo al final)
-
-  -En registro: servlet envie tipo error (contraseñas no coinciden, el nombre debe ser más largo,...)
+  -(hecho)Servlets envien respuesta codificada UTF8(se ha mirado el tipo de mensaje y se ha puesto un mensaje sin usar directamente el string recibido del server)
 
 
 (hecho)INICIO: servlets registro y login implementados, al cerrar sesion informa de ello. Si ya hay sesion va a home directamente
-Perfil: cerrar sesion (hecho)
+
+Perfil:
+  -(hecho)Cerrar sesion
+  -(hecho)Cambiar nombre
+  -(hecho)Cambiar contraseña
+  -(hecho)Cambiar foto(solo acepta jpg y mirando en el directorio de la máquina (apache/images/user.jpg) se ve que esta)
+  -(hecho)Eliminar cuenta
+  -(hecho)Mostrar nombre
+  -Mostrar foto al cargar la pagina
 
 
 AMIGOS:
-  De buscar usuarios: (se usa sessionStorage que permite almacenar en navegador y si se cierra la pestaña elimina esa informacion)
-    -Borrar el propio usuario para que no salga o desde el servidor
-    -Que en servidor se envien tambien la URL de las imagenes de los usuarios
-    -Servidor busquedas se deberia usar Lucene Apache, sino son poco utiles
+  -(hecho)Mostrar amigos
+  -(hecho)Borrar amigo
+  -(hecho)Busqueda canciones(lleva a la pagina, verificar alli su funcionamiento)
+  -Mostrar imagenes de los usuarios
+
+BUSQUEDA:(canciones)
+  -Poner formato para mostrar canciones correctamente (con URL imagen, nombre y artista)
+  -Implementar funciones cancion(repr, fav y añadir a lista)
+  -(hecho)Al pulsar añadir a lista salen las listas(IMPORTANTE*** CAMBIAR WINDOW POR FUNCTION QUE SE LLAME AL MOSTRAR LAS CANCIONES(canciones_servlet.js una vez que mostrar las canciones este hecho))
+  -Para añadir a lista, en form de lista hay que poner los parametros de la cancion elegida (nombre,artista,...) usar diversos input hidden y poner valor
 
 
-(hecho)USUARIOS: muestra 4 por pagina con opcion de mas y funcion de seguir usuario
+USUARIOS: (hecho)muestra 4 por pagina con opcion de mas y funcion de seguir usuario
+  -(hecho)Borrar el propio usuario para que no salga o desde el servidor(de momento se ha borrado para que no salga en la web)
+  -Que en servidor se envien tambien la URL de las imagenes de los usuarios y ponerla en la pagina
+
+USUARIO:
+  -(hecho)Ver listas de usuario(informa en caso de no seguir al usuario que no las puede ver)
+  -(hecho)Busqueda de usuarios
+  -(hecho)Añadir amigo
+  -(hecho)Si es el propio usuario, deja verlo pero no sale opcion de añadir amigo
+  -Falta ver la imagen (usar otro form para solicitar al servidor la ruta?)
 
 LISTAS:
   -(hecho)Crear lista. Informa de ello y recarga la pagina
+  -(hecho)Muestra las listas del usuario
+  -(hecho)Borrar lista
+  -Reproducir lista(con varias opciones:en orden, aleatorio o en bucle)
+  -(hecho)Permitir busqueda de listas
+
+LISTA:
+  -(hecho)En + quitar opcion de busqueda(ya esta en la barra superior)
+  -Hacer opcion subir musica(ademas se añadira automaticamente a la lista)
+  -(hecho)Cambiar nombre lista(FALTA depurar cuando vaya en server)
+  -Permitir cambiar nombre de la lista solo si la lista es del usuario sino no debe salir esa opcion, p ej leer cookie login y comparar con la que devuelve el servlet(si no esta se debe añadir)
+  -Añadir opcion reproducir lista(con varias opciones:en orden, aleatorio o en bucle)
+  -Mostrar canciones con opcion de reproducir(siempre) y de eliminar(solo si la lista es del usuario)
+  -(hecho)Permitir busqueda listas
+
+
+BUSQUEDA_LISTAS:(FALTA permitir reproduccion de lista)
+  -(hecho)Hacer pagina que muestre las listas resultado de la busqueda de listas
+  -(hecho)Permitir la busqueda de listas
+  -Mostrar solo listas de los amigos(se debe realizar en el servidor)
+
+HOME:
+  -Mostrar top topsemanal(hecho el js, falta depurar una vez que haya canciones)
+  -(hecho)Mostrar estilos
+
+TOP SEMANAL:
+  -Mostrar canciones
+  -Mostrar al menos nombre, imagen y artista para cada cancion
+
+ESTILO:
+  -(hecho)Motrar nombre del estilo
+  -Mostrar canciones
+
+ALBUMES:
+  -(hecho)Mostrar todos los albumes limitados por paginas(se han limitado a 20 por pagina, falta depurar una vez haya más albumes)(se solicita una vez y no se guardan los datos porque se complicaba al realizar busquedas)
+  -Cambiar foto albumes al cargarlos
+  -(hecho)Busqueda de albumes lleve a pagina que los muestre
+
+BUSQUEDA_ALBUMES:(falta cambiar las imagenes y depurar cuando haya muchos)
+  -(hecho)Hacer pagina que muestre los albumes resultado de la busqueda de albumes
+  -(hecho)Permitir la busqueda de albumes
+
+ALBUM:
+  -Mostrar canciones del album
+  -(hecho)Añadir nombre artista a la pagina
+  -(hecho)Busqueda de albumes lleve a pagina que los muestre
+
+ARTISTAS:
+  -(hecho)Mostrar todos los artistas limitados por paginas(se han limitado a 20 por pagina, falta depurar una vez haya más artistas)
+  -Cambiar foto artistas al cargarlos
+  -(hecho)Busqueda de artistas lleve a pagina que los muestre
+
+BUSQUEDA_ARTISTAS:(falta cambiar las imagenes y depurar cuando haya muchos)
+  -(hecho)Hacer pagina que muestre los artistas resultado de la busqueda de artistas
+  -(hecho)Permitir la busqueda de artistas
+
+ARTISTA:
+  -(hecho)Mostrar albumes del artista(solo los muestra si hay, en caso contrario no muestra esa seccion)
+  -(hecho)Mostrar canciones(falta cambiar la imagen)
+  -(hecho)Permitir busqueda de artistas
+
+SUBIR_MUSICA:
+  -Permitir envio de ficheros de musica
+
+FAVORITOS:
+  -Mostrar canciones
+  -Permitir que en todas las canciones se pueda añadir/quitar de favorito(Añadir/quitar cancion a lista)
+
+RECIENTES:
+  -Mostrar ultimas actividades(incluidas las recomendaciones recibidas de amigos en cancion->share->seleccionar amigo)
+
+CANCION:
+  -Mostrar datos de la cancion
+  -Reproducir cancion
+  -Implementar funciones del reproductor
+
+REPRODUCTOR(WRAPPER):
+  -Reproductor en menu derecho
