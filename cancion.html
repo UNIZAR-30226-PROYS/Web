@@ -37,6 +37,7 @@
     <script src="js/changeImage.js"></script>
     <script src="js/cookies.js"></script>
     <script src="js/busqueda_cancion_servlet.js" charset="UTF-8"></script>
+    <script src="js/cancion_servlet.js" charset="UTF-8"></script>
     <script src="js/comprobar_sesion_iniciada.js"></script>
 
 
@@ -156,21 +157,16 @@
 
 
               <!-- Twitter -->
-              <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="Canción Perfect de Ed Sheeran" data-url="http://www.urldelacancion.com" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              <a id="prueba" href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="Canción Perfect de Ed Sheeran" data-url="http://www.urldelacancion.com" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
               <!--<a href="https://twitter.com/share?url=https://simplesharebuttons.com&amp;text=Simple%20Share%20Buttons&amp;hashtags=simplesharebuttons" target="_blank">
                   <img src="img/twitter.png" alt="Twitter" title"Compartir en Twitter"/>
               </a>
 -->
-              <a href="https://twitter.com/share?url=https://simplesharebuttons.com&amp;text=Simple%20Share%20Buttons&amp;hashtags=simplesharebuttons" target="_blank">
-                  <img src="img/share_friends.png" alt="Amigos" title"Compartir con amigo" class="button0" onclick="return false" data-type="zoomin0"/>
-              </a>
+              <form id="form_mostrar_amigos" method="post" action="/ps/VerSeguidos">
+                  <input type="image" src="img/share_friends.png" alt="Amigos" title"Compartir con amigo"/>
+              </form>
 
           </div>
-
-
-
-
-
         </div>
 
 
@@ -218,6 +214,7 @@
 
 
     <!-- contenido de la ventana amigos -->
+    <button type="submit" class="button0 button-block" data-type="zoomin0" hidden></button>
     <div class="overlay-container0">
       <div class="window-container0 zoomin0">
         <span class="close0"><img src="img\cerrar.png" width=30 height=30></span>
@@ -226,26 +223,9 @@
                 <tr>
                   <th>
                   <div id="subir_cancion_titulo">Seleccione amigo para compartir</div>
-                  <form action="#" method="post">
-                    <table height="100%">
-                      <tr ><a href="#" id="enlacecancion">
-                        <div class="imagen">
-                          <img src="img/user.png" alt="Imagen usuario">
-                        </div>
+                  <table id="lista_amigos" height="100%">
+                  </table>
 
-                        <div class="nombreamigo">
-                          Amigo1
-                        </div></a></tr>
-                      <tr><a href="#" id="enlacecancion">
-                        <div class="imagen">
-                          <img src="img/user.png" alt="Imagen usuario">
-                        </div>
-
-                        <div class="nombreamigo">
-                          Amigo2
-                        </div></a></tr>
-                    </table>
-                  </form>
                   </th>
                 </tr>
 

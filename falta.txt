@@ -117,6 +117,7 @@ CANCION:
   -Mostrar datos de la cancion
   -Reproducir cancion
   -Implementar funciones del reproductor
+  -(hecho FALTA que al pulsar comparta la cancion, tras añadir los campos de la cancion como hidden)Mostrar amigos al pulsar compartir con amigos
 
 REPRODUCTOR(WRAPPER):
   -Reproductor en menu derecho

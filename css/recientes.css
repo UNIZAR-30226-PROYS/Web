@@ -3,6 +3,12 @@
     margin-right: 15%;
 }
 
+#tituloestilo {
+  text-align: center;
+  margin-right: 13%;
+  color: #333;
+}
+
 .informacion input {
   font-family: "Roboto", sans-serif;
   outline: 0;

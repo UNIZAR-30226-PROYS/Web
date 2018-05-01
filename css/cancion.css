@@ -1,16 +1,13 @@
-#share-buttons img {
-width: 35px;
-padding: 5px;
-border: 0;
-box-shadow: 0;
-display: inline;
-z-index: 0;
-padding-top: 0;
-margin-top: -6px;
-}
-
 body {
   background: #45B39D;
+}
+
+.window-container0 {
+    max-height: 500px;
+}
+
+#sin_resul {
+    margin-left: 130px;
 }
 
 @media (min-width: 1200px){
@@ -22,7 +19,7 @@ body {
 
 .nombreamigo {
     text-align: center;
-    margin-left: 80px;
+    margin-left: 180px;
     padding: 10px;
     font-size: 40px;
 }
@@ -33,10 +30,10 @@ body {
 
 .imagen img {
   position: absolute;
-  margin-left: 100px;
+  margin-left: 120px;
   margin-top: 15px;
-  max-width: 23%;
-  max-height: 23%;
+  max-width: 50px;
+  max-height: 40px;
 }
 
 #subir_cancion_titulo {
@@ -114,6 +111,40 @@ body {
     padding: 1%;
     bottom:0%;
     right:20%;
+}
+
+#share-buttons {
+  padding-top: 2px;
+  position: absolute;
+  width: 150px;
+}
+
+#share-buttons img {
+width: 35px;
+padding: 5px;
+border: 0;
+box-shadow: 0;
+display: inline;
+z-index: 0;
+padding-top: 0;
+margin-top: -6px;
+}
+
+#form_mostrar_amigos{
+  display: inline;
+}
+
+#form_mostrar_amigos input {
+  top: 0px;
+  position: absolute;
+  width: 35px;
+  padding: 5px;
+  border: 0;
+  box-shadow: 0;
+  z-index: 0;
+  padding-top: 0;
+  background: none;
+
 }
 
 button:hover {

@@ -130,85 +130,127 @@
 
         <div class="informacion">
 		 <br/>
-          <div id="titulopagina"><h1>Escuchados recientemente</h1></div>
+        <div id="titulopagina"><h1>Escuchados recientemente</h1></div>
+				<div class="menurecientes">
 
-		  <!-- LAS CANCIONES -->
-			<form name="accionCancion" method="post" action="#">
-				<div class="cancioninf">
-				  <ul>
-					<li id="barraopciones"><a href="cancion.html" id="enlacecancion">
-								<div class="imagen">
-									<img src="img/edsheeranperfect.jpg" alt="Imagen cancion">
-								</div>
-					</a></li>
-					<li id="barraopciones">
-						<div class="nombre_autor_cancion">
-							<a href="cancion.html" id="enlacecancion"><div class="nombrecancion">
-								Perfect
-							</div></a>
-							<a href="artista.html" id="enlacecancion">
-								<div class="nombreautor">
-									Ed Sheeran
-								</div>
-							</a>
-							<a href="estilo.html" id="enlacecancion">
-								<div class="nombreestilo">
-									pop
-								</div>
-							</a>
+			  <!-- LAS CANCIONES -->
+				<form name="accionCancion" method="post" action="#">
+					<div class="cancioninf">
+					  <ul>
+						<li id="barraopciones"><a href="cancion.html" id="enlacecancion">
+									<div class="imagen">
+										<img src="img/edsheeranperfect.jpg" alt="Imagen cancion">
+									</div>
+						</a></li>
+						<li id="barraopciones">
+							<div class="nombre_autor_cancion">
+								<a href="cancion.html" id="enlacecancion"><div class="nombrecancion">
+									Perfect
+								</div></a>
+								<a href="artista.html" id="enlacecancion">
+									<div class="nombreautor">
+										Ed Sheeran
+									</div>
+								</a>
+								<a href="estilo.html" id="enlacecancion">
+									<div class="nombreestilo">
+										pop
+									</div>
+								</a>
+							</div>
+						</li>
+						<li id="barraopciones"><div class="simb_repr_play">
+							<input type="image" src="img/play.png" alt="Reproducir cancion" title="Reproducir canción" onClick="playMusic('media/Blue Browne.mp3');return false;">
+						</div></li>
+						<li id="barraopciones"><div class="simb_repr_fav">
+							<input type="image" src="img/favoritos.png" alt="Añadir a favoritos" title="Añadir/quitar favoritos" onclick="changeImage(this)">
+						</div></li>
+						<li id="barraopciones"><div class="simb_repr_lista">
+							<input type="image" src="img/listas_add.png" alt="Añadir a lista" class="button" title="Añadir a lista" onclick="return false" data-type="zoomin">
+						</div></li>
+					  </ul>
+	    			</div>
+				</form>
+				<form name="accionCancion" method="post" action="#">
+					<div class="cancioninf">
+					  <ul>
+						<li id="barraopciones"><a href="cancion.html" id="enlacecancion">
+									<div class="imagen">
+										<img src="img/iggy.jpg" alt="Imagen cancion">
+									</div>
+						</a></li>
+						<li id="barraopciones">
+							<div class="nombre_autor_cancion">
+								<a href="cancion.html" id="enlacecancion"><div class="nombrecancion">
+									Black Windows
+								</div></a>
+								<a href="artista.html" id="enlacecancion">
+									<div class="nombreautor">
+										Iggy Azalea
+									</div>
+								</a>
+								<a href="estilo.html" id="enlacecancion">
+									<div class="nombreestilo">
+										pop
+									</div>
+								</a>
+							</div>
+						</li>
+						<li id="barraopciones"><div class="simb_repr_play">
+							<input type="image" src="img/play.png" alt="Reproducir cancion" title="Reproducir canción" onClick="playMusic('media/Blue Browne.mp3');return false;">
+						</div></li>
+						<li id="barraopciones"><div class="simb_repr_fav">
+							<input type="image" src="img/favoritos.png" alt="Añadir a favoritos" title="Añadir/quitar favoritos" onclick="changeImage(this)">
+						</div></li>
+						<li id="barraopciones"><div class="simb_repr_lista">
+							<input type="image" src="img/listas_add.png" alt="Añadir a lista" class="button" title="Añadir a lista" onclick="return false" data-type="zoomin">
+						</div></li>
+					  </ul>
+	    			</div>
+				</form>
+			</div>
+			<br>
+
+			<div id="tituloestilo"><h1>Recomendaciones</h1></div>
+			<div class="menuestilo">
+				<form name="accionCancion" method="post" action="#">
+					<div class="cancioninf">
+						<ul>
+						<li id="barraopciones"><a href="cancion.html" id="enlacecancion">
+									<div class="imagen">
+										<img src="img/iggy.jpg" alt="Imagen cancion">
+									</div>
+						</a></li>
+						<li id="barraopciones">
+							<div class="nombre_autor_cancion">
+								<a href="cancion.html" id="enlacecancion"><div class="nombrecancion">
+									Black Windows
+								</div></a>
+								<a href="artista.html" id="enlacecancion">
+									<div class="nombreautor">
+										Iggy Azalea
+									</div>
+								</a>
+								<a href="estilo.html" id="enlacecancion">
+									<div class="nombreestilo">
+										pop
+									</div>
+								</a>
+							</div>
+						</li>
+						<li id="barraopciones"><div class="simb_repr_play">
+							<input type="image" src="img/play.png" alt="Reproducir cancion" title="Reproducir canción" onClick="playMusic('media/Blue Browne.mp3');return false;">
+						</div></li>
+						<li id="barraopciones"><div class="simb_repr_fav">
+							<input type="image" src="img/favoritos.png" alt="Añadir a favoritos" title="Añadir/quitar favoritos" onclick="changeImage(this)">
+						</div></li>
+						<li id="barraopciones"><div class="simb_repr_lista">
+							<input type="image" src="img/listas_add.png" alt="Añadir a lista" class="button" title="Añadir a lista" onclick="return false" data-type="zoomin">
+						</div></li>
+						</ul>
 						</div>
-					</li>
-					<li id="barraopciones"><div class="simb_repr_play">
-						<input type="image" src="img/play.png" alt="Reproducir cancion" title="Reproducir canción" onClick="playMusic('media/Blue Browne.mp3');return false;">
-					</div></li>
-					<li id="barraopciones"><div class="simb_repr_fav">
-						<input type="image" src="img/favoritos.png" alt="Añadir a favoritos" title="Añadir/quitar favoritos" onclick="changeImage(this)">
-					</div></li>
-					<li id="barraopciones"><div class="simb_repr_lista">
-						<input type="image" src="img/listas_add.png" alt="Añadir a lista" class="button" title="Añadir a lista" onclick="return false" data-type="zoomin">
-					</div></li>
-				  </ul>
-    			</div>
-			</form>
-			<form name="accionCancion" method="post" action="#">
-				<div class="cancioninf">
-				  <ul>
-					<li id="barraopciones"><a href="cancion.html" id="enlacecancion">
-								<div class="imagen">
-									<img src="img/iggy.jpg" alt="Imagen cancion">
-								</div>
-					</a></li>
-					<li id="barraopciones">
-						<div class="nombre_autor_cancion">
-							<a href="cancion.html" id="enlacecancion"><div class="nombrecancion">
-								Black Windows
-							</div></a>
-							<a href="artista.html" id="enlacecancion">
-								<div class="nombreautor">
-									Iggy Azalea
-								</div>
-							</a>
-							<a href="estilo.html" id="enlacecancion">
-								<div class="nombreestilo">
-									pop
-								</div>
-							</a>
-						</div>
-					</li>
-					<li id="barraopciones"><div class="simb_repr_play">
-						<input type="image" src="img/play.png" alt="Reproducir cancion" title="Reproducir canción" onClick="playMusic('media/Blue Browne.mp3');return false;">
-					</div></li>
-					<li id="barraopciones"><div class="simb_repr_fav">
-						<input type="image" src="img/favoritos.png" alt="Añadir a favoritos" title="Añadir/quitar favoritos" onclick="changeImage(this)">
-					</div></li>
-					<li id="barraopciones"><div class="simb_repr_lista">
-						<input type="image" src="img/listas_add.png" alt="Añadir a lista" class="button" title="Añadir a lista" onclick="return false" data-type="zoomin">
-					</div></li>
-				  </ul>
-    			</div>
-			</form>
-
-
+				</form>
+			</div>
 
 
 
