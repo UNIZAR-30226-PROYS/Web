@@ -30,6 +30,9 @@
     <script src="js/cookies.js"></script>
     <script src="js/busqueda_cancion_servlet.js" charset="UTF-8"></script>
     <script src="js/comprobar_sesion_iniciada.js"></script>
+    <link rel="stylesheet" href="css/demo1.css">
+    <script type="text/javascript" src="js/reg_exito.js"></script>
+    <script src="js/subirmusica_servlet.js" charset="UTF-8"></script>
 
 </head>
 
@@ -129,13 +132,16 @@
         <div class="informacion">
           <br/>
           <div id="titulopagina"><h1>Subir música</h1></div>
-          <form id="subirMusica" name="subirMusica" method="post" action="#" enctype="multipart/form-data" >
+          <form id="form_subir_musica" method="post" action="/ps/SubirCanciones" enctype="multipart/form-data" >
             <input type="file" name="fichero" id="fichero" required onchange="return fileValidation()"/><br />
-            <div id="atributos_cancion">
+            <!--<div id="atributos_cancion">
                 <div class="block">
                   <label for="idNombre">Nombre:<font size="5" color="red" style="font-weight: bold">* </font></label>
                     <input size="25" id="idNombre" type="text" name="nombrecancion" required/></br>
                 </div>
+            </div>-->
+            <div class="progress">
+                <div class="progress-bar progress-bar-success myprogress" role="progressbar" id="barra_progreso" style="width:0%">0%</div>
             </div>
 
             <input type="submit" name="send" id="send" value="Subir"/>
@@ -155,6 +161,32 @@
     });
     </script>
 
+    <button type="submit" class="button1 button-block" data-type="zoomin1" hidden></button>
+    <div class="overlay-container1">
+      <div class="window-container1 zoomin1">
+        <span class="close1"><img src="img\cerrar.png" width=30 height=30></span>
+        <td>
+              <table width="top:400%" >
+                <tr>
+                  <th>
+                  <table id="reg_exito" height="100%">
+                    <tr height="60px">
+                      <td>
+                        <img id="result_seguir" src="img/exito.png"/>
+                      </td>
+                      <td>
+                        <p id="resultado_seguir"></p>
+                      </td>
+                    </tr>
+                  </table>
+                  </th>
+                </tr>
+
+              </table>
+
+            </td>
+      </div>
+    </div>
 
 </body>
 

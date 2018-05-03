@@ -104,7 +104,8 @@ ARTISTA:
   -(hecho)Permitir busqueda de artistas
 
 SUBIR_MUSICA:
-  -Permitir envio de ficheros de musica
+  -Permitir envio de ficheros de musica(hecho servlet con barra progreso, falta depurar los mensajes de error y mostrar el mensaje correspondiente)
+  -(hecho)Quitar nombre como input y usar el de la cancion
 
 FAVORITOS:
   -Mostrar canciones

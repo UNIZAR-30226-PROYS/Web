@@ -1,3 +1,9 @@
+.progress{
+  margin-left: 20px;
+  margin-top: 0px;
+  max-width: 350px;
+}
+
 .window-container2 {
   margin: 13em auto !important;
 }
