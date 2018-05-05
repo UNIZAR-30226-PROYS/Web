@@ -5,6 +5,9 @@ General:
   -(hecho)Servlets envien respuesta codificada UTF8(se ha mirado el tipo de mensaje y se ha puesto un mensaje sin usar directamente el string recibido del server)
 
 
+PASAR RUTA A PAGINA CANCION PARA REPRODUCCION(EN TODOS LOS ENLACES A CANCION)
+
+
 (hecho)INICIO: servlets registro y login implementados, al cerrar sesion informa de ello. Si ya hay sesion va a home directamente
 
 Perfil:
@@ -84,9 +87,11 @@ BUSQUEDA_ALBUMES:(falta cambiar las imagenes y depurar cuando haya muchos)
   -(hecho)Permitir la busqueda de albumes
 
 ALBUM:
-  -Mostrar canciones del album
+  -(hecho)Mostrar canciones del album
   -(hecho)Añadir nombre artista a la pagina
   -(hecho)Busqueda de albumes lleve a pagina que los muestre
+  -Hacer funcion favoritos
+  -Funcion añadir a lista(las muestra pero no funciona)
 
 ARTISTAS:
   -(hecho)Mostrar todos los artistas limitados por paginas(se han limitado a 20 por pagina, falta depurar una vez haya más artistas)

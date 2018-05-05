@@ -8,6 +8,14 @@
   margin-right: 15%;
 }
 
+#artista_del_album {
+    color: #333;
+}
+
+#artista_del_album:hover {
+    text-decoration: none;
+}
+
 .informacion input {
   font-family: "Roboto", sans-serif;
   outline: 0;
@@ -37,10 +45,6 @@
     padding: 1%;
     bottom:0%;
     right:20%;
-}
-
-.informacion form{
-  margin-bottom: 20px;
 }
 
 button:hover {
@@ -164,7 +168,7 @@ button:hover {
     margin-top: 7%;
   }
   .cancioninf{
-    margin-top:0%;
+    margin-top:10px;
     margin-bottom:0%;
   }
 
