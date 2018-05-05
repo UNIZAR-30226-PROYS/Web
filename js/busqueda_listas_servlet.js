@@ -19,9 +19,10 @@ $(document).ready(function() {
     var inicio=(pag_actual-1)*elem_por_pagina;
     var sin_elementos = 1;
     for(i=inicio; i<(elem_por_pagina+inicio) && i<listas.length;i++){
-      var lista=listas[i];
+      var lista=listas[i].nombre;
+      var autor=listas[i].nombreUsuario;
       if("Favoritos" != lista){
-        var large='<div class="cancioninf"><ul><li id="barraopciones"><a href="lista.html'+"?lista="+lista+'" id="enlacecancion"><div class="imagen"><img src="img/listaicono.png" alt="Imagen lista"></div></a></li><li id="barraopciones"><a href="lista.html'+"?lista="+lista+'"><div class="nombrecancion">'+lista+'</div></a></li><li id="barraopciones"><div class="simb_repr_play"><input type="image" src="img/play.png" alt="Reproducir lista" title="Reproducir lista" onClick="playMusic(\'media/Blue Browne.mp3\');return false;"></div></li></ul></div>';
+        var large='<div class="cancioninf"><ul><li id="barraopciones"><a href="lista.html'+"?lista="+lista+'&autor='+autor+'" id="enlacecancion"><div class="imagen"><img src="img/listaicono.png" alt="Imagen lista"></div></a></li><li id="barraopciones"><a href="lista.html'+"?lista="+lista+'&autor='+autor+'"><div class="nombrecancion">'+lista+'</div><div class="nombreautor">Autor: '+autor+'</div></a></li><li id="barraopciones"><div class="simb_repr_play"><input type="image" src="img/play.png" alt="Reproducir lista" title="Reproducir lista" onClick="playMusic(\'media/Blue Browne.mp3\');return false;"></div></li></ul></div>';
         $(".informacion").append(large);
         sin_elementos = 0;
       }

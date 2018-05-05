@@ -162,7 +162,29 @@
     color: #333333;
 }
 
+#enlacecancion_wrapper {
+    font: bold 20px Arial;
+    text-decoration: none;
+    color: #333333;
+}
+
 .nombrecancion {
+    position: absolute;
+    margin-left: 22%;
+    font-size: 100%;
+    margin-top: 5%;
+    font-weight: normal;
+}
+
+.nombreautor {
+    position: absolute;
+    margin-left: 22%;
+    font-size: 100%;
+    margin-top: 5%;
+    font-weight: normal;
+}
+
+.nombregenero {
     position: absolute;
     margin-left: 22%;
     font-size: 100%;
@@ -209,9 +231,16 @@ button:hover {
 .cancioninf{
   height: 5%;
   width: 100%;
+  margin-bottom:10px;
 }
 
 #enlacecancion{
+  font: bold 20px Arial;
+  text-decoration: none;
+  color: #333333;
+}
+
+#enlacecancion_wrapper{
   font: bold 20px Arial;
   text-decoration: none;
   color: #333333;
@@ -317,8 +346,22 @@ tr {
   .nombrecancion {
     margin-left: 5%;
     padding-top:0%;
-    font-size: 28px;
-    margin-top: 1%;
+    font-size: 22px;
+    margin-top: 0;
+  }
+
+  .nombreautor {
+    margin-left: 5%;
+    padding-top:0%;
+    font-size: 22px;
+    margin-top: 18px;
+  }
+
+  .nombregenero {
+    margin-left: 5%;
+    padding-top:0%;
+    font-size: 22px;
+    margin-top: 36px;
   }
 
   #IdUsar {

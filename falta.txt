@@ -50,19 +50,20 @@ LISTAS:
 
 LISTA:
   -(hecho)En + quitar opcion de busqueda(ya esta en la barra superior)
-  -Hacer opcion subir musica(ademas se añadira automaticamente a la lista)
+  -(hecho)Hacer opcion subir musica(ademas se añadira automaticamente a la lista)
   -(hecho)Cambiar nombre lista
   -(hecho)Permitir cambiar nombre de la lista solo si la lista es del usuario sino no debe salir esa opcion, p ej leer cookie login y comparar con la que devuelve el servlet(si no esta se debe añadir)
   -Añadir opcion reproducir lista(con varias opciones:en orden, aleatorio o en bucle)
-  -Mostrar canciones con opcion de reproducir(siempre) y de eliminar(solo si la lista es del usuario)
+  -(hecho)Mostrar canciones con opcion de reproducir(siempre) y de eliminar(solo si la lista es del usuario)
   -(hecho)Permitir busqueda listas
+  -Error muestra todas las cnaciones iguales de diferentes usuarios->solo deberia mostrar la que se añade y no todas
+  -Subirmusica da error al parsear porque hay mas parametros->Cuando funcione quitar alert
 
 
 BUSQUEDA_LISTAS:(FALTA permitir reproduccion de lista)
   -(hecho)Hacer pagina que muestre las listas resultado de la busqueda de listas
   -(hecho)Permitir la busqueda de listas
-  -Mostrar solo listas de los amigos(se debe realizar en el servidor)
-  -Quitar alert de depuracion
+  -(hecho)Mostrar solo listas de los amigos(se debe realizar en el servidor)
 
 HOME:
   -Mostrar top topsemanal(hecho el js, falta depurar una vez que haya canciones)
@@ -105,8 +106,8 @@ ARTISTA:
   -(hecho)Permitir busqueda de artistas
 
 SUBIR_MUSICA:
-  -Permitir envio de ficheros de musica(hecho servlet con barra progreso, falta depurar los mensajes de error y mostrar el mensaje correspondiente)
-  -(hecho)Quitar nombre como input y usar el de la cancion
+  -(hecho)Permitir envio de ficheros de musica
+  -Falta que servidor funcione bien y no envie formato no json o con mas de 1 json
 
 FAVORITOS:
   -Mostrar canciones
@@ -122,4 +123,9 @@ CANCION:
   -(hecho FALTA que al pulsar comparta la cancion, tras añadir los campos de la cancion como hidden)Mostrar amigos al pulsar compartir con amigos
 
 REPRODUCTOR(WRAPPER):
-  -Reproductor en menu derecho
+  EN LISTA FUNCIONA(excepto anterior siguiente)--> USAR COMO REFERENCIA junto a la funcion playMusic
+  -Reproductor en menu derecho:muestra nombre cancion e imagen y enlaza a la cancion
+  -(hecho)Reload
+  -Poner una cancion base para todos al entrar en la web
+  -Modificar en todas las paginas
+  -Funciones anterior y siguiente

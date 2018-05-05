@@ -59,10 +59,10 @@
         <div id="sidebar-wrapper">
           <div id="cancion">
             <a href="cancion.html" id="enlacecancion">
-              <img src="img/edsheeranperfect.jpg" alt="menu">
+              <img src="img/edsheeranperfect.jpg" alt="menu" id="imagen_cancion_wrapper">
             </a>
-            <a href="artista.html" id="enlacecancion">
-              <div id="autor">Ed Sheeran</div>
+            <a href="artista.html" id="enlacecancion_wrapper">
+              <div id="cancion_wrapper">Ed Sheeran</div>
             </a>
           </div>
             <ul class="sidebar-nav" id="repr">
@@ -88,7 +88,7 @@
                         <!--audio-->
                         <script type="text/javascript">
                           function reloadMusic(){
-                              var src=document.getElementById("source").src;
+                              var src=document.getElementById("audio-player").src;
                                 audio_core=$('#audio-player').attr('src', src)[0]
                               audio_core.play() // <- play the song!!!
                           }
@@ -175,7 +175,7 @@
   												<label for="idNombre">  <font size="4" face="Arial" color="black" style="font-weight: bold"> &nbsp Nombre: </font></label>
   											</td>
   											<td>
-  												<input size="25" id="IdUsar" type="text" name="nombreLista" required/></br>
+  												<input size="25" id="IdUsar" type="text" name="nombreLista" maxlength="20" required/></br>
   											</td>
   										</tr>
                     </table>

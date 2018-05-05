@@ -135,7 +135,6 @@ $(document).ready(function() {
           data : form_data,
 
     }).done(function(response){
-      alert("Listas: "+response);
       var obj=JSON.parse(response);
       var lista_listas = JSON.stringify(response);
       if(obj.error != undefined){

@@ -59,11 +59,9 @@
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
           <div id="cancion">
-            <a href="cancion.html" id="enlacecancion">
-              <img src="img/edsheeranperfect.jpg" alt="menu">
-            </a>
-            <a href="artista.html" id="enlacecancion">
-              <div id="autor">Ed Sheeran</div>
+            <a href="cancion.html" id="enlacecancion_wrapper">
+              <img src="img/edsheeranperfect.jpg" alt="menu" id="imagen_cancion_wrapper">
+              <div id="cancion_wrapper">Ed Sheeran</div>
             </a>
           </div>
             <ul class="sidebar-nav" id="repr">
@@ -71,7 +69,7 @@
                   <div class="col-md-4 player" id="reproductor">
                     <div class="audio-player">
                       <audio id="audio-player"  controls="controls">
-                        <source id="source" src="media/Blue Browne.mp3" type="audio/mpeg"></source>
+                        <source id="source" src="../ps/music/Fidel/Blue Browne.mp3" type="audio/mpeg"></source>
                         </div>
                         <!---->
                         <script type="text/javascript">
@@ -89,7 +87,7 @@
                         <!--audio-->
                         <script type="text/javascript">
                           function reloadMusic(){
-                              var src=document.getElementById("source").src;
+                              var src=document.getElementById("audio-player").src;
                                 audio_core=$('#audio-player').attr('src', src)[0]
                               audio_core.play() // <- play the song!!!
                           }
@@ -143,55 +141,6 @@
 
           <div id="separador"></div>
             <br/>
-            <form name="accionCancion" method="post" action="#">
-              <div class="cancioninf">
-                <ul>
-                  <li id="barraopciones"><a href="cancion.html" id="enlacecancion">
-                    <div class="imagen">
-                      <img src="img/edsheeranperfect.jpg" alt="Imagen cancion">
-                    </div>
-                  </a></li>
-                  <li id="barraopciones">
-                    <a href="cancion.html">
-                      <div class="nombrecancion">
-                        Perfect
-                      </div>
-                    </a>
-                  </li>
-                  <li id="barraopciones"><div class="simb_repr_play">
-                      <input type="image" src="img/play.png" alt="Reproducir cancion" title="Reproducir canción" onClick="playMusic('media/Blue Browne.mp3');return false;">
-                  </div></li>
-                  <li id="barraopciones"><div class="simb_repr_elim">
-                      <input type="image" src="img/eliminar.png" alt="Eliminar cancion de lista" title="Eliminar canción de lista">
-                  </div></li>
-                </ul>
-              </div>
-            </form>
-
-            <form name="accionCancion" method="post" action="#">
-              <div class="cancioninf">
-                <ul>
-                  <li id="barraopciones"><a href="cancion.html" id="enlacecancion">
-                    <div class="imagen">
-                      <img src="img/lushlife.jpg" alt="Imagen cancion">
-                    </div>
-                  </a></li>
-                  <li id="barraopciones">
-                    <a href="cancion.html">
-                      <div class="nombrecancion">
-                        Lush life
-                      </div>
-                    </a>
-                  </li>
-                  <li id="barraopciones"><div class="simb_repr_play">
-                      <input type="image" src="img/play.png" alt="Reproducir cancion" title="Reproducir canción" onClick="playMusic('media/Blue Browne.mp3');return false;">
-                  </div></li>
-                  <li id="barraopciones"><div class="simb_repr_elim">
-                      <input type="image" src="img/eliminar.png" alt="Eliminar cancion de lista" title="Eliminar canción de lista">
-                  </div></li>
-                </ul>
-              </div>
-            </form>
         </div>
 
         <form id="form_mostrar_lista" method="post" action="/ps/VerLista">
@@ -211,8 +160,13 @@
     });
     </script>
     <script type="text/javascript">
-      function playMusic(src){
-            audio_core=$('#audio-player').attr('src', src)[0]
+      function playMusic(src,imagen,cancion,artista,album,uploader){
+            audio_core=$('#audio-player').attr('src', src)[0];
+            document.getElementById('imagen_cancion_wrapper').src=imagen;
+            document.getElementById('cancion_wrapper').innerHTML=cancion;
+            var enlace="cancion.html?nombre="+cancion+"&artista="+artista+"&album="+album+"&uploader="+uploader;
+            document.getElementById('enlacecancion_wrapper').href=enlace;
+
           audio_core.play() // <- play the song!!!
       }
     </script>
@@ -230,12 +184,7 @@
                     <form id="form_subir_musica" method="post" action="/ps/SubirCanciones" enctype="multipart/form-data" >
                       <input type="file" name="fichero" id="fichero" required onchange="return fileValidation()"/>
                       <br />
-                      <!--<div id="atributos_cancion">
-                          <div class="block">
-                            <label for="idNombre">Nombre:<font size="5" color="red" style="font-weight: bold">* </font></label>
-                              <input size="25" id="idNombre" type="text" name="nombrecancion" required/></br>
-                          </div>
-                      </div>-->
+                      <input type="hidden" name="lista" id="nombre_lista" />
                       <div class="progress">
                           <div class="progress-bar progress-bar-success myprogress" role="progressbar" id="barra_progreso" style="width:0%">0%</div>
                       </div>
@@ -272,7 +221,7 @@
                         </td>
                         <td>
                           <input type="hidden" id="viejoNombre" name="viejoNombre">
-                          <input size="25" id="IdUsar1" type="text" name="nuevoNombre" required/></br>
+                          <input size="25" id="IdUsar1" type="text" name="nuevoNombre" maxlength="20" required/></br>
                         </td>
                       </tr>
                     </table>

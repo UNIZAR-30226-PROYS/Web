@@ -70,7 +70,7 @@ $(document).ready(function() {
           borrarCookie("login");
           borrarCookie("idSesion");
           window.location = "inicio.html";
-        } 
+        }
         else if(obj.error.indexOf("album cuyo nombre sea o empiece") >= 0){
           sessionStorage.setItem("lista_albumes", lista_albumes);
           //Pasar tambien el valor de busqueda

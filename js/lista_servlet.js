@@ -27,7 +27,6 @@ $(document).ready(function() {
           data : form_data,
 
     }).done(function(response){
-      alert(response);
        var obj=JSON.parse(response);
        if(obj.error != undefined){
          if(obj.error.indexOf("Usuario no logeado en el servidor") >= 0){
@@ -52,14 +51,17 @@ $(document).ready(function() {
        else{
          var url_string = window.location.href;
          var url = new URL(url_string);
+         var pag_actual = url.searchParams.get("pagina");
          var autor = url.searchParams.get("autor");
+         var es_lista_propia = 0;
          if(leerCookie("login") == autor){
            //Es del propio usuario, mostrar campos cambiar nombre y subir musica
            $('.editar_lista').css('display','block');
            $('.anadir_lista').css('display','block');
+           es_lista_propia = 1; //bool para mostrar campo de eliminar cancion o no
          }
-         /*   MOSTRAR CANCIONES CON CAMPOS SOLO SI ES DEL PROPIO USUARIO
-         var listas = obj.nombre;
+         //  MOSTRAR CANCIONES CON CAMPOS SOLO SI ES DEL PROPIO USUARIO
+         var canciones = obj.canciones;
          //Definir elementos a mostrar por pagina, pagina actual y valor a empezar a mostrar
          if(pag_actual == null){
            pag_actual = 1;
@@ -67,27 +69,53 @@ $(document).ready(function() {
          else{
            pag_actual = parseInt(pag_actual);
          }
+         var elem_por_pagina = 4;
          inicio=(pag_actual-1)*elem_por_pagina;
-         var sin_elementos = 1;
-         for(i=inicio; i<(elem_por_pagina+inicio) && i<listas.length;i++){
-           var lista=listas[i];
-           if("Favoritos" != lista){
-             var large='<div class="cancioninf"><ul><li id="barraopciones"><a href="lista.html'+"?lista="+lista+'" id="enlacecancion"><div class="imagen"><img src="img/listaicono.png" alt="Imagen lista"></div></a></li><li id="barraopciones"><a href="lista.html'+"?lista="+lista+'"><div class="nombrecancion">'+lista+'</div></a></li><li id="barraopciones"><div class="simb_repr_play"><input type="image" src="img/play.png" alt="Reproducir lista" title="Reproducir lista" onClick="playMusic(\'media/Blue Browne.mp3\');return false;"></div></li><li id="barraopciones"><form class="form_borrar_lista" method="post" action="/ps/BorrarListaDeReproduccion"><div class="simb_repr_elim"><input type="image" src="img/eliminar.png" alt="Eliminar lista" title="Eliminar lista"></div><input type="hidden" id="seguido" name="nombreLista" value="'+lista+'"/></form></li></ul></div>';
-             $(".informacion").append(large);
-             sin_elementos = 0;
+         for(i=inicio; i<(elem_por_pagina+inicio) && i<canciones.length;i++){
+           var n_cancion=canciones[i].tituloCancion;
+           var n_artista=canciones[i].nombreArtista;
+           var n_genero=canciones[i].genero;
+           var n_album=canciones[i].nombreAlbum;
+           //Cambiar ruta por la ruta relativa
+           var ruta_aux=canciones[i].ruta;
+           var index = ruta_aux.indexOf("/ps");
+           var ruta = ".."+ruta_aux.substr(index);
+
+           var n_uploader=canciones[i].uploader;
+           //CAMBIAR IMAGEN
+           var image="img/edsheeranperfect.jpg";
+           if(n_genero==null){
+             n_genero= "";
+           }
+           if(n_album==null){
+             n_album= "";
+           }
+           var l1='<div class="cancioninf"><ul><li id="barraopciones"><a href="cancion.html?nombre='+n_cancion+'&artista='+n_artista+'&album='+n_album+'&uploader='+n_uploader+'" id="enlacecancion"><div class="imagen"><img src="'+image+'" alt="Imagen cancion"></div></a></li>';
+           var l2='<li id="barraopciones"><a href="cancion.html?nombre='+n_cancion+'&artista='+n_artista+'&album='+n_album+'&uploader='+n_uploader+'" id="enlacecancion"><div class="nombrecancion">'+n_cancion+'</div></a>';
+           var l3='<a href="artista.html?artista='+n_artista+'"><div class="nombreautor">Artista: '+n_artista+'</div></a>';
+           var seccion_genero='<a href="estilo.html?estilo='+n_genero+'"><div class="nombregenero">Género: '+n_genero+'</div></a>';
+           var param_playmusic="\'"+ruta+"\',"+"\'"+image+"\',"+"\'"+n_cancion+"\',"+"\'"+n_artista+"\',"+"\'"+n_album+"\',"+"\'"+n_uploader+"\'";
+           var l4='</li><li id="barraopciones"><div class="simb_repr_play"><input type="image" src="img/play.png" alt="Reproducir cancion" title="Reproducir canción" onClick="playMusic('+param_playmusic+');return false;"></div></li>';
+           var elim_cancion='<form class="form_borrar_cancion_lista" method="post" action="/ps/QuitarCancionDeLista"><li id="barraopciones"><div class="simb_repr_elim"><input type="hidden" name="tituloCancion" value="'+n_cancion+'"/><input type="hidden" name="nombreArtista" value="'+n_artista+'"/><input type="hidden" name="nombreAlbum" value="'+n_album+'"/><input type="hidden" name="nombreLista" value="'+nombreLista+'"/><input type="image" src="img/eliminar.png" alt="Eliminar cancion de lista" title="Eliminar canción de lista"></div></li></form>';
+           var final='</ul></div>';
+           if(n_genero==""){ //Si no hay genero no mostrar esa seccion
+             seccion_genero="";
+           }
+           if(es_lista_propia == 1){ //Mostrar opcion eliminar cancion
+             $(".informacion").append(l1+l2+l3+seccion_genero+l4+elim_cancion+final);
+           }
+           else{
+             $(".informacion").append(l1+l2+l3+seccion_genero+l4+final);
            }
          }
-         if(sin_elementos == 1){
-           //No hay resultados
-           $("#anadir_lista").after("<h2 id=\"sin_resul\">No hay listas.</h2>");
-         }
-         if((elem_por_pagina+inicio)<listas.length){
+         if((elem_por_pagina+inicio)<canciones.length){
            var pagina_sig=pag_actual+1;
-           var boton_mas = '<br><br><form action="listas.html"><button type="submit" id="boton_mostrar_mas" class="aumentar">Mostrar más</button><input type="hidden" name="pagina" value="'+pagina_sig+'"/></form>';
+           var boton_mas = '<br><br><form action="lista.html"><button type="submit" id="boton_mostrar_mas" class="aumentar">Mostrar más</button><input type="hidden" name="lista" value="'+nombreLista+'"/><input type="hidden" name="autor" value="'+autor+'"/><input type="hidden" name="pagina" value="'+pagina_sig+'"/></form>';
            $(".informacion").append(boton_mas);
-         } */
+         }
        }
-       //form_borrar_lista(); Poner funcion para definir los form
+       //Definir form para eliminar cancion
+       form_borrar_cancion();
 
     }).fail(function(response){
         alert("Error interno. Inténtelo más tarde.");
@@ -200,6 +228,11 @@ $(document).ready(function() {
 
   $("#form_subir_musica").submit(function(event){
       event.preventDefault(); //prevent default action
+      //Poner nombre de la lista
+      var url_string = window.location.href;
+      var url = new URL(url_string);
+      var lista = url.searchParams.get("lista");
+      document.getElementById("nombre_lista").value=lista;
       var post_url = $(this).attr("action"); //get form action url
       var form_data = new FormData(document.getElementById("form_subir_musica")); //Encode form elements for submission
       var request_method = $(this).attr("method"); //get form GET/POST method
@@ -237,8 +270,7 @@ $(document).ready(function() {
            window.location = "inicio.html";
          }
          else{
-           $("#resultado_seguir").text(obj.error+".");
-           $("#result_seguir").attr("src","img/error.png");
+           alert("Error. Inténtelo más tarde.")
          }
        }
        else{
@@ -271,4 +303,42 @@ function updateQueryStringParam(key, value) {
     }
   }
   window.history.replaceState({}, "", baseUrl + params);
+}
+
+function form_borrar_cancion(){
+  $(".form_borrar_cancion_lista").submit(function(event){
+      event.preventDefault(); //prevent default action
+      var post_url = $(this).attr("action"); //get form action url
+      var form_data = $(this).serialize(); //Encode form elements for submission
+      var request_method = $(this).attr("method"); //get form GET/POST method
+
+      $.ajax({
+          url : post_url,
+          type: request_method,
+          data : form_data,
+
+    }).done(function(response){
+       var obj=JSON.parse(response);
+       //Mostrar mensaje correspondiente en forma de ventana
+       if(obj.error != undefined){
+         if(obj.error.indexOf("Usuario no logeado en el servidor") >= 0){
+           //El usuario no esta logeado, quitar cookies e ir a inicio
+           borrarCookie("login");
+           borrarCookie("idSesion");
+           window.location = "inicio.html";
+         }
+         else{
+           alert("Error interno. Inténtelo más tarde.");
+         }
+       }
+       else{
+         $("#resultado_seguir").text("Canción eliminada correctamente.");
+         $("#result_seguir").attr("src","img/exito.png");
+       }
+       $('.button2').click();
+
+    }).fail(function(response){
+        alert("Error interno. Inténtelo más tarde.");
+    });
+  });
 }

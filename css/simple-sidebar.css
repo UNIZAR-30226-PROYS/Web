@@ -615,6 +615,14 @@
     font-size: 50px;
   }
 
+  #cancion_wrapper {
+    position: relative;
+    top: 20px;
+    left: 40px;
+    color: white;
+    font-size: 50px;
+  }
+
   #repr {
     position: relative;
     top: 60px;
