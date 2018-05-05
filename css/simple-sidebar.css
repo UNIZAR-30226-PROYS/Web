@@ -618,7 +618,7 @@
   #cancion_wrapper {
     position: relative;
     top: 20px;
-    left: 40px;
+    left: 0px;
     color: white;
     font-size: 50px;
   }

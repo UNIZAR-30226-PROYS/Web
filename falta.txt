@@ -56,9 +56,6 @@ LISTA:
   -Añadir opcion reproducir lista(con varias opciones:en orden, aleatorio o en bucle)
   -(hecho)Mostrar canciones con opcion de reproducir(siempre) y de eliminar(solo si la lista es del usuario)
   -(hecho)Permitir busqueda listas
-  -Error muestra todas las cnaciones iguales de diferentes usuarios->solo deberia mostrar la que se añade y no todas
-  -Subirmusica da error al parsear porque hay mas parametros->Cuando funcione quitar alert
-
 
 BUSQUEDA_LISTAS:(FALTA permitir reproduccion de lista)
   -(hecho)Hacer pagina que muestre las listas resultado de la busqueda de listas
@@ -107,7 +104,6 @@ ARTISTA:
 
 SUBIR_MUSICA:
   -(hecho)Permitir envio de ficheros de musica
-  -Falta que servidor funcione bien y no envie formato no json o con mas de 1 json
 
 FAVORITOS:
   -Mostrar canciones
