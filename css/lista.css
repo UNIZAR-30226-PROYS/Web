@@ -1,3 +1,8 @@
+#sin_resul {
+    margin-left: 70px;
+    margin-top: 40px;
+}
+
 .progress{
   margin-left: 20px;
   margin-top: 0px;
@@ -62,6 +67,10 @@
     opacity: 0;
 }
 
+.editar_lista {
+  display: none;
+}
+
 .editar_lista img {
   max-width: 35px;
   max-height: 10%;
@@ -69,6 +78,10 @@
   float: left;
   margin-left: 60%;
   margin-top: -50px;
+}
+
+.anadir_lista {
+  display: none;
 }
 
 .anadir_lista img {
@@ -272,7 +285,7 @@ tr {
     max-height: 12%;
     margin: auto;
     float: left;
-    margin-left: 50%;
+    margin-left: 28%;
     margin-top: -50px;
   }
 

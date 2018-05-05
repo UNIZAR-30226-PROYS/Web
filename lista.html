@@ -133,13 +133,15 @@
         <div class="informacion">
           <br/>
           <div id="titulopagina"><h1 id="prueba">Lista: </h1></div>
-            <div class="editar_lista">
-              <img src="img/editar.png" alt="Cambiar nombre lista" title="Cambiar nombre lista" class="button1" data-type="zoomin1" onclick="nombreLista()">
-            </div>
+          <div class="editar_lista">
+            <img src="img/editar.png" alt="Cambiar nombre lista" title="Cambiar nombre lista" class="button1" data-type="zoomin1" onclick="nombreLista()">
+          </div>
 
-            <div class="anadir_lista">
-              <img src="img/anadir.png" alt="Añadir canción" title="Añadir canción" class="button" data-type="zoomin">
-            </div>
+          <div class="anadir_lista">
+            <img src="img/anadir.png" alt="Añadir canción" title="Añadir canción" class="button" data-type="zoomin">
+          </div>
+
+          <div id="separador"></div>
             <br/>
             <form name="accionCancion" method="post" action="#">
               <div class="cancioninf">
@@ -192,6 +194,11 @@
             </form>
         </div>
 
+        <form id="form_mostrar_lista" method="post" action="/ps/VerLista">
+          <input type="hidden" id="nombreLista" name="nombreLista">
+          <input type="hidden" id="nombreCreadorLista" name="nombreCreadorLista">
+          <input type="submit" value="Enviar" hidden>
+        </form>
 
     </div>
     <!-- /#wrapper -->

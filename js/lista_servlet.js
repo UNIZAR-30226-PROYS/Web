@@ -2,10 +2,101 @@ $(document).ready(function() {
   var url_string = window.location.href;
   var url = new URL(url_string);
   var c = url.searchParams.get("lista");
-  if(c == undefined){ //Si se ha ido directamente a la pagina redirigir
+  var autor = url.searchParams.get("autor");
+  if(c == undefined || autor == undefined){ //Si se ha ido directamente a la pagina redirigir
     window.location="home.html";
   }
   $("#prueba").append(c);
+
+  $("#form_mostrar_lista").submit(function(event){
+      event.preventDefault(); //prevent default action
+      var url_string = window.location.href;
+      var url = new URL(url_string);
+      var nombreLista = url.searchParams.get("lista");
+      var autor = url.searchParams.get("autor");
+
+      document.getElementById("form_mostrar_lista").elements[0].value = nombreLista;
+      document.getElementById("form_mostrar_lista").elements[1].value = autor;
+      var post_url = $(this).attr("action"); //get form action url
+      var form_data = $(this).serialize(); //Encode form elements for submission
+      var request_method = $(this).attr("method"); //get form GET/POST method
+
+      $.ajax({
+          url : post_url,
+          type: request_method,
+          data : form_data,
+
+    }).done(function(response){
+      alert(response);
+       var obj=JSON.parse(response);
+       if(obj.error != undefined){
+         if(obj.error.indexOf("Usuario no logeado en el servidor") >= 0){
+           //El usuario no esta logeado, quitar cookies e ir a inicio
+           borrarCookie("login");
+           borrarCookie("idSesion");
+           window.location = "inicio.html";
+         }
+       }
+       else if(obj.NoHayCanciones != undefined){
+         //No hay resultados
+         var url_string = window.location.href;
+         var url = new URL(url_string);
+         var autor = url.searchParams.get("autor");
+         if(leerCookie("login") == autor){
+           //Es del propio usuario, mostrar campos cambiar nombre y subir musica
+           $('.editar_lista').css('display','block');
+           $('.anadir_lista').css('display','block');
+         }
+          $("#separador").after("<h2 id=\"sin_resul\">No hay canciones.</h2>");
+       }
+       else{
+         var url_string = window.location.href;
+         var url = new URL(url_string);
+         var autor = url.searchParams.get("autor");
+         if(leerCookie("login") == autor){
+           //Es del propio usuario, mostrar campos cambiar nombre y subir musica
+           $('.editar_lista').css('display','block');
+           $('.anadir_lista').css('display','block');
+         }
+         /*   MOSTRAR CANCIONES CON CAMPOS SOLO SI ES DEL PROPIO USUARIO
+         var listas = obj.nombre;
+         //Definir elementos a mostrar por pagina, pagina actual y valor a empezar a mostrar
+         if(pag_actual == null){
+           pag_actual = 1;
+         }
+         else{
+           pag_actual = parseInt(pag_actual);
+         }
+         inicio=(pag_actual-1)*elem_por_pagina;
+         var sin_elementos = 1;
+         for(i=inicio; i<(elem_por_pagina+inicio) && i<listas.length;i++){
+           var lista=listas[i];
+           if("Favoritos" != lista){
+             var large='<div class="cancioninf"><ul><li id="barraopciones"><a href="lista.html'+"?lista="+lista+'" id="enlacecancion"><div class="imagen"><img src="img/listaicono.png" alt="Imagen lista"></div></a></li><li id="barraopciones"><a href="lista.html'+"?lista="+lista+'"><div class="nombrecancion">'+lista+'</div></a></li><li id="barraopciones"><div class="simb_repr_play"><input type="image" src="img/play.png" alt="Reproducir lista" title="Reproducir lista" onClick="playMusic(\'media/Blue Browne.mp3\');return false;"></div></li><li id="barraopciones"><form class="form_borrar_lista" method="post" action="/ps/BorrarListaDeReproduccion"><div class="simb_repr_elim"><input type="image" src="img/eliminar.png" alt="Eliminar lista" title="Eliminar lista"></div><input type="hidden" id="seguido" name="nombreLista" value="'+lista+'"/></form></li></ul></div>';
+             $(".informacion").append(large);
+             sin_elementos = 0;
+           }
+         }
+         if(sin_elementos == 1){
+           //No hay resultados
+           $("#anadir_lista").after("<h2 id=\"sin_resul\">No hay listas.</h2>");
+         }
+         if((elem_por_pagina+inicio)<listas.length){
+           var pagina_sig=pag_actual+1;
+           var boton_mas = '<br><br><form action="listas.html"><button type="submit" id="boton_mostrar_mas" class="aumentar">Mostrar más</button><input type="hidden" name="pagina" value="'+pagina_sig+'"/></form>';
+           $(".informacion").append(boton_mas);
+         } */
+       }
+       //form_borrar_lista(); Poner funcion para definir los form
+
+    }).fail(function(response){
+        alert("Error interno. Inténtelo más tarde.");
+    });
+  });
+
+  $("#form_mostrar_lista").submit();
+
+
 
 
   $("#form_buscar_lista").submit(function(event){
@@ -80,8 +171,6 @@ $(document).ready(function() {
           data : form_data,
 
     }).done(function(response){
-      alert(response);
-
        var obj=JSON.parse(response);
        if(obj.error != undefined){
          if(obj.error.indexOf("Usuario no logeado en el servidor") >= 0){

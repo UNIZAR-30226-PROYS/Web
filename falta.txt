@@ -51,8 +51,8 @@ LISTAS:
 LISTA:
   -(hecho)En + quitar opcion de busqueda(ya esta en la barra superior)
   -Hacer opcion subir musica(ademas se añadira automaticamente a la lista)
-  -(hecho)Cambiar nombre lista(FALTA depurar cuando vaya en server)
-  -Permitir cambiar nombre de la lista solo si la lista es del usuario sino no debe salir esa opcion, p ej leer cookie login y comparar con la que devuelve el servlet(si no esta se debe añadir)
+  -(hecho)Cambiar nombre lista
+  -(hecho)Permitir cambiar nombre de la lista solo si la lista es del usuario sino no debe salir esa opcion, p ej leer cookie login y comparar con la que devuelve el servlet(si no esta se debe añadir)
   -Añadir opcion reproducir lista(con varias opciones:en orden, aleatorio o en bucle)
   -Mostrar canciones con opcion de reproducir(siempre) y de eliminar(solo si la lista es del usuario)
   -(hecho)Permitir busqueda listas
@@ -62,6 +62,7 @@ BUSQUEDA_LISTAS:(FALTA permitir reproduccion de lista)
   -(hecho)Hacer pagina que muestre las listas resultado de la busqueda de listas
   -(hecho)Permitir la busqueda de listas
   -Mostrar solo listas de los amigos(se debe realizar en el servidor)
+  -Quitar alert de depuracion
 
 HOME:
   -Mostrar top topsemanal(hecho el js, falta depurar una vez que haya canciones)
