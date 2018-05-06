@@ -3,6 +3,15 @@
  * Copyright 2013-2017 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-simple-sidebar/blob/master/LICENSE)
  */
+ #enlacecancion_wrapper {
+    font: bold 20px Arial;
+    text-decoration: none;
+    color: #333333;
+}
+
+ .window-container10 {
+     margin: 13em auto !important;
+ }
 
  .anadir_cancion_lista_f {
    background: none;
@@ -617,10 +626,10 @@
 
   #cancion_wrapper {
     position: relative;
-    top: 20px;
+    top: 0px;
     left: 0px;
     color: white;
-    font-size: 50px;
+    font-size: 35px;
   }
 
   #repr {

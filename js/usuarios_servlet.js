@@ -11,7 +11,7 @@ $(document).ready(function() {
   var usuarios = jsonData.usuarios;
   if(usuarios != undefined){
     //Definir elementos a mostrar por pagina, pagina actual y valor a empezar a mostrar
-    var elem_por_pagina = 4;
+    var elem_por_pagina = 5;
     var pag_actual= parseInt(url.searchParams.get("pagina"));
     var inicio=(pag_actual-1)*elem_por_pagina;
     var sin_elementos = 1;

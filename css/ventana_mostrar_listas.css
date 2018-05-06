@@ -1,0 +1,94 @@
+@import url(http://fonts.googleapis.com/css?family=Pontano+Sans|Oleo+Script);
+
+	.overlay-container11 {
+		display: none;
+		content: " ";
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		left: 0;
+		top: 0;
+		background: -moz-radial-gradient(center, ellipse cover,  rgba(127,127,127,0) 0%, rgba(127,127,127,0.9) 100%);
+		background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(127,127,127,0)), color-stop(100%,rgba(127,127,127,0.9)));
+		background: -webkit-radial-gradient(center, ellipse cover,  rgba(127,127,127,0) 0%,rgba(127,127,127,0.9) 100%);
+		background: -o-radial-gradient(center, ellipse cover,  rgba(127,127,127,0) 0%,rgba(127,127,127,0.9) 100%);
+		background: -ms-radial-gradient(center, ellipse cover,  rgba(127,127,127,0) 0%,rgba(127,127,127,0.9) 100%);
+		background: radial-gradient(center, ellipse cover,  rgba(127,127,127,0) 0%,rgba(127,127,127,0.9) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#007f7f7f', endColorstr='#e67f7f7f',GradientType=1 );
+	}
+
+	.window-container11 {
+		display: block;
+		background: #fcfcfc;
+		margin: 8em auto;
+		width: 500px;
+		text-align: left;
+		z-index: 3;
+		overflow:auto;
+		border-radius: 3px;
+		box-shadow: 0px 0px 30px rgba(0,0,0,0.2);
+		-webkit-transition: 0.4s ease-out;
+		-moz-transition: 0.4s ease-out;
+		-ms-transition: 0.4s ease-out;
+		-o-transition: 0.4s ease-out;
+		transition: 0.4s ease-out;
+		opacity: 0;
+		margin-bottom:0;
+	}
+
+	.zoomin11 {
+		-webkit-transform:  scale(1.2);
+		-moz-transform:  scale(1.2);
+		-ms-transform:  scale(1.2);
+		transform:  scale(1.2);
+	}
+
+	.zoomout {
+		-webkit-transform:  scale(0.7);
+		-moz-transform:  scale(0.7);
+		-ms-transform:  scale(0.7);
+		transform:  scale(0.7);
+	}
+
+	.window-container11-visible {
+		-webkit-transform:  scale(1);
+		-moz-transform:  scale(1);
+		-ms-transform:  scale(1);
+		transform:  scale(1);
+		opacity: 1;
+	}
+
+		.window-container11 h3 {
+			margin: 1em 0 0.5em;
+			font-family: "Oleo Script";
+			font-weight: normal;
+			font-size: 25px;
+			text-align: center;
+		}
+
+		.close11 {
+			float: right;
+			margin: 1em auto;
+			display: block;
+			width: 52px;
+			background: none;
+			padding: 5px 7px;
+			color: #444;
+			font-family: Helvetica, sans-serif;
+			font-size: 12px;
+			-webkit-transition: 0.2s linear;
+			-moz-transition: 0.2s linear;
+			-ms-transition: 0.2s linear;
+			-o-transition: 0.2s linear;
+			transition: 0.2s linear;
+			cursor: pointer;
+		}
+
+			.close11:hover {
+				background: none;
+			}
+
+			.close11:active {
+				background: none;
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f4f4', endColorstr='#dcdcdc',GradientType=0 );
+			}

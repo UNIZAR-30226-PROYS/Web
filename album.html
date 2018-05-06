@@ -29,6 +29,10 @@
 
     <link rel="stylesheet" href="css/demo.css">
 		<script src="js/cookies.js"></script>
+		<link rel="stylesheet" href="css/result_anadir_lista.css">
+		<script type="text/javascript" src="js/result_anadir_lista.js"></script>
+		<link rel="stylesheet" href="css/ventana_mostrar_listas.css">
+		<script type="text/javascript" src="js/ventana_mostrar_listas.js"></script>
 		<script src="js/canciones_servlet.js" charset="UTF-8"></script>
 		<script src="js/album_servlet.js" charset="UTF-8"></script>
 		<script src="js/comprobar_sesion_iniciada.js"></script>
@@ -141,7 +145,7 @@
 				<input type="submit" value="Enviar" hidden>
 			</form>
 
-			<input type="hidden" class="button" data-type="zoomin"/>
+			<input type="hidden" class="button11" data-type="zoomin11"/>
 		</div>
 
 	</div>
@@ -167,9 +171,9 @@
     </script>
 
 		<!-- contenido de la ventana emergente -->
-		<div class="overlay-container">
-			<div class="window-container zoomin">
-				<span class="close"><img src="img\cerrar.png" width=30 height=30></span>
+		<div class="overlay-container11">
+			<div class="window-container11 zoomin11">
+				<span class="close11"><img src="img\cerrar.png" width=30 height=30></span>
 				<td>
 							<table width="100% ;left:35%; top:400%" >
 								<tr>
@@ -183,8 +187,36 @@
 						</td>
 			</div>
 		</div>
+
+
+		<button type="submit" class="button10 button-block" data-type="zoomin10" hidden></button>
+    <div class="overlay-container10">
+      <div class="window-container10 zoomin10">
+        <span class="close10"><img src="img\cerrar.png" width=30 height=30></span>
+        <td>
+              <table width="top:400%" >
+                <tr>
+                  <th>
+                  <table id="reg_exito" height="100%">
+                    <tr height="60px">
+                      <td>
+                        <img id="result_seguir" src="img/exito.png"/>
+                      </td>
+                      <td>
+                        <p id="resultado_seguir"></p>
+                      </td>
+                    </tr>
+                  </table>
+                  </th>
+                </tr>
+
+              </table>
+
+            </td>
+      </div>
+    </div>
+
     <script>!window.jQuery && document.write(unescape('%3Cscript src="js/jquery-1.7.1.min.js"%3E%3C/script%3E'))</script>
-    <script type="text/javascript" src="js/demo.js"></script>
 
 </body>
 
