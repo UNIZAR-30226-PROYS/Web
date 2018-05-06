@@ -3,7 +3,7 @@
     margin-bottom: 20px;
 }
 
-.window-container1 {
+.window-container10 {
   margin: 13em auto !important;
 }
 
@@ -39,9 +39,6 @@
     right:20%;
 }
 
-.informacion form{
-  margin-bottom: 20px;
-}
 
 button:hover {
     background-color: green;
@@ -58,10 +55,9 @@ button:hover {
 }
 
 .simb_repr_play input {
-  position: absolute;
+  margin-left: 40px;
   width:  45px;
   height: 45px;
-  margin-left: 65%;
   margin-top: 3%;
   border: none;
   padding: 0;
@@ -69,10 +65,9 @@ button:hover {
 }
 
 .simb_repr_fav input {
-  position: absolute;
+  margin-left: 100px;
   width:  45px;
   height: 45px;
-  margin-left: 75%;
   margin-top: 3%;
   border: none;
   padding: 0;
@@ -80,10 +75,9 @@ button:hover {
 }
 
 .simb_repr_lista input {
-  position: absolute;
+  margin-left: 100px;
   width:  45px;
   height: 45px;
-  margin-left: 85%;
   margin-top: 3%;
   border: none;
   padding: 0;
@@ -95,9 +89,8 @@ button:hover {
   font-size: 100%;
   margin-top: 5%;
   font-weight: normal;
+  width: 200px;
 }
-
-
 
 
 .cancioninf ul{
@@ -130,6 +123,7 @@ button:hover {
       padding-top: 0%;
       font-size: 22px;
       margin-top: 0;
+      width:450px;
   }
 
   .imagen img {
@@ -146,17 +140,14 @@ button:hover {
   }
 
   .simb_repr_play input {
-    margin-left: 35%;
     margin-top: 0%;
   }
 
   .simb_repr_fav input {
-    margin-left: 45%;
     margin-top: 0%;
   }
 
   .simb_repr_lista input {
-    margin-left: 55%;
     margin-top: 0%;
   }
 

@@ -39,14 +39,23 @@ BUSQUEDA_ARTISTAS:
 BUSQUEDA_LISTAS:
   -Funcion reproducir lista
 
-  >>>>>>>>>>>>>>>>>>>
-
 BUSQUEDA:(canciones)
-  -Poner formato para mostrar canciones correctamente (con URL imagen, nombre y artista)
-  -Implementar funciones cancion(repr, fav y añadir a lista)
-  -(hecho)Al pulsar añadir a lista salen las listas(IMPORTANTE*** CAMBIAR WINDOW POR FUNCTION QUE SE LLAME AL MOSTRAR LAS CANCIONES(canciones_servlet.js una vez que mostrar las canciones este hecho))
-  -Para añadir a lista, en form de lista hay que poner los parametros de la cancion elegida (nombre,artista,...) usar diversos input hidden y poner valor
+  -Hacer funcion favoritos
+  -Cambiar imagen canciones dinamicamente
 
+ESTILO:
+  -Hacer funcion favoritos
+  -Cambiar imagen canciones dinamicamente
+  -Depurar cuando haya mas canciones (que funcione limitar resultados por paginas)
+
+
+CANCION:(FALTAAAAAAAAAAAAAAAAAAAAAAAA)
+  -Mostrar datos de la cancion
+  -Reproducir cancion
+  -Implementar funciones del reproductor
+  -(hecho FALTA que al pulsar comparta la cancion, tras añadir los campos de la cancion como hidden)Mostrar amigos al pulsar compartir con amigos
+
+  >>>>>>>>>>>>>>>>>>>
 
 Perfil:
   -(hecho)Cerrar sesion
@@ -93,11 +102,6 @@ TOP SEMANAL:
   -Mostrar canciones
   -Mostrar al menos nombre, imagen y artista para cada cancion
 
-ESTILO:
-  -(hecho)Motrar nombre del estilo
-  -Mostrar canciones
-
-
 SUBIR_MUSICA:
   -(hecho)Permitir envio de ficheros de musica
 
@@ -107,12 +111,6 @@ FAVORITOS:
 
 RECIENTES:
   -Mostrar ultimas actividades(incluidas las recomendaciones recibidas de amigos en cancion->share->seleccionar amigo)
-
-CANCION:
-  -Mostrar datos de la cancion
-  -Reproducir cancion
-  -Implementar funciones del reproductor
-  -(hecho FALTA que al pulsar comparta la cancion, tras añadir los campos de la cancion como hidden)Mostrar amigos al pulsar compartir con amigos
 
 REPRODUCTOR(WRAPPER):
   EN LISTA FUNCIONA(excepto anterior siguiente)--> USAR COMO REFERENCIA junto a la funcion playMusic
