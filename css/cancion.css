@@ -1,3 +1,12 @@
+.nombreamigo {
+    background: none;
+    border: none;
+}
+
+.nombreamigo:focus {
+    outline: none;
+}
+
 body {
   background: #45B39D;
 }
@@ -111,6 +120,38 @@ body {
     padding: 1%;
     bottom:0%;
     right:20%;
+}
+
+.simb_repr_fav input {
+  position: absolute;
+  width:  35px;
+  height: 35px;
+  border: none;
+  padding: 0;
+  background: none;
+  padding: 0;
+  background: none;
+  max-width: none;
+}
+
+
+#simbolo_repr_lista{
+  left: 55%;
+  position: absolute;
+  top: 0;
+}
+
+.simb_repr_lista input {
+  position: absolute;
+  width:  35px;
+  height: 32px;
+  border: none;
+  padding: 0;
+  background: none;
+  border: none;
+  padding: 0;
+  background: none;
+  max-width: none;
 }
 
 #share-buttons {
@@ -243,7 +284,7 @@ button:hover {
 #nombrecancion {
     position: relative;
     top: 10px;
-    left: 22%;
+    left: 12%;
     color: white;
     font-size: 50px;
     width: 50%;
@@ -268,7 +309,7 @@ button:hover {
 #autor1 {
     position: relative;
     top: 10px;
-    left: 26%;
+    left: 15%;
     color: white;
     font-size: 30px;
     width: 50%;

@@ -61,10 +61,25 @@ $(document).ready(function() {
          var canciones = obj.canciones;
 
          for(i=0;i<canciones.length;i++){
-           var cancion=canciones[i].tituloCancion;
-           //PONER RUTA DE LA IMAGEN
-           var image="img/edsheeranperfect.png";
-           var large='<li id="barraopciones"><div class="cancioninf"><a href="cancion.html'+"?cancion="+cancion+'" id="enlacecancion"><div class="imagen"><img src="'+image+'" alt="Imagen cancion"></div><div class="nombrecancion">'+cancion+'</div></a></div></li>';
+           var n_cancion=canciones[i].tituloCancion;
+           var n_artista=canciones[i].nombreArtista;
+           var n_genero=canciones[i].genero;
+           var n_album=canciones[i].nombreAlbum;
+           //Cambiar ruta por la ruta relativa
+           var ruta_aux=canciones[i].ruta;
+           var index = ruta_aux.indexOf("/ps");
+           var ruta = ".."+ruta_aux.substr(index);
+
+           var n_uploader=canciones[i].uploader;
+           //CAMBIAR IMAGEN
+           var image="img/edsheeranperfect.jpg";
+           if(n_genero==null){
+             n_genero= "";
+           }
+           if(n_album==null){
+             n_album= "";
+           }
+           var large='<li id="barraopciones"><div class="cancioninf"><a href="cancion.html?nombre='+n_cancion+'&artista='+n_artista+'&album='+n_album+'&genero='+n_genero+'&uploader='+n_uploader+'&ruta='+ruta+'" id="enlacecancion"><div class="imagen"><img src="'+image+'" alt="Imagen cancion"></div><div class="nombrecancion">'+cancion+'</div></a></div></li>';
            $("#lista_top_semanal").append(large);
          }
        }

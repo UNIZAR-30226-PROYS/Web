@@ -32,10 +32,14 @@
 
     <link rel="stylesheet" href="css/cancion.css" type='text/css' />
 
-    <link rel="stylesheet" href="css/demo.css">
     <link rel="stylesheet" href="css/ventanaamigos.css">
     <script src="js/changeImage.js"></script>
     <script src="js/cookies.js"></script>
+    <link rel="stylesheet" href="css/result_anadir_lista.css">
+    <script type="text/javascript" src="js/result_anadir_lista.js"></script>
+    <link rel="stylesheet" href="css/ventana_mostrar_listas.css">
+    <script type="text/javascript" src="js/ventana_mostrar_listas.js"></script>
+    <script src="js/canciones_servlet.js" charset="UTF-8"></script>
     <script src="js/busqueda_cancion_servlet.js" charset="UTF-8"></script>
     <script src="js/cancion_servlet.js" charset="UTF-8"></script>
     <script src="js/comprobar_sesion_iniciada.js"></script>
@@ -94,16 +98,16 @@
             <a href="javascript:history.back(-1);" title="Ir a la página anterior"><img src="img/retorno.png" id="retorno" alt="Volver pagina anterior"/></a>
 
             <div id="cancion">
-              <img src="img/edsheeranperfect.jpg" alt="menu">
+              <img src="img/edsheeranperfect.jpg" alt="menu" id="imagen_cancion_wrapper">
               <div id="nombrecancion">Perfect</div>
-            <a href="artista.html" id="enlacecancion"><div id="autor1">Ed Sheeran</div></a>
+            <a href="artista.html" id="enlacecancion_wrapper"><div id="autor1">Ed Sheeran</div></a>
             </div>
               <ul class="sidebar-nav" id="repr">
                   <li>
                     <div class="col-md-4 player" id="reproductor">
                       <div class="audio-player">
                         <audio id="audio-player"  controls="controls">
-                        <source id="source" src="media/Blue Browne.mp3" type="audio/mpeg"></source>
+      									<source id="source" src="../ps/music/Fidel/Blue Browne.mp3" type="audio/mpeg"></source>
                         </div>
                         <!---->
                         <script type="text/javascript">
@@ -119,49 +123,51 @@
                          });
                         </script>
                         <!--audio-->
-                        <script type="text/javascript">
-                          function reloadMusic(){
-                              var src=document.getElementById("source").src;
-                                audio_core=$('#audio-player').attr('src', src)[0]
-                              audio_core.play() // <- play the song!!!
-                          }
-                        </script>
 
                           <script type="text/javascript" src="js/mediaelement-and-player.min.js"></script>
                           <!---->
 
                         </div>
                         <!--//-->
-                        <form name="accionCancion" method="post" action="#">
-                          <div id="opcionesrepr">
-                            <ul class="next-top">
-                              <li class="oprep"><a class="share" href="#"> <input type="image" src="img/share.png" width="30" height="30" alt="Compartir canción" title="Compartir canción" onclick="mostrarMenuShare(); return false"/></a></li>
-                              <li class="oprep"><a class="ar" href="#"> <input type="image" src="img/atras.png" width="30" height="30" alt="Canción anterior" title="Canción anterior"/></a></li>
-                              <li class="oprep"><a class="rel" href="#"> <input type="image" src="img/reload1.png" width="30" height="30" alt="Reiniciar canción" title="Reiniciar canción" onClick="reloadMusic();return false;"/></a></li>
-                              <li class="oprep"><a class="ar2" href="#"><input type="image" src="img/siguiente.png" width="30" height="30" alt="Siguiente canción" title="Siguiente canción"/></a></li>
-                              <li class="oprep"><a class="fav" href="#"><input type="image" src="img/favoritos.png" width="30" height="30" alt="Añadir a favoritos" title="Añadir/quitar favoritos" onclick="changeImage(this)"/></a></li>
-                              <li class="oprep"><a class="lis" href="#"><input type="image" src="img/listas_add.png" width="30" height="30" alt="Añadir a lista" class="button" title="Añadir a lista" onclick="return false" data-type="zoomin"/></a></li>
+                        <div id="opcionesrepr">
+                          <ul class="next-top">
+                            <li class="oprep"><a class="share" href="#"> <input type="image" src="img/share.png" width="30" height="30" alt="Compartir canción" title="Compartir canción" onclick="mostrarMenuShare(); return false"/></a></li>
+                            <li class="oprep"><a class="ar" href="#"> <input type="image" src="img/atras.png" width="30" height="30" alt="Canción anterior" title="Canción anterior"/></a></li>
+                            <li class="oprep"><a class="rel" href="#"> <input type="image" src="img/reload1.png" width="30" height="30" alt="Reiniciar canción" title="Reiniciar canción" onClick="reloadMusic();return false;"/></a></li>
+                            <li class="oprep"><a class="ar2" href="#"><input type="image" src="img/siguiente.png" width="30" height="30" alt="Siguiente canción" title="Siguiente canción"/></a></li>
+                            <li class="oprep"><a class="fav" href="#"><input type="image" src="img/favoritos.png" width="30" height="30" alt="Añadir a favoritos" title="Añadir/quitar favoritos" onclick="changeImage(this)"/></a></li>
 
-                            </ul>
-                          </div>
-                        </form>
+                            <!-- Mostrar listas -->
+                            <form class="form_mostrar_listas_c" method="post" action="/ps/MostrarListasReproduccion">
+                              <li id="barraopciones">
+                                <div class="simb_repr_lista">
+                                  <div class="simb_repr_lista" id="simbolo_repr_lista">
+                                    <input type="hidden" id="botonlista_user" name="user" value="">
+                                    <input type="hidden" id="botonlista_cancion" name="tituloCancion" value="'+n_cancion+'">
+                                    <input type="hidden" id="botonlista_artista" name="nombreArtista" value="'+n_artista+'">
+                                    <input type="hidden" id="botonlista_album" name="nombreAlbum" value="'+n_album+'">
+                                    <input type="image" src="img/listas_add.png" alt="Añadir a lista" class="boton_mostrar_listas" title="Añadir a lista">
+                                  </div>
+                                </div>
+                              </li>
+                            </form>
+
+                          </ul>
+                        </div>
                   </li>
               </ul>
           </div>
 
           <div id="share-buttons" style="z-index:-100">
               <!-- Facebook -->
-              <a href="http://www.facebook.com/sharer.php?u=http://urldelapagina.com" target="_blank">
+              <a id="compartir_facebook" href="http://www.facebook.com/sharer.php?u=http://urldelapagina.com" target="_blank">
                   <img src="img/facebook.png" />
               </a>
 
 
               <!-- Twitter -->
-              <a id="prueba" href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="Canción Perfect de Ed Sheeran" data-url="http://www.urldelacancion.com" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-              <!--<a href="https://twitter.com/share?url=https://simplesharebuttons.com&amp;text=Simple%20Share%20Buttons&amp;hashtags=simplesharebuttons" target="_blank">
-                  <img src="img/twitter.png" alt="Twitter" title"Compartir en Twitter"/>
-              </a>
--->
+              <a id="compartir_twitter" href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="Canción Perfect de Ed Sheeran" data-url="http://www.urldelacancion.com" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
               <form id="form_mostrar_amigos" method="post" action="/ps/VerSeguidos">
                   <input type="image" src="img/share_friends.png" alt="Amigos" title"Compartir con amigo"/>
               </form>
@@ -181,26 +187,44 @@
     });
     </script>
 
-    <!-- contenido de la ventana emergente -->
-    <div class="overlay-container">
-      <div class="window-container zoomin">
-        <span class="close"><img src="img\cerrar.png" width=30 height=30></span>
+    <input type="hidden" class="button11" data-type="zoomin11"/>
+		<!-- contenido de la ventana emergente -->
+		<div class="overlay-container11">
+			<div class="window-container11 zoomin11">
+				<span class="close11"><img src="img\cerrar.png" width=30 height=30></span>
+				<td>
+							<table width="100% ;left:35%; top:400%" >
+								<tr>
+									<th class="ventana_listas">
+
+									</th>
+								</tr>
+
+							</table>
+
+						</td>
+			</div>
+		</div>
+
+
+		<button type="submit" class="button10 button-block" data-type="zoomin10" hidden></button>
+    <div class="overlay-container10">
+      <div class="window-container10 zoomin10">
+        <span class="close10"><img src="img\cerrar.png" width=30 height=30></span>
         <td>
-              <table width="100% ;left:35%; top:400%" >
+              <table width="top:400%" >
                 <tr>
                   <th>
-                  <form action="#" method="post">
-                    <table height="100%">
-                      <tr ><a href="#" id="enlacecancion">
-                        <div class="nombrelista">
-                          Lista1
-                        </div></a></tr>
-                      <tr><a href="#" id="enlacecancion">
-                        <div class="nombrelista">
-                          Lista2
-                        </div></a></tr>
-                    </table>
-                  </form>
+                  <table id="reg_exito" height="100%">
+                    <tr height="60px">
+                      <td>
+                        <img id="result_seguir" src="img/exito.png"/>
+                      </td>
+                      <td>
+                        <p id="resultado_seguir"></p>
+                      </td>
+                    </tr>
+                  </table>
                   </th>
                 </tr>
 
@@ -210,7 +234,6 @@
       </div>
     </div>
     <script>!window.jQuery && document.write(unescape('%3Cscript src="js/jquery-1.7.1.min.js"%3E%3C/script%3E'))</script>
-    <script type="text/javascript" src="js/demo.js"></script>
 
 
     <!-- contenido de la ventana amigos -->

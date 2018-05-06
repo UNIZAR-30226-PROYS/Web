@@ -43,19 +43,28 @@ BUSQUEDA:(canciones)
   -Hacer funcion favoritos
   -Cambiar imagen canciones dinamicamente
 
+CANCION:
+  -Implementar funciones del reproductor(anterior y siguiente)
+  -Hacer favoritos
+  -(hecho)Compartir(en facebook da error porque no acepta la URL (que es lo que se comparte) como valida por temas de seguridad)
+  -Depurar compartir amigos cuando vaya en servidor
+  -Cambiar imagenes al mostrar amigos
+
 ESTILO:
   -Hacer funcion favoritos
   -Cambiar imagen canciones dinamicamente
   -Depurar cuando haya mas canciones (que funcione limitar resultados por paginas)
 
+FAVORITOS:
+  -(hecho)Mostrar canciones->falta depurar cuando se puedan añadir/quitar canciones de favoritos
+  -Permitir que en todas las canciones se pueda añadir/quitar de favorito(Añadir/quitar cancion a lista)
 
-CANCION:(FALTAAAAAAAAAAAAAAAAAAAAAAAA)
-  -Mostrar datos de la cancion
-  -Reproducir cancion
-  -Implementar funciones del reproductor
-  -(hecho FALTA que al pulsar comparta la cancion, tras añadir los campos de la cancion como hidden)Mostrar amigos al pulsar compartir con amigos
+HOME:
+  -Mostrar top topsemanal(hecho el js, falta depurar una vez que haya canciones)
+  -Cambiar imagenes canciones
+  -(hecho)Mostrar estilos
 
-  >>>>>>>>>>>>>>>>>>>
+    >>>>>>>>>>>>>>>>>>>
 
 Perfil:
   -(hecho)Cerrar sesion
@@ -94,20 +103,12 @@ LISTA:
   -(hecho)Mostrar canciones con opcion de reproducir(siempre) y de eliminar(solo si la lista es del usuario)
   -(hecho)Permitir busqueda listas
 
-HOME:
-  -Mostrar top topsemanal(hecho el js, falta depurar una vez que haya canciones)
-  -(hecho)Mostrar estilos
-
 TOP SEMANAL:
   -Mostrar canciones
   -Mostrar al menos nombre, imagen y artista para cada cancion
 
 SUBIR_MUSICA:
   -(hecho)Permitir envio de ficheros de musica
-
-FAVORITOS:
-  -Mostrar canciones
-  -Permitir que en todas las canciones se pueda añadir/quitar de favorito(Añadir/quitar cancion a lista)
 
 RECIENTES:
   -Mostrar ultimas actividades(incluidas las recomendaciones recibidas de amigos en cancion->share->seleccionar amigo)

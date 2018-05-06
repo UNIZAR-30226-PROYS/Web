@@ -15,6 +15,7 @@ $(document).ready(function() {
 
 	$('.close0').click(function() {
 		$('.overlay-container0').fadeOut().end().find('.window-container0').removeClass('window-container0-visible');
+		$(".form_compartir_cancion").remove();
 	});
 
 });
