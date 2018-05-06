@@ -26,8 +26,13 @@
 
     <!-- Custom styles for this template -->
     <link href="css/simple-sidebar.css" rel="stylesheet">
+		<link rel="stylesheet" href="css/result_anadir_lista.css">
+	  <script type="text/javascript" src="js/result_anadir_lista.js"></script>
+	  <link rel="stylesheet" href="css/ventana_mostrar_listas.css">
+	  <script type="text/javascript" src="js/ventana_mostrar_listas.js"></script>
+	  <script src="js/recientes_servlet.js" charset="UTF-8"></script>
+	  <script src="js/canciones_servlet.js" charset="UTF-8"></script>
 
-    <link rel="stylesheet" href="css/demo.css">
 		<script src="js/cookies.js"></script>
 		<script src="js/busqueda_cancion_servlet.js" charset="UTF-8"></script>
 		<script src="js/comprobar_sesion_iniciada.js"></script>
@@ -53,62 +58,40 @@
     </div>
 
 
-        <!-- Sidebar -->
-        <div id="sidebar-wrapper">
-					<div id="cancion">
-            <a href="cancion.html" id="enlacecancion">
-              <img src="img/edsheeranperfect.jpg" alt="menu">
-            </a>
-            <a href="artista.html" id="enlacecancion">
-              <div id="autor">Ed Sheeran</div>
-            </a>
-          </div>
-            <ul class="sidebar-nav" id="repr">
-                <li>
-                  <div class="col-md-4 player" id="reproductor">
-                    <div class="audio-player">
-                      <audio id="audio-player"  controls="controls">
-                        <source id="source" src="media/Blue Browne.mp3" type="audio/mpeg"></source>
-                        </div>
-                        <!---->
-                        <script type="text/javascript">
-                          $(function(){
-                            $('#audio-player').mediaelementplayer({
-                            alwaysShowControls: true,
-                            features: ['playpause','progress','volume','duration'],
-                            audioVolume: 'horizontal',
-                            iPadUseNativeControls: true,
-                            iPhoneUseNativeControls: true,
-                            AndroidUseNativeControls: true
-                          });
-                         });
-                        </script>
-                        <!--audio-->
-                        <script type="text/javascript">
-                          function reloadMusic(){
-                              var src=document.getElementById("source").src;
-                                audio_core=$('#audio-player').attr('src', src)[0]
-                              audio_core.play() // <- play the song!!!
-                          }
-                        </script>
+		<!-- Sidebar -->
+    <div id="sidebar-wrapper">
+      <div id="cancion">
+        <a href="cancion.html" id="enlacecancion_wrapper">
+          <img src="img/edsheeranperfect.jpg" alt="menu" id="imagen_cancion_wrapper">
+          <div id="cancion_wrapper">Ed Sheeran</div>
+        </a>
+      </div>
+        <ul class="sidebar-nav" id="repr">
+            <li>
+              <div class="col-md-4 player" id="reproductor">
+                <div class="audio-player">
+                  <audio id="audio-player"  controls="controls">
+                    <source id="source" src="../ps/music/Fidel/Blue Browne.mp3" type="audio/mpeg"></source>
+                    </div>
+                    <!--audio-->
 
-                          <link rel="stylesheet" type="text/css" media="all" href="css/audio.css">
-                          <script type="text/javascript" src="js/mediaelement-and-player.min.js"></script>
-                          <!---->
+                      <link rel="stylesheet" type="text/css" media="all" href="css/audio.css">
+                      <script type="text/javascript" src="js/mediaelement-and-player.min.js"></script>
+                      <!---->
 
-                        </div>
-                        <!--//-->
-                        <div id="opcionesrepr">
-                          <ul class="next-top">
-                            <li class="oprep"><a class="ar" href="#"> <img src="img/arrow.png" width="30" height="30" alt=""/></a></li>
-                            <li class="oprep"><a class="rel" href="#"> <input type="image" src="img/reload.png" width="30" height="30" alt="Reiniciar canción" title="Reiniciar canción" onClick="reloadMusic();return false;"/></a></li>
-                            <li class="oprep"><a class="ar2" href="#"><img src="img/arrow2.png" width="30" height="30" alt=""/></a></li>
-                          </ul>
-                        </div>
-                </li>
-            </ul>
-        </div>
-        <!-- /#sidebar-wrapper -->
+                    </div>
+                    <!--//-->
+                    <div id="opcionesrepr">
+                      <ul class="next-top">
+                        <li class="oprep"><a class="ar" href="#"> <img src="img/arrow.png" width="30" height="30" alt=""/></a></li>
+                        <li class="oprep"><a class="rel" href="#"> <input type="image" src="img/reload.png" width="30" height="30" alt="Reiniciar canción" title="Reiniciar canción" onClick="reloadMusic();return false;"/></a></li>
+                        <li class="oprep"><a class="ar2" href="#"><img src="img/arrow2.png" width="30" height="30" alt=""/></a></li>
+                      </ul>
+                    </div>
+            </li>
+        </ul>
+    </div>
+    <!-- /#sidebar-wrapper -->
 
         <!-- Page Content -->
         <div id="header-section">
@@ -134,126 +117,22 @@
 				<div class="menurecientes">
 
 			  <!-- LAS CANCIONES -->
-				<form name="accionCancion" method="post" action="#">
-					<div class="cancioninf">
-					  <ul>
-						<li id="barraopciones"><a href="cancion.html" id="enlacecancion">
-									<div class="imagen">
-										<img src="img/edsheeranperfect.jpg" alt="Imagen cancion">
-									</div>
-						</a></li>
-						<li id="barraopciones">
-							<div class="nombre_autor_cancion">
-								<a href="cancion.html" id="enlacecancion"><div class="nombrecancion">
-									Perfect
-								</div></a>
-								<a href="artista.html" id="enlacecancion">
-									<div class="nombreautor">
-										Ed Sheeran
-									</div>
-								</a>
-								<a href="estilo.html" id="enlacecancion">
-									<div class="nombreestilo">
-										pop
-									</div>
-								</a>
-							</div>
-						</li>
-						<li id="barraopciones"><div class="simb_repr_play">
-							<input type="image" src="img/play.png" alt="Reproducir cancion" title="Reproducir canción" onClick="playMusic('media/Blue Browne.mp3');return false;">
-						</div></li>
-						<li id="barraopciones"><div class="simb_repr_fav">
-							<input type="image" src="img/favoritos.png" alt="Añadir a favoritos" title="Añadir/quitar favoritos" onclick="changeImage(this)">
-						</div></li>
-						<li id="barraopciones"><div class="simb_repr_lista">
-							<input type="image" src="img/listas_add.png" alt="Añadir a lista" class="button" title="Añadir a lista" onclick="return false" data-type="zoomin">
-						</div></li>
-					  </ul>
-	    			</div>
-				</form>
-				<form name="accionCancion" method="post" action="#">
-					<div class="cancioninf">
-					  <ul>
-						<li id="barraopciones"><a href="cancion.html" id="enlacecancion">
-									<div class="imagen">
-										<img src="img/iggy.jpg" alt="Imagen cancion">
-									</div>
-						</a></li>
-						<li id="barraopciones">
-							<div class="nombre_autor_cancion">
-								<a href="cancion.html" id="enlacecancion"><div class="nombrecancion">
-									Black Windows
-								</div></a>
-								<a href="artista.html" id="enlacecancion">
-									<div class="nombreautor">
-										Iggy Azalea
-									</div>
-								</a>
-								<a href="estilo.html" id="enlacecancion">
-									<div class="nombreestilo">
-										pop
-									</div>
-								</a>
-							</div>
-						</li>
-						<li id="barraopciones"><div class="simb_repr_play">
-							<input type="image" src="img/play.png" alt="Reproducir cancion" title="Reproducir canción" onClick="playMusic('media/Blue Browne.mp3');return false;">
-						</div></li>
-						<li id="barraopciones"><div class="simb_repr_fav">
-							<input type="image" src="img/favoritos.png" alt="Añadir a favoritos" title="Añadir/quitar favoritos" onclick="changeImage(this)">
-						</div></li>
-						<li id="barraopciones"><div class="simb_repr_lista">
-							<input type="image" src="img/listas_add.png" alt="Añadir a lista" class="button" title="Añadir a lista" onclick="return false" data-type="zoomin">
-						</div></li>
-					  </ul>
-	    			</div>
-				</form>
-			</div>
+				</div>
 			<br>
 
 			<div id="tituloestilo"><h1>Recomendaciones</h1></div>
 			<div class="menuestilo">
-				<form name="accionCancion" method="post" action="#">
-					<div class="cancioninf">
-						<ul>
-						<li id="barraopciones"><a href="cancion.html" id="enlacecancion">
-									<div class="imagen">
-										<img src="img/iggy.jpg" alt="Imagen cancion">
-									</div>
-						</a></li>
-						<li id="barraopciones">
-							<div class="nombre_autor_cancion">
-								<a href="cancion.html" id="enlacecancion"><div class="nombrecancion">
-									Black Windows
-								</div></a>
-								<a href="artista.html" id="enlacecancion">
-									<div class="nombreautor">
-										Iggy Azalea
-									</div>
-								</a>
-								<a href="estilo.html" id="enlacecancion">
-									<div class="nombreestilo">
-										pop
-									</div>
-								</a>
-							</div>
-						</li>
-						<li id="barraopciones"><div class="simb_repr_play">
-							<input type="image" src="img/play.png" alt="Reproducir cancion" title="Reproducir canción" onClick="playMusic('media/Blue Browne.mp3');return false;">
-						</div></li>
-						<li id="barraopciones"><div class="simb_repr_fav">
-							<input type="image" src="img/favoritos.png" alt="Añadir a favoritos" title="Añadir/quitar favoritos" onclick="changeImage(this)">
-						</div></li>
-						<li id="barraopciones"><div class="simb_repr_lista">
-							<input type="image" src="img/listas_add.png" alt="Añadir a lista" class="button" title="Añadir a lista" onclick="return false" data-type="zoomin">
-						</div></li>
-						</ul>
-						</div>
-				</form>
+
 			</div>
 
 
+			<form id="form_mostrar_recientes" method="post" action="/ps/EscuchadasRecientemente">
+				<input type="submit" hidden>
+			</form>
 
+			<form id="form_mostrar_compartidas" method="post" action="/ps/VerCompartidas">
+				<input type="submit" hidden>
+			</form>
 
 		</div>
 
@@ -268,33 +147,44 @@
     });
     </script>
 
-    <script type="text/javascript">
-      function playMusic(src){
-            audio_core=$('#audio-player').attr('src', src)[0]
-          audio_core.play() // <- play the song!!!
-      }
-    </script>
-
+		<input type="hidden" class="button11" data-type="zoomin11"/>
     <!-- contenido de la ventana emergente -->
-    <div class="overlay-container">
-      <div class="window-container zoomin">
-				<span class="close"><img src="img\cerrar.png" width=30 height=30></span>
+    <div class="overlay-container11">
+      <div class="window-container11 zoomin11">
+        <span class="close11"><img src="img\cerrar.png" width=30 height=30></span>
         <td>
               <table width="100% ;left:35%; top:400%" >
                 <tr>
+                  <th class="ventana_listas">
+
+                  </th>
+                </tr>
+
+              </table>
+
+            </td>
+      </div>
+    </div>
+
+
+    <button type="submit" class="button10 button-block" data-type="zoomin10" hidden></button>
+    <div class="overlay-container10">
+      <div class="window-container10 zoomin10">
+        <span class="close10"><img src="img\cerrar.png" width=30 height=30></span>
+        <td>
+              <table width="top:400%" >
+                <tr>
                   <th>
-                  <form action="#" method="post">
-                    <table height="100%">
-                      <tr ><a href="#" id="enlacecancion">
-                        <div class="nombrelista">
-                          Lista1
-                        </div></a></tr>
-                      <tr><a href="#" id="enlacecancion">
-                        <div class="nombrelista">
-                          Lista2
-                        </div></a></tr>
-                    </table>
-                  </form>
+                  <table id="reg_exito" height="100%">
+                    <tr height="60px">
+                      <td>
+                        <img id="result_seguir" src="img/exito.png"/>
+                      </td>
+                      <td>
+                        <p id="resultado_seguir"></p>
+                      </td>
+                    </tr>
+                  </table>
                   </th>
                 </tr>
 
@@ -304,7 +194,6 @@
       </div>
     </div>
     <script>!window.jQuery && document.write(unescape('%3Cscript src="js/jquery-1.7.1.min.js"%3E%3C/script%3E'))</script>
-    <script type="text/javascript" src="js/demo.js"></script>
 
 </body>
 

@@ -1,12 +1,19 @@
-#titulopagina {
-    text-align: center;
-    margin-right: 15%;
-}
-
 #tituloestilo {
   text-align: center;
   margin-right: 13%;
   color: #333;
+}
+#titulopagina {
+  text-align: center;
+  margin-right: 15%;
+}
+.cancioninf {
+    margin-top: 0%;
+    margin-bottom: 20px;
+}
+
+.window-container10 {
+  margin: 13em auto !important;
 }
 
 .informacion input {
@@ -20,6 +27,7 @@
   box-sizing: border-box;
   font-size: 14px;
 }
+
   .informacion button {
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
@@ -40,9 +48,6 @@
     right:20%;
 }
 
-.informacion form{
-  margin-bottom: 20px;
-}
 
 button:hover {
     background-color: green;
@@ -59,10 +64,9 @@ button:hover {
 }
 
 .simb_repr_play input {
-  position: absolute;
+  margin-left: 40px;
   width:  45px;
   height: 45px;
-  margin-left: 65%;
   margin-top: 3%;
   border: none;
   padding: 0;
@@ -70,10 +74,9 @@ button:hover {
 }
 
 .simb_repr_fav input {
-  position: absolute;
+  margin-left: 100px;
   width:  45px;
   height: 45px;
-  margin-left: 75%;
   margin-top: 3%;
   border: none;
   padding: 0;
@@ -81,10 +84,9 @@ button:hover {
 }
 
 .simb_repr_lista input {
-  position: absolute;
+  margin-left: 100px;
   width:  45px;
   height: 45px;
-  margin-left: 85%;
   margin-top: 3%;
   border: none;
   padding: 0;
@@ -92,9 +94,14 @@ button:hover {
 }
 
 .nombrecancion {
+  margin-left: 22%;
   font-size: 100%;
+  margin-top: 5%;
   font-weight: normal;
+  width: 200px;
 }
+
+
 .cancioninf ul{
   list-style-type: none;
   padding-left: 0;
@@ -102,18 +109,11 @@ button:hover {
 }
 
 .nombre_autor_cancion{
-  margin-left: 5%;
+  /*margin-left: 5%;*/
   position: absolute;
 }
 
 .nombreautor {
-  margin-left: 50px;
-  font-size: 90%;
-  margin-top: 0%;
-  font-weight: normal;
-}
-
-.nombreestilo {
   margin-left: 50px;
   font-size: 90%;
   margin-top: 0%;
@@ -127,11 +127,12 @@ button:hover {
 }
 
 @media(min-width:768px) {
-  ..nombrecancion {
-    margin-left: 8%;
-    padding-top:0%;
-    font-size: 30px;
-    margin-top: 1%;
+  .nombrecancion {
+      margin-left: 5%;
+      padding-top: 0%;
+      font-size: 22px;
+      margin-top: 0;
+      width:450px;
   }
 
   .imagen img {
@@ -141,32 +142,24 @@ button:hover {
   }
 
   .nombreautor {
-    margin-left: 40px;
+    margin-left: 5%;
     padding-top:0%;
-    font-size: 20px;
+    font-size: 18px;
     margin-top: 0%;
   }
 
   .simb_repr_play input {
-    margin-left: 35%;
-    margin-top: 0.5%;
+    margin-top: 0%;
   }
 
   .simb_repr_fav input {
-    margin-left: 45%;
-    margin-top: 0.5%;
+    margin-top: 0%;
   }
 
   .simb_repr_lista input {
-    margin-left: 55%;
-    margin-top: 0.5%;
-  }
-  .nombreestilo {
-    margin-left: 40px;
-    padding-top:0%;
-    font-size: 20px;
     margin-top: 0%;
   }
+
 }
 
 @media(max-width:767px) {
@@ -193,7 +186,7 @@ button:hover {
     margin-left: 40px !important;
     padding: 10px;
     font-size: 40px;
-  }
+}
 }
 
 @media(max-width:350px) {

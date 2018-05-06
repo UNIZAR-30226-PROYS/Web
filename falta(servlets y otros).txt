@@ -1,1 +1,8 @@
-Al devolver cancion en una busqueda falta la clave de la ruta de la imagen
+-Imagenes de album, cancion, artista y usuarios: poner en carpetas dentro de ps y devolver ruta (o suponer en algunos casos como usuario que esta en "../ps/users/<nombreuser>" por ejemplo y por tanto con el nombre del usuario ya se sabe la ruta, y el resto al recibir JSON que sea una clave mas)
+
+-Por cada cancion devuelta una clave que indique si esta en favoritos(mostrar corazon rojo y si se pulsa se quita de favoritos) o no(corazon blanco si se pulsa se añade a favoritos)
+  ->Es la solucion que he pensado, sino no se como distinguir y mostrar al usuario que esa cancion ya la tiene como favorita o no
+
+-Funcionalidad compartir y ver compartidas no va
+
+-Funcionalidad ver ultimas canciones escuchadas no funciona

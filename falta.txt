@@ -2,9 +2,12 @@ Falta:
 General:
   -Cambiar form para que sea sobre SSL. Usar "https://yourdomain.com/servlet" en action(dejarlo hasta que todo funcione y crear certificado en servidor)
 
-Poner una cancion a reproducir cuando entras en alguna pagina***
+--Poner una cancion a reproducir cuando entras en alguna pagina(por ejemplo una al principio y si pulsas otra se guarda en sessionStorage la ruta y al iniciar otra pagina que se cargue (por ejemplo en comprobar_sesion_iniciada funcion que llame a play(poner todos los datos para mostrar imagen, nombre ... y poder hacer enlace a cancion)))***
 
-PASAR RUTA A PAGINA CANCION PARA REPRODUCCION(EN TODOS LOS ENLACES A CANCION)
+--(servidor)Imagenes de album, cancion, artista y usuarios: poner en carpetas dentro de ps y devolver ruta (o suponer en algunos casos como usuario que esta en "../ps/users/<nombreuser>" y el resto al recibir JSON que sea una clave mas)
+--(servidor)Por cada cancion devuelta una clave que indique si esta en favoritos(mostrar corazon rojo y si se pulsa se quita de favoritos) o no(corazon blanco si se pulsa se añade a favoritos)
+--(servidor)Funcionalidad compartir y ver compartidas no va
+--(servidor)Funcionalidad ver ultimas canciones escuchadas no funciona
 
 (por orden alfabetico)
 ALBUM:
@@ -64,59 +67,36 @@ HOME:
   -Cambiar imagenes canciones
   -(hecho)Mostrar estilos
 
-    >>>>>>>>>>>>>>>>>>>
-
-Perfil:
-  -(hecho)Cerrar sesion
-  -(hecho)Cambiar nombre
-  -(hecho)Cambiar contraseña
-  -(hecho)Cambiar foto(solo acepta jpg y mirando en el directorio de la máquina (apache/images/user.jpg) se ve que esta)
-  -(hecho)Eliminar cuenta
-  -(hecho)Mostrar nombre
-  -Mostrar foto al cargar la pagina
-
-
-USUARIOS: (hecho)muestra 4 por pagina con opcion de mas y funcion de seguir usuario
-  -(hecho)Borrar el propio usuario para que no salga o desde el servidor(de momento se ha borrado para que no salga en la web)
-  -Que en servidor se envien tambien la URL de las imagenes de los usuarios y ponerla en la pagina
-
-USUARIO:
-  -(hecho)Ver listas de usuario(informa en caso de no seguir al usuario que no las puede ver)
-  -(hecho)Busqueda de usuarios
-  -(hecho)Añadir amigo
-  -(hecho)Si es el propio usuario, deja verlo pero no sale opcion de añadir amigo
-  -Falta ver la imagen (usar otro form para solicitar al servidor la ruta?)
+LISTA:
+  -Añadir opcion reproducir lista(con varias opciones:en orden, aleatorio o en bucle)
 
 LISTAS:
-  -(hecho)Crear lista. Informa de ello y recarga la pagina
-  -(hecho)Muestra las listas del usuario
-  -(hecho)Borrar lista
   -Reproducir lista(con varias opciones:en orden, aleatorio o en bucle)
-  -(hecho)Permitir busqueda de listas
 
-LISTA:
-  -(hecho)En + quitar opcion de busqueda(ya esta en la barra superior)
-  -(hecho)Hacer opcion subir musica(ademas se añadira automaticamente a la lista)
-  -(hecho)Cambiar nombre lista
-  -(hecho)Permitir cambiar nombre de la lista solo si la lista es del usuario sino no debe salir esa opcion, p ej leer cookie login y comparar con la que devuelve el servlet(si no esta se debe añadir)
-  -Añadir opcion reproducir lista(con varias opciones:en orden, aleatorio o en bucle)
-  -(hecho)Mostrar canciones con opcion de reproducir(siempre) y de eliminar(solo si la lista es del usuario)
-  -(hecho)Permitir busqueda listas
+Perfil:
+  -(hecho)Cambiar contraseña
+  -(hecho)Cambiar foto(solo acepta jpg y mirando en el directorio de la máquina (apache/images/user.jpg) se ve que esta)
+  -Mostrar foto al cargar la pagina
 
-TOP SEMANAL:
-  -Mostrar canciones
-  -Mostrar al menos nombre, imagen y artista para cada cancion
+RECIENTES:
+  -Mostrar hasta ultimas 10 escuchadas(hecho falta depurar cuando vaya en server)
+  -Mostrar recomendaciones recibidas(hecho falta depurar y cambiar formato si se quiere(mostrar usuario que la recomienda?))
+  -Cambiar imagenes canciones
 
 SUBIR_MUSICA:
   -(hecho)Permitir envio de ficheros de musica
 
-RECIENTES:
-  -Mostrar ultimas actividades(incluidas las recomendaciones recibidas de amigos en cancion->share->seleccionar amigo)
+TOP SEMANAL:
+  -(hecho)Mostrar canciones-->depurar cuando server devuelva canciones(deberian ser unas 10)
+
+USUARIO:
+  -Poner la imagen del usuario
+
+USUARIOS:
+  -Que en servidor se envien tambien la URL de las imagenes de los usuarios y ponerla en la pagina
+
+
 
 REPRODUCTOR(WRAPPER):
-  EN LISTA FUNCIONA(excepto anterior siguiente)--> USAR COMO REFERENCIA junto a la funcion playMusic
-  -Reproductor en menu derecho:muestra nombre cancion e imagen y enlaza a la cancion
-  -(hecho)Reload
   -Poner una cancion base para todos al entrar en la web
-  -Modificar en todas las paginas
   -Funciones anterior y siguiente
