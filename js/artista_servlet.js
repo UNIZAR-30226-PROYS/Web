@@ -109,10 +109,25 @@ $(document).ready(function() {
            $("#separador_album_cancion").after(l);
 
            for(i=0;i<canciones.length;i++){
-             var cancion=canciones[i].tituloCancion;
-             //Cambiar cuando JSON devuelva imagen
+             var n_cancion=canciones[i].tituloCancion;
+             var n_artista=canciones[i].nombreArtista;
+             var n_genero=canciones[i].genero;
+             var n_album=canciones[i].nombreAlbum;
+             //Cambiar ruta por la ruta relativa
+             var ruta_aux=canciones[i].ruta;
+             var index = ruta_aux.indexOf("/ps");
+             var ruta = ".."+ruta_aux.substr(index);
+
+             var n_uploader=canciones[i].uploader;
+             //CAMBIAR IMAGEN
              var image="img/work_iggy.jpg";
-             var large='<li id="barraopciones"><div class="cancioninf"><a href="cancion.html'+"?cancion="+cancion+'" id="enlacecancion"><div class="imagen"><img src="'+image+'" alt="Imagen cancion"></div><div class="nombrecancion">'+cancion+'</div></a></div></li>';
+             if(n_genero==null){
+               n_genero= "";
+             }
+             if(n_album==null){
+               n_album= "";
+             }
+             var large='<li id="barraopciones"><div class="cancioninf"><a href="cancion.html?nombre='+n_cancion+'&artista='+n_artista+'&album='+n_album+'&genero='+n_genero+'&uploader='+n_uploader+'&ruta='+ruta+'" id="enlacecancion"><div class="imagen"><img src="'+image+'" alt="Imagen cancion"></div><div class="nombrecancion">'+n_cancion+'</div></a></div></li>';
              $("#lista_canciones_artista").append(large);
            }
          }

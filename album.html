@@ -72,27 +72,7 @@
 									<audio id="audio-player"  controls="controls">
 										<source id="source" src="../ps/music/Fidel/Blue Browne.mp3" type="audio/mpeg"></source>
 										</div>
-										<!---->
-										<script type="text/javascript">
-											$(function(){
-												$('#audio-player').mediaelementplayer({
-												alwaysShowControls: true,
-												features: ['playpause','progress','volume','duration'],
-												audioVolume: 'horizontal',
-												iPadUseNativeControls: true,
-												iPhoneUseNativeControls: true,
-												AndroidUseNativeControls: true
-											});
-										 });
-										</script>
 										<!--audio-->
-										<script type="text/javascript">
-											function reloadMusic(){
-													var src=document.getElementById("audio-player").src;
-														audio_core=$('#audio-player').attr('src', src)[0]
-													audio_core.play() // <- play the song!!!
-											}
-										</script>
 
 											<link rel="stylesheet" type="text/css" media="all" href="css/audio.css">
 											<script type="text/javascript" src="js/mediaelement-and-player.min.js"></script>
@@ -156,18 +136,6 @@
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
     });
-    </script>
-
-		<script type="text/javascript">
-      function playMusic(src,imagen,cancion,artista,album,uploader){
-            audio_core=$('#audio-player').attr('src', src)[0];
-            document.getElementById('imagen_cancion_wrapper').src=imagen;
-            document.getElementById('cancion_wrapper').innerHTML=cancion;
-            var enlace="cancion.html?nombre="+cancion+"&artista="+artista+"&album="+album+"&uploader="+uploader;
-            document.getElementById('enlacecancion_wrapper').href=enlace;
-
-          audio_core.play() // <- play the song!!!
-      }
     </script>
 
 		<!-- contenido de la ventana emergente -->

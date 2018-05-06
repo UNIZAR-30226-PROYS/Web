@@ -13,11 +13,19 @@ $(document).ready(function() {
   }
   $( "#texto_nombre_busqueda" ).append("\"" + c + "\"");
   var jsonData = JSON.parse(JSON.parse(sessionStorage.getItem("lista_listas")));
-
   var listas = jsonData.busquedaListas;
   if(listas != undefined){
     var inicio=(pag_actual-1)*elem_por_pagina;
     var sin_elementos = 1;
+    var no=0;
+    var si = 1;
+    var aux=[];
+    for(j in listas){
+      if(listas[j].nombre != "Favoritos"){
+        	aux.push(listas[j]);
+      }
+    }
+    listas=aux;
     for(i=inicio; i<(elem_por_pagina+inicio) && i<listas.length;i++){
       var lista=listas[i].nombre;
       var autor=listas[i].nombreUsuario;
@@ -32,7 +40,7 @@ $(document).ready(function() {
       $("#titulopagina").after("<h2 id=\"sin_resul\">No hay resultados.</h2>");
     }
     else if((elem_por_pagina+inicio)<listas.length){
-      var pagina_sig=pag_actual+1;
+      var pagina_sig=parseInt(pag_actual)+1;
       var boton_mas = '<br><br><form action="busqueda_listas.html"><button type="submit" id="boton_mostrar_mas" class="aumentar">Mostrar más</button><input type="hidden" name="busqueda_lista" value="'+c+'"/><input type="hidden" name="pagina" value="'+pagina_sig+'"/></form>';
       $(".informacion").append(boton_mas);
     }

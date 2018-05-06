@@ -132,10 +132,10 @@ $(document).ready(function() {
            if(n_album==null){
              n_album= "";
            }
-           var l1='<div class="cancioninf"><ul><li id="barraopciones"><a href="cancion.html?nombre='+n_cancion+'&artista='+n_artista+'&album='+n_album+'&uploader='+n_uploader+'&ruta='+ruta+'" id="enlacecancion"><div class="imagen"><img src="'+image+'" alt="Imagen cancion"></div></a></li>';
-           var l2='<li id="barraopciones"><a href="cancion.html?nombre='+n_cancion+'&artista='+n_artista+'&album='+n_album+'&uploader='+n_uploader+'&ruta='+ruta+'" id="enlacecancion"><div class="nombrecancion">'+n_cancion+'</div></a></li>';
+           var l1='<div class="cancioninf"><ul><li id="barraopciones"><a href="cancion.html?nombre='+n_cancion+'&artista='+n_artista+'&album='+n_album+'&genero='+n_genero+'&uploader='+n_uploader+'&ruta='+ruta+'" id="enlacecancion"><div class="imagen"><img src="'+image+'" alt="Imagen cancion"></div></a></li>';
+           var l2='<li id="barraopciones"><a href="cancion.html?nombre='+n_cancion+'&artista='+n_artista+'&album='+n_album+'&genero='+n_genero+'&uploader='+n_uploader+'&ruta='+ruta+'" id="enlacecancion"><div class="nombrecancion">'+n_cancion+'</div></a></li>';
 
-           var param_playmusic="\'"+ruta+"\',"+"\'"+image+"\',"+"\'"+n_cancion+"\',"+"\'"+n_artista+"\',"+"\'"+n_album+"\',"+"\'"+n_uploader+"\'";
+           var param_playmusic="\'"+ruta+"\',"+"\'"+image+"\',"+"\'"+n_cancion+"\',"+"\'"+n_artista+"\',"+"\'"+n_album+"\',"+"\'"+n_uploader+"\',"+"\'"+n_genero+"\'";
            var play='<li id="barraopciones"><div class="simb_repr_play"><input type="image" src="img/play.png" alt="Reproducir cancion" title="Reproducir canción" onClick="playMusic('+param_playmusic+');return false;"></div></li>';
            //*******************MODIFICAR FAVORITOS   *****************************************
            var fav='<form name="accionCancion" method="post" action="#"><li id="barraopciones"><div class="simb_repr_fav"><input type="image" src="img/favoritos.png" alt="Añadir a favoritos" title="Añadir/quitar favoritos" onclick="changeImage(this)"></div></li></form>';

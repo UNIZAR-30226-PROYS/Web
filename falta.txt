@@ -2,10 +2,11 @@ Falta:
 General:
   -Cambiar form para que sea sobre SSL. Usar "https://yourdomain.com/servlet" en action(dejarlo hasta que todo funcione y crear certificado en servidor)
 
+Poner una cancion a reproducir cuando entras en alguna pagina***
 
 PASAR RUTA A PAGINA CANCION PARA REPRODUCCION(EN TODOS LOS ENLACES A CANCION)
 
-
+(por orden alfabetico)
 ALBUM:
   -Hacer funcion favoritos
   -Cambiar imagen album dinamicamente
@@ -15,6 +16,38 @@ ALBUMES:
   -(hecho)Mostrar todos los albumes limitados por paginas(se han limitado a 20 por pagina, falta depurar una vez haya más albumes)(se solicita una vez y no se guardan los datos porque se complicaba al realizar busquedas)
   -Cambiar foto albumes al cargarlos
 
+AMIGOS:
+  -(hecho)Busqueda canciones(lleva a la pagina, verificar alli su funcionamiento)
+  -Mostrar imagenes de los usuarios
+
+ARTISTA:
+  -Cambiar imagenes albumes
+  -Cambiar imagenes canciones
+
+ARTISTAS:
+  -(hecho)Mostrar todos los artistas limitados por paginas(se han limitado a 20 por pagina, falta depurar una vez haya más artistas)
+  -Cambiar foto artistas al cargarlos
+
+BUSQUEDA_ALBUMES:
+  -Cambiar imagenes albumes
+  -Depurar cuando haya muchos
+
+BUSQUEDA_ARTISTAS:
+  -Cambiar imagenes artistas
+  -Depurar cuando haya muchos
+
+BUSQUEDA_LISTAS:
+  -Funcion reproducir lista
+
+  >>>>>>>>>>>>>>>>>>>
+
+BUSQUEDA:(canciones)
+  -Poner formato para mostrar canciones correctamente (con URL imagen, nombre y artista)
+  -Implementar funciones cancion(repr, fav y añadir a lista)
+  -(hecho)Al pulsar añadir a lista salen las listas(IMPORTANTE*** CAMBIAR WINDOW POR FUNCTION QUE SE LLAME AL MOSTRAR LAS CANCIONES(canciones_servlet.js una vez que mostrar las canciones este hecho))
+  -Para añadir a lista, en form de lista hay que poner los parametros de la cancion elegida (nombre,artista,...) usar diversos input hidden y poner valor
+
+
 Perfil:
   -(hecho)Cerrar sesion
   -(hecho)Cambiar nombre
@@ -23,19 +56,6 @@ Perfil:
   -(hecho)Eliminar cuenta
   -(hecho)Mostrar nombre
   -Mostrar foto al cargar la pagina
-
-
-AMIGOS:
-  -(hecho)Mostrar amigos
-  -(hecho)Borrar amigo
-  -(hecho)Busqueda canciones(lleva a la pagina, verificar alli su funcionamiento)
-  -Mostrar imagenes de los usuarios
-
-BUSQUEDA:(canciones)
-  -Poner formato para mostrar canciones correctamente (con URL imagen, nombre y artista)
-  -Implementar funciones cancion(repr, fav y añadir a lista)
-  -(hecho)Al pulsar añadir a lista salen las listas(IMPORTANTE*** CAMBIAR WINDOW POR FUNCTION QUE SE LLAME AL MOSTRAR LAS CANCIONES(canciones_servlet.js una vez que mostrar las canciones este hecho))
-  -Para añadir a lista, en form de lista hay que poner los parametros de la cancion elegida (nombre,artista,...) usar diversos input hidden y poner valor
 
 
 USUARIOS: (hecho)muestra 4 por pagina con opcion de mas y funcion de seguir usuario
@@ -65,11 +85,6 @@ LISTA:
   -(hecho)Mostrar canciones con opcion de reproducir(siempre) y de eliminar(solo si la lista es del usuario)
   -(hecho)Permitir busqueda listas
 
-BUSQUEDA_LISTAS:(FALTA permitir reproduccion de lista)
-  -(hecho)Hacer pagina que muestre las listas resultado de la busqueda de listas
-  -(hecho)Permitir la busqueda de listas
-  -(hecho)Mostrar solo listas de los amigos(se debe realizar en el servidor)
-
 HOME:
   -Mostrar top topsemanal(hecho el js, falta depurar una vez que haya canciones)
   -(hecho)Mostrar estilos
@@ -82,23 +97,6 @@ ESTILO:
   -(hecho)Motrar nombre del estilo
   -Mostrar canciones
 
-BUSQUEDA_ALBUMES:(falta cambiar las imagenes y depurar cuando haya muchos)
-  -(hecho)Hacer pagina que muestre los albumes resultado de la busqueda de albumes
-  -(hecho)Permitir la busqueda de albumes
-
-ARTISTAS:
-  -(hecho)Mostrar todos los artistas limitados por paginas(se han limitado a 20 por pagina, falta depurar una vez haya más artistas)
-  -Cambiar foto artistas al cargarlos
-  -(hecho)Busqueda de artistas lleve a pagina que los muestre
-
-BUSQUEDA_ARTISTAS:(falta cambiar las imagenes y depurar cuando haya muchos)
-  -(hecho)Hacer pagina que muestre los artistas resultado de la busqueda de artistas
-  -(hecho)Permitir la busqueda de artistas
-
-ARTISTA:
-  -(hecho)Mostrar albumes del artista(solo los muestra si hay, en caso contrario no muestra esa seccion)
-  -(hecho)Mostrar canciones(falta cambiar la imagen)
-  -(hecho)Permitir busqueda de artistas
 
 SUBIR_MUSICA:
   -(hecho)Permitir envio de ficheros de musica

@@ -52,62 +52,40 @@
     </div>
 
 
-        <!-- Sidebar -->
-        <div id="sidebar-wrapper">
-					<div id="cancion">
-            <a href="cancion.html" id="enlacecancion">
-              <img src="img/edsheeranperfect.jpg" alt="menu">
-            </a>
-            <a href="artista.html" id="enlacecancion">
-              <div id="autor">Ed Sheeran</div>
-            </a>
-          </div>
-            <ul class="sidebar-nav" id="repr">
-                <li>
-                  <div class="col-md-4 player" id="reproductor">
-                    <div class="audio-player">
-                      <audio id="audio-player"  controls="controls">
-                        <source id="source" src="media/Blue Browne.mp3" type="audio/mpeg"></source>
-                        </div>
-                        <!---->
-                        <script type="text/javascript">
-                          $(function(){
-                            $('#audio-player').mediaelementplayer({
-                            alwaysShowControls: true,
-                            features: ['playpause','progress','volume','duration'],
-                            audioVolume: 'horizontal',
-                            iPadUseNativeControls: true,
-                            iPhoneUseNativeControls: true,
-                            AndroidUseNativeControls: true
-                          });
-                         });
-                        </script>
-                        <!--audio-->
-                        <script type="text/javascript">
-                          function reloadMusic(){
-                              var src=document.getElementById("source").src;
-                                audio_core=$('#audio-player').attr('src', src)[0]
-                              audio_core.play() // <- play the song!!!
-                          }
-                        </script>
+		<!-- Sidebar -->
+		<div id="sidebar-wrapper">
+			<div id="cancion">
+				<a href="cancion.html" id="enlacecancion_wrapper">
+					<img src="img/edsheeranperfect.jpg" alt="menu" id="imagen_cancion_wrapper">
+					<div id="cancion_wrapper">Ed Sheeran</div>
+				</a>
+			</div>
+				<ul class="sidebar-nav" id="repr">
+						<li>
+							<div class="col-md-4 player" id="reproductor">
+								<div class="audio-player">
+									<audio id="audio-player"  controls="controls">
+										<source id="source" src="../ps/music/Fidel/Blue Browne.mp3" type="audio/mpeg"></source>
+										</div>
+										<!--audio-->
 
-                          <link rel="stylesheet" type="text/css" media="all" href="css/audio.css">
-                          <script type="text/javascript" src="js/mediaelement-and-player.min.js"></script>
-                          <!---->
+											<link rel="stylesheet" type="text/css" media="all" href="css/audio.css">
+											<script type="text/javascript" src="js/mediaelement-and-player.min.js"></script>
+											<!---->
 
-                        </div>
-                        <!--//-->
-                        <div id="opcionesrepr">
-                          <ul class="next-top">
-                            <li class="oprep"><a class="ar" href="#"> <img src="img/arrow.png" width="30" height="30" alt=""/></a></li>
-                            <li class="oprep"><a class="rel" href="#"> <input type="image" src="img/reload.png" width="30" height="30" alt="Reiniciar canción" title="Reiniciar canción" onClick="reloadMusic();return false;"/></a></li>
-                            <li class="oprep"><a class="ar2" href="#"><img src="img/arrow2.png" width="30" height="30" alt=""/></a></li>
-                          </ul>
-                        </div>
-                </li>
-            </ul>
-        </div>
-        <!-- /#sidebar-wrapper -->
+										</div>
+										<!--//-->
+										<div id="opcionesrepr">
+											<ul class="next-top">
+												<li class="oprep"><a class="ar" href="#"> <img src="img/arrow.png" width="30" height="30" alt=""/></a></li>
+												<li class="oprep"><a class="rel" href="#"> <input type="image" src="img/reload.png" width="30" height="30" alt="Reiniciar canción" title="Reiniciar canción" onClick="reloadMusic();return false;"/></a></li>
+												<li class="oprep"><a class="ar2" href="#"><img src="img/arrow2.png" width="30" height="30" alt=""/></a></li>
+											</ul>
+										</div>
+						</li>
+				</ul>
+		</div>
+		<!-- /#sidebar-wrapper -->
 		 <!-- Page Content -->
         <div id="header-section">
             <a href="#menu-music" class="buttonMenu" id="menu-music" onmouseover="changeImage()" onmouseout="changeImageAntes()"><img id="simbolo_menu_imagen" src="img/simbolomenu.png" width="30" height="30" alt="menu"></a>
@@ -146,13 +124,6 @@
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
     });
-    </script>
-
-    <script type="text/javascript">
-      function playMusic(src){
-            audio_core=$('#audio-player').attr('src', src)[0]
-          audio_core.play() // <- play the song!!!
-      }
     </script>
 
     <script>!window.jQuery && document.write(unescape('%3Cscript src="js/jquery-1.7.1.min.js"%3E%3C/script%3E'))</script>
