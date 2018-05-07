@@ -47,8 +47,10 @@ $(document).ready(function() {
          for(i=inicio; i<(elem_por_pagina+inicio) && i<listas.length;i++){
            var lista=listas[i];
            if("Favoritos" != lista){
-             var large='<div class="cancioninf"><ul><li id="barraopciones"><a href="lista.html'+"?lista="+lista+'&autor='+autor+'" id="enlacecancion"><div class="imagen"><img src="img/listaicono.png" alt="Imagen lista"></div></a></li><li id="barraopciones"><a href="lista.html'+"?lista="+lista+'&autor='+autor+'"><div class="nombrecancion">'+lista+'</div></a></li><li id="barraopciones"><div class="simb_repr_play"><input type="image" src="img/play.png" alt="Reproducir lista" title="Reproducir lista" onClick="playMusic(\'media/Blue Browne.mp3\');return false;"></div></li><li id="barraopciones"><form class="form_borrar_lista" method="post" action="/ps/BorrarListaDeReproduccion"><div class="simb_repr_elim"><input type="image" src="img/eliminar.png" alt="Eliminar lista" title="Eliminar lista"></div><input type="hidden" id="seguido" name="nombreLista" value="'+lista+'"/></form></li></ul></div>';
-             $(".informacion").append(large);
+             var large='<div class="cancioninf"><ul><li id="barraopciones"><a href="lista.html'+"?lista="+lista+'&autor='+autor+'" id="enlacecancion"><div class="imagen"><img src="img/listaicono.png" alt="Imagen lista"></div></a></li><li id="barraopciones"><a href="lista.html'+"?lista="+lista+'&autor='+autor+'"><div class="nombrecancion">'+lista+'</div></a></li>';
+             var repr_lista='<li id="barraopciones"><form class="form_reproducir_lista" method="post" action="/ps/VerLista"><div class="simb_repr_play"><input type="image" src="img/play.png" alt="Reproducir lista" title="Reproducir lista"><input type="hidden" name="nombreLista" value="'+lista+'"/><input type="hidden" name="nombreCreadorLista" value="'+autor+'"/></div></form></li>';
+             var borrar_y_resto='<li id="barraopciones"><form class="form_borrar_lista" method="post" action="/ps/BorrarListaDeReproduccion"><div class="simb_repr_elim"><input type="image" src="img/eliminar.png" alt="Eliminar lista" title="Eliminar lista"></div><input type="hidden" id="seguido" name="nombreLista" value="'+lista+'"/></form></li></ul></div>';
+             $(".informacion").append(large+repr_lista+borrar_y_resto);
              sin_elementos = 0;
            }
          }
@@ -63,6 +65,7 @@ $(document).ready(function() {
          }
        }
        form_borrar_lista();
+       form_repr_lista();
 
     }).fail(function(response){
         alert("Error interno. Inténtelo más tarde.");
@@ -197,6 +200,51 @@ function form_borrar_lista(){
          $("#result_seguir").attr("src","img/exito.png");
        }
        $('.button1').click();
+
+    }).fail(function(response){
+        alert("Error interno. Inténtelo más tarde.");
+    });
+  });
+}
+
+/* Solicita las canciones al servidor y si no hay canciones muestra alert,
+ * sino reproduce la primera y cuando acabe esa cancion o pulse siguiente
+ * se reproduce la siguiente (si la hay)
+ */
+function form_repr_lista(){
+  $(".form_reproducir_lista").submit(function(event){
+      event.preventDefault(); //prevent default action
+
+      var post_url = $(this).attr("action"); //get form action url
+      var form_data = $(this).serialize(); //Encode form elements for submission
+      var request_method = $(this).attr("method"); //get form GET/POST method
+
+      $.ajax({
+          url : post_url,
+          type: request_method,
+          data : form_data,
+
+    }).done(function(response){
+       var obj=JSON.parse(response);
+       if(obj.error != undefined){
+         if(obj.error.indexOf("Usuario no logeado en el servidor") >= 0){
+           //El usuario no esta logeado, quitar cookies e ir a inicio
+           borrarCookie("login");
+           borrarCookie("idSesion");
+           window.location = "inicio.html";
+         }
+       }
+       else if(obj.NoHayCanciones != undefined){
+         //No hay resultados
+          alert("La lista no tiene canciones.");
+       }
+       else{
+         var canciones = JSON.stringify(obj.canciones);
+         sessionStorage.setItem("listaActual",canciones);
+         sessionStorage.setItem("indiceLista",0);
+         //Llamar a fucion que reproduce la cancion indexada por indiceLista
+         reproducirCancion();
+       }
 
     }).fail(function(response){
         alert("Error interno. Inténtelo más tarde.");
