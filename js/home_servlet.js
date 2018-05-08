@@ -60,6 +60,9 @@ $(document).ready(function() {
        else{
          var canciones = obj.canciones;
 
+         var canciones_string = JSON.stringify(canciones);
+         sessionStorage.setItem("listaAux",canciones_string);
+
          for(i=0;i<canciones.length;i++){
            var n_cancion=canciones[i].tituloCancion;
            var n_artista=canciones[i].nombreArtista;
@@ -79,7 +82,7 @@ $(document).ready(function() {
            if(n_album==null){
              n_album= "";
            }
-           var large='<li id="barraopciones"><div class="cancioninf"><a href="cancion.html?nombre='+n_cancion+'&artista='+n_artista+'&album='+n_album+'&genero='+n_genero+'&uploader='+n_uploader+'&ruta='+ruta+'" id="enlacecancion"><div class="imagen"><img src="'+image+'" alt="Imagen cancion"></div><div class="nombrecancion">'+cancion+'</div></a></div></li>';
+           var large='<li id="barraopciones"><div class="cancioninf"><a href="cancion.html?nombre='+n_cancion+'&artista='+n_artista+'&album='+n_album+'&genero='+n_genero+'&uploader='+n_uploader+'&ruta='+ruta+'" id="enlacecancion"><div class="imagen"><img src="'+image+'" alt="Imagen cancion" onClick="setIndiceAndPlay('+i+',1)"></div><div class="nombrecancion" onClick="setIndiceAndPlay('+i+',1)">'+cancion+'</div></a></div></li>';
            $("#lista_top_semanal").append(large);
          }
        }

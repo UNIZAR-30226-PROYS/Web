@@ -2,25 +2,23 @@ Falta:
 General:
   -Cambiar form para que sea sobre SSL. Usar "https://yourdomain.com/servlet" en action(dejarlo hasta que todo funcione y crear certificado en servidor)
 
---Poner una cancion a reproducir cuando entras en alguna pagina(por ejemplo una al principio y si pulsas otra se guarda en sessionStorage la ruta y al iniciar otra pagina que se cargue (por ejemplo en comprobar_sesion_iniciada funcion que llame a play(poner todos los datos para mostrar imagen, nombre ... y poder hacer enlace a cancion)))***
-
 --(servidor)Imagenes de album, cancion, artista y usuarios: poner en carpetas dentro de ps y devolver ruta (o suponer en algunos casos como usuario que esta en "../ps/users/<nombreuser>" y el resto al recibir JSON que sea una clave mas)
 --(servidor)Por cada cancion devuelta una clave que indique si esta en favoritos(mostrar corazon rojo y si se pulsa se quita de favoritos) o no(corazon blanco si se pulsa se añade a favoritos)
 --(servidor)Funcionalidad compartir y ver compartidas no va
 --(servidor)Funcionalidad ver ultimas canciones escuchadas no funciona
+--(servidor)Estilos: que en servidor se comprueben nombre para que no haya errores (estilo=null o "")
+
 
 (por orden alfabetico)
 ALBUM:
   -Hacer funcion favoritos
   -Cambiar imagen album dinamicamente
-  -(hecho)Funcion añadir a lista--> en canciones_servlet esta (sirve para todas pantallas usando como result una ventana result_anadir_lista de valor 10 (button10, class10,...))
 
 ALBUMES:
   -(hecho)Mostrar todos los albumes limitados por paginas(se han limitado a 20 por pagina, falta depurar una vez haya más albumes)(se solicita una vez y no se guardan los datos porque se complicaba al realizar busquedas)
   -Cambiar foto albumes al cargarlos
 
 AMIGOS:
-  -(hecho)Busqueda canciones(lleva a la pagina, verificar alli su funcionamiento)
   -Mostrar imagenes de los usuarios
 
 ARTISTA:
@@ -39,19 +37,16 @@ BUSQUEDA_ARTISTAS:
   -Cambiar imagenes artistas
   -Depurar cuando haya muchos
 
-BUSQUEDA_LISTAS:
-  -Funcion reproducir lista
-
 BUSQUEDA:(canciones)
   -Hacer funcion favoritos
   -Cambiar imagen canciones dinamicamente
 
 CANCION:
-  -Implementar funciones del reproductor(anterior y siguiente)
   -Hacer favoritos
   -(hecho)Compartir(en facebook da error porque no acepta la URL (que es lo que se comparte) como valida por temas de seguridad)
   -Depurar compartir amigos cuando vaya en servidor
-  -Cambiar imagenes al mostrar amigos
+  -Cambiar imagen cancion
+  -Cambiar imagenes al mostrar amigos (en compartir)
 
 ESTILO:
   -Hacer funcion favoritos
@@ -65,17 +60,8 @@ FAVORITOS:
 HOME:
   -Mostrar top topsemanal(hecho el js, falta depurar una vez que haya canciones)
   -Cambiar imagenes canciones
-  -(hecho)Mostrar estilos
-
-LISTA:
-  -Añadir opcion reproducir lista(con varias opciones:en orden, aleatorio o en bucle)
-
-LISTAS:
-  -Reproducir lista(con varias opciones:en orden, aleatorio o en bucle)
 
 Perfil:
-  -(hecho)Cambiar contraseña
-  -(hecho)Cambiar foto(solo acepta jpg y mirando en el directorio de la máquina (apache/images/user.jpg) se ve que esta)
   -Mostrar foto al cargar la pagina
 
 RECIENTES:
@@ -83,25 +69,11 @@ RECIENTES:
   -Mostrar recomendaciones recibidas(hecho falta depurar y cambiar formato si se quiere(mostrar usuario que la recomienda?))
   -Cambiar imagenes canciones
 
-SUBIR_MUSICA:
-  -(hecho)Permitir envio de ficheros de musica
-
 TOP SEMANAL:
   -(hecho)Mostrar canciones-->depurar cuando server devuelva canciones(deberian ser unas 10)
 
 USUARIO:
   -Poner la imagen del usuario
-  -Añadir opcion de reproducir lista?
 
 USUARIOS:
   -Que en servidor se envien tambien la URL de las imagenes de los usuarios y ponerla en la pagina
-
-
-Funcion reproductor:
-  -Al mostrar listas (en pagina listas, usuario o busqeuda listas) (y reproducir) o canciones (pagina top semanal, estilo, busqueda, album, recientes, favoritos):
-     Al pulsar reproducir se establece
-     sessionStorage.setItem("listaActual",canciones);
-     sessionStorage.setItem("indiceLista",0);
-
-Al carga pagina con canciones: se debe establecer listaActual como esas canciones solo si se reproduce alguna (poner en listaProvisional y si se llama a setIndice se compreueba y si las dos listas no son iguales se igualan (actual=prov))
-Cambiar reproducir canciones llame a funcion setIndice que cambie el indice al valor recibido y reproduzca la cancion

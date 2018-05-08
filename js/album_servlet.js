@@ -104,6 +104,9 @@ $(document).ready(function() {
          var nombreAlbum = url.searchParams.get("album");
 
          var canciones = obj.canciones;
+
+         var canciones_string = JSON.stringify(canciones);
+         sessionStorage.setItem("listaAux",canciones_string);
          //Definir elementos a mostrar por pagina, pagina actual y valor a empezar a mostrar
          if(pag_actual == null){
            pag_actual = 1;
@@ -132,11 +135,10 @@ $(document).ready(function() {
            if(n_album==null){
              n_album= "";
            }
-           var l1='<div class="cancioninf"><ul><li id="barraopciones"><a href="cancion.html?nombre='+n_cancion+'&artista='+n_artista+'&album='+n_album+'&genero='+n_genero+'&uploader='+n_uploader+'&ruta='+ruta+'" id="enlacecancion"><div class="imagen"><img src="'+image+'" alt="Imagen cancion"></div></a></li>';
-           var l2='<li id="barraopciones"><a href="cancion.html?nombre='+n_cancion+'&artista='+n_artista+'&album='+n_album+'&genero='+n_genero+'&uploader='+n_uploader+'&ruta='+ruta+'" id="enlacecancion"><div class="nombrecancion">'+n_cancion+'</div></a></li>';
+           var l1='<div class="cancioninf"><ul><li id="barraopciones"><a href="cancion.html?nombre='+n_cancion+'&artista='+n_artista+'&album='+n_album+'&genero='+n_genero+'&uploader='+n_uploader+'&ruta='+ruta+'" id="enlacecancion"><div class="imagen"><img src="'+image+'" alt="Imagen cancion" onClick="setIndiceAndPlay('+i+',1)"></div></a></li>';
+           var l2='<li id="barraopciones"><a href="cancion.html?nombre='+n_cancion+'&artista='+n_artista+'&album='+n_album+'&genero='+n_genero+'&uploader='+n_uploader+'&ruta='+ruta+'" id="enlacecancion"><div class="nombrecancion" onClick="setIndiceAndPlay('+i+',1)">'+n_cancion+'</div></a></li>';
 
-           var param_playmusic="\'"+ruta+"\',"+"\'"+image+"\',"+"\'"+n_cancion+"\',"+"\'"+n_artista+"\',"+"\'"+n_album+"\',"+"\'"+n_uploader+"\',"+"\'"+n_genero+"\'";
-           var play='<li id="barraopciones"><div class="simb_repr_play"><input type="image" src="img/play.png" alt="Reproducir cancion" title="Reproducir canción" onClick="playMusic('+param_playmusic+');return false;"></div></li>';
+           var play='<li id="barraopciones"><div class="simb_repr_play"><input type="image" src="img/play.png" alt="Reproducir cancion" title="Reproducir canción" onClick="setIndiceAndPlay('+i+',0);return false;"></div></li>';
            //*******************MODIFICAR FAVORITOS   *****************************************
            var fav='<form name="accionCancion" method="post" action="#"><li id="barraopciones"><div class="simb_repr_fav"><input type="image" src="img/favoritos.png" alt="Añadir a favoritos" title="Añadir/quitar favoritos" onclick="changeImage(this)"></div></li></form>';
            var anadir_lista='<form class="form_mostrar_listas_c" method="post" action="/ps/MostrarListasReproduccion"><li id="barraopciones"><div class="simb_repr_lista"><div class="simb_repr_lista"><input type="hidden" id="user" name="user" value="'+leerCookie("login")+'"><input type="hidden" name="tituloCancion" value="'+n_cancion+'"><input type="hidden" name="nombreArtista" value="'+n_artista+'"><input type="hidden" name="nombreAlbum" value="'+n_album+'"><input type="image" src="img/listas_add.png" alt="Añadir a lista" class="boton_mostrar_listas" title="Añadir a lista"></div></div></li></form>';

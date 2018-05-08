@@ -30,8 +30,10 @@ $(document).ready(function() {
       var lista=listas[i].nombre;
       var autor=listas[i].nombreUsuario;
       if("Favoritos" != lista){
-        var large='<div class="cancioninf"><ul><li id="barraopciones"><a href="lista.html'+"?lista="+lista+'&autor='+autor+'" id="enlacecancion"><div class="imagen"><img src="img/listaicono.png" alt="Imagen lista"></div></a></li><li id="barraopciones"><a href="lista.html'+"?lista="+lista+'&autor='+autor+'"><div class="nombrecancion">'+lista+'</div><div class="nombreautor">Autor: '+autor+'</div></a></li><li id="barraopciones"><div class="simb_repr_play"><input type="image" src="img/play.png" alt="Reproducir lista" title="Reproducir lista" onClick="playMusic(\'media/Blue Browne.mp3\');return false;"></div></li></ul></div>';
-        $(".informacion").append(large);
+        var large='<div class="cancioninf"><ul><li id="barraopciones"><a href="lista.html'+"?lista="+lista+'&autor='+autor+'" id="enlacecancion"><div class="imagen"><img src="img/listaicono.png" alt="Imagen lista"></div></a></li><li id="barraopciones"><a href="lista.html'+"?lista="+lista+'&autor='+autor+'"><div class="nombrecancion">'+lista+'</div><div class="nombreautor">Autor: '+autor+'</div></a></li>';
+        var repr_lista='<li id="barraopciones"><form class="form_reproducir_lista" method="post" action="/ps/VerLista"><div class="simb_repr_play"><input type="image" src="img/play.png" alt="Reproducir lista" title="Reproducir lista"><input type="hidden" name="nombreLista" value="'+lista+'"/><input type="hidden" name="nombreCreadorLista" value="'+autor+'"/></div></form></li>';
+        var resto='</ul></div>';
+        $(".informacion").append(large+repr_lista+resto);
         sin_elementos = 0;
       }
     }
@@ -44,6 +46,7 @@ $(document).ready(function() {
       var boton_mas = '<br><br><form action="busqueda_listas.html"><button type="submit" id="boton_mostrar_mas" class="aumentar">Mostrar más</button><input type="hidden" name="busqueda_lista" value="'+c+'"/><input type="hidden" name="pagina" value="'+pagina_sig+'"/></form>';
       $(".informacion").append(boton_mas);
     }
+    form_repr_lista();
   }
   else{
     //No hay resultados

@@ -103,6 +103,9 @@ $(document).ready(function() {
        else{
          var canciones = obj.canciones;
 
+         var canciones_string = JSON.stringify(canciones);
+         sessionStorage.setItem("listaAux",canciones_string);
+
          //Añadir titulo albumes y seccion
          if(canciones.length > 0){
            var l='<div id="tituloestilo"><h3>Canciones</h3></div><div class="cancionesArtista"><ul id="lista_canciones_artista"></ul></div>';
@@ -127,7 +130,7 @@ $(document).ready(function() {
              if(n_album==null){
                n_album= "";
              }
-             var large='<li id="barraopciones"><div class="cancioninf"><a href="cancion.html?nombre='+n_cancion+'&artista='+n_artista+'&album='+n_album+'&genero='+n_genero+'&uploader='+n_uploader+'&ruta='+ruta+'" id="enlacecancion"><div class="imagen"><img src="'+image+'" alt="Imagen cancion"></div><div class="nombrecancion">'+n_cancion+'</div></a></div></li>';
+             var large='<li id="barraopciones"><div class="cancioninf"><a href="cancion.html?nombre='+n_cancion+'&artista='+n_artista+'&album='+n_album+'&genero='+n_genero+'&uploader='+n_uploader+'&ruta='+ruta+'" id="enlacecancion"><div class="imagen"><img src="'+image+'" alt="Imagen cancion" onClick="setIndiceAndPlay('+i+',1)"></div><div class="nombrecancion" onClick="setIndiceAndPlay('+i+',1)">'+n_cancion+'</div></a></div></li>';
              $("#lista_canciones_artista").append(large);
            }
          }

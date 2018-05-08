@@ -110,8 +110,30 @@ function anteriorCancion(pagina_cancion){
         }
       }
     }
+    else{
+      //Modo en orden
+      i = i - 1;
+      //Si no hay siguiente volver a la primera
+      if(i < 0){
+        i=canciones.length - 1;
+      }
+    }
     sessionStorage.setItem("indiceLista",i);
     reproducirCancion(pagina_cancion);
+}
+
+/* Se ejecuta al pulsar reproducir en alguna cancion y establece el indice de esa
+ * cancion en la lista y la reproduce
+ */
+function setIndiceAndPlay(indice,a_pagina_cancion){
+  sessionStorage.setItem("indiceLista",indice);
+  //Si actual es distinta a Aux se establece Aux
+  var listaActual = sessionStorage.getItem("listaActual");
+  var listaAux = sessionStorage.getItem("listaAux");
+  if(listaActual != listaAux){
+    sessionStorage.setItem("listaActual",listaAux);
+  }
+  reproducirCancion(a_pagina_cancion);
 }
 
 //Funcion que se ejecuta cuando una cancion acaba
@@ -228,4 +250,65 @@ function cargar_lista_top_semanal(){
   }).fail(function(response){
       alert("Error interno. Inténtelo más tarde.");
   });
+}
+
+
+/* Solicita las canciones al servidor y si no hay canciones muestra alert,
+ * sino reproduce la primera y cuando acabe esa cancion o pulse siguiente
+ * se reproduce la siguiente (si la hay)
+ */
+function form_repr_lista(){
+  $(".form_reproducir_lista").submit(function(event){
+      event.preventDefault(); //prevent default action
+
+      var post_url = $(this).attr("action"); //get form action url
+      var form_data = $(this).serialize(); //Encode form elements for submission
+      var request_method = $(this).attr("method"); //get form GET/POST method
+
+      $.ajax({
+          url : post_url,
+          type: request_method,
+          data : form_data,
+
+    }).done(function(response){
+       var obj=JSON.parse(response);
+       if(obj.error != undefined){
+         if(obj.error.indexOf("Usuario no logeado en el servidor") >= 0){
+           //El usuario no esta logeado, quitar cookies e ir a inicio
+           borrarCookie("login");
+           borrarCookie("idSesion");
+           window.location = "inicio.html";
+         }
+       }
+       else if(obj.NoHayCanciones != undefined){
+         //No hay resultados
+          alert("La lista no tiene canciones.");
+       }
+       else{
+         var canciones = JSON.stringify(obj.canciones);
+         sessionStorage.setItem("listaActual",canciones);
+         sessionStorage.setItem("indiceLista",0);
+         //Llamar a fucion que reproduce la cancion indexada por indiceLista
+         reproducirCancion(0);
+       }
+
+    }).fail(function(response){
+        alert("Error interno. Inténtelo más tarde.");
+    });
+  });
+}
+
+/* En pagina recientes hay dos listas (recientes y recomendados), si se quiere
+ * reproducir una, al pulsar en play o enlace a cancion se llama a esta funcion que
+ * establece el valor de listaAux que luego pasara a ser listaActual(en otra funcion)
+ */
+function setLista(que_lista){
+  var lista;
+  if(que_lista == 0){
+    lista = sessionStorage.getItem("listaRecientes");
+  }
+  else{
+    lista = sessionStorage.getItem("listaRecomendaciones");
+  }
+  sessionStorage.setItem("listaAux",lista);
 }

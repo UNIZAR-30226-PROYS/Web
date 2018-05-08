@@ -6,3 +6,5 @@
 -Funcionalidad compartir y ver compartidas no va
 
 -Funcionalidad ver ultimas canciones escuchadas no funciona
+
+-Estilos: que en servidor se comprueben nombre para que no haya errores (en la web se reciben nombres como null o "")
