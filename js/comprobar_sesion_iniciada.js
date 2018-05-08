@@ -9,6 +9,9 @@ function playMusic(src,imagen,cancion,artista,album,uploader,genero){
       document.getElementById('cancion_wrapper').innerHTML=cancion;
       var enlace="cancion.html?nombre="+cancion+"&artista="+artista+"&album="+album+'&genero='+genero+'&uploader='+uploader+'&ruta='+src;
       document.getElementById('enlacecancion_wrapper').href=enlace;
+      //Establecer funciones para canciones dentro del wrapper
+      document.getElementById('imagen_cancion_wrapper').onclick=function() {setIndiceAndPlay(0,1)};
+      document.getElementById('cancion_wrapper').onclick=function() {setIndiceAndPlay(0,1)};
 
     audio_core.play() // <- play the song!!!
 }
