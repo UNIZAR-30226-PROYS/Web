@@ -122,8 +122,10 @@ $(document).ready(function() {
          for(i=inicio; i<(elem_por_pagina+inicio) && i<listas.length;i++){
            var lista=listas[i];
            if("Favoritos" != lista){
-             var large='<div class="cancioninf"><ul><li id="barraopciones"><a href="lista.html'+"?lista="+lista+'&autor='+c+'" id="enlacecancion"><div class="imagen"><img src="img/listaicono.png" alt="Imagen lista"></div></a></li><li id="barraopciones"><a href="lista.html'+"?lista="+lista+'&autor='+c+'"><div class="nombrecancion">'+lista+'</div></a></li></ul></div>';
-             $(".block1").append(large);
+             var large='<div class="cancioninf"><ul><li id="barraopciones"><a href="lista.html'+"?lista="+lista+'&autor='+c+'" id="enlacecancion"><div class="imagen"><img src="img/listaicono.png" alt="Imagen lista"></div></a></li>';
+             var repr_lista='<li id="barraopciones"><form class="form_reproducir_lista" method="post" action="/ps/VerLista"><div class="simb_repr_play"><input type="image" src="img/play.png" alt="Reproducir lista" title="Reproducir lista"><input type="hidden" name="nombreLista" value="'+lista+'"/><input type="hidden" name="nombreCreadorLista" value="'+c+'"/></div></form></li>';
+             var nombre_y_fin ='<li id="barraopciones"><a href="lista.html'+"?lista="+lista+'&autor='+c+'"><div class="nombrecancion">'+lista+'</div></a></li></ul></div>';
+             $(".block1").append(large+repr_lista+nombre_y_fin);
            }
          }
          if((elem_por_pagina+inicio)<listas.length){
@@ -131,6 +133,7 @@ $(document).ready(function() {
            var boton_mas = '<br><br><form action="usuario.html"><button type="submit" id="boton_mostrar_mas" class="aumentar">Mostrar más</button><input type="hidden" name="usuario" value="'+c+'"/><input type="hidden" name="pagina" value="'+pagina_sig+'"/></form>';
            $(".informacion").append(boton_mas);
          }
+         form_repr_lista();
        }
        form_mostrar_usuario();
     }).fail(function(response){
