@@ -3,7 +3,6 @@ General:
   -Cambiar form para que sea sobre SSL. Usar "https://yourdomain.com/servlet" en action(dejarlo hasta que todo funcione y crear certificado en servidor)
 
 --(servidor)Imagenes de album, cancion, artista y usuarios: poner en carpetas dentro de ps y devolver ruta (o suponer en algunos casos como usuario que esta en "../ps/users/<nombreuser>" y el resto al recibir JSON que sea una clave mas)
---(servidor)Por cada cancion devuelta una clave que indique si esta en favoritos(mostrar corazon rojo y si se pulsa se quita de favoritos) o no(corazon blanco si se pulsa se añade a favoritos)
 --(servidor)Funcionalidad compartir y ver compartidas no va
 --(servidor)Funcionalidad ver ultimas canciones escuchadas no funciona
 --(servidor)Estilos: que en servidor se comprueben nombre para que no haya errores (estilo=null o "")
@@ -11,7 +10,6 @@ General:
 
 (por orden alfabetico)
 ALBUM:
-  -Hacer funcion favoritos
   -Cambiar imagen album dinamicamente
 
 ALBUMES:
@@ -38,11 +36,9 @@ BUSQUEDA_ARTISTAS:
   -Depurar cuando haya muchos
 
 BUSQUEDA:(canciones)
-  -Hacer funcion favoritos
   -Cambiar imagen canciones dinamicamente
 
 CANCION:
-  -Hacer favoritos
   -(hecho)Compartir(en facebook da error porque no acepta la URL (que es lo que se comparte) como valida por temas de seguridad)
   -Depurar compartir amigos cuando vaya en servidor
   -Cambiar imagen cancion

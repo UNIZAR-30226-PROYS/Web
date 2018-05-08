@@ -23,6 +23,12 @@ $(document).ready(function() {
   var enlace="artista.html?artista="+artista;
   document.getElementById('enlacecancion_wrapper').href=enlace;
 
+  //Establecer valores para form favorito
+  document.getElementById('cancionfav').value=cancion;
+  document.getElementById('artistafav').value=artista;
+  document.getElementById('albumfav').value=album;
+
+
   //A veces puede no iniciarse asi que espera run tiempo y reproducir
   window.setTimeout(function(){
     reloadMusic();
@@ -40,6 +46,38 @@ $(document).ready(function() {
   document.getElementById('botonlista_artista').value=artista;
   document.getElementById('botonlista_album').value=album;
 
+
+  cargar_lista_favoritos()
+    .done(function(response){
+     var obj1=JSON.parse(response);
+     var favoritos=undefined;
+       if(obj1.error != undefined){
+         if(obj1.error.indexOf("Usuario no logeado en el servidor") >= 0){
+           //El usuario no esta logeado, quitar cookies e ir a inicio
+           borrarCookie("login");
+           borrarCookie("idSesion");
+           window.location = "inicio.html";
+         }
+       }
+       else if(obj1.NoHayCanciones != undefined){
+         //No hay resultados
+       }
+       else{
+         var aux = obj1.canciones;
+         if(aux.length > 0){
+           for (i in aux){//Quitar valor uploader porque en album no esta
+             delete aux[i].uploader;
+           }
+           favoritos = JSON.stringify(aux);
+         }
+       }
+       //Llamar a mostrar album con la lista del album y de favoritos
+       mostrarCancionconFav(cancion,artista,album,genero,ruta,favoritos);
+    }).
+    fail(function(response){
+        alert("Error interno. Inténtelo más tarde.");
+        sessionStorage.setItem("listaFavoritos",undefined);
+    });
 
   $("#form_mostrar_amigos").submit(function(event){
       event.preventDefault(); //prevent default action
@@ -130,4 +168,33 @@ function form_mostrar_amigos(){
         alert("Error interno. Inténtelo más tarde.");
     });
   });
+}
+
+
+function  mostrarCancionconFav(cancion,artista,album,genero,ruta,favoritos){
+   var lista_fav=JSON.parse(favoritos);
+   var esta_en_fav=0;
+   ruta=ruta.substr(2); //Quitar los dos puntos del principio
+
+
+   for (i in lista_fav){
+     if(artista == lista_fav[i].nombreArtista && cancion == lista_fav[i].tituloCancion
+        && album == lista_fav[i].nombreAlbum &&
+        lista_fav[i].ruta.indexOf(ruta) >=0 ){
+        if(genero == lista_fav[i].genero || genero == "" || genero == null){
+          esta_en_fav=1;
+          break;
+        }
+     }
+   }
+
+   if(esta_en_fav == 1){
+     document.getElementById('imagen_fav').src="img/favanadido.png";
+     document.getElementById('imagen_fav').alt="Quitar de favoritos";
+     document.getElementById('imagen_fav').title="Quitar de favoritos";
+     document.getElementById('form_poner_fav').class="form_quitar_favorito";
+     document.getElementById('form_poner_fav').action="/ps/QuitarCancionDeLista";
+   }
+
+   form_anadirquitar_cancion_a_favorito();
 }

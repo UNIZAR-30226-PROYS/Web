@@ -143,6 +143,22 @@
                             <li class="oprep"><a class="ar2" href=""><input type="image" src="img/siguiente.png" width="30" height="30" alt="Siguiente canción" title="Siguiente canción" onClick="siguienteCancion(1);return false;"/></a></li>
                             <li class="oprep"><a class="fav" href=""><input type="image" src="img/favoritos.png" width="30" height="30" alt="Añadir a favoritos" title="Añadir/quitar favoritos" onclick="changeImage(this)"/></a></li>
 
+
+                            <form class="form_poner_favorito" id="form_poner_fav" method="post" action="/ps/AnyadirCancionALista">
+                              <li class="oprep">
+                                <a class="fav" href="">
+                                  <input type="image" id="imagen_fav" src="img/favoritos.png" width="30" height="30" alt="Añadir a favoritos" title="Añadir a favoritos"/>
+                                  <input type="hidden" id="cancionfav" name="tituloCancion" value=""/>
+                                  <input type="hidden" id="artistafav"name="nombreArtista" value=""/>
+                                  <input type="hidden" id="albumfav" name="nombreAlbum" value=""/>
+                                  <input type="hidden" name="nombreLista" value="Favoritos"/>
+                                </a>
+                              </li>
+                            </form>'
+
+
+
+
                             <!-- Mostrar listas -->
                             <form class="form_mostrar_listas_c" method="post" action="/ps/MostrarListasReproduccion">
                               <li id="barraopciones">

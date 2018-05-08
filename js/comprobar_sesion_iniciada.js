@@ -315,3 +315,18 @@ function setLista(que_lista){
   }
   sessionStorage.setItem("listaAux",lista);
 }
+
+/* Solicita las canciones al servidor de favoritos y las deja es sessionStorage
+ * como string o null si no hay
+ */
+function cargar_lista_favoritos(){
+    var post_url = "/ps/VerLista"
+    var request_method = "post"; //get form GET/POST method
+    var form_data = "nombreLista=Favoritos&nombreCreadorLista="+leerCookie("login");
+
+  return $.ajax({
+        url : post_url,
+        type: request_method,
+        data : form_data,
+  });
+}
