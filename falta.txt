@@ -68,6 +68,7 @@ RECIENTES:
   -Mostrar hasta ultimas 10 escuchadas(hecho falta depurar cuando vaya en server)
   -Mostrar recomendaciones recibidas(hecho falta depurar y cambiar formato si se quiere(mostrar usuario que la recomienda?))
   -Cambiar imagenes canciones
+  -Depurar que funcione reproduccion (en las otra spaginas solo hay una lista, aqui hay 2: recientes y recomendaciones -> verificar que funciones(se reproduce una lista o la otra segun donde se pulse))
 
 TOP SEMANAL:
   -(hecho)Mostrar canciones-->depurar cuando server devuelva canciones(deberian ser unas 10)
