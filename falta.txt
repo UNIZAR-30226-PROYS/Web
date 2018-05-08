@@ -97,25 +97,11 @@ USUARIOS:
   -Que en servidor se envien tambien la URL de las imagenes de los usuarios y ponerla en la pagina
 
 
-REPRODUCTOR(WRAPPER):
-  -Poner una cancion base para todos al entrar en la web
-  -Funciones anterior y siguiente
-
-
-
 Funcion reproductor:
   -Al mostrar listas (en pagina listas, usuario o busqeuda listas) (y reproducir) o canciones (pagina top semanal, estilo, busqueda, album, recientes, favoritos):
      Al pulsar reproducir se establece
      sessionStorage.setItem("listaActual",canciones);
      sessionStorage.setItem("indiceLista",0);
 
-En comprobar_sesion_iniciada estan las funciones
-Poner wrapper igual en todas pantallas (solo esta en listas)
-
-  Si no hay ninguna para reproducir o no poner nada o una por defecto y al pulsar rep lista si no hay mensaje de alerta
-
-  AL REPRODUCIR: siempre es en orden y en bucle (si es la ultima vuelve al principio), poner opcion en el wrapper que si se pulsa haga que sea aleatorio
-  y al reproducir, siguiente y anterior, si variable aleatorio=1 (sessionStorage) entonces i coger random (hace funcion al puslar aleatorio se establezca variable y al quitar se elimine y mostrar en cada wrapper el simbolo si esta marcado o no)
-
-
-Faltan tratar todos errores posibles de no hay canciones
+Al carga pagina con canciones: se debe establecer listaActual como esas canciones solo si se reproduce alguna (poner en listaProvisional y si se llama a setIndice se compreueba y si las dos listas no son iguales se igualan (actual=prov))
+Cambiar reproducir canciones llame a funcion setIndice que cambie el indice al valor recibido y reproduzca la cancion

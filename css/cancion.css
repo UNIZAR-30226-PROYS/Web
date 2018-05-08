@@ -1,3 +1,9 @@
+#modo_aleatorio {
+    margin-left: 80px;
+    font-size: 25px;
+    z-index: 100;
+}
+
 .nombreamigo {
     background: none;
     border: none;

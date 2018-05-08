@@ -58,6 +58,13 @@
 
     <!-- Sidebar -->
 		<div id="sidebar-wrapper">
+      <div id="modo_aleatorio">
+        Modo aleatorio
+        <label class="switch">
+          <input type="checkbox" id="valor_aleatorio" onclick="pulsadoAleatorio()">
+          <span class="slider round"></span>
+        </label>
+      </div>
 			<div id="cancion">
 				<a href="cancion.html" id="enlacecancion_wrapper">
 					<img src="img/edsheeranperfect.jpg" alt="menu" id="imagen_cancion_wrapper">
@@ -76,14 +83,15 @@
 											<link rel="stylesheet" type="text/css" media="all" href="css/audio.css">
 											<script type="text/javascript" src="js/mediaelement-and-player.min.js"></script>
 											<!---->
+                      <script type="text/javascript" src="js/mediaelement-and-player.min.js"></script>
 
 										</div>
 										<!--//-->
 										<div id="opcionesrepr">
 											<ul class="next-top">
-												<li class="oprep"><a class="ar" href="#"> <img src="img/arrow.png" width="30" height="30" alt=""/></a></li>
-												<li class="oprep"><a class="rel" href="#"> <input type="image" src="img/reload.png" width="30" height="30" alt="Reiniciar canción" title="Reiniciar canción" onClick="reloadMusic();return false;"/></a></li>
-												<li class="oprep"><a class="ar2" href="#"><img src="img/arrow2.png" width="30" height="30" alt=""/></a></li>
+												<li class="oprep"><a class="ar" href=""> <img src="img/arrow.png" width="30" height="30" alt="" onclick="anteriorCancion(0);return false"/></a></li>
+												<li class="oprep"><a class="rel" href=""> <input type="image" src="img/reload.png" width="30" height="30" alt="Reiniciar canción" title="Reiniciar canción" onClick="reloadMusic();return false;"/></a></li>
+												<li class="oprep"><a class="ar2" href=""><img src="img/arrow2.png" width="30" height="30" alt="" onclick="siguienteCancion(0);return false"/></a></li>
 											</ul>
 										</div>
 						</li>

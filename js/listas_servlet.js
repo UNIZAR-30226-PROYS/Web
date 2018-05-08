@@ -243,7 +243,7 @@ function form_repr_lista(){
          sessionStorage.setItem("listaActual",canciones);
          sessionStorage.setItem("indiceLista",0);
          //Llamar a fucion que reproduce la cancion indexada por indiceLista
-         reproducirCancion();
+         reproducirCancion(0);
        }
 
     }).fail(function(response){

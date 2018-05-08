@@ -19,64 +19,124 @@ function reloadMusic(){
     audio_core.play() // <- play the song!!!
 }
 
-//Reproduce la cancion actual (indiceLista) de la lista listaActual guardada en sessionStorage
-function reproducirCancion(){
-  //  Comprobar si hay que hacer parse a JSON o no
-    var canciones =JSON.parse(sessionStorage.getItem("listaActual"));
-    var i=sessionStorage.getItem("indiceLista");
-    var cancion=canciones[i].tituloCancion;
-    var artista=canciones[i].nombreArtista;
-    var genero=canciones[i].genero;
-    var album=canciones[i].nombreAlbum;
-    //Cambiar ruta por la ruta relativa
-    var ruta_aux=canciones[i].ruta;
-    var index = ruta_aux.indexOf("/ps");
-    var ruta = ".."+ruta_aux.substr(index);
+/*Reproduce la cancion actual (indiceLista) de la lista listaActual guardada en sessionStorage
+ *Si no hay lista guardada se carga top semanal (las listas nunca seran vacias ya que sino
+ * no se llama a esta funcion)
+ * Si pagina_cancion==1 (esta en pagina cancion) solo se cambia la URL y va alli
+ * sino actualiza el wrapper
+ */
+function reproducirCancion(pagina_cancion){
+    var aux = sessionStorage.getItem("listaActual");
+    if(aux == null){
+      //Si no hay lista para reproducir se carga la lista de top semanal
+      // que cuando el sistema funciones siempre tendra canciones
+      cargar_lista_top_semanal();
+    }
+    else{
+      var canciones =JSON.parse(aux);
 
-    var uploader=canciones[i].uploader;
-    //CAMBIAR IMAGEN
-    var image="img/edsheeranperfect.jpg";
-    playMusic(ruta,image,cancion,artista,album,uploader,genero);
+      var i=sessionStorage.getItem("indiceLista");
+      var cancion=canciones[i].tituloCancion;
+      var artista=canciones[i].nombreArtista;
+      var genero=canciones[i].genero;
+      var album=canciones[i].nombreAlbum;
+      //Cambiar ruta por la ruta relativa
+      var ruta_aux=canciones[i].ruta;
+      var index = ruta_aux.indexOf("/ps");
+      var ruta = ".."+ruta_aux.substr(index);
+
+      var uploader=canciones[i].uploader;
+      //CAMBIAR IMAGEN
+      var image="img/edsheeranperfect.jpg";
+      if(pagina_cancion == 0){
+        playMusic(ruta,image,cancion,artista,album,uploader,genero);
+      }
+      else{
+        window.location = "cancion.html?nombre="+cancion+"&artista="+artista+"&album="+album+"&genero="+genero+"&uploader="+uploader+"&ruta="+ruta;
+      }
+    }
 }
 
 //Reproduce la cancion actual (indiceLista) de la lista listaActual guardada en sessionStorage
-function siguienteCancion(){
+//Recibe un bool que indica si se ejecu en la pagina cancion o no
+function siguienteCancion(pagina_cancion){
   //  Comprobar si hay que hacer parse a JSON o no
     var canciones =JSON.parse(sessionStorage.getItem("listaActual"));
     var i=parseInt(sessionStorage.getItem("indiceLista"));
-    i = i + 1;
-    //Si no hay siguiente volver a la primera
-    if(i == canciones.length){
-      i=0;
+    var aleatorio = sessionStorage.getItem("valor_aleatorio");
+    if(aleatorio != null){
+      if (aleatorio == 1){
+        //Modo aleatorio
+        i=getRandomInt(0,canciones.length);
+      }
+      else{
+        //Modo en orden
+        i = i + 1;
+        //Si no hay siguiente volver a la primera
+        if(i == canciones.length){
+          i=0;
+        }
+      }
+    }
+    else{
+      //Modo en orden
+      i = i + 1;
+      //Si no hay siguiente volver a la primera
+      if(i == canciones.length){
+        i=0;
+      }
     }
     sessionStorage.setItem("indiceLista",i);
-    reproducirCancion();
+    reproducirCancion(pagina_cancion);
 }
 
 //Reproduce la cancion actual (indiceLista) de la lista listaActual guardada en sessionStorage
-function anteriorCancion(){
+function anteriorCancion(pagina_cancion){
   //  Comprobar si hay que hacer parse a JSON o no
     var canciones =JSON.parse(sessionStorage.getItem("listaActual"));
     var i=parseInt(sessionStorage.getItem("indiceLista"));
-    i = i - 1;
-    //Si no hay siguiente volver a la primera
-    if(i < 0){
-      i=canciones.length - 1;
+    var aleatorio = sessionStorage.getItem("valor_aleatorio");
+    if(aleatorio != null){
+      if (aleatorio == 1){
+        //Modo aleatorio
+        i=getRandomInt(0,canciones.length);
+      }
+      else{
+        //Modo en orden
+        i = i - 1;
+        //Si no hay anterior volver a la ultima
+        if(i < 0){
+          i=canciones.length - 1;
+        }
+      }
     }
     sessionStorage.setItem("indiceLista",i);
-    reproducirCancion();
-
-
-    //alert(getRandomInt(0,canciones.length));
+    reproducirCancion(pagina_cancion);
 }
 
 //Funcion que se ejecuta cuando una cancion acaba
 //Se pone timeout porque si no sale excepcion (se ejec play y luego pausa asi play se ejec al final)
+//Si esta en pagina cancion, lo indica al llamar a la funcion y sino tambien
 function finCancion() {
+  var url = window.location.href;
+  var pagina_cancion = 0;
+  if(url.indexOf("cancion.html?") >= 0){
+    pagina_cancion = 1;
+  }
   window.setTimeout(function(){
-    siguienteCancion();
+    siguienteCancion(pagina_cancion);
   }, 100);
 
+}
+
+//Si esta puesto (checked) poner valor aleatorio a 1, sino a 0
+function pulsadoAleatorio() {
+  if(document.getElementById("valor_aleatorio").checked){
+    sessionStorage.setItem("valor_aleatorio",1);
+  }
+  else{
+    sessionStorage.setItem("valor_aleatorio",0);
+  }
 }
 
 
@@ -94,4 +154,78 @@ $(function(){
 // Retorna un entero aleatorio entre min (incluido) y max (excluido)
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
+}
+
+//Poner modo aleatorio visualización en off o en on
+$(document).ready(function() {
+  var valor_aleatorio = sessionStorage.getItem("valor_aleatorio");
+  if(valor_aleatorio == null){
+    valor_aleatorio = false;
+  }
+  else{
+    if(valor_aleatorio == 0){
+      valor_aleatorio = false;
+    }
+    else{
+      valor_aleatorio=true;
+    }
+  }
+  document.getElementById("valor_aleatorio").checked = valor_aleatorio;
+  //Comenzar a reproducir cancion
+  var url = window.location.href;
+  var pagina_cancion = 0;
+  if(url.indexOf("cancion.html?") >= 0){
+    pagina_cancion = 1;
+  }
+  else{
+    reproducirCancion(pagina_cancion);
+  }
+});
+
+
+/* Solicita las canciones al servidor de top semanal
+ */
+function cargar_lista_top_semanal(){
+    var post_url = "/ps/TopSemanal"
+    var request_method = "post"; //get form GET/POST method
+
+    $.ajax({
+        url : post_url,
+        type: request_method,
+
+  }).done(function(response){
+     var obj=JSON.parse(response);
+     if(obj.error != undefined){
+       if(obj.error.indexOf("Usuario no logeado en el servidor") >= 0){
+         //El usuario no esta logeado, quitar cookies e ir a inicio
+         borrarCookie("login");
+         borrarCookie("idSesion");
+         window.location = "inicio.html";
+       }
+     }
+     else if(obj.NoHayCanciones != undefined){
+       //No hay resultados
+        alert("Top semanal no tiene canciones.");
+     }
+     else{
+       var aux = obj.canciones;
+       if(aux.length > 0){
+         var canciones = JSON.stringify(aux);
+         sessionStorage.setItem("listaActual",canciones);
+         sessionStorage.setItem("indiceLista",0);
+         var url = window.location.href;
+         var pagina_cancion = 0;
+         if(url.indexOf("cancion.html?") >= 0){
+           pagina_cancion = 1;
+         }
+         reproducirCancion(pagina_cancion);
+       }
+       else{ //QUITA CUANDO SERVIDOR DEVUELVA CANCIONES EN TOP SEMANAL
+         //alert("Top semanal no tiene canciones.")
+       }
+     }
+
+  }).fail(function(response){
+      alert("Error interno. Inténtelo más tarde.");
+  });
 }
