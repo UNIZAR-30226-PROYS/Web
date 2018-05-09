@@ -73,7 +73,7 @@ function avisarReproducirCancion(ruta){
       data : form_data,
 
     }).done(function(response){
-alert(response)
+      
     }).fail(function(response){
         alert("Error interno. Inténtelo más tarde.");
     });

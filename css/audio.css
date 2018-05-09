@@ -104,6 +104,7 @@ div.audio-player {
 }
 /* metallic sliders */
 .mejs-controls .mejs-time-rail .mejs-time-handle {
+  left: 0;
   position: absolute;
   display: block;
       width: 23px !important;

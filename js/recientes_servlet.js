@@ -26,36 +26,42 @@ $(document).ready(function() {
           $("#titulopagina").after("<h2 id=\"sin_resul\">No hay canciones.</h2>");
        }
        else{
-         cargar_lista_favoritos()
-           .done(function(response){
-            var obj1=JSON.parse(response);
-            var favoritos=undefined;
-              if(obj1.error != undefined){
-                if(obj1.error.indexOf("Usuario no logeado en el servidor") >= 0){
-                  //El usuario no esta logeado, quitar cookies e ir a inicio
-                  borrarCookie("login");
-                  borrarCookie("idSesion");
-                  window.location = "inicio.html";
-                }
-              }
-              else if(obj1.NoHayCanciones != undefined){
-                //No hay resultados
-              }
-              else{
-                var aux = obj1.canciones;
-                if(aux.length > 0){
-                  for (i in aux){//Quitar valor uploader porque en album no esta
-                    delete aux[i].uploader;
+         if(obj.canciones == undefined || obj.canciones.length == 0){
+           $(".menurecientes").append("<h2 id=\"sin_resul\">No hay canciones.</h2>");
+         }
+         else{
+           cargar_lista_favoritos()
+             .done(function(response){
+              var obj1=JSON.parse(response);
+              var favoritos=undefined;
+                if(obj1.error != undefined){
+                  if(obj1.error.indexOf("Usuario no logeado en el servidor") >= 0){
+                    //El usuario no esta logeado, quitar cookies e ir a inicio
+                    borrarCookie("login");
+                    borrarCookie("idSesion");
+                    window.location = "inicio.html";
                   }
-                  favoritos = JSON.stringify(aux);
                 }
-              }
-              mostrarPaginaconFav(obj,favoritos,"recientes",".menurecientes");
+                else if(obj1.NoHayCanciones != undefined){
+                  //No hay resultados
+                }
+                else{
+                  var aux = obj1.canciones;
+                  if(aux.length > 0){
+                    for (i in aux){//Quitar valor uploader porque en album no esta
+                      delete aux[i].uploader;
+                    }
+                    favoritos = JSON.stringify(aux);
+                    alert("comparando:\n"+favoritos+"\n\nCON\n"+JSON.stringify(obj.canciones));
+                  }
+                }
+                mostrarPaginaconFav(obj,favoritos,"recientes",".menurecientes");
          }).
          fail(function(response){
              alert("Error interno. Inténtelo más tarde.");
          });
        }
+      }
 
     }).fail(function(response){
         alert("Error interno. Inténtelo más tarde.");
@@ -89,33 +95,38 @@ $(document).ready(function() {
           $("#tituloestilo").after("<h2 id=\"sin_resul\">No hay canciones.</h2>");
        }
        else{
-         cargar_lista_favoritos()
-           .done(function(response){
-            var obj1=JSON.parse(response);
-            var favoritos=undefined;
-              if(obj1.error != undefined){
-                if(obj1.error.indexOf("Usuario no logeado en el servidor") >= 0){
-                  //El usuario no esta logeado, quitar cookies e ir a inicio
-                  borrarCookie("login");
-                  borrarCookie("idSesion");
-                  window.location = "inicio.html";
+         if(obj.canciones == undefined || obj.canciones.length == 0){
+           $(".menuestilo").append("<h2 id=\"sin_resul\">No hay canciones.</h2>");
+         }
+         else{
+           cargar_lista_favoritos()
+             .done(function(response){
+              var obj1=JSON.parse(response);
+              var favoritos=undefined;
+                if(obj1.error != undefined){
+                  if(obj1.error.indexOf("Usuario no logeado en el servidor") >= 0){
+                    //El usuario no esta logeado, quitar cookies e ir a inicio
+                    borrarCookie("login");
+                    borrarCookie("idSesion");
+                    window.location = "inicio.html";
+                  }
                 }
-              }
-              else if(obj1.NoHayCanciones != undefined){
-                //No hay resultados
-              }
-              else{
-                var aux = obj1.canciones;
+                else if(obj1.NoHayCanciones != undefined){
+                  //No hay resultados
+                }
+                else{
+                  var aux = obj1.canciones;
 
-                if(aux.length > 0){
-                  favoritos = JSON.stringify(aux);
+                  if(aux.length > 0){
+                    favoritos = JSON.stringify(aux);
+                  }
                 }
-              }
-              mostrarPaginaconFav(obj,favoritos,"recientes",".menuestilo");
-         }).
-         fail(function(response){
-             alert("Error interno. Inténtelo más tarde.");
-         });
+                mostrarPaginaconFav(obj,favoritos,"recientes",".menuestilo");
+           }).
+           fail(function(response){
+               alert("Error interno. Inténtelo más tarde.");
+           });
+         }
        }
 
     }).fail(function(response){

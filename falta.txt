@@ -57,5 +57,4 @@ TOP SEMANAL:
 
 
 Al compartir cancion el usuario recibe esa cancion todas las veces que la ha subido distintos usuarios, en vez de solmanete una vez la del usuario quese la recomendo
-Problema al decir que se ha reproducio cancion que sale error sql y por tanto no se ven escuchadas recientemente
 Problema con acentos: las canciones salen mal si tienen acentos y por tanto no permite reproducir(ruta no es correcta) --> response.setContentType()
