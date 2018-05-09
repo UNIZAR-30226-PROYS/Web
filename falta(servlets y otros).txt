@@ -1,5 +1,5 @@
 -Imagenes de album, cancion y artista: poner en carpetas dentro de ps y devolver ruta (o suponer en algunos casos como usuario que esta en "../ps/users/<nombreuser>" por ejemplo y por tanto con el nombre del usuario ya se sabe la ruta, y el resto al recibir JSON que sea una clave mas)
-  --> La imagen de los usuarios está en /images/nombreUsuario.jpg
+  --> La imagen de los usuarios está en ps/images/nombreUsuario.jpg
       Si no encuentra ese recurso significa que el usuario aún no ha subido imagen propia
   --> Falta la imagen de artistas, canciones y albumes.
 
