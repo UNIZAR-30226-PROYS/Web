@@ -46,7 +46,6 @@ $(document).ready(function() {
        }).
        fail(function(response){
            alert("Error interno. Inténtelo más tarde.");
-           sessionStorage.setItem("listaFavoritos",undefined);
        });
      }
      else{

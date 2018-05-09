@@ -7,6 +7,7 @@ General:
 --(servidor)Funcionalidad ver ultimas canciones escuchadas no funciona
 --(servidor)Estilos: que en servidor se comprueben nombre para que no haya errores (estilo=null o "")
 
+-Funcion favoritos: comprobar que en paginas TopSemanal y recientes funcione (función genérica mostrarPaginaconFav() en canciones_servlet.js)
 
 (por orden alfabetico)
 ALBUM:
@@ -45,13 +46,8 @@ CANCION:
   -Cambiar imagenes al mostrar amigos (en compartir)
 
 ESTILO:
-  -Hacer funcion favoritos
   -Cambiar imagen canciones dinamicamente
   -Depurar cuando haya mas canciones (que funcione limitar resultados por paginas)
-
-FAVORITOS:
-  -(hecho)Mostrar canciones->falta depurar cuando se puedan añadir/quitar canciones de favoritos
-  -Permitir que en todas las canciones se pueda añadir/quitar de favorito(Añadir/quitar cancion a lista)
 
 HOME:
   -Mostrar top topsemanal(hecho el js, falta depurar una vez que haya canciones)
