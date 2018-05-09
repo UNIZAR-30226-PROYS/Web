@@ -17,9 +17,6 @@ ALBUMES:
   -(hecho)Mostrar todos los albumes limitados por paginas(se han limitado a 20 por pagina, falta depurar una vez haya más albumes)(se solicita una vez y no se guardan los datos porque se complicaba al realizar busquedas)
   -Cambiar foto albumes al cargarlos
 
-AMIGOS:
-  -Mostrar imagenes de los usuarios
-
 ARTISTA:
   -Cambiar imagenes albumes
   -Cambiar imagenes canciones
@@ -43,7 +40,6 @@ CANCION:
   -(hecho)Compartir(en facebook da error porque no acepta la URL (que es lo que se comparte) como valida por temas de seguridad)
   -Depurar compartir amigos cuando vaya en servidor
   -Cambiar imagen cancion
-  -Cambiar imagenes al mostrar amigos (en compartir)
 
 ESTILO:
   -Cambiar imagen canciones dinamicamente
@@ -52,9 +48,6 @@ ESTILO:
 HOME:
   -Mostrar top topsemanal(hecho el js, falta depurar una vez que haya canciones)
   -Cambiar imagenes canciones
-
-Perfil:
-  -Mostrar foto al cargar la pagina
 
 RECIENTES:
   -Mostrar hasta ultimas 10 escuchadas(hecho falta depurar cuando vaya en server)
@@ -65,8 +58,11 @@ RECIENTES:
 TOP SEMANAL:
   -(hecho)Mostrar canciones-->depurar cuando server devuelva canciones(deberian ser unas 10)
 
-USUARIO:
-  -Poner la imagen del usuario
 
-USUARIOS:
-  -Que en servidor se envien tambien la URL de las imagenes de los usuarios y ponerla en la pagina
+Error al añadir fav una cancion compartidas
+Falta recientes poner que se ha reproducido(en reproducir cancion llamar a servelet ??)
+Quitar alert de favoritos(ahora estan para depurar)
+
+
+Imagenes USUARIOS VVVV
+En cancion no captura bien añadir a favoritos VVVV

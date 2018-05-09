@@ -17,9 +17,9 @@ $(document).ready(function() {
     var sin_elementos = 1;
     for(i=inicio; i<(elem_por_pagina+inicio) && i<usuarios.length;i++){
       var user=usuarios[i];
-      var image="img/user.png";
+      var image="../ps/images/"+user+".jpg";
       if(leerCookie("login") != user){ //Poner opcion añadir amigo solo si no es el mismo
-        var large='<form class="form_seguir_usuario" method="post" action="/ps/SeguirUsuario"><div class="cancioninf"><ul><li id="barraopciones"><a href="usuario.html'+"?usuario="+user+'"><div class="imagen"><img src="'+image+'" alt="Imagen lista"></div></a></li><li id="barraopciones"><a href="usuario.html'+"?usuario="+user+'"><div class="nombrecancion">'+user+'</div></a></li><li id="barraopciones"><div class="simb_repr_elim"><input type="image" src="img/add_friend.png" alt="Añadir amigo" title="Añadir amigo"><input type="hidden" id="seguido" name="seguido" value="'+user+'"/></div></li></ul></div></form>';
+        var large='<form class="form_seguir_usuario" method="post" action="/ps/SeguirUsuario"><div class="cancioninf"><ul><li id="barraopciones"><a href="usuario.html'+"?usuario="+user+'"><div class="imagen"><img src="'+image+'" alt="Imagen lista" onerror="this.src=\'img/user.png\'"></div></a></li><li id="barraopciones"><a href="usuario.html'+"?usuario="+user+'"><div class="nombrecancion">'+user+'</div></a></li><li id="barraopciones"><div class="simb_repr_elim"><input type="image" src="img/add_friend.png" alt="Añadir amigo" title="Añadir amigo"><input type="hidden" id="seguido" name="seguido" value="'+user+'"/></div></li></ul></div></form>';
         $(".informacion").append(large);
         sin_elementos = 0;
       }

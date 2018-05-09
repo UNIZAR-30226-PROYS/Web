@@ -70,10 +70,11 @@ $(document).ready(function() {
        var obj=JSON.parse(response);
        if(obj.error != undefined){
          var err = obj.error;
-
+         var image="../ps/images/"+c+".jpg";
          if(err.indexOf("no sigue a") >= 0){ //No sigue al usuario
+
            //ESTABLECER IMAGEN O USAR OTRO FORM PARA VER CUAL ES
-           var l='<div class="imagen"><img src="img/user.png" alt="Imagen usuario" ></div>';
+           var l='<div class="imagen"><img src="'+image+'" alt="Imagen usuario" onerror="this.src=\'img/user.png\'"></div>';
            $("#titulopagina").after(l);
            if(leerCookie("login") != c){ //Poner opcion añadir amigo solo si no es el mismo
              l='<form id="form_seguir_usuario" method="post" action="/ps/SeguirUsuario"><div class="anadir_lista"><input type="image" src="img/add_friend.png" alt="Añadir amigo" title="Añadir amigo"></div><input type="hidden" id="seguido" name="seguido" value="'+c+'"/></form>';
@@ -84,7 +85,7 @@ $(document).ready(function() {
            $(".block1").append(l);
          }
          else if(err.indexOf("no tiene ninguna lista asociada") >= 0){
-           var l='<div class="imagen"><img src="img/user.png" alt="Imagen usuario" ></div>';
+           var l='<div class="imagen"><img src="'+image+'" alt="Imagen usuario" onerror="this.src=\'img/user.png\'"></div>';
            $("#titulopagina").after(l);
            if(leerCookie("login") != c){ //Poner opcion añadir amigo solo si no es el mismo
              l='<form id="form_seguir_usuario" method="post" action="/ps/SeguirUsuario"><div class="anadir_lista"><input type="image" src="img/add_friend.png" alt="Añadir amigo" title="Añadir amigo"></div><input type="hidden" id="seguido" name="seguido" value="'+c+'"/></form>';
@@ -102,8 +103,9 @@ $(document).ready(function() {
          }
        }
        else{
+         var image="../ps/images/"+c+".jpg";
          //ESTABLECER IMAGEN O USAR OTRO FORM PARA VER CUAL ES
-         var l='<div class="imagen"><img src="img/user.png" alt="Imagen usuario" ></div>';
+         var l='<div class="imagen"><img src="'+image+'" alt="Imagen usuario" onerror="this.src=\'img/user.png\'"></div>';
          $("#titulopagina").after(l);
          if(leerCookie("login") != c){ //Poner opcion añadir amigo solo si no es el mismo
            l='<form id="form_seguir_usuario" method="post" action="/ps/SeguirUsuario"><div class="anadir_lista"><input type="image" src="img/add_friend.png" alt="Añadir amigo" title="Añadir amigo"></div><input type="hidden" id="seguido" name="seguido" value="'+c+'"/></form>';

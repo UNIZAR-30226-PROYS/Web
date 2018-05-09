@@ -1,6 +1,8 @@
 $(document).ready(function() {
-  //Mostrar nombre
-  document.getElementById("idNombre").value=leerCookie("login");
+  //Mostrar nombre y foto
+  var nombre=leerCookie("login");
+  document.getElementById("idNombre").value=nombre;
+  document.getElementById("imagen_usuario_perfil").src="../ps/images/"+nombre+".jpg";
 
   $("#form_cerrar_sesion").submit(function(event){
       event.preventDefault(); //prevent default action

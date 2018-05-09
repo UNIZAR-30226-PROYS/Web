@@ -15,6 +15,7 @@ $(document).ready(function() {
 
 	$('.close4').click(function() {
 		$('.overlay-container4').fadeOut().end().find('.window-container4').removeClass('window-container4-visible');
+		location.reload();
 	});
 
 });

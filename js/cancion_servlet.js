@@ -113,9 +113,9 @@ $(document).ready(function() {
          for(i=0;i<amigos.length;i++){
            var amigo=amigos[i].nombreSeguido;
            //Cambiar cuando JSON devuelva imagen
-           var image="img/user.png";
+           var image="../ps/images/"+amigo+".jpg";
 
-           var large='<form class="form_compartir_cancion" method="post" action="/ps/CompartirCancion"><tr ><div class="imagen"><img src="'+image+'" alt="Imagen usuario"></div><input type="submit" class="nombreamigo" value="'+amigo+'"/><input type="hidden" name="titulo" value="'+cancion+'"/><input type="hidden" name="nombreAlbum" value="'+album+'"/><input type="hidden" name="nombreArtista" value="'+artista+'"/><input type="hidden" name="genero" value="'+genero+'"/><input type="hidden" name="usuarioDestino" value="'+amigo+'"/></tr></form>';
+           var large='<form class="form_compartir_cancion" method="post" action="/ps/CompartirCancion"><tr ><div class="imagen"><img src="'+image+'" alt="Imagen usuario" onerror="this.src=\'img/user.png\'"></div><input type="submit" class="nombreamigo" value="'+amigo+'"/><input type="hidden" name="titulo" value="'+cancion+'"/><input type="hidden" name="nombreAlbum" value="'+album+'"/><input type="hidden" name="nombreArtista" value="'+artista+'"/><input type="hidden" name="genero" value="'+genero+'"/><input type="hidden" name="usuarioDestino" value="'+amigo+'"/></tr></form>';
            $("#lista_amigos").append(large);
          }
          form_mostrar_amigos();
@@ -172,19 +172,21 @@ function form_mostrar_amigos(){
 
 
 function  mostrarCancionconFav(cancion,artista,album,genero,ruta,favoritos){
-   var lista_fav=JSON.parse(favoritos);
+   var lista_fav=favoritos;
    var esta_en_fav=0;
    ruta=ruta.substr(2); //Quitar los dos puntos del principio
 
-
-   for (i in lista_fav){
-     if(artista == lista_fav[i].nombreArtista && cancion == lista_fav[i].tituloCancion
-        && album == lista_fav[i].nombreAlbum &&
-        lista_fav[i].ruta.indexOf(ruta) >=0 ){
-        if(genero == lista_fav[i].genero || genero == "" || genero == null){
-          esta_en_fav=1;
-          break;
-        }
+  if(lista_fav != undefined){
+    lista_fav=JSON.parse(lista_fav);
+     for (i in lista_fav){
+       if(artista == lista_fav[i].nombreArtista && cancion == lista_fav[i].tituloCancion
+          && album == lista_fav[i].nombreAlbum &&
+          lista_fav[i].ruta.indexOf(ruta) >=0 ){
+          if(genero == lista_fav[i].genero || genero == "" || genero == null){
+            esta_en_fav=1;
+            break;
+          }
+       }
      }
    }
 
