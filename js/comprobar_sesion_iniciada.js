@@ -49,6 +49,8 @@ function reproducirCancion(pagina_cancion){
       var ruta = ".."+ruta_aux.substr(index);
 
       var uploader=canciones[i].uploader;
+      avisarReproducirCancion(ruta_aux);
+
       //CAMBIAR IMAGEN
       var image="img/edsheeranperfect.jpg";
       if(pagina_cancion == 0){
@@ -59,6 +61,26 @@ function reproducirCancion(pagina_cancion){
       }
     }
 }
+
+function avisarReproducirCancion(ruta){
+  var post_url = "/ps/ReproducirCancion"
+  var request_method = "post"; //get form GET/POST method
+  var form_data = "ruta="+ruta;
+
+  $.ajax({
+      url : post_url,
+      type: request_method,
+      data : form_data,
+
+    }).done(function(response){
+alert(response)
+    }).fail(function(response){
+        alert("Error interno. Inténtelo más tarde.");
+    });
+}
+
+
+
 
 //Reproduce la cancion actual (indiceLista) de la lista listaActual guardada en sessionStorage
 //Recibe un bool que indica si se ejecu en la pagina cancion o no

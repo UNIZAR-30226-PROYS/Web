@@ -123,7 +123,6 @@ function form_anadirquitar_cancion_a_favorito(){
           data : form_data,
 
     }).done(function(response){
-      alert(response);
        var obj=JSON.parse(response);
        if(obj.error != undefined){
          if(obj.error.indexOf("Usuario no logeado en el servidor") >= 0){

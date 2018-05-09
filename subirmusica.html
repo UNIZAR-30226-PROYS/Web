@@ -119,13 +119,8 @@
           <br/>
           <div id="titulopagina"><h1>Subir música</h1></div>
           <form id="form_subir_musica" method="post" action="/ps/SubirCanciones" enctype="multipart/form-data" >
-            <input type="file" name="fichero" id="fichero" required onchange="return fileValidation()"/><br />
-            <!--<div id="atributos_cancion">
-                <div class="block">
-                  <label for="idNombre">Nombre:<font size="5" color="red" style="font-weight: bold">* </font></label>
-                    <input size="25" id="idNombre" type="text" name="nombrecancion" required/></br>
-                </div>
-            </div>-->
+            <input type="file" name="fichero" id="fichero" required onchange="return fileValidation()" multiple/><br />
+
             <div class="progress">
                 <div class="progress-bar progress-bar-success myprogress" role="progressbar" id="barra_progreso" style="width:0%">0%</div>
             </div>

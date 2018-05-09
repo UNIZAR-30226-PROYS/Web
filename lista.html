@@ -159,7 +159,7 @@
 
                     <div id="subir_cancion_titulo">Subir música</div>
                     <form id="form_subir_musica" method="post" action="/ps/SubirCanciones" enctype="multipart/form-data" >
-                      <input type="file" name="fichero" id="fichero" required onchange="return fileValidation()"/>
+                      <input type="file" name="fichero" id="fichero" required onchange="return fileValidation()" multiple/>
                       <br />
                       <input type="hidden" name="lista" id="nombre_lista" />
                       <div class="progress">

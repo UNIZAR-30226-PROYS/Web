@@ -2,10 +2,8 @@ Falta:
 General:
   -Cambiar form para que sea sobre SSL. Usar "https://yourdomain.com/servlet" en action(dejarlo hasta que todo funcione y crear certificado en servidor)
 
---(servidor)Imagenes de album, cancion, artista y usuarios: poner en carpetas dentro de ps y devolver ruta (o suponer en algunos casos como usuario que esta en "../ps/users/<nombreuser>" y el resto al recibir JSON que sea una clave mas)
---(servidor)Funcionalidad compartir y ver compartidas no va
+--(servidor)Imagenes de album, cancion, artista: poner en carpetas dentro de ps y devolver ruta
 --(servidor)Funcionalidad ver ultimas canciones escuchadas no funciona
---(servidor)Estilos: que en servidor se comprueben nombre para que no haya errores (estilo=null o "")
 
 -Funcion favoritos: comprobar que en paginas TopSemanal y recientes funcione (función genérica mostrarPaginaconFav() en canciones_servlet.js)
 
@@ -59,10 +57,6 @@ TOP SEMANAL:
   -(hecho)Mostrar canciones-->depurar cuando server devuelva canciones(deberian ser unas 10)
 
 
-Error al añadir fav una cancion compartidas
+Al compartir cancion el usuario recibe esa cancion todas las veces que la ha subido distintos usuarios, en vez de solmanete una vez la del usuario quese la recomendo
 Falta recientes poner que se ha reproducido(en reproducir cancion llamar a servelet ??)
-Quitar alert de favoritos(ahora estan para depurar)
-
-
-Imagenes USUARIOS VVVV
-En cancion no captura bien añadir a favoritos VVVV
+Problema con acentos: las canciones salen mal si tienen acentos y por tanto no permite reproducir(ruta no es correcta) --> response.setContentType()

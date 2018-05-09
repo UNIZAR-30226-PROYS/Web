@@ -12,7 +12,6 @@ $(document).ready(function() {
           data : form_data,
 
     }).done(function(response){
-      alert(response);
        var obj=JSON.parse(response);
        if(obj.error != undefined){
          if(obj.error.indexOf("Usuario no logeado en el servidor") >= 0){
@@ -76,7 +75,6 @@ $(document).ready(function() {
           data : form_data,
 
     }).done(function(response){
-      alert("Compartida:" +response);
        var obj=JSON.parse(response);
        if(obj.error != undefined){
          if(obj.error.indexOf("Usuario no logeado en el servidor") >= 0){
@@ -93,7 +91,6 @@ $(document).ready(function() {
        else{
          cargar_lista_favoritos()
            .done(function(response){
-             alert(response);
             var obj1=JSON.parse(response);
             var favoritos=undefined;
               if(obj1.error != undefined){
@@ -111,9 +108,6 @@ $(document).ready(function() {
                 var aux = obj1.canciones;
 
                 if(aux.length > 0){
-                  for (i in aux){//Quitar valor uploader porque en album no esta
-                    delete aux[i].uploader;
-                  }
                   favoritos = JSON.stringify(aux);
                 }
               }

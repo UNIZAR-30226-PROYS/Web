@@ -262,23 +262,29 @@ $(document).ready(function() {
           },
 
     }).done(function(response){
-       var obj=JSON.parse(response);
-       if(obj.error != undefined){
-         if(obj.error.indexOf("Usuario no logeado en el servidor") >= 0){
-           //El usuario no esta logeado, quitar cookies e ir a inicio
-           borrarCookie("login");
-           borrarCookie("idSesion");
-           window.location = "inicio.html";
-         }
-         else{
-           $("#resultado_seguir").text(obj.error);
-           $("#result_seguir").attr("src","img/error.png");
-         }
-       }
-       else{
-         $("#resultado_seguir").text("Canción subida correctamente.");
-         $("#result_seguir").attr("src","img/exito.png");
-       }
+    }).done(function(response){
+      var i=response.indexOf("\n");
+      var respuesta=response;
+      var hay_fallos=0;
+      while(i>=0){
+        var auxiliar=JSON.parse(respuesta.substr(0,i)).error;
+        if(auxiliar!=undefined){
+          $("#resultado_seguir").append("-"+auxiliar);
+          $("#resultado_seguir").append("<br>");
+          hay_fallos=1;
+        }
+        respuesta=respuesta.substr(i+1);
+        i=respuesta.indexOf("\n");
+
+      }
+      if(hay_fallos == 0){
+        $("#resultado_seguir").text("Canciones subidas correctamente.");
+        $("#result_seguir").attr("src","img/exito.png");
+      }
+      else{
+        $(".window-container2").width(800);
+        $("#result_seguir").attr("src","img/error.png");
+      }
        $('.button2').click();
 
     }).fail(function(response){
