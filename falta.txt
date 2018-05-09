@@ -3,9 +3,8 @@ General:
   -Cambiar form para que sea sobre SSL. Usar "https://yourdomain.com/servlet" en action(dejarlo hasta que todo funcione y crear certificado en servidor)
 
 --(servidor)Imagenes de album, cancion, artista: poner en carpetas dentro de ps y devolver ruta
---(servidor)Funcionalidad ver ultimas canciones escuchadas no funciona
 
--Funcion favoritos: comprobar que en paginas TopSemanal y recientes funcione (función genérica mostrarPaginaconFav() en canciones_servlet.js)
+-Funcion favoritos: comprobar que en paginas TopSemanal y recientes funcione (función genérica mostrarPaginaconFav() en canciones_servlet.js, recomendaciones funciona)
 
 (por orden alfabetico)
 ALBUM:
@@ -58,5 +57,5 @@ TOP SEMANAL:
 
 
 Al compartir cancion el usuario recibe esa cancion todas las veces que la ha subido distintos usuarios, en vez de solmanete una vez la del usuario quese la recomendo
-Falta recientes poner que se ha reproducido(en reproducir cancion llamar a servelet ??)
+Problema al decir que se ha reproducio cancion que sale error sql y por tanto no se ven escuchadas recientemente
 Problema con acentos: las canciones salen mal si tienen acentos y por tanto no permite reproducir(ruta no es correcta) --> response.setContentType()
