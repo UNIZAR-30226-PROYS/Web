@@ -9,3 +9,6 @@
 -Funcionalidad ver ultimas canciones escuchadas no funciona
   --> Para poder implementarlo, desde los clientes tiene que enviarse una petición al servidor cuando se reproduce una canción,
       para poder contar el número de reproducciones hechas.
+
+-Error de géneros null
+  --> Solucionado
