@@ -1,14 +1,6 @@
--Imagenes de album, cancion y artista: poner en carpetas dentro de ps y devolver ruta (o suponer en algunos casos como usuario que esta en "../ps/users/<nombreuser>" por ejemplo y por tanto con el nombre del usuario ya se sabe la ruta, y el resto al recibir JSON que sea una clave mas)
-  --> La imagen de los usuarios está en ps/images/nombreUsuario.jpg
-      Si no encuentra ese recurso significa que el usuario aún no ha subido imagen propia
+-Imagenes de album, cancion y artista: poner en carpetas dentro de ps y devolver ruta
   --> Falta la imagen de artistas, canciones y albumes.
 
--Funcionalidad compartir y ver compartidas no va
-  --> Creo que ya funciona
+-Funcionalidad compartir y ver compartidas no va: falla al mostrar misma cancion de diferentes usuarios (solo deberia mostrar la del usuario que la recomendo)
 
--Funcionalidad ver ultimas canciones escuchadas no funciona
-  --> Para poder implementarlo, desde los clientes tiene que enviarse una petición al servidor cuando se reproduce una canción,
-      para poder contar el número de reproducciones hechas.
-
--Error de géneros null
-  --> Solucionado
+-Establecer codificacion de respuesta UTF-8: con response.setCharacterEncoding("UTF-8"); deberia funcionar
