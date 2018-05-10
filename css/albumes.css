@@ -57,7 +57,7 @@ button:hover {
 }
 
 #barraopciones{
-  float: left;
+  display: inline-grid;
   list-style-type: none;
   margin-left: 5px;
   margin-right: 50px;
@@ -175,10 +175,9 @@ button:hover {
       height: 60%;
       padding-left: 10px;
   }
-  #barraopciones {
-    float: left;
+  #barraopciones{
+    display: inline-grid;
     list-style-type: none;
-    height: 100%;
     margin-left: 5px;
   }
 

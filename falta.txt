@@ -4,7 +4,7 @@ General:
 
 --(servidor)Imagenes de album, cancion, artista: poner en carpetas dentro de ps y devolver ruta
 
--Funcion favoritos: comprobar que en paginas TopSemanal y recientes funcione (función genérica mostrarPaginaconFav() en canciones_servlet.js, recomendaciones funciona)
+-Funcion favoritos: comprobar que en pagina TopSemanal
 
 (por orden alfabetico)
 ALBUM:
@@ -35,7 +35,6 @@ BUSQUEDA:(canciones)
 
 CANCION:
   -(hecho)Compartir(en facebook da error porque no acepta la URL (que es lo que se comparte) como valida por temas de seguridad)
-  -Depurar compartir amigos cuando vaya en servidor
   -Cambiar imagen cancion
 
 ESTILO:
@@ -48,9 +47,8 @@ HOME:
 
 RECIENTES:
   -Mostrar hasta ultimas 10 escuchadas(hecho falta depurar cuando vaya en server)
-  -Mostrar recomendaciones recibidas(hecho falta depurar y cambiar formato si se quiere(mostrar usuario que la recomienda?))
   -Cambiar imagenes canciones
-  -Depurar que funcione reproduccion (en las otra spaginas solo hay una lista, aqui hay 2: recientes y recomendaciones -> verificar que funciones(se reproduce una lista o la otra segun donde se pulse))
+  -Depurar que funcione reproduccion (en las otra paginas solo hay una lista, aqui hay 2: recientes y recomendaciones -> verificar que funciones(se reproduce una lista o la otra segun donde se pulse))
 
 TOP SEMANAL:
   -(hecho)Mostrar canciones-->depurar cuando server devuelva canciones(deberian ser unas 10)
@@ -58,3 +56,7 @@ TOP SEMANAL:
 
 Al compartir cancion el usuario recibe esa cancion todas las veces que la ha subido distintos usuarios, en vez de solmanete una vez la del usuario quese la recomendo
 Problema con acentos: las canciones salen mal si tienen acentos y por tanto no permite reproducir(ruta no es correcta) --> response.setContentType()
+
+
+Pagina estilo audio preload="auto" para que descargue la cancion y asi no hay error 206. Sin eso salen esos errore spero se reproduce --> si ocurren problemas en la reproduccion revisar
+Cambiar añadir a lista para que solo envien ruta para que concuerde con servidor

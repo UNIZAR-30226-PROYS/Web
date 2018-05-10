@@ -52,7 +52,6 @@ $(document).ready(function() {
                       delete aux[i].uploader;
                     }
                     favoritos = JSON.stringify(aux);
-                    alert("comparando:\n"+favoritos+"\n\nCON\n"+JSON.stringify(obj.canciones));
                   }
                 }
                 mostrarPaginaconFav(obj,favoritos,"recientes",".menurecientes");

@@ -210,6 +210,9 @@ function mostrarPaginaconFav(obj,favoritos,nombrePagina,nombreParamUrl){
      pag_actual = parseInt(pag_actual);
    }
    var elem_por_pagina = 5;
+   if(nombreParamUrl==".menurecientes"){
+     elem_por_pagina=10;
+   }
    inicio=(pag_actual-1)*elem_por_pagina;
 
    for(i=inicio; i<(elem_por_pagina+inicio) && i<canciones.length;i++){

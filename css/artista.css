@@ -60,11 +60,16 @@ button:hover {
     background-color: green;
 }
 
-#barraopciones{
+/*#barraopciones{
   float: left;
   list-style-type: none;
   width: 18%;
   height: 100%;
+  margin-left: 5px;
+}*/
+#barraopciones{
+  display: inline-grid;
+  list-style-type: none;
   margin-left: 5px;
 }
 
@@ -186,11 +191,19 @@ button:hover {
   .topsemanal ul {
       padding-left: 10px;
   }
+  /*
   #barraopciones {
     float: left;
     list-style-type: none;
     width: 22%;
     height: 100%;
+    margin-left: 5px;
+    margin-bottom: 30px;
+  }*/
+
+  #barraopciones{
+    display: inline-grid;
+    list-style-type: none;
     margin-left: 5px;
     margin-bottom: 30px;
   }
