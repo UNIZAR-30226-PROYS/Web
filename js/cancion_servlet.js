@@ -23,10 +23,11 @@ $(document).ready(function() {
   var enlace="artista.html?artista="+artista;
   document.getElementById('enlacecancion_wrapper').href=enlace;
 
+  //Quitar los dos puntos y coger el resto y añadir la base
+  var ruta_aux="/usr/local/apache-tomcat-9.0.7/webapps"+ruta.substr(2);
+
   //Establecer valores para form favorito
-  document.getElementById('cancionfav').value=cancion;
-  document.getElementById('artistafav').value=artista;
-  document.getElementById('albumfav').value=album;
+  document.getElementById('rutafav').value=ruta_aux;
 
 
   //A veces puede no iniciarse asi que espera run tiempo y reproducir
@@ -42,9 +43,7 @@ $(document).ready(function() {
 
   //Poner datos para poder mostrar listas
   document.getElementById('botonlista_user').value=leerCookie("login");
-  document.getElementById('botonlista_cancion').value=cancion;
-  document.getElementById('botonlista_artista').value=artista;
-  document.getElementById('botonlista_album').value=album;
+  document.getElementById('botonlista_ruta').value=ruta_aux;
 
 
   cargar_lista_favoritos()

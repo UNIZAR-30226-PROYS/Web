@@ -98,7 +98,7 @@ $(document).ready(function() {
            var l3='<a href="artista.html?artista='+n_artista+'"><div class="nombreautor">Artista: '+n_artista+'</div></a>';
            var seccion_genero='<a href="estilo.html?estilo='+n_genero+'"><div class="nombregenero">Género: '+n_genero+'</div></a>';
            var l4='</li><li id="barraopciones"><div class="simb_repr_play"><input type="image" src="img/play.png" alt="Reproducir cancion" title="Reproducir canción" onClick="setIndiceAndPlay('+i+',0);return false;"></div></li>';
-           var elim_cancion='<form class="form_borrar_cancion_lista" method="post" action="/ps/QuitarCancionDeLista"><li id="barraopciones"><div class="simb_repr_elim"><input type="hidden" name="tituloCancion" value="'+n_cancion+'"/><input type="hidden" name="nombreArtista" value="'+n_artista+'"/><input type="hidden" name="nombreAlbum" value="'+n_album+'"/><input type="hidden" name="nombreLista" value="'+nombreLista+'"/><input type="image" src="img/eliminar.png" alt="Eliminar cancion de lista" title="Eliminar canción de lista"></div></li></form>';
+           var elim_cancion='<form class="form_borrar_cancion_lista" method="post" action="/ps/QuitarCancionDeLista"><li id="barraopciones"><div class="simb_repr_elim"><input type="hidden" name="ruta" value="'+ruta_aux+'"/><input type="hidden" name="nombreLista" value="'+nombreLista+'"/><input type="image" src="img/eliminar.png" alt="Eliminar cancion de lista" title="Eliminar canción de lista"></div></li></form>';
            var final='</ul></div>';
            if(n_genero==""){ //Si no hay genero no mostrar esa seccion
              seccion_genero="";

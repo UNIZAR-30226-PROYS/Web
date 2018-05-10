@@ -47,7 +47,6 @@ $(document).ready(function() {
           data : form_data,
 
     }).done(function(response){
-      alert(response);
        var obj=JSON.parse(response);
        if(obj.error != undefined){
          if(obj.error.indexOf("Usuario no logeado en el servidor") >= 0){
@@ -82,7 +81,7 @@ $(document).ready(function() {
            if(n_album==null){
              n_album= "";
            }
-           var large='<li id="barraopciones"><div class="cancioninf"><a href="cancion.html?nombre='+n_cancion+'&artista='+n_artista+'&album='+n_album+'&genero='+n_genero+'&uploader='+n_uploader+'&ruta='+ruta+'" id="enlacecancion"><div class="imagen"><img src="'+image+'" alt="Imagen cancion" onClick="setIndiceAndPlay('+i+',1)"></div><div class="nombrecancion" onClick="setIndiceAndPlay('+i+',1)">'+cancion+'</div></a></div></li>';
+           var large='<li id="barraopciones"><div class="cancioninf"><a href="cancion.html?nombre='+n_cancion+'&artista='+n_artista+'&album='+n_album+'&genero='+n_genero+'&uploader='+n_uploader+'&ruta='+ruta+'" id="enlacecancion"><div class="imagen"><img src="'+image+'" alt="Imagen cancion" onClick="setIndiceAndPlay('+i+',1)"></div><div class="nombrecancion" onClick="setIndiceAndPlay('+i+',1)">'+n_cancion+'</div></a></div></li>';
            $("#lista_top_semanal").append(large);
          }
        }
@@ -92,6 +91,6 @@ $(document).ready(function() {
     });
   });
 
-  $("#form_mostrar_estilos").submit();
   $("#form_mostrar_top_semanal").submit();
+  $("#form_mostrar_estilos").submit();
 });

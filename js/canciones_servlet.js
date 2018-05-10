@@ -14,9 +14,7 @@ function form_mostrar_anadir_alistas(){
 
       //Coger el padre (div simb_repr_lista) e ir cogiendo el valor de los input
       var contenedor=$(this).parent().children();
-      var tituloCancion = contenedor.get(1).value;
-      var nombreArtista = contenedor.get(2).value;
-      var nombreAlbum = contenedor.get(3).value;
+      var ruta = contenedor.get(1).value;
 
       $.ajax({
           url : post_url,
@@ -43,7 +41,7 @@ function form_mostrar_anadir_alistas(){
          for(i=0;i<listas.length;i++){
            var lista=listas[i];
            if(lista != "Favoritos"){
-             var large='<form class="form_anadir_cancion_lista" action="/ps/AnyadirCancionALista" method="post"><div class="nombrelista"><input type="submit" class="anadir_cancion_lista_f" value="'+lista+'"><input type="hidden" name="nombreLista" value="'+lista+'"><input type="hidden" name="tituloCancion" value="'+tituloCancion+'"><input type="hidden" name="nombreArtista" value="'+nombreArtista+'"><input type="hidden" name="nombreAlbum" value="'+nombreAlbum+'"></div></form>';
+             var large='<form class="form_anadir_cancion_lista" action="/ps/AnyadirCancionALista" method="post"><div class="nombrelista"><input type="submit" class="anadir_cancion_lista_f" value="'+lista+'"><input type="hidden" name="nombreLista" value="'+lista+'"><input type="hidden" name="ruta" value="'+ruta+'"/></div></form>';
              $(".ventana_listas").append(large);
              sin_resul=0;
            }
@@ -260,8 +258,8 @@ function mostrarPaginaconFav(obj,favoritos,nombrePagina,nombreParamUrl){
 
      var play='<li id="barraopciones"><div class="simb_repr_play"><input type="image" src="img/play.png" alt="Reproducir cancion" title="Reproducir canción" onClick="setIndiceAndPlay('+i+',0);return false;"></div></li>';
 
-     var fav='<form class="'+form+'" method="post" action="/ps/'+servlet+'"><li id="barraopciones"><div class="simb_repr_fav"><input type="image" src="img/'+imagen_favoritos+'" alt="'+msg+'" title="'+msg+'"></div><input type="hidden" name="tituloCancion" value="'+n_cancion+'"/><input type="hidden" name="nombreArtista" value="'+n_artista+'"/><input type="hidden" name="nombreAlbum" value="'+n_album+'"/><input type="hidden" name="nombreLista" value="Favoritos"/></li></form>';
-     var anadir_lista='<form class="form_mostrar_listas_c" method="post" action="/ps/MostrarListasReproduccion"><li id="barraopciones"><div class="simb_repr_lista"><div class="simb_repr_lista"><input type="hidden" id="user" name="user" value="'+leerCookie("login")+'"><input type="hidden" name="tituloCancion" value="'+n_cancion+'"><input type="hidden" name="nombreArtista" value="'+n_artista+'"><input type="hidden" name="nombreAlbum" value="'+n_album+'"><input type="image" src="img/listas_add.png" alt="Añadir a lista" class="boton_mostrar_listas" title="Añadir a lista"></div></div></li></form>';
+     var fav='<form class="'+form+'" method="post" action="/ps/'+servlet+'"><li id="barraopciones"><div class="simb_repr_fav"><input type="image" src="img/'+imagen_favoritos+'" alt="'+msg+'" title="'+msg+'"></div><input type="hidden" name="ruta" value="'+ruta_aux+'"/><input type="hidden" name="nombreLista" value="Favoritos"/></li></form>';
+     var anadir_lista='<form class="form_mostrar_listas_c" method="post" action="/ps/MostrarListasReproduccion"><li id="barraopciones"><div class="simb_repr_lista"><div class="simb_repr_lista"><input type="hidden" id="user" name="user" value="'+leerCookie("login")+'"><input type="hidden" name="ruta" value="'+ruta_aux+'"/><input type="image" src="img/listas_add.png" alt="Añadir a lista" class="boton_mostrar_listas" title="Añadir a lista"></div></div></li></form>';
      var final='</ul></div>';
      var classPoner=".informacion";
      if(nombrePagina=="recientes"){

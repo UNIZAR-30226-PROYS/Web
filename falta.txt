@@ -4,14 +4,11 @@ General:
 
 --(servidor)Imagenes de album, cancion, artista: poner en carpetas dentro de ps y devolver ruta
 
--Funcion favoritos: comprobar que en pagina TopSemanal
-
 (por orden alfabetico)
 ALBUM:
   -Cambiar imagen album dinamicamente
 
 ALBUMES:
-  -(hecho)Mostrar todos los albumes limitados por paginas(se han limitado a 20 por pagina, falta depurar una vez haya más albumes)(se solicita una vez y no se guardan los datos porque se complicaba al realizar busquedas)
   -Cambiar foto albumes al cargarlos
 
 ARTISTA:
@@ -19,16 +16,13 @@ ARTISTA:
   -Cambiar imagenes canciones
 
 ARTISTAS:
-  -(hecho)Mostrar todos los artistas limitados por paginas(se han limitado a 20 por pagina, falta depurar una vez haya más artistas)
   -Cambiar foto artistas al cargarlos
 
 BUSQUEDA_ALBUMES:
   -Cambiar imagenes albumes
-  -Depurar cuando haya muchos
 
 BUSQUEDA_ARTISTAS:
   -Cambiar imagenes artistas
-  -Depurar cuando haya muchos
 
 BUSQUEDA:(canciones)
   -Cambiar imagen canciones dinamicamente
@@ -39,24 +33,16 @@ CANCION:
 
 ESTILO:
   -Cambiar imagen canciones dinamicamente
-  -Depurar cuando haya mas canciones (que funcione limitar resultados por paginas)
 
 HOME:
-  -Mostrar top topsemanal(hecho el js, falta depurar una vez que haya canciones)
   -Cambiar imagenes canciones
 
 RECIENTES:
-  -Mostrar hasta ultimas 10 escuchadas(hecho falta depurar cuando vaya en server)
   -Cambiar imagenes canciones
   -Depurar que funcione reproduccion (en las otra paginas solo hay una lista, aqui hay 2: recientes y recomendaciones -> verificar que funciones(se reproduce una lista o la otra segun donde se pulse))
 
-TOP SEMANAL:
-  -(hecho)Mostrar canciones-->depurar cuando server devuelva canciones(deberian ser unas 10)
-
 
 Al compartir cancion el usuario recibe esa cancion todas las veces que la ha subido distintos usuarios, en vez de solmanete una vez la del usuario quese la recomendo
-Problema con acentos: las canciones salen mal si tienen acentos y por tanto no permite reproducir(ruta no es correcta) --> response.setContentType()
 
 
 Pagina estilo audio preload="auto" para que descargue la cancion y asi no hay error 206. Sin eso salen esos errore spero se reproduce --> si ocurren problemas en la reproduccion revisar
-Cambiar añadir a lista para que solo envien ruta para que concuerde con servidor

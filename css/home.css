@@ -68,9 +68,8 @@ button:hover {
 #barraopciones{
   display: inline-grid;
   list-style-type: none;
-  margin-left: 5px;
-  margin-right: 50px;
-  margin-bottom: 4%;
+  margin-right: 48px;
+  margin-bottom: 20px;
 }
 
 .imagen {
@@ -103,7 +102,6 @@ button:hover {
 }
 
 .nombrecancion {
-  position: absolute;
   font-size: 70%;
   width: 150px;
   font-weight: normal;
@@ -149,7 +147,7 @@ button:hover {
 
   .nombrecancion {
     padding-top:0%;
-    font-size: 130%;
+    font-size: 105%;
   }
 
   .cancioninf{
