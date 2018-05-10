@@ -2,5 +2,3 @@
   --> Falta la imagen de artistas, canciones y albumes.
 
 -Funcionalidad compartir y ver compartidas no va: falla al mostrar misma cancion de diferentes usuarios (solo deberia mostrar la del usuario que la recomendo)
-
--Establecer codificacion de respuesta UTF-8: con response.setCharacterEncoding("UTF-8"); deberia funcionar
