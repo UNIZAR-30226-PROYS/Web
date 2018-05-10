@@ -88,9 +88,12 @@ button:hover {
   border-style: solid;
   border-width: thin;
   text-align: center;
-  padding-top: 25px;
+  border-radius: 15px;
   font-size: 90%;
   font-weight: normal;
+  display: table-cell;
+  vertical-align: middle;
+  padding: 0;
 }
 
 .imagen img {
@@ -126,6 +129,7 @@ button:hover {
 }
 
 .menuestilo ul{
+  display: inline-flex;
   padding-left: 20px;
   overflow: hidden;
 }
@@ -140,7 +144,6 @@ button:hover {
   .marco_estilo {
     width:  150px;
     height: 110px;
-    padding-top: 35px;
     font-size: 130%;
   }
 

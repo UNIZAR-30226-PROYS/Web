@@ -98,7 +98,7 @@ button:hover {
 
 .nombrecancion {
   position: absolute;
-  margin-left: 22%;
+  margin-left: 5%;
   font-size: 100%;
   margin-top: 5%;
   font-weight: normal;
@@ -141,9 +141,9 @@ button:hover {
 
 @media(min-width:768px) {
   .nombrecancion {
-    margin-left: 5%;
+    margin-left: 1%;
     padding-top:0%;
-    font-size: 28px;
+    font-size: 25px;
     margin-top: 1%;
   }
 
