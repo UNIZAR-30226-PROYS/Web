@@ -73,7 +73,7 @@ function avisarReproducirCancion(ruta){
       data : form_data,
 
     }).done(function(response){
-      
+
     }).fail(function(response){
         alert("Error interno. Inténtelo más tarde.");
     });
@@ -155,6 +155,26 @@ function setIndiceAndPlay(indice,a_pagina_cancion){
   //Si actual es distinta a Aux se establece Aux
   var listaActual = sessionStorage.getItem("listaActual");
   var listaAux = sessionStorage.getItem("listaAux");
+  if(listaActual != listaAux){
+    sessionStorage.setItem("listaActual",listaAux);
+  }
+  reproducirCancion(a_pagina_cancion);
+}
+
+/* Se ejecuta al pulsar reproducir en alguna cancion y establece el indice de esa
+ * cancion en la lista y la reproduce
+ */
+function setIndiceAndPlayRecientes(indice,a_pagina_cancion,recientes){
+  sessionStorage.setItem("indiceLista",indice);
+  var listaAux;
+  //Si actual es distinta a Aux se establece Aux
+  if(recientes==1){
+    listaAux = sessionStorage.getItem("listaRecientes");
+  }
+  else{
+    listaAux = sessionStorage.getItem("listaRecomendadas");
+  }
+  var listaActual = sessionStorage.getItem("listaActual");
   if(listaActual != listaAux){
     sessionStorage.setItem("listaActual",listaAux);
   }

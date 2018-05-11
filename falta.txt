@@ -39,10 +39,3 @@ HOME:
 
 RECIENTES:
   -Cambiar imagenes canciones
-  -Depurar que funcione reproduccion (en las otra paginas solo hay una lista, aqui hay 2: recientes y recomendaciones -> verificar que funciones(se reproduce una lista o la otra segun donde se pulse))
-
-
-Al compartir cancion el usuario recibe esa cancion todas las veces que la ha subido distintos usuarios, en vez de solmanete una vez la del usuario quese la recomendo
-
-
-Pagina estilo audio preload="auto" para que descargue la cancion y asi no hay error 206. Sin eso salen esos errore spero se reproduce --> si ocurren problemas en la reproduccion revisar

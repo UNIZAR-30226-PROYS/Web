@@ -1,4 +1,6 @@
 $(document).ready(function() {
+  //Quitar flag de que se ha cargado form
+  sessionStorage.removeItem("cargados_Form_Recientes");
   $("#form_mostrar_recientes").submit(function(event){
       event.preventDefault(); //prevent default action
 

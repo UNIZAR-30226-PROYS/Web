@@ -197,7 +197,17 @@ function mostrarPaginaconFav(obj,favoritos,nombrePagina,nombreParamUrl){
    var canciones = obj.canciones;
 
    var canciones_string = JSON.stringify(canciones);
-   sessionStorage.setItem("listaAux",canciones_string);
+   //Si es recientes se establece essa lista y si es recomendada lo mismo.
+   //Sino solo hay una lista (en recientes hay dos listas de reproduccion)
+   if(nombreParamUrl == ".menurecientes"){
+      sessionStorage.setItem("listaRecientes",canciones_string);
+   }
+   else if(nombreParamUrl == ".menuestilo"){
+      sessionStorage.setItem("listaRecomendadas",canciones_string);
+   }
+   else{
+      sessionStorage.setItem("listaAux",canciones_string);
+   }
 
    var lista_favoritos=favoritos;
    //Definir elementos a mostrar por pagina, pagina actual y valor a empezar a mostrar
@@ -252,11 +262,21 @@ function mostrarPaginaconFav(obj,favoritos,nombrePagina,nombreParamUrl){
         msg="Añadir a favoritos";
         form="form_poner_favorito";
      }
+     var funcion_play;
+     if(nombreParamUrl == ".menurecientes"){
+        funcion_play = 'setIndiceAndPlayRecientes('+i+',0,1);';
+     }
+     else if(nombreParamUrl == ".menuestilo"){
+        funcion_play = 'setIndiceAndPlayRecientes('+i+',0,0);';
+     }
+     else{
+        funcion_play = 'setIndiceAndPlay('+i+',0);';
+     }
 
      var l1='<div class="cancioninf"><ul><li id="barraopciones"><a href="cancion.html?nombre='+n_cancion+'&artista='+n_artista+'&album='+n_album+'&genero='+n_genero+'&uploader='+n_uploader+'&ruta='+ruta+'" id="enlacecancion"><div class="imagen"><img src="'+image+'" alt="Imagen cancion" onClick="setIndiceAndPlay('+i+',1)"></div></a></li>';
      var l2='<li id="barraopciones"><a href="cancion.html?nombre='+n_cancion+'&artista='+n_artista+'&album='+n_album+'&genero='+n_genero+'&uploader='+n_uploader+'&ruta='+ruta+'" id="enlacecancion"><div class="nombrecancion" onClick="setIndiceAndPlay('+i+',1)">'+n_cancion+'</div></a><a href="artista.html?artista='+n_artista+'" id="enlacecancion"><div class="nombreautor">Artista: '+n_artista+'</div></a></li>';
 
-     var play='<li id="barraopciones"><div class="simb_repr_play"><input type="image" src="img/play.png" alt="Reproducir cancion" title="Reproducir canción" onClick="setIndiceAndPlay('+i+',0);return false;"></div></li>';
+     var play='<li id="barraopciones"><div class="simb_repr_play"><input type="image" src="img/play.png" alt="Reproducir cancion" title="Reproducir canción" onClick="'+funcion_play+'return false;"></div></li>';
 
      var fav='<form class="'+form+'" method="post" action="/ps/'+servlet+'"><li id="barraopciones"><div class="simb_repr_fav"><input type="image" src="img/'+imagen_favoritos+'" alt="'+msg+'" title="'+msg+'"></div><input type="hidden" name="ruta" value="'+ruta_aux+'"/><input type="hidden" name="nombreLista" value="Favoritos"/></li></form>';
      var anadir_lista='<form class="form_mostrar_listas_c" method="post" action="/ps/MostrarListasReproduccion"><li id="barraopciones"><div class="simb_repr_lista"><div class="simb_repr_lista"><input type="hidden" id="user" name="user" value="'+leerCookie("login")+'"><input type="hidden" name="ruta" value="'+ruta_aux+'"/><input type="image" src="img/listas_add.png" alt="Añadir a lista" class="boton_mostrar_listas" title="Añadir a lista"></div></div></li></form>';
@@ -281,6 +301,22 @@ function mostrarPaginaconFav(obj,favoritos,nombrePagina,nombreParamUrl){
      $(classPonerBoton).append(boton_mas);
    }
    //Definir form para anadir a listas
-   form_mostrar_anadir_alistas();
-   form_anadirquitar_cancion_a_favorito();
+   if(nombreParamUrl == ".menurecientes"){
+      sessionStorage.setItem("cargados_Form_Recientes",1);
+      form_mostrar_anadir_alistas();
+      form_anadirquitar_cancion_a_favorito();
+   }
+   else if(nombreParamUrl == ".menuestilo"){
+     if(sessionStorage.getItem("cargados_Form_Recientes")==1){
+        sessionStorage.removeItem("cargados_Form_Recientes");
+     }
+     else{
+       form_mostrar_anadir_alistas();
+       form_anadirquitar_cancion_a_favorito();
+     }
+   }
+   else{
+     form_mostrar_anadir_alistas();
+     form_anadirquitar_cancion_a_favorito();
+   }
 }

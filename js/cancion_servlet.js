@@ -114,7 +114,7 @@ $(document).ready(function() {
            //Cambiar cuando JSON devuelva imagen
            var image="../ps/images/"+amigo+".jpg";
 
-           var large='<form class="form_compartir_cancion" method="post" action="/ps/CompartirCancion"><tr ><div class="imagen"><img src="'+image+'" alt="Imagen usuario" onerror="this.src=\'img/user.png\'"></div><input type="submit" class="nombreamigo" value="'+amigo+'"/><input type="hidden" name="titulo" value="'+cancion+'"/><input type="hidden" name="nombreAlbum" value="'+album+'"/><input type="hidden" name="nombreArtista" value="'+artista+'"/><input type="hidden" name="genero" value="'+genero+'"/><input type="hidden" name="usuarioDestino" value="'+amigo+'"/></tr></form>';
+           var large='<form class="form_compartir_cancion" method="post" action="/ps/CompartirCancion"><tr ><div class="imagen"><img src="'+image+'" alt="Imagen usuario" onerror="this.src=\'img/user.png\'"></div><input type="submit" class="nombreamigo" value="'+amigo+'"/><input type="hidden" name="ruta" value="'+ruta_aux+'"/><input type="hidden" name="usuarioDestino" value="'+amigo+'"/></tr></form>';
            $("#lista_amigos").append(large);
          }
          form_mostrar_amigos();
@@ -136,6 +136,8 @@ function form_mostrar_amigos(){
       var form_data = $(this).serialize(); //Encode form elements for submission
       var request_method = $(this).attr("method"); //get form GET/POST method
       var amigo = form_data.slice(14);
+      var i_n_amigo=form_data.indexOf("usuarioDestino=") + "usuarioDestino=".length;
+      var n_amigo=form_data.substr(i_n_amigo);
 
       $.ajax({
           url : post_url,
@@ -143,7 +145,6 @@ function form_mostrar_amigos(){
           data : form_data,
 
     }).done(function(response){
-      alert(response);
        var obj=JSON.parse(response);
        //Mostrar mensaje correspondiente en forma de ventana
        if(obj.error != undefined){
@@ -153,15 +154,21 @@ function form_mostrar_amigos(){
            borrarCookie("idSesion");
            window.location = "inicio.html";
          }
+         else if(obj.error.indexOf("Duplicate entry") >= 0){
+           $('.close0').click();
+           $("#resultado_seguir").text("Ya has compartido la canción con "+n_amigo+".");
+           $("#result_seguir").attr("src","img/error.png");
+         }
          else{
            alert("Error interno. Inténtelo más tarde.");
          }
        }
        else{
-         $("#resultado_seguir").text("Canción compartida con amigo.");
+         $('.close0').click();
+         $("#resultado_seguir").text("Canción compartida con "+n_amigo+".");
          $("#result_seguir").attr("src","img/exito.png");
        }
-       $('.button1').click();
+       $('.button10').click();
 
     }).fail(function(response){
         alert("Error interno. Inténtelo más tarde.");
