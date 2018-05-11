@@ -1,2 +1,4 @@
 -Imagenes de album, cancion y artista: poner en carpetas dentro de ps y devolver ruta
   --> Falta la imagen de artistas, canciones y albumes.
+
+-Usar conexion segurar sobre SSL/TLS (https) 
