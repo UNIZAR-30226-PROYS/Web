@@ -57,6 +57,7 @@ function reproducirCancion(pagina_cancion){
         playMusic(ruta,image,cancion,artista,album,uploader,genero);
       }
       else{
+        sessionStorage.setItem("tiempo_cancion",0);
         window.location = "cancion.html?nombre="+cancion+"&artista="+artista+"&album="+album+"&genero="+genero+"&uploader="+uploader+"&ruta="+ruta;
       }
     }
@@ -209,13 +210,27 @@ function pulsadoAleatorio() {
 
 $(function(){
   $('#audio-player').mediaelementplayer({
-  alwaysShowControls: true,
-  features: ['playpause','progress','volume','duration'],
-  audioVolume: 'horizontal',
-  iPadUseNativeControls: true,
-  iPhoneUseNativeControls: true,
-  AndroidUseNativeControls: true
-});
+    alwaysShowControls: true,
+    features: ['playpause','progress','volume','duration'],
+    audioVolume: 'horizontal',
+    iPadUseNativeControls: true,
+    iPhoneUseNativeControls: true,
+    AndroidUseNativeControls: true,
+    success: function(mediaElement, originalNode, instance) {
+      var tiempo_actual=sessionStorage.getItem("tiempo_cancion");
+      if(tiempo_actual == undefined){
+        tiempo_actual=0;
+      }
+			instance.setCurrentTime(tiempo_actual);
+
+      function actualizar_tiempo_actual(){
+        sessionStorage.setItem("tiempo_cancion",instance.getCurrentTime());
+        setTimeout(actualizar_tiempo_actual, 500);
+      }
+      setTimeout(actualizar_tiempo_actual, 500);
+		}
+  });
+
 });
 
 // Retorna un entero aleatorio entre min (incluido) y max (excluido)
