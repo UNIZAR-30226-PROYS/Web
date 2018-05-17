@@ -3,6 +3,7 @@ $(document).ready(function() {
   var url = new URL(url_string);
   var c = url.searchParams.get("lista");
   var autor = url.searchParams.get("autor");
+  document.title = "Lista "+c+" de "+autor;
   if(c == undefined || autor == undefined){ //Si se ha ido directamente a la pagina redirigir
     window.location="home.html";
   }

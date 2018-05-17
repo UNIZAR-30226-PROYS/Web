@@ -11,6 +11,8 @@ $(document).ready(function() {
   if(c == undefined){ //Si se ha ido directamente a la pagina redirigir
     window.location="home.html";
   }
+
+  document.title = "Búsqueda álbumes: "+c;
   $( "#texto_nombre_busqueda" ).append("\"" + c + "\"");
   var jsonData = JSON.parse(JSON.parse(sessionStorage.getItem("lista_albumes")));
 

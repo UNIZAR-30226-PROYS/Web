@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  document.title = "Favoritos";
   $("#form_mostrar_lista").submit(function(event){
       event.preventDefault(); //prevent default action
       var autor = leerCookie("login");

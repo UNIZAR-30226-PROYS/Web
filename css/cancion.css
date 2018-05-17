@@ -63,7 +63,7 @@ body {
   border-style: solid;
   border-width: thin;
   background-color: white;
-  margin-top: 465px;
+  margin-top: 440px;
   margin-left: 260px;
   position: absolute;
   padding-top: 8px;
@@ -275,8 +275,8 @@ button:hover {
 }
 
 #cancion img {
-    width: 60%;
-    height: 60%;
+    width: 320px;
+    height: 320px;
     max-width: 350px;
     max-height: 350px;
 }

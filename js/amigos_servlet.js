@@ -4,6 +4,7 @@ $(document).ready(function() {
   var url = new URL(url_string);
   var pag_actual = url.searchParams.get("pagina");
   var inicio;
+  document.title = "Amigos";
 
   $("#form_mostrar_amigos").submit(function(event){
       event.preventDefault(); //prevent default action

@@ -3,6 +3,7 @@ $(document).ready(function() {
   var nombre=leerCookie("login");
   document.getElementById("idNombre").value=nombre;
   document.getElementById("imagen_usuario_perfil").src="../ps/images/"+nombre+".jpg";
+  document.title = "Configuración";
 
   $("#form_cerrar_sesion").submit(function(event){
       event.preventDefault(); //prevent default action

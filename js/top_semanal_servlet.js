@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  document.title = "Top semanal";
   $("#form_mostrar_top_semanal").submit(function(event){
       event.preventDefault(); //prevent default action
 

@@ -14,6 +14,8 @@ $(document).ready(function() {
     window.location="home.html";
   }
 
+  $("meta[property='og\\:title']").attr("content", "Cancion "+cancion+" de "+artista);
+  document.title = "Cancion "+cancion+" de "+artista;
 
   audio_core=$('#audio-player').attr('src', ruta)[0];
   document.getElementById('imagen_cancion_wrapper').src=imagen;

@@ -4,6 +4,7 @@ $(document).ready(function() {
   var url = new URL(url_string);
   var pag_actual = url.searchParams.get("pagina");
   var inicio;
+  document.title = "Álbumes";
 
   //Definir el form de mostrar albumes
   $("#form_mostrar_albumes").submit(function(event){
@@ -18,7 +19,6 @@ $(document).ready(function() {
           data : form_data,
 
     }).done(function(response){
-      alert(response)
        var obj=JSON.parse(response);
        if(obj.error != undefined){
          if(obj.error.indexOf("Usuario no logeado en el servidor") >= 0){

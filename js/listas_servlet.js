@@ -4,6 +4,7 @@ $(document).ready(function() {
   var url = new URL(url_string);
   var pag_actual = url.searchParams.get("pagina");
   var inicio;
+  document.title = "Listas";
 
   $("#form_mostrar_listas").submit(function(event){
       event.preventDefault(); //prevent default action

@@ -11,6 +11,8 @@ $(document).ready(function() {
     return false;
   }
 
+  document.title = "Búsqueda canciones: "+c;
+
   var canciones = jsonData.canciones;
 
   if(canciones != undefined){

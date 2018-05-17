@@ -8,6 +8,9 @@ $(document).ready(function() {
   }
   //Poner estilo en el titulo de la pagina
   $( "#texto_nombre_busqueda" ).append(c);
+
+  document.title = "Estilo "+c;
+
   //Poner valor del estilo en el campo del form
   document.getElementById('genero').value=c;
 
@@ -25,7 +28,6 @@ $(document).ready(function() {
           data : form_data,
 
     }).done(function(response){
-      alert(response)
        var obj=JSON.parse(response);
        if(obj.error != undefined){
          if(obj.error.indexOf("Usuario no logeado en el servidor") >= 0){

@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  document.title = "Recientes y recomendaciones";
   //Quitar flag de que se ha cargado form
   sessionStorage.removeItem("cargados_Form_Recientes");
   $("#form_mostrar_recientes").submit(function(event){
@@ -82,7 +83,6 @@ $(document).ready(function() {
           data : form_data,
 
     }).done(function(response){
-      alert(response)
        var obj=JSON.parse(response);
        if(obj.error != undefined){
          if(obj.error.indexOf("Usuario no logeado en el servidor") >= 0){

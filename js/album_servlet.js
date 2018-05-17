@@ -3,17 +3,18 @@ $(document).ready(function() {
   var url_string = window.location.href;
   var url = new URL(url_string);
   var inicio;
-  var c = url.searchParams.get("album");
-  if(c == undefined){ //Si se ha ido directamente a la pagina redirigir
+  var album = url.searchParams.get("album");
+  if(album == undefined){ //Si se ha ido directamente a la pagina redirigir
     window.location="home.html";
   }
   $( "#texto_nombre_busqueda" ).append(c);
-  c = url.searchParams.get("artista");
+  var c = url.searchParams.get("artista");
   if(c == undefined){ //Si se ha ido directamente a la pagina redirigir
     window.location="home.html";
   }
   document.getElementById('artista_del_album').href="artista.html?artista="+c;
   $( "#titulo_artista" ).append(c);
+  document.title = "Álbum "+album+" de "+c;
 
   $("#form_buscar_album").submit(function(event){
       event.preventDefault(); //prevent default action
@@ -83,7 +84,6 @@ $(document).ready(function() {
           data : form_data,
 
     }).done(function(response){
-      alert(response)
        var obj=JSON.parse(response);
        if(obj.error != undefined){
          if(obj.error.indexOf("Usuario no logeado en el servidor") >= 0){

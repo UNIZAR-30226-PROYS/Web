@@ -4,6 +4,7 @@ $(document).ready(function() {
   var url = new URL(url_string);
   var pag_actual = url.searchParams.get("pagina");
   var inicio;
+  document.title = "Artistas";
 
   //Definir el form de mostrar albumes
   $("#form_mostrar_artistas").submit(function(event){
@@ -115,7 +116,6 @@ $(document).ready(function() {
           data : form_data,
 
     }).done(function(response){
-      alert(response)
       var obj=JSON.parse(response);
       var lista_artistas = JSON.stringify(response);
       if(obj.error != undefined){

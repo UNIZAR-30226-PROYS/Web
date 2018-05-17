@@ -5,6 +5,9 @@ $(document).ready(function() {
   if(c == undefined){ //Si se ha ido directamente a la pagina redirigir
     window.location="home.html";
   }
+
+  document.title = "Búsqueda usuarios: "+c;
+
   $( "#texto_nombre_busqueda" ).append("\"" + c + "\"");
   var jsonData = JSON.parse(JSON.parse(sessionStorage.getItem("lista_usuarios")));
 
@@ -59,7 +62,6 @@ $(document).ready(function() {
           data : form_data,
 
     }).done(function(response){
-      alert(response)
         var obj=JSON.parse(response);
         var lista_usuarios = JSON.stringify(response);
         if(obj.error != undefined){

@@ -7,7 +7,7 @@ function playMusic(src,imagen,cancion,artista,album,uploader,genero){
       audio_core=$('#audio-player').attr('src', src)[0];
       document.getElementById('imagen_cancion_wrapper').src=imagen;
       document.getElementById('cancion_wrapper').innerHTML=cancion;
-      var enlace="cancion.html?nombre="+cancion+"&artista="+artista+"&album="+album+'&genero='+genero+'&uploader='+uploader+'&ruta='+src;
+      var enlace="cancion.html?nombre="+cancion+"&artista="+artista+"&album="+album+'&genero='+genero+'&uploader='+uploader+'&ruta='+src+'&ruta_imagen='+imagen;
       document.getElementById('enlacecancion_wrapper').href=enlace;
       //Establecer funciones para canciones dentro del wrapper
       document.getElementById('imagen_cancion_wrapper').onclick=function() {setIndiceAndPlay(0,1)};

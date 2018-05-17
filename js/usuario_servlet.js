@@ -10,7 +10,7 @@ $(document).ready(function() {
   var inicio;
   var pag_actual = url.searchParams.get("pagina");
 
-
+  document.title = "Usuario: "+c;
 
   $("#form_buscar_amigos").submit(function(event){
       event.preventDefault(); //prevent default action
@@ -73,7 +73,7 @@ $(document).ready(function() {
          var image="../ps/images/"+c+".jpg";
          if(err.indexOf("no sigue a") >= 0){ //No sigue al usuario
 
-        
+
            var l='<div class="imagen"><img src="'+image+'" alt="Imagen usuario" onerror="this.src=\'img/user.png\'"></div>';
            $("#titulopagina").after(l);
            if(leerCookie("login") != c){ //Poner opcion añadir amigo solo si no es el mismo

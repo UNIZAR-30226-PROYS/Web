@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  document.title = "MEWAT";
   $("#form_mostrar_estilos").submit(function(event){
       event.preventDefault(); //prevent default action
       var post_url = $(this).attr("action"); //get form action url

@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  document.title = "MEWAT";
   //Si se ha cerrado la sesion, informar y borrar la cookie
   if(leerCookie("sesionCerrada") != null){
     $("#inf_acceso").css("color", "#088A08");

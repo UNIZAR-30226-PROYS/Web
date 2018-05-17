@@ -14,6 +14,7 @@ $(document).ready(function() {
   //Poner artista en titulo pagina
   $("#nombre_artista_titulo").append(artista);
 
+  document.title = "Artista "+artista;
 
   //Definir el form de mostrar albumes
   $("#form_mostrar_albumes_artista").submit(function(event){
@@ -90,7 +91,6 @@ $(document).ready(function() {
           data : form_data,
 
     }).done(function(response){
-      alert(response)
        var obj=JSON.parse(response);
        if(obj.error != undefined){
          if(obj.error.indexOf("Usuario no logeado en el servidor") >= 0){

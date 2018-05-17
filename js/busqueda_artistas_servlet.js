@@ -11,6 +11,9 @@ $(document).ready(function() {
   if(c == undefined){ //Si se ha ido directamente a la pagina redirigir
     window.location="home.html";
   }
+
+  document.title = "Búsqueda artistas: "+c;
+
   $( "#texto_nombre_busqueda" ).append("\"" + c + "\"");
   var jsonData = JSON.parse(JSON.parse(sessionStorage.getItem("lista_artistas")));
 
@@ -19,7 +22,7 @@ $(document).ready(function() {
     var inicio=(pag_actual-1)*elem_por_pagina;
     var sin_elementos = 1;
     for(i=inicio; i<(elem_por_pagina+inicio) && i<artistas.length;i++){
-      var artista=artistas[i].nombre;
+      var artista=artistas[i].nombreArtista;
 
       var image_aux=artistas[i].ruta_imagen;
       var indexi = image_aux.indexOf("/ps");
