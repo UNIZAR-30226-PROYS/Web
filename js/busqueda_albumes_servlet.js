@@ -21,9 +21,11 @@ $(document).ready(function() {
     for(i=inicio; i<(elem_por_pagina+inicio) && i<albumes.length;i++){
       var album=albumes[i].nombre;
       var artista=albumes[i].artista;
-      //Cambiar cuando JSON devuelva imagen
-      var image="img/reclassified_album.png";
-      var large='<li id="barraopciones"> <div class="cancioninf"><a href="album.html'+"?album="+album+'&artista='+artista+'" id="enlacecancion"><div class="imagen"><img src="'+image+'" alt="Imagen cancion"></div><div class="nombrecancion">'+album+'</div></a></div></li>';
+
+      var image_aux=albumes[i].ruta_imagen;
+      var indexi = image_aux.indexOf("/ps");
+      var image = ".."+image_aux.substr(indexi);
+      var large='<li id="barraopciones"> <div class="cancioninf"><a href="album.html'+"?album="+album+'&artista='+artista+'" id="enlacecancion"><div class="imagen"><img src="'+image+'" alt="Imagen cancion" onerror="this.src=\'img/Unknown_Album.png\'"></div><div class="nombrecancion">'+album+'</div></a></div></li>';
       $("#lista_albumes").append(large);
       sin_elementos = 0;
     }

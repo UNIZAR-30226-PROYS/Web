@@ -42,7 +42,7 @@ $(document).ready(function() {
          inicio=(pag_actual-1)*elem_por_pagina;
          for(i=inicio; i<(elem_por_pagina+inicio) && i<amigos.length;i++){
            var amigo=amigos[i].nombreSeguido;
-           //Cambiar cuando JSON devuelva imagen
+
            var image="../ps/images/"+amigo+".jpg";
            var large='<div class="cancioninf"><ul><li id="barraopciones"><a href="usuario.html'+"?usuario="+amigo+'"><div class="imagen"><img src="'+image+'" alt="Imagen lista" onerror="this.src=\'img/user.png\'"></div></a></li><li id="barraopciones"><a href="usuario.html'+"?usuario="+amigo+'"><div class="nombrecancion">'+amigo+'</div></a></li><li id="barraopciones"><form class="form_borrar_amigo" method="post" action="/ps/DejarDeSeguirUsuario"><div class="simb_repr_elim"><input type="image" src="img/eliminar.png" alt="Eliminar amigo" title="Eliminar amigo"></div><input type="hidden" id="seguido" name="nombreSeguido" value="'+amigo+'"/></form></li></ul></div><br/>';
            $(".informacion").append(large);

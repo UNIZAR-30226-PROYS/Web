@@ -58,7 +58,8 @@ $(document).ready(function() {
           type: request_method,
           data : form_data,
 
-    }).done(function(response){ //
+    }).done(function(response){
+      alert(response)
         var obj=JSON.parse(response);
         var lista_usuarios = JSON.stringify(response);
         if(obj.error != undefined){

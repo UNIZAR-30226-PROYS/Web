@@ -8,13 +8,12 @@ $(document).ready(function() {
   var uploader = url.searchParams.get("uploader");
   var ruta = url.searchParams.get("ruta");
 
-  if(cancion == undefined || artista == undefined || album == undefined || genero == undefined || uploader == undefined || ruta == undefined){
-    //Falta algun parametro en la url
+  var imagen =url.searchParams.get("ruta_imagen");
+
+  if(cancion == undefined || artista == undefined || album == undefined || genero == undefined || uploader == undefined || ruta == undefined || imagen == undefined){
     window.location="home.html";
   }
 
-  //CAMBIAR CUANDO ESTE, SI ES NECESARIO MODIFICAR ENLACES A CANCION.HTML AÑADIENDO PARAMETRO IMAGEN
-  var imagen ="img/edsheeranperfect.jpg";
 
   audio_core=$('#audio-player').attr('src', ruta)[0];
   document.getElementById('imagen_cancion_wrapper').src=imagen;

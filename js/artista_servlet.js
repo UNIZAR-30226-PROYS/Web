@@ -56,10 +56,12 @@ $(document).ready(function() {
            var artista = $.trim(aux);
 
            for(i=0;i<albumes.length;i++){
-             var album=albumes[i];
-             //Cambiar cuando JSON devuelva imagen
-             var image="img/blackWindows.jpg";
-             var large='<li id="barraopciones"> <div class="cancioninf"><a href="album.html'+"?album="+album+'&artista='+artista+'" id="enlacecancion"><div class="imagen"><img src="'+image+'" alt="Imagen album"></div><div class="nombrecancion">'+album+'</div></a></div></li>';
+             var album=albumes[i].nombre;
+
+             var image_aux=albumes[i].ruta_imagen;
+             var indexi = image_aux.indexOf("/ps");
+             var image = ".."+image_aux.substr(indexi);
+             var large='<li id="barraopciones"> <div class="cancioninf"><a href="album.html'+"?album="+album+'&artista='+artista+'" id="enlacecancion"><div class="imagen"><img src="'+image+'" alt="Imagen album" onerror="this.src=\'img/Unknown_Album.png\'"></div><div class="nombrecancion">'+album+'</div></a></div></li>';
              $("#lista_albumes").append(large);
            }
          }
@@ -88,6 +90,7 @@ $(document).ready(function() {
           data : form_data,
 
     }).done(function(response){
+      alert(response)
        var obj=JSON.parse(response);
        if(obj.error != undefined){
          if(obj.error.indexOf("Usuario no logeado en el servidor") >= 0){
@@ -122,15 +125,17 @@ $(document).ready(function() {
              var ruta = ".."+ruta_aux.substr(index);
 
              var n_uploader=canciones[i].uploader;
-             //CAMBIAR IMAGEN
-             var image="img/work_iggy.jpg";
+
+             var image_aux=canciones[i].ruta_imagen;
+             var indexi = image_aux.indexOf("/ps");
+             var image = ".."+image_aux.substr(indexi);
              if(n_genero==null){
                n_genero= "";
              }
              if(n_album==null){
                n_album= "";
              }
-             var large='<li id="barraopciones"><div class="cancioninf"><a href="cancion.html?nombre='+n_cancion+'&artista='+n_artista+'&album='+n_album+'&genero='+n_genero+'&uploader='+n_uploader+'&ruta='+ruta+'" id="enlacecancion"><div class="imagen"><img src="'+image+'" alt="Imagen cancion" onClick="setIndiceAndPlay('+i+',1)"></div><div class="nombrecancion" onClick="setIndiceAndPlay('+i+',1)">'+n_cancion+'</div></a></div></li>';
+             var large='<li id="barraopciones"><div class="cancioninf"><a href="cancion.html?nombre='+n_cancion+'&artista='+n_artista+'&album='+n_album+'&genero='+n_genero+'&uploader='+n_uploader+'&ruta='+ruta+'&ruta_imagen='+image+'" id="enlacecancion"><div class="imagen"><img src="'+image+'" alt="Imagen cancion" onClick="setIndiceAndPlay('+i+',1)" onerror="this.src=\'img/Unknown_Music.png\'"></div><div class="nombrecancion" onClick="setIndiceAndPlay('+i+',1)">'+n_cancion+'</div></a></div></li>';
              $("#lista_canciones_artista").append(large);
            }
          }

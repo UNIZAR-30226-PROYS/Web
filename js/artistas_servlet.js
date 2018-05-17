@@ -40,15 +40,17 @@ $(document).ready(function() {
          }
          inicio=(pag_actual-1)*elem_por_pagina;
          for(i=inicio; i<(elem_por_pagina+inicio) && i<artistas.length;i++){
-           var artista=artistas[i];
-           //Cambiar cuando JSON devuelva imagen
-           var image="img/blackWindows.jpg";
-           var large='<li id="barraopciones"> <div class="cancioninf"><a href="artista.html'+"?artista="+artista+'" id="enlacecancion"><div class="imagen"><img src="'+image+'" alt="Imagen cancion"></div><div class="nombrecancion">'+artista+'</div></a></div></li>';
+           var artista=artistas[i].nombreArtista;
+
+           var image_aux=artistas[i].ruta_imagen;
+           var indexi = image_aux.indexOf("/ps");
+           var image = ".."+image_aux.substr(indexi);
+           var large='<li id="barraopciones"> <div class="cancioninf"><a href="artista.html'+"?artista="+artista+'" id="enlacecancion"><div class="imagen"><img src="'+image+'" alt="Imagen cancion" onerror="this.src=\'img/Unknown_Artist.png\'"></div><div class="nombrecancion">'+artista+'</div></a></div></li>';
            $("#lista_artistas").append(large);
          }
          if((elem_por_pagina+inicio)<artistas.length){
            var pagina_sig=pag_actual+1;
-           var boton_mas = '<br><br><form action="albumes.html"><button type="submit" id="boton_mostrar_mas" class="aumentar">Mostrar más</button><input type="hidden" name="pagina" value="'+pagina_sig+'"/></form>';
+           var boton_mas = '<br><br><form action="artistas.html"><button type="submit" id="boton_mostrar_mas" class="aumentar">Mostrar más</button><input type="hidden" name="pagina" value="'+pagina_sig+'"/></form>';
            $(".informacion").append(boton_mas);
          }
        }
@@ -113,6 +115,7 @@ $(document).ready(function() {
           data : form_data,
 
     }).done(function(response){
+      alert(response)
       var obj=JSON.parse(response);
       var lista_artistas = JSON.stringify(response);
       if(obj.error != undefined){

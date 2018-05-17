@@ -51,14 +51,16 @@ function reproducirCancion(pagina_cancion){
       var uploader=canciones[i].uploader;
       avisarReproducirCancion(ruta_aux);
 
-      //CAMBIAR IMAGEN
-      var image="img/edsheeranperfect.jpg";
+      var image_aux=canciones[i].ruta_imagen;
+      var indexi = image_aux.indexOf("/ps");
+      var image = ".."+image_aux.substr(indexi);
+
       if(pagina_cancion == 0){
         playMusic(ruta,image,cancion,artista,album,uploader,genero);
       }
       else{
         sessionStorage.setItem("tiempo_cancion",0);
-        window.location = "cancion.html?nombre="+cancion+"&artista="+artista+"&album="+album+"&genero="+genero+"&uploader="+uploader+"&ruta="+ruta;
+        window.location = "cancion.html?nombre="+cancion+"&artista="+artista+"&album="+album+"&genero="+genero+"&uploader="+uploader+"&ruta="+ruta+"&ruta_imagen="+image;
       }
     }
 }

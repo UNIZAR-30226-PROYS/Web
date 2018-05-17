@@ -19,10 +19,12 @@ $(document).ready(function() {
     var inicio=(pag_actual-1)*elem_por_pagina;
     var sin_elementos = 1;
     for(i=inicio; i<(elem_por_pagina+inicio) && i<artistas.length;i++){
-      var artista=artistas[i];
-      //Cambiar cuando JSON devuelva imagen
-      var image="img/blackWindows.jpg";
-      var large='<li id="barraopciones"> <div class="cancioninf"><a href="artista.html'+"?artista="+artista+'" id="enlacecancion"><div class="imagen"><img src="'+image+'" alt="Imagen cancion"></div><div class="nombrecancion">'+artista+'</div></a></div></li>';
+      var artista=artistas[i].nombre;
+
+      var image_aux=artistas[i].ruta_imagen;
+      var indexi = image_aux.indexOf("/ps");
+      var image = ".."+image_aux.substr(indexi);
+      var large='<li id="barraopciones"><div class="cancioninf"><a href="artista.html'+"?artista="+artista+'" id="enlacecancion"><div class="imagen"><img src="'+image+'" alt="Imagen cancion" onerror="this.src=\'img/Unknown_Artist.png\'"></div><div class="nombrecancion">'+artista+'</div></a></div></li>';
       $("#lista_artistas").append(large);
       sin_elementos = 0;
     }

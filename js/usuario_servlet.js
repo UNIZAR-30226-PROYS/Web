@@ -73,7 +73,7 @@ $(document).ready(function() {
          var image="../ps/images/"+c+".jpg";
          if(err.indexOf("no sigue a") >= 0){ //No sigue al usuario
 
-           //ESTABLECER IMAGEN O USAR OTRO FORM PARA VER CUAL ES
+        
            var l='<div class="imagen"><img src="'+image+'" alt="Imagen usuario" onerror="this.src=\'img/user.png\'"></div>';
            $("#titulopagina").after(l);
            if(leerCookie("login") != c){ //Poner opcion añadir amigo solo si no es el mismo

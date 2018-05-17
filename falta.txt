@@ -2,40 +2,16 @@ Falta:
 General:
   -Cambiar form para que sea sobre SSL. Usar "https://yourdomain.com/servlet" en action(dejarlo hasta que todo funcione y crear certificado en servidor)
 
---(servidor)Imagenes de album, cancion, artista: poner en carpetas dentro de ps y devolver ruta
-
-(por orden alfabetico)
-ALBUM:
-  -Cambiar imagen album dinamicamente
-
-ALBUMES:
-  -Cambiar foto albumes al cargarlos
-
-ARTISTA:
-  -Cambiar imagenes albumes
-  -Cambiar imagenes canciones
-
-ARTISTAS:
-  -Cambiar foto artistas al cargarlos
-
-BUSQUEDA_ALBUMES:
-  -Cambiar imagenes albumes
-
-BUSQUEDA_ARTISTAS:
-  -Cambiar imagenes artistas
-
-BUSQUEDA:(canciones)
-  -Cambiar imagen canciones dinamicamente
 
 CANCION:
   -(hecho)Compartir(en facebook da error porque no acepta la URL (que es lo que se comparte) como valida por temas de seguridad)
-  -Cambiar imagen cancion
 
-ESTILO:
-  -Cambiar imagen canciones dinamicamente
 
-HOME:
-  -Cambiar imagenes canciones
+Paginas devuelven ruta incorrecta(entero por ejemplo 146, 147):
+-Estilo
+-ALBUM
+-Artista
+-Busqueda canciones
 
-RECIENTES:
-  -Cambiar imagenes canciones
+Busqueda artistas falta devolver ruta_imagen
+Recomendadas tambien
