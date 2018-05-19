@@ -1,3 +1,0 @@
-Falta:
-General:
-  -Cambiar form para que sea sobre SSL. Usar "https://yourdomain.com/servlet" en action(dejarlo hasta que todo funcione y crear certificado en servidor)

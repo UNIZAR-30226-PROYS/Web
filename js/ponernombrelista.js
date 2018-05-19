@@ -1,11 +1,1 @@
-function nombreLista(){
-  //get the input elements from HTML DOM
-  var textOne = document.getElementById("prueba");
-  var textTwo = document.getElementById("IdUsar1");
-  //Get the value of textOne textbox input
-  var textOneValue = textOne.innerHTML.slice(7);
-
-  var textTwoValue = textOneValue;
-  //Assign the value of textOne textbox to textTwo textbox
-  textTwo.value = textTwoValue;
-}
+function nombreLista(){var e=document.getElementById("prueba"),n=document.getElementById("IdUsar1"),t=e.innerHTML.slice(7);n.value=t}

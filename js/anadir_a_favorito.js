@@ -1,8 +1,1 @@
-function changeImage(image) {
-    //var image = document.getElementById('imagen_favorito');
-    if (image.src.match("img/favoritos")) {
-        image.src = "img/favanadido.png";
-    } else {
-        image.src = "img/favoritos.png";
-    }
-}
+function changeImage(a){a.src.match("img/favoritos")?a.src="img/favanadido.png":a.src="img/favoritos.png"}

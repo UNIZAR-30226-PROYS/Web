@@ -1,10 +1,1 @@
-/*Función para mostrar menu de compartir cancion*/
-
-function mostrarMenuShare(){
-    var x = document.getElementById("share-buttons");
-    if (x.style.zIndex == "-100") {
-        x.style.zIndex = "0";
-    } else {
-        x.style.zIndex = "-100";
-    }
-}
+function mostrarMenuShare(){var e=document.getElementById("share-buttons");"-100"==e.style.zIndex?e.style.zIndex="0":e.style.zIndex="-100"}

@@ -1,0 +1,225 @@
+/* Para que no ocupe espacio el separador */
+#separador_album_cancion {
+  position: absolute;
+}
+
+#titulopagina {
+  text-align: center;
+  margin-right: 15%;
+}
+
+#titulopagina a{
+  color: #333;
+}
+
+#titulopagina a:hover{
+  text-decoration: none;
+}
+
+#tituloestilo {
+  text-align: center;
+  margin-right: 15%;
+  color: #333;
+}
+
+.informacion form{
+  height: 12%;
+}
+.informacion input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  max-width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+  .informacion button {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #4CAF50;
+  width: 45%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 90%;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+    position: absolute;
+    float:left;
+    padding: 1%;
+    bottom:0%;
+    right:20%;
+}
+
+button:hover {
+    background-color: green;
+}
+
+/*#barraopciones{
+  float: left;
+  list-style-type: none;
+  width: 18%;
+  height: 100%;
+  margin-left: 5px;
+}*/
+#barraopciones{
+  display: inline-grid;
+  list-style-type: none;
+  margin-left: 5px;
+}
+
+
+.marco_estilo {
+  width: 100%;
+}
+
+.marco_estilo {
+  position: absolute;
+  width:  60px;
+  height: 70px;
+  max-width: 17%;
+  max-height: 16%;
+  margin: auto;
+  border-style: solid;
+  border-width: thin;
+  text-align: center;
+  padding-top: 25px;
+  font-size: 90%;
+  font-weight: normal;
+}
+
+.imagen img {
+  width:  60px;
+  height: 70px;
+  margin: auto;
+    border-radius: 10px;
+}
+
+.nombrecancion {
+  font-size: 70%;
+  width: 150px;
+  font-weight: normal;
+  text-align: center;
+}
+
+.albumes {
+  height: 40%;
+}
+
+.cancionesArtista {
+  height: 40%;
+}
+
+.cancioninf{
+  height: 100%;
+  width: 100%;
+  margin-top:5%;
+  margin-bottom:5%;
+}
+
+#enlacecancion{
+  font: bold 20px Arial;
+  text-decoration: none;
+  color: #333333;
+}
+
+.albumes ul{
+  padding-left: 20px;
+  overflow: hidden;
+}
+
+.cancionesArtista ul{
+  padding-left: 20px;
+  overflow: hidden;
+}
+
+@media(min-width:768px) {
+  .imagen img {
+    width:  150px;
+    height: 110px;
+    margin: auto;
+  }
+
+  .marco_estilo {
+    position: absolute;
+    max-width: 13%;
+    max-height: 20%;
+    width:  150px;
+    height: 110px;
+    padding-top: 35px;
+    font-size: 130%;
+  }
+
+  .nombrecancion {
+    padding-top:0%;
+    font-size: 105%;
+  }
+
+  .cancioninf{
+    margin-top:5%;
+    margin-bottom:5%;
+    padding: 2%;
+  }
+
+  .albumes {
+    height: 40%;
+  }
+
+  .albumes ul{
+    padding-left: 20px;
+  }
+
+
+  .cancionesArtista ul{
+    padding-left: 20px;
+  }
+
+  #tituloestilo {
+    text-align: center;
+
+
+    color: #333;
+  }
+
+}
+
+@media (max-width: 415px){
+  .topsemanal ul {
+      padding-left: 10px;
+  }
+  /*
+  #barraopciones {
+    float: left;
+    list-style-type: none;
+    width: 22%;
+    height: 100%;
+    margin-left: 5px;
+    margin-bottom: 30px;
+  }*/
+
+  #barraopciones{
+    display: inline-grid;
+    list-style-type: none;
+    margin-left: 5px;
+    margin-bottom: 30px;
+  }
+
+  .nombrecancion {
+    font-size: 60%;
+    margin-top: 70px;
+    width: 150px;
+    font-weight: normal;
+    text-align: center;
+  }
+}
+
+@media (min-width: 1300px){
+  .topsemanal ul {
+      padding-left: 20px;
+  }
+}

@@ -1,0 +1,193 @@
+#titulopagina {
+  text-align: center;
+  margin-right: 15%;
+}
+
+.cancioninf {
+    margin-top: 0%;
+    margin-bottom: 20px;
+}
+
+.window-container10 {
+  margin: 13em auto !important;
+}
+
+.informacion input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  max-width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+  .informacion button {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #4CAF50;
+  width: 45%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 90%;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+    position: absolute;
+    float:left;
+    padding: 1%;
+    bottom:0%;
+    right:20%;
+}
+
+
+button:hover {
+    background-color: green;
+}
+
+#barraopciones{
+  float: left;
+}
+
+.imagen img {
+  width: 110px;
+  height: 70px;
+  margin: auto;
+}
+
+.simb_repr_play input {
+  margin-left: 40px;
+  width:  45px;
+  height: 45px;
+  margin-top: 3%;
+  border: none;
+  padding: 0;
+  background: none;
+}
+
+.simb_repr_fav input {
+  margin-left: 100px;
+  width:  45px;
+  height: 45px;
+  margin-top: 3%;
+  border: none;
+  padding: 0;
+  background: none;
+}
+
+.simb_repr_lista input {
+  margin-left: 100px;
+  width:  45px;
+  height: 45px;
+  margin-top: 3%;
+  border: none;
+  padding: 0;
+  background: none;
+}
+
+.nombrecancion {
+  margin-left: 22%;
+  font-size: 100%;
+  margin-top: 5%;
+  font-weight: normal;
+  width: 200px;
+}
+
+
+.cancioninf ul{
+  list-style-type: none;
+  padding-left: 0;
+  overflow: hidden;
+}
+
+.nombre_autor_cancion{
+  /*margin-left: 5%;*/
+  position: absolute;
+}
+
+.nombreautor {
+  margin-left: 50px;
+  font-size: 90%;
+  margin-top: 0%;
+  font-weight: normal;
+}
+
+#enlacecancion{
+  font: bold 20px Arial;
+  text-decoration: none;
+  color: #333333;
+}
+
+@media(min-width:768px) {
+  .nombrecancion {
+      margin-left: 5%;
+      padding-top: 0%;
+      font-size: 22px;
+      margin-top: 0;
+      width:450px;
+  }
+
+  .imagen img {
+    width: 110px;
+    height: 70px;
+    margin: auto;
+  }
+
+  .nombreautor {
+    margin-left: 5%;
+    padding-top:0%;
+    font-size: 18px;
+    margin-top: 0%;
+  }
+
+  .simb_repr_play input {
+    margin-top: 0%;
+  }
+
+  .simb_repr_fav input {
+    margin-top: 0%;
+  }
+
+  .simb_repr_lista input {
+    margin-top: 0%;
+  }
+
+}
+
+@media(max-width:767px) {
+	.window-container {
+	    display: block;
+	    background: #fcfcfc;
+	    margin: 8em auto;
+	    margin-left: 25% !important;
+	    width: 250px !important;
+	    padding: 250px 20px 20px !important;
+	    text-align: left;
+	    z-index: 3;
+	    border-radius: 3px;
+	    box-shadow: 0px 0px 30px rgba(0,0,0,0.2);
+	    -webkit-transition: 0.4s ease-out;
+	    -moz-transition: 0.4s ease-out;
+	    -ms-transition: 0.4s ease-out;
+	    -o-transition: 0.4s ease-out;
+	    transition: 0.4s ease-out;
+	    opacity: 0;
+	}
+  .nombrelista {
+    text-align: center;
+    margin-left: 40px !important;
+    padding: 10px;
+    font-size: 40px;
+}
+}
+
+@media(max-width:350px) {
+    .window-container {
+        width: 225px !important;
+        margin-left: 25% !important;
+    }
+}

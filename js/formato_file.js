@@ -1,12 +1,1 @@
-/*Función para verificar si el fichero a subir es del formato adecuado*/
-
-function fileValidation(){
-    var fileInput = document.getElementById('fichero');
-    var filePath = fileInput.value;
-    var allowedExtensions = /(.mp3|.ogg|.acc)$/i;
-    if(!allowedExtensions.exec(filePath)){
-        alert('Por favor sube un fichero de extensión .mp3/.ogg/.acc.');
-        fileInput.value = '';
-        return false;
-    }
-}
+function fileValidation(){var e=document.getElementById("fichero"),a=e.value;if(!/(.mp3|.ogg|.acc)$/i.exec(a))return alert("Por favor sube un fichero de extensión .mp3/.ogg/.acc."),e.value="",!1}
