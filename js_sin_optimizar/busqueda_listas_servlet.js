@@ -79,11 +79,8 @@ $(document).ready(function() {
       var obj=JSON.parse(response);
       var lista_listas = JSON.stringify(response);
       if(obj.error != undefined){
-        if(obj.error.indexOf("Usuario no logeado en el servidor") >= 0){
-          //El usuario no esta logeado, quitar cookies e ir a inicio
-          borrarCookie("login");
-          borrarCookie("idSesion");
-          window.location = "inicio.html";
+        if(obj.error.indexOf("Usuario no logeado") >= 0){
+          cerrarSesion();
         }
         else if(obj.error.indexOf("lista cuyo nombre coincida") >= 0){
           sessionStorage.setItem("lista_listas", lista_listas);

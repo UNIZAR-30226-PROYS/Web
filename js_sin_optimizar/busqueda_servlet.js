@@ -24,11 +24,8 @@ $(document).ready(function() {
        var obj1=JSON.parse(response);
        var favoritos=undefined;
          if(obj1.error != undefined){
-           if(obj1.error.indexOf("Usuario no logeado en el servidor") >= 0){
-             //El usuario no esta logeado, quitar cookies e ir a inicio
-             borrarCookie("login");
-             borrarCookie("idSesion");
-             window.location = "inicio.html";
+           if(obj1.error.indexOf("Usuario no logeado") >= 0){
+             cerrarSesion();
            }
          }
          else if(obj1.NoHayCanciones != undefined){

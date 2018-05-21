@@ -3,6 +3,14 @@ if(leerCookie("login") == null || leerCookie("idSesion") == null){
   window.location = "inicio.html"
 }
 
+//Elimina las cookies y todos los elementos de sessionStorage y lleva a pagina inicio
+function cerrarSesion(){
+  borrarCookie("login");
+  borrarCookie("idSesion");
+  sessionStorage.clear();
+  window.location = "inicio.html";
+}
+
 function playMusic(src,imagen,cancion,artista,album,uploader,genero){
       audio_core=$('#audio-player').attr('src', src)[0];
       document.getElementById('imagen_cancion_wrapper').src=imagen;
@@ -280,11 +288,8 @@ function cargar_lista_top_semanal(){
   }).done(function(response){
      var obj=JSON.parse(response);
      if(obj.error != undefined){
-       if(obj.error.indexOf("Usuario no logeado en el servidor") >= 0){
-         //El usuario no esta logeado, quitar cookies e ir a inicio
-         borrarCookie("login");
-         borrarCookie("idSesion");
-         window.location = "inicio.html";
+       if(obj.error.indexOf("Usuario no logeado") >= 0){
+         cerrarSesion();
        }
      }
      else if(obj.NoHayCanciones != undefined){
@@ -335,11 +340,8 @@ function form_repr_lista(){
     }).done(function(response){
        var obj=JSON.parse(response);
        if(obj.error != undefined){
-         if(obj.error.indexOf("Usuario no logeado en el servidor") >= 0){
-           //El usuario no esta logeado, quitar cookies e ir a inicio
-           borrarCookie("login");
-           borrarCookie("idSesion");
-           window.location = "inicio.html";
+         if(obj.error.indexOf("Usuario no logeado") >= 0){
+           cerrarSesion();
          }
        }
        else if(obj.NoHayCanciones != undefined){

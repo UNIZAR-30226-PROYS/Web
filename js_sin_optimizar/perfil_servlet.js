@@ -19,11 +19,8 @@ $(document).ready(function() {
     }).done(function(response){
        var obj=JSON.parse(response);
         if(obj.error != undefined){
-          if(obj.error.indexOf("Usuario no logeado en el servidor") >= 0){
-            //El usuario no esta logeado, quitar cookies e ir a inicio
-            borrarCookie("login");
-            borrarCookie("idSesion");
-            window.location = "inicio.html";
+          if(obj.error.indexOf("Usuario no logeado") >= 0){
+            cerrarSesion();
           }
           else{
             alert(obj.error);
@@ -34,6 +31,7 @@ $(document).ready(function() {
           borrarCookie("login");
           borrarCookie("idSesion");
           crearCookie("sesionCerrada","true",1);
+          sessionStorage.clear();
           window.location = "inicio.html"
         }
 
@@ -57,11 +55,8 @@ $(document).ready(function() {
       var obj=JSON.parse(response);
       var lista_usuarios = JSON.stringify(response);
       if(obj.error != undefined){
-        if(obj.error.indexOf("Usuario no logeado en el servidor") >= 0){
-          //El usuario no esta logeado, quitar cookies e ir a inicio
-          borrarCookie("login");
-          borrarCookie("idSesion");
-          window.location = "inicio.html";
+        if(obj.error.indexOf("Usuario no logeado") >= 0){
+          cerrarSesion();
         }
         else{
           $("#resultado_seguir").text(obj.error+".");
@@ -96,11 +91,8 @@ $(document).ready(function() {
        $('.close2').click();
        var obj=JSON.parse(response);
        if(obj.error != undefined){
-         if(obj.error.indexOf("Usuario no logeado en el servidor") >= 0){
-           //El usuario no esta logeado, quitar cookies e ir a inicio
-           borrarCookie("login");
-           borrarCookie("idSesion");
-           window.location = "inicio.html";
+         if(obj.error.indexOf("Usuario no logeado") >= 0){
+           cerrarSesion();
          }
          else{
            $("#resultado_seguir").text("La contraseña no es válida.");
@@ -133,11 +125,8 @@ $(document).ready(function() {
        $('.close3').click();
        var obj=JSON.parse(response);
        if(obj.error != undefined){
-         if(obj.error.indexOf("Usuario no logeado en el servidor") >= 0){
-           //El usuario no esta logeado, quitar cookies e ir a inicio
-           borrarCookie("login");
-           borrarCookie("idSesion");
-           window.location = "inicio.html";
+         if(obj.error.indexOf("Usuario no logeado") >= 0){
+           cerrarSesion();
          }
          else{
            $("#resultado_seguir").text(obj.error+".");
@@ -176,11 +165,8 @@ $(document).ready(function() {
        $('.close4').click();
        var obj=JSON.parse(response);
        if(obj.error != undefined){
-         if(obj.error.indexOf("Usuario no logeado en el servidor") >= 0){
-           //El usuario no esta logeado, quitar cookies e ir a inicio
-           borrarCookie("login");
-           borrarCookie("idSesion");
-           window.location = "inicio.html";
+         if(obj.error.indexOf("Usuario no logeado") >= 0){
+           cerrarSesion();
          }
          else{
            $("#resultado_seguir").text(obj.error+".");

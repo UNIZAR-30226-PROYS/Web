@@ -70,11 +70,8 @@ $(document).ready(function() {
       var obj=JSON.parse(response);
       var lista_artistas = JSON.stringify(response);
       if(obj.error != undefined){
-        if(obj.error.indexOf("Usuario no logeado en el servidor") >= 0){
-          //El usuario no esta logeado, quitar cookies e ir a inicio
-          borrarCookie("login");
-          borrarCookie("idSesion");
-          window.location = "inicio.html";
+        if(obj.error.indexOf("Usuario no logeado") >= 0){
+          cerrarSesion();
         }
         else if(obj.error.indexOf("artista cuyo nombre sea o empiece") >= 0){
           sessionStorage.setItem("lista_artistas", lista_artistas);

@@ -24,11 +24,8 @@ function form_mostrar_anadir_alistas(){
     }).done(function(response){
        var obj=JSON.parse(response);
        if(obj.error != undefined){
-         if(obj.error.indexOf("Usuario no logeado en el servidor") >= 0){
-           //El usuario no esta logeado, quitar cookies e ir a inicio
-           borrarCookie("login");
-           borrarCookie("idSesion");
-           window.location = "inicio.html";
+         if(obj.error.indexOf("Usuario no logeado") >= 0){
+           cerrarSesion();
          }
          else{
            //No hay resultados
@@ -78,11 +75,8 @@ function form_anadir_cancion_a_lista(){
     }).done(function(response){
        var obj=JSON.parse(response);
        if(obj.error != undefined){
-         if(obj.error.indexOf("Usuario no logeado en el servidor") >= 0){
-           //El usuario no esta logeado, quitar cookies e ir a inicio
-           borrarCookie("login");
-           borrarCookie("idSesion");
-           window.location = "inicio.html";
+         if(obj.error.indexOf("Usuario no logeado") >= 0){
+           cerrarSesion();
          }
          else{
            alert("Error. Inténtelo más tarde.");s
@@ -123,11 +117,8 @@ function form_anadirquitar_cancion_a_favorito(){
     }).done(function(response){
        var obj=JSON.parse(response);
        if(obj.error != undefined){
-         if(obj.error.indexOf("Usuario no logeado en el servidor") >= 0){
-           //El usuario no esta logeado, quitar cookies e ir a inicio
-           borrarCookie("login");
-           borrarCookie("idSesion");
-           window.location = "inicio.html";
+         if(obj.error.indexOf("Usuario no logeado") >= 0){
+           cerrarSesion();
          }
          else{
            alert("Error. Inténtelo más tarde.");s
@@ -160,11 +151,8 @@ function form_anadirquitar_cancion_a_favorito(){
     }).done(function(response){
        var obj=JSON.parse(response);
        if(obj.error != undefined){
-         if(obj.error.indexOf("Usuario no logeado en el servidor") >= 0){
-           //El usuario no esta logeado, quitar cookies e ir a inicio
-           borrarCookie("login");
-           borrarCookie("idSesion");
-           window.location = "inicio.html";
+         if(obj.error.indexOf("Usuario no logeado") >= 0){
+           cerrarSesion();
          }
          else{
            alert("Error. Inténtelo más tarde.");s

@@ -52,11 +52,8 @@ $(document).ready(function() {
      var obj1=JSON.parse(response);
      var favoritos=undefined;
        if(obj1.error != undefined){
-         if(obj1.error.indexOf("Usuario no logeado en el servidor") >= 0){
-           //El usuario no esta logeado, quitar cookies e ir a inicio
-           borrarCookie("login");
-           borrarCookie("idSesion");
-           window.location = "inicio.html";
+         if(obj1.error.indexOf("Usuario no logeado") >= 0){
+           cerrarSesion();
          }
        }
        else if(obj1.NoHayCanciones != undefined){
@@ -93,11 +90,8 @@ $(document).ready(function() {
     }).done(function(response){
        var obj=JSON.parse(response);
        if(obj.error != undefined){
-         if(obj.error.indexOf("Usuario no logeado en el servidor") >= 0){
-           //El usuario no esta logeado, quitar cookies e ir a inicio
-           borrarCookie("login");
-           borrarCookie("idSesion");
-           window.location = "inicio.html";
+         if(obj.error.indexOf("Usuario no logeado") >= 0){
+           cerrarSesion();
          }
        }
        else if(obj.SinSeguidos != undefined){
@@ -149,11 +143,8 @@ function form_mostrar_amigos(){
        var obj=JSON.parse(response);
        //Mostrar mensaje correspondiente en forma de ventana
        if(obj.error != undefined){
-         if(obj.error.indexOf("Usuario no logeado en el servidor") >= 0){
-           //El usuario no esta logeado, quitar cookies e ir a inicio
-           borrarCookie("login");
-           borrarCookie("idSesion");
-           window.location = "inicio.html";
+         if(obj.error.indexOf("Usuario no logeado") >= 0){
+           cerrarSesion();
          }
          else if(obj.error.indexOf("Duplicate entry") >= 0){
            $('.close0').click();
