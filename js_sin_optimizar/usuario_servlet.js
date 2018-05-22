@@ -6,7 +6,7 @@ $(document).ready(function() {
     window.location="perfil.html";
   }
   $( "#titulopagina" ).append("<h1>" + c + "</h1>");
-  var elem_por_pagina = 4;
+  var elem_por_pagina = 10;
   var inicio;
   var pag_actual = url.searchParams.get("pagina");
 

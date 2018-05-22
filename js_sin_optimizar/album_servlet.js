@@ -156,7 +156,7 @@ function mostrarAlbumconFav(obj,favoritos){
    else{
      pag_actual = parseInt(pag_actual);
    }
-   var elem_por_pagina = 4;
+   var elem_por_pagina = 10;
    inicio=(pag_actual-1)*elem_por_pagina;
 
    for(i=inicio; i<(elem_por_pagina+inicio) && i<canciones.length;i++){

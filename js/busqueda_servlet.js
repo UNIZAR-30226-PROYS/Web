@@ -5,7 +5,7 @@ else if(obj1.NoHayCanciones!=undefined){}
 else{var aux=obj1.canciones;if(aux.length>0){for(i in aux){delete aux[i].uploader}
 favoritos=JSON.stringify(aux)}}
 mostrarBusquedaconFav(jsonData,favoritos)}).fail(function(response){alert("Error interno. Inténtelo más tarde.")})}
-else{$("#titulopagina").after("<h2 id=\"sin_resul\">No hay resultados.</h2>")}});function mostrarBusquedaconFav(obj,favoritos){var url_string=window.location.href;var url=new URL(url_string);var c=url.searchParams.get("busqueda_cancion");var canciones=obj.canciones;var elem_por_pagina=5;var pag_actual=parseInt(url.searchParams.get("pagina"));if(pag_actual==null){pag_actual=1}
+else{$("#titulopagina").after("<h2 id=\"sin_resul\">No hay resultados.</h2>")}});function mostrarBusquedaconFav(obj,favoritos){var url_string=window.location.href;var url=new URL(url_string);var c=url.searchParams.get("busqueda_cancion");var canciones=obj.canciones;var elem_por_pagina=10;var pag_actual=parseInt(url.searchParams.get("pagina"));if(pag_actual==null){pag_actual=1}
 else{pag_actual=parseInt(pag_actual)}
 var lista_favoritos=favoritos;var inicio=(pag_actual-1)*elem_por_pagina;for(i=inicio;i<(elem_por_pagina+inicio)&&i<canciones.length;i++){var n_cancion=canciones[i].tituloCancion;var n_artista=canciones[i].nombreArtista;var n_genero=canciones[i].genero;var n_album=canciones[i].nombreAlbum;var ruta_aux=canciones[i].ruta;var index=ruta_aux.indexOf("/ps");var ruta=".."+ruta_aux.substr(index);var n_uploader=canciones[i].uploader;var image_aux=canciones[i].ruta_imagen;var indexi=image_aux.indexOf("/ps");var image=".."+image_aux.substr(indexi);if(n_genero==null){n_genero=""}
 if(n_album==null){n_album=""}

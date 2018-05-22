@@ -64,7 +64,6 @@ button:hover {
 }
 
 .simb_repr_play input {
-  position: absolute;
   width:  45px;
   height: 45px;
   margin-left: 65%;
@@ -75,7 +74,6 @@ button:hover {
 }
 
 .simb_repr_fav input {
-  position: absolute;
   width:  45px;
   height: 45px;
   margin-left: 75%;
@@ -86,7 +84,6 @@ button:hover {
 }
 
 .simb_repr_lista input {
-  position: absolute;
   width:  45px;
   height: 45px;
   margin-left: 85%;
@@ -97,7 +94,6 @@ button:hover {
 }
 
 .nombrecancion {
-  position: absolute;
   margin-left: 5%;
   font-size: 100%;
   margin-top: 5%;
@@ -144,7 +140,8 @@ button:hover {
     margin-left: 1%;
     padding-top:0%;
     font-size: 25px;
-    margin-top: 1%;
+    margin-top: 15px;
+    width: 520px;
   }
 
   .imagen img {
@@ -174,17 +171,17 @@ button:hover {
 
   .simb_repr_play input {
     margin-left: 35%;
-    margin-top: 0.5%;
+    margin-top: 10px;
   }
 
   .simb_repr_fav input {
-    margin-left: 45%;
-    margin-top: 0.5%;
+    margin-left: 80px;
+    margin-top: 10px;
   }
 
   .simb_repr_lista input {
-    margin-left: 55%;
-    margin-top: 0.5%;
+    margin-left: 80px;
+    margin-top: 10px;
   }
 
 }

@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  var elem_por_pagina = 5;
+  var elem_por_pagina = 11;
   var url_string = window.location.href;
   var url = new URL(url_string);
   var pag_actual = url.searchParams.get("pagina");

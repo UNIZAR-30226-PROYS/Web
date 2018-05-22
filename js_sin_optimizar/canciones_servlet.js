@@ -205,7 +205,7 @@ function mostrarPaginaconFav(obj,favoritos,nombrePagina,nombreParamUrl){
    else{
      pag_actual = parseInt(pag_actual);
    }
-   var elem_por_pagina = 5;
+   var elem_por_pagina = 10;
    if(nombreParamUrl==".menurecientes"){
      elem_por_pagina=10;
    }

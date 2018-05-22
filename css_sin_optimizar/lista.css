@@ -169,27 +169,26 @@
 }
 
 .nombrecancion {
-    position: absolute;
-    margin-left: 22%;
-    font-size: 100%;
-    margin-top: 5%;
-    font-weight: normal;
+    margin-left: 5%;
+    padding-top: 0;
+    font-size: 22px;
+    margin-top: 0;
+    width: 470px;
 }
 
 .nombreautor {
-    position: absolute;
-    margin-left: 22%;
-    font-size: 100%;
-    margin-top: 5%;
-    font-weight: normal;
+    margin-left: 5%;
+    padding-top: 0;
+    font-size: 22px;
+    /* margin-top: 18px; */
+    margin-top: -5px;
 }
 
 .nombregenero {
-    position: absolute;
-    margin-left: 22%;
-    font-size: 100%;
-    margin-top: 5%;
-    font-weight: normal;
+    margin-left: 5%;
+    padding-top: 0;
+    font-size: 22px;
+    margin-top: -5px;
 }
 
 .informacion form {
@@ -197,19 +196,17 @@
 }
 
 .simb_repr_play input {
-  position: absolute;
-  width:  45px;
-  height: 45px;
-  margin-left: 65%;
-  margin-top: 3%;
-  border: none;
-  padding: 0;
-  background: none;
+    width: 45px;
+    height: 45px;
+    margin-left: 65%;
+    margin-top: 3%;
+    border: none;
+    padding: 0;
+    background: none;
 }
 
 .simb_repr_elim input {
-  position: absolute;
-  width:  45px;
+  width: 45px;
   height: 45px;
   margin-left: 75%;
   margin-top: 3%;
@@ -335,16 +332,17 @@ tr {
   }
 
   .simb_repr_play input {
-    margin-left: 35%;
-    margin-top: 0.5%;
+    margin-left: 65px;
+    margin-top: .5%;
   }
 
   .simb_repr_elim input {
-    margin-left: 45%;
-    margin-top: 0.5%;
+    margin-left: 65px;
+    margin-top: .5%;
   }
 
   .nombrecancion {
+    font-weight: normal;
     margin-left: 5%;
     padding-top:0%;
     font-size: 22px;
@@ -355,14 +353,12 @@ tr {
     margin-left: 5%;
     padding-top:0%;
     font-size: 22px;
-    margin-top: 18px;
   }
 
   .nombregenero {
     margin-left: 5%;
     padding-top:0%;
     font-size: 22px;
-    margin-top: 36px;
   }
 
   #IdUsar {

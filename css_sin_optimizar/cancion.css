@@ -291,12 +291,14 @@ button:hover {
 }
 
 #nombrecancion {
-    position: relative;
-    top: 10px;
-    left: 12%;
-    color: white;
-    font-size: 40px;
-    width: 50%;
+  position: relative;
+  top: 10px;
+  left: 0;
+  color: #fff;
+  font-size: 40px;
+  width: 80%;
+  text-align: center;
+  margin-left: -100px;
 }
 
 #repr {
@@ -318,12 +320,14 @@ button:hover {
 }
 
 #autor1 {
-    position: relative;
-    top: 10px;
-    left: 15%;
-    color: white;
-    font-size: 30px;
-    width: 50%;
+  position: relative;
+  top: 10px;
+  /* left: 15%; */
+  color: white;
+  font-size: 30px;
+  width: 60%;
+  text-align: center;
+  margin-left: -40px;
 }
 
 #opcionesrepr {

@@ -21,7 +21,7 @@ else if(nombreParamUrl==".menuestilo"){sessionStorage.setItem("listaRecomendadas
 else{sessionStorage.setItem("listaAux",canciones_string)}
 var lista_favoritos=favoritos;if(pag_actual==null){pag_actual=1}
 else{pag_actual=parseInt(pag_actual)}
-var elem_por_pagina=5;if(nombreParamUrl==".menurecientes"){elem_por_pagina=10}
+var elem_por_pagina=10;if(nombreParamUrl==".menurecientes"){elem_por_pagina=10}
 inicio=(pag_actual-1)*elem_por_pagina;for(i=inicio;i<(elem_por_pagina+inicio)&&i<canciones.length;i++){var n_cancion=canciones[i].tituloCancion;var n_artista=canciones[i].nombreArtista;var n_genero=canciones[i].genero;var n_album=canciones[i].nombreAlbum;var ruta_aux=canciones[i].ruta;var index=ruta_aux.indexOf("/ps");var ruta=".."+ruta_aux.substr(index);var n_uploader=canciones[i].uploader;var image_aux=canciones[i].ruta_imagen;var indexi=image_aux.indexOf("/ps");var image=".."+image_aux.substr(indexi);if(n_genero==null){n_genero=""}
 if(n_album==null){n_album=""}
 var en_favoritos,servlet,imagen_favoritos,msg,form;if(lista_favoritos!=undefined){en_favoritos=lista_favoritos.includes(JSON.stringify(canciones[i]))}

@@ -62,7 +62,7 @@ function mostrarBusquedaconFav(obj,favoritos){
     var c = url.searchParams.get("busqueda_cancion");
     var canciones = obj.canciones;
     //Definir elementos a mostrar por pagina, pagina actual y valor a empezar a mostrar
-    var elem_por_pagina = 5;
+    var elem_por_pagina = 10;
     var pag_actual= parseInt(url.searchParams.get("pagina"));
     if(pag_actual == null){
       pag_actual = 1;
