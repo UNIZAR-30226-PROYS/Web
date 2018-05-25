@@ -253,18 +253,21 @@ function mostrarPaginaconFav(obj,favoritos,nombrePagina,nombreParamUrl){
         form="form_poner_favorito";
      }
      var funcion_play;
+     var nombreFuncion="setIndiceAndPlay";
      if(nombreParamUrl == ".menurecientes"){
         funcion_play = 'setIndiceAndPlayRecientes('+i+',0,1);';
+        nombreFuncion="setIndiceAndPlayRecientes";
      }
      else if(nombreParamUrl == ".menuestilo"){
         funcion_play = 'setIndiceAndPlayRecientes('+i+',0,0);';
+        nombreFuncion="setIndiceAndPlayRecientes";
      }
      else{
         funcion_play = 'setIndiceAndPlay('+i+',0);';
      }
 
-     var l1='<div class="cancioninf"><ul><li id="barraopciones"><a href="cancion.html?nombre='+n_cancion+'&artista='+n_artista+'&album='+n_album+'&genero='+n_genero+'&uploader='+n_uploader+'&ruta='+ruta+'&ruta_imagen='+image+'" id="enlacecancion"><div class="imagen"><img src="'+image+'" alt="Imagen cancion" onClick="setIndiceAndPlay('+i+',1)" onerror="this.src=\'img/Unknown_Music.png\'"></div></a></li>';
-     var l2='<li id="barraopciones"><a href="cancion.html?nombre='+n_cancion+'&artista='+n_artista+'&album='+n_album+'&genero='+n_genero+'&uploader='+n_uploader+'&ruta='+ruta+'&ruta_imagen='+image+'" id="enlacecancion"><div class="nombrecancion" onClick="setIndiceAndPlay('+i+',1)">'+n_cancion+'</div></a><a href="artista.html?artista='+n_artista+'" id="enlacecancion"><div class="nombreautor">Artista: '+n_artista+'</div></a></li>';
+     var l1='<div class="cancioninf"><ul><li id="barraopciones"><a href="cancion.html?nombre='+n_cancion+'&artista='+n_artista+'&album='+n_album+'&genero='+n_genero+'&uploader='+n_uploader+'&ruta='+ruta+'&ruta_imagen='+image+'" id="enlacecancion"><div class="imagen"><img src="'+image+'" alt="Imagen cancion" onClick="'+nombreFuncion+'('+i+',1)" onerror="this.src=\'img/Unknown_Music.png\'"></div></a></li>';
+     var l2='<li id="barraopciones"><a href="cancion.html?nombre='+n_cancion+'&artista='+n_artista+'&album='+n_album+'&genero='+n_genero+'&uploader='+n_uploader+'&ruta='+ruta+'&ruta_imagen='+image+'" id="enlacecancion"><div class="nombrecancion" onClick="'+nombreFuncion+'('+i+',1)">'+n_cancion+'</div></a><a href="artista.html?artista='+n_artista+'" id="enlacecancion"><div class="nombreautor">Artista: '+n_artista+'</div></a></li>';
 
      var play='<li id="barraopciones"><div class="simb_repr_play"><input type="image" src="img/play.png" alt="Reproducir cancion" title="Reproducir canción" onClick="'+funcion_play+'return false;"></div></li>';
 

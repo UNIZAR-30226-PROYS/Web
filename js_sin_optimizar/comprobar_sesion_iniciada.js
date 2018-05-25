@@ -44,6 +44,7 @@ function reproducirCancion(pagina_cancion){
       cargar_lista_top_semanal();
     }
     else{
+      alert("LIsta: "+aux);
       var canciones =JSON.parse(aux);
 
       var i=sessionStorage.getItem("indiceLista");

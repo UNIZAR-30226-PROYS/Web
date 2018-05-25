@@ -7,7 +7,7 @@ function reproducirCancion(pagina_cancion){var aux=sessionStorage.getItem("lista
 else{var canciones=JSON.parse(aux);var i=sessionStorage.getItem("indiceLista");var cancion=canciones[i].tituloCancion;var artista=canciones[i].nombreArtista;var genero=canciones[i].genero;var album=canciones[i].nombreAlbum;var ruta_aux=canciones[i].ruta;var index=ruta_aux.indexOf("/ps");var ruta=".."+ruta_aux.substr(index);var uploader=canciones[i].uploader;avisarReproducirCancion(ruta_aux);var image_aux=canciones[i].ruta_imagen;var indexi=image_aux.indexOf("/ps");var image=".."+image_aux.substr(indexi);if(pagina_cancion==0){playMusic(ruta,image,cancion,artista,album,uploader,genero)}
 else{sessionStorage.setItem("tiempo_cancion",0);window.location="cancion.html?nombre="+cancion+"&artista="+artista+"&album="+album+"&genero="+genero+"&uploader="+uploader+"&ruta="+ruta+"&ruta_imagen="+image}}}
 function avisarReproducirCancion(ruta){var post_url="/ps/ReproducirCancion"
-var request_method="post";var form_data="ruta="+ruta;$.ajax({url:post_url,type:request_method,data:form_data,}).done(function(response){}).fail(function(response){alert("Error interno. Inténtelo más tarde.")})}
+var request_method="post";var form_data="ruta="+ruta;$.ajax({url:post_url,type:request_method,data:form_data,}).done(function(response){}).fail(function(response){})}
 function siguienteCancion(pagina_cancion){var canciones=JSON.parse(sessionStorage.getItem("listaActual"));var i=parseInt(sessionStorage.getItem("indiceLista"));var aleatorio=sessionStorage.getItem("valor_aleatorio");if(aleatorio!=null){if(aleatorio==1){i=getRandomInt(0,canciones.length)}
 else{i=i+1;if(i==canciones.length){i=0}}}
 else{i=i+1;if(i==canciones.length){i=0}}
