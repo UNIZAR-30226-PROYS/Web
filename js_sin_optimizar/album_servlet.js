@@ -7,7 +7,7 @@ $(document).ready(function() {
   if(album == undefined){ //Si se ha ido directamente a la pagina redirigir
     window.location="home.html";
   }
-  $( "#texto_nombre_busqueda" ).append(c);
+  $( "#texto_nombre_busqueda" ).append(album);
   var c = url.searchParams.get("artista");
   if(c == undefined){ //Si se ha ido directamente a la pagina redirigir
     window.location="home.html";
