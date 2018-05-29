@@ -14,8 +14,7 @@ $(document).ready(function() {
   document.title = "Búsqueda canciones: "+c;
 
   var canciones = jsonData.canciones;
-
-  if(canciones != undefined){
+  if(canciones != undefined && canciones != ""){
     var canciones_string = JSON.stringify(canciones);
     sessionStorage.setItem("listaAux",canciones_string);
 

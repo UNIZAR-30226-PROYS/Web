@@ -1,6 +1,6 @@
 $(document).ready(function(){var url_string=window.location.href;var url=new URL(url_string);var c=url.searchParams.get("busqueda_cancion");if(c==undefined){window.location="home.html"}
 $("#texto_nombre_busqueda").append("\""+c+"\"");var jsonData=JSON.parse(JSON.parse(sessionStorage.getItem("lista_canciones")));if(jsonData==undefined){return!1}
-document.title="Búsqueda canciones: "+c;var canciones=jsonData.canciones;if(canciones!=undefined){var canciones_string=JSON.stringify(canciones);sessionStorage.setItem("listaAux",canciones_string);cargar_lista_favoritos().done(function(response){var obj1=JSON.parse(response);var favoritos=undefined;if(obj1.error!=undefined){if(obj1.error.indexOf("Usuario no logeado")>=0){cerrarSesion()}}
+document.title="Búsqueda canciones: "+c;var canciones=jsonData.canciones;if(canciones!=undefined && canciones != ""){var canciones_string=JSON.stringify(canciones);sessionStorage.setItem("listaAux",canciones_string);cargar_lista_favoritos().done(function(response){var obj1=JSON.parse(response);var favoritos=undefined;if(obj1.error!=undefined){if(obj1.error.indexOf("Usuario no logeado")>=0){cerrarSesion()}}
 else if(obj1.NoHayCanciones!=undefined){}
 else{var aux=obj1.canciones;if(aux.length>0){for(i in aux){delete aux[i].uploader}
 favoritos=JSON.stringify(aux)}}
