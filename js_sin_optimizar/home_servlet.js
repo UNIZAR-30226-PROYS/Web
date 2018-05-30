@@ -20,11 +20,19 @@ $(document).ready(function() {
        }
        else{
          var estilos = obj.generos;
+         var estilo_hip = 0;
 
          for(i=0;i<estilos.length;i++){
            var estilo=estilos[i];
-           var large='<li id="barraopciones"><div class="cancioninf"><a href="estilo.html'+"?estilo="+estilo+'" id="enlacecancion"><div class="marco_estilo">'+estilo+'</div></a></div></li>';
-           $("#lista_estilos").append(large);
+           if(estilo.indexOf("Hip-Hop/") < 0){
+             var large='<li id="barraopciones"><div class="cancioninf"><a href="estilo.html'+"?estilo="+estilo+'" id="enlacecancion"><div class="marco_estilo">'+estilo+'</div></a></div></li>';
+             $("#lista_estilos").append(large);
+           }
+           if(estilo.indexOf("Hip-Hop/") >= 0 && estilo_hip==0){
+             var large='<li id="barraopciones"><div class="cancioninf"><a href="estilo.html'+"?estilo="+estilo+'" id="enlacecancion"><div class="marco_estilo">'+estilo+'</div></a></div></li>';
+             $("#lista_estilos").append(large);
+             estilo_hip = 1;
+           }
          }
        }
 
